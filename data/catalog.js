@@ -1,11 +1,11 @@
 window.NEXUS_CATALOG = {
   "meta": {
     "name": "Nexus Acervo",
-    "version": "1.1.0",
+    "version": "1.2.0",
     "generatedAt": "2026-09-23T13:00:00-03:00",
     "language": "pt-BR",
     "sourceFile": "Relatorio-de-ferramentas-links-e-informacoes-dos-posts-analisados.md",
-    "updatedAt": "2026-09-23T20:37:29.963Z"
+    "updatedAt": "2026-09-23T20:54:55.581Z"
   },
   "segments": [
     {
@@ -75,7 +75,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para traduz xianyu e taobao, converte yuan para real e encaminha produtos a agentes de compra.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-goofish",
@@ -92,7 +94,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para marketplace chinês de itens novos e usados usado no fluxo do importhelper.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-taobao",
@@ -109,7 +113,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para marketplace chinês integrado ao fluxo de pesquisa e importação.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-cssbuy",
@@ -127,7 +133,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para agente de compra, armazenagem, inspeção, consolidação e envio internacional.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-ai-studio",
@@ -145,7 +153,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para gerenciamento de chaves e acesso à api gemini para protótipos e integrações.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-factory",
@@ -163,7 +173,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para agentes de programação para explorar repositórios, planejar, alterar e revisar código.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-tubelab",
@@ -181,7 +193,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para apoio à pesquisa, análise e planejamento de canais e vídeos.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-vidiq",
@@ -199,7 +213,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para pesquisa, seo, ideias e análise para canais no youtube.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-vidrush",
@@ -217,7 +233,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para apoio à criação e produção de vídeos com ia.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-pikzels",
@@ -235,7 +253,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para criação de thumbnails e elementos visuais para conteúdo.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-elevenlabs",
@@ -253,7 +273,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para geração e processamento de voz e áudio com ia.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-nosignups",
@@ -271,7 +293,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Conhecimento essencial e mastigado para entender nosignups com rapidez.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-bundlephobia",
@@ -289,7 +313,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para estima o peso e o impacto de pacotes npm no bundle frontend.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-excalidraw",
@@ -307,7 +333,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Um quadro branco virtual intuitivo para rabiscar ideias, rascunhos e fluxogramas como se fosse no papel.",
+      "targetAudience": "Quem precisa explicar ideias visualmente"
     },
     {
       "id": "tool-drawdb",
@@ -325,7 +353,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para editor de diagramas de banco de dados com geração de sql.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-graphite",
@@ -343,7 +373,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Editor gráfico gratuito e leve no navegador para criar desenhos vetoriais e ilustrações sem pagar mensalidades caras.",
+      "targetAudience": "Ilustradores e designers"
     },
     {
       "id": "tool-stackedit",
@@ -361,7 +393,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para editor markdown completo executado no navegador.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-opencut",
@@ -379,7 +413,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para editor de vídeo open source baseado na web.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-hoppscotch",
@@ -397,7 +433,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para ambiente web para desenvolver, testar e documentar apis.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "tool-logseq",
@@ -415,7 +453,9 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para organização de conhecimento, notas conectadas e colaboração.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "repo-open-notebook",
@@ -435,7 +475,10 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "open source",
-      "openAccess": true
+      "openAccess": true,
+      "thumbnail": "https://opengraph.githubassets.com/1/lfnovo/open-notebook",
+      "deliverable": "Código e documentação aberta e pronta para usar em projetos de ia e automação.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "repo-no-ai-slop",
@@ -455,7 +498,10 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "open source",
-      "openAccess": true
+      "openAccess": true,
+      "thumbnail": "https://opengraph.githubassets.com/1/petergyang/no-ai-slop",
+      "deliverable": "Código e documentação aberta e pronta para usar em projetos de ia e automação.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "repo-agenticseek",
@@ -475,7 +521,10 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "GPL-3.0",
-      "openAccess": true
+      "openAccess": true,
+      "thumbnail": "https://opengraph.githubassets.com/1/Fosowl/agenticSeek",
+      "deliverable": "Código e documentação aberta e pronta para usar em projetos de ia e automação.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "repo-coolify",
@@ -495,7 +544,10 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "Apache-2.0",
-      "openAccess": true
+      "openAccess": true,
+      "thumbnail": "https://opengraph.githubassets.com/1/coollabsio/coolify",
+      "deliverable": "Código e documentação aberta e pronta para usar em projetos de infraestrutura.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "repo-scrapling",
@@ -515,7 +567,10 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "BSD-3-Clause",
-      "openAccess": true
+      "openAccess": true,
+      "thumbnail": "https://opengraph.githubassets.com/1/D4Vinci/Scrapling",
+      "deliverable": "Código e documentação aberta e pronta para usar em projetos de osint e pesquisa.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "repo-openbb",
@@ -535,7 +590,10 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "AGPL-3.0",
-      "openAccess": true
+      "openAccess": true,
+      "thumbnail": "https://opengraph.githubassets.com/1/OpenBB-finance/OpenBB",
+      "deliverable": "Código e documentação aberta e pronta para usar em projetos de dados e apis.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "repo-documenso",
@@ -555,7 +613,10 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "AGPL-3.0",
-      "openAccess": true
+      "openAccess": true,
+      "thumbnail": "https://opengraph.githubassets.com/1/documenso/documenso",
+      "deliverable": "Código e documentação aberta e pronta para usar em projetos de produtividade.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "repo-twenty",
@@ -575,7 +636,10 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "open source",
-      "openAccess": true
+      "openAccess": true,
+      "thumbnail": "https://opengraph.githubassets.com/1/twentyhq/twenty",
+      "deliverable": "Código e documentação aberta e pronta para usar em projetos de negócios.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "repo-openvoice",
@@ -595,7 +659,10 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "MIT",
-      "openAccess": true
+      "openAccess": true,
+      "thumbnail": "https://opengraph.githubassets.com/1/myshell-ai/OpenVoice",
+      "deliverable": "Código e documentação aberta e pronta para usar em projetos de conteúdo e mídia.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "video-natureza-humana",
@@ -612,7 +679,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "SejaUmaPessoaMelhor",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "RTo2akdZ7Dc",
+      "thumbnail": "https://img.youtube.com/vi/RTo2akdZ7Dc/hqdefault.jpg",
+      "deliverable": "Revela os segredos do comportamento humano para você entender as reais intenções das pessoas e não ser manipulado.",
+      "targetAudience": "Qualquer pessoa que queira se relacionar melhor"
     },
     {
       "id": "video-20-horas",
@@ -629,7 +700,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "TEDxCSU",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "5MgBikgcWnY",
+      "thumbnail": "https://img.youtube.com/vi/5MgBikgcWnY/hqdefault.jpg",
+      "deliverable": "Um método prático para aprender qualquer nova habilidade (como tocar violão ou programar) praticando apenas 45 minutos por dia durante 1 mês.",
+      "targetAudience": "Estudantes e mentes curiosas"
     },
     {
       "id": "video-growth-mindset",
@@ -646,7 +721,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "TED",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "_X0mgOOSpLU",
+      "thumbnail": "https://img.youtube.com/vi/_X0mgOOSpLU/hqdefault.jpg",
+      "deliverable": "Mostra como o cérebro se desenvolve com o esforço e ensina você a nunca mais ter medo de errar ou de novos desafios.",
+      "targetAudience": "Estudantes, pais e profissionais"
     },
     {
       "id": "video-impostor",
@@ -663,7 +742,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Lento Ponto",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "I6B_v3eR5Wk",
+      "thumbnail": "https://img.youtube.com/vi/I6B_v3eR5Wk/hqdefault.jpg",
+      "deliverable": "Ensina técnicas mentais para superar a sensação de \"não ser bom o suficiente\" e ter mais autoconfiança no trabalho e na vida.",
+      "targetAudience": "Profissionais e empreendedores"
     },
     {
       "id": "video-discussao",
@@ -679,7 +762,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Bárbara Tovar",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "uK4eT3c4G0M",
+      "thumbnail": "https://img.youtube.com/vi/uK4eT3c4G0M/hqdefault.jpg",
+      "deliverable": "5 técnicas psicológicas para defender suas ideias com calma, inteligência e respeito, sem precisar gritar ou brigar.",
+      "targetAudience": "Qualquer pessoa"
     },
     {
       "id": "video-procrastinacao",
@@ -696,7 +783,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Eslen Delanogare",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "faE1EGQJ0lQ",
+      "thumbnail": "https://img.youtube.com/vi/faE1EGQJ0lQ/hqdefault.jpg",
+      "deliverable": "Um plano simples de ação para parar de enrolar e começar imediatamente as tarefas difíceis que você vive adiando.",
+      "targetAudience": "Quem sofre com prazos e tarefas acumuladas"
     },
     {
       "id": "video-comparacao",
@@ -713,7 +804,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Bagetti",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "cnqxuqMvZaM",
+      "thumbnail": "https://img.youtube.com/vi/cnqxuqMvZaM/hqdefault.jpg",
+      "deliverable": "Uma reflexão profunda para você parar de se comparar com a vida perfeita dos outros na internet e focar no que realmente importa para você.",
+      "targetAudience": "Usuários de redes sociais"
     },
     {
       "id": "video-decisao",
@@ -730,7 +825,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Luana Carolina",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "cnqxuqMvZaM",
+      "thumbnail": "https://img.youtube.com/vi/cnqxuqMvZaM/hqdefault.jpg",
+      "deliverable": "Um guia prático de clareza mental para você tomar aquela decisão importante que você vem empurrando com a barriga.",
+      "targetAudience": "Quem está em encruzilhadas na carreira ou vida"
     },
     {
       "id": "video-13-minutos",
@@ -746,7 +845,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Eslen Delanogare",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "RZRritkIEA0",
+      "thumbnail": "https://img.youtube.com/vi/RZRritkIEA0/hqdefault.jpg",
+      "deliverable": "13 minutos de sabedoria prática sobre disciplina, tempo e foco para você reorganizar sua rotina e ter mais energia no dia a dia.",
+      "targetAudience": "Quem quer melhorar sua produtividade diária"
     },
     {
       "id": "video-hacks",
@@ -762,7 +865,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Lil code",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "RZRritkIEA0",
+      "thumbnail": "https://img.youtube.com/vi/RZRritkIEA0/hqdefault.jpg",
+      "deliverable": "O teste definitivo dos melhores métodos de organização pessoal, mostrando sem rodeios o que realmente funciona e o que é perda de tempo.",
+      "targetAudience": "Quem busca mais tempo livre no dia"
     },
     {
       "id": "video-pensar-papel",
@@ -779,7 +886,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "Matheus Menucci",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "RTo2akdZ7Dc",
+      "thumbnail": "https://img.youtube.com/vi/RTo2akdZ7Dc/hqdefault.jpg",
+      "deliverable": "Ensina como organizar pensamentos confusos usando apenas papel e caneta, clareando decisões difíceis e diminuindo a ansiedade.",
+      "targetAudience": "Quem se sente sobrecarregado de informações"
     },
     {
       "id": "video-sucesso",
@@ -796,7 +907,11 @@ window.NEXUS_CATALOG = {
       "year": 2026,
       "source": "JOTA JOTA Podcast",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23"
+      "updatedAt": "2026-09-23",
+      "youtubeId": "jYdE1f_bK38",
+      "thumbnail": "https://img.youtube.com/vi/jYdE1f_bK38/hqdefault.jpg",
+      "deliverable": "Uma conversa sincera sobre o que os ricos e bem-sucedidos realmente fazem por trás das câmeras, desmistificando fórmulas mágicas.",
+      "targetAudience": "Empreendedores e sonhadores"
     },
     {
       "id": "metric-roi",
@@ -815,7 +930,9 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar."
+      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
+      "deliverable": "A fórmula matemática simples para saber se o dinheiro que você gastou em um projeto voltou com lucro ou com prejuízo.",
+      "targetAudience": "Qualquer pessoa que cuida do próprio dinheiro ou negócio"
     },
     {
       "id": "metric-cac",
@@ -834,7 +951,9 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar."
+      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
+      "deliverable": "Mostra na ponta do lápis quanto custou cada novo cliente que entrou na sua empresa.",
+      "targetAudience": "Empreendedores e comerciantes"
     },
     {
       "id": "metric-aov",
@@ -853,7 +972,9 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar."
+      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
+      "deliverable": "Conhecimento essencial e mastigado para entender aov — ticket médio com rapidez.",
+      "targetAudience": "Profissionais e entusiastas"
     },
     {
       "id": "metric-runway",
@@ -872,7 +993,9 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar."
+      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
+      "deliverable": "Calcula quantos meses de vida a sua empresa ainda tem com o dinheiro que está guardado no banco antes de quebrar.",
+      "targetAudience": "Startups e donos de empresas"
     },
     {
       "id": "metric-churn",
@@ -891,7 +1014,9 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar."
+      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
+      "deliverable": "Mede a porcentagem de clientes que cancelaram ou deixaram de comprar de você no último mês.",
+      "targetAudience": "Negócios de assinatura e serviços"
     },
     {
       "id": "metric-mrr",
@@ -910,7 +1035,9 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar."
+      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
+      "deliverable": "A receita previsível que cai religiosamente na sua conta todo mês com mensalidades ou assinaturas.",
+      "targetAudience": "Empresas de SaaS e escolas"
     },
     {
       "id": "metric-ebitda",
@@ -929,7 +1056,9 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar."
+      "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
+      "deliverable": "O lucro operacional real da empresa, mostrando se a operação dá dinheiro de verdade antes de impostos e juros de banco.",
+      "targetAudience": "Investidores e empresários"
     },
     {
       "id": "design-shadcn-ui",
@@ -951,7 +1080,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "MIT",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Blocos de construção prontos e modernos para criar sites elegantes e rápidos sem precisar desenhar botões e menus do zero.",
+      "targetAudience": "Desenvolvedores e criadores de sites"
     },
     {
       "id": "design-aceternity-ui",
@@ -973,7 +1104,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "MIT",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Efeitos visuais e animações de cair o queixo para transformar qualquer página comum em uma experiência futurista.",
+      "targetAudience": "Designers e programadores web"
     },
     {
       "id": "design-uiverse",
@@ -995,7 +1128,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "Open Source",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Um shopping grátis com mais de 3.000 botões, cartões e loaders animados criados pela comunidade para copiar e colar.",
+      "targetAudience": "Qualquer pessoa montando um site"
     },
     {
       "id": "design-coolors",
@@ -1015,7 +1150,9 @@ window.NEXUS_CATALOG = {
       "source": "Brad Traversy Design Resources",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Gera combinações perfeitas de cores que combinam entre si apenas apertando a barra de espaço do teclado.",
+      "targetAudience": "Designers, artistas e iniciantes"
     },
     {
       "id": "design-realtime-colors",
@@ -1035,7 +1172,9 @@ window.NEXUS_CATALOG = {
       "source": "Brad Traversy Design Resources",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Permite testar e ver como suas cores e fontes favoritas ficam aplicadas em um site de verdade antes de publicar.",
+      "targetAudience": "Quem está criando a identidade de um projeto"
     },
     {
       "id": "design-color-hunt",
@@ -1055,7 +1194,9 @@ window.NEXUS_CATALOG = {
       "source": "Brad Traversy Design Resources",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Milhares de paletas de cores prontas e consagradas para você nunca mais ter dúvida sobre qual cor usar na sua arte.",
+      "targetAudience": "Designers gráficos e criadores"
     },
     {
       "id": "design-lucide-icons",
@@ -1076,7 +1217,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "ISC",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Mais de 1.400 ícones modernos, elegantes e levíssimos que funcionam em qualquer tela e aplicativo.",
+      "targetAudience": "Quem precisa de símbolos visuais limpos"
     },
     {
       "id": "design-tabler-icons",
@@ -1097,7 +1240,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "MIT",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Uma imensa biblioteca com mais de 5.200 ícones de alta qualidade para usar livremente em apresentações e softwares.",
+      "targetAudience": "Designers e programadores"
     },
     {
       "id": "design-simple-icons",
@@ -1119,7 +1264,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "CC0-1.0",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Todos os logotipos oficiais de marcas (Instagram, Google, WhatsApp, Apple) em formato vetor limpo e perfeito.",
+      "targetAudience": "Criadores de conteúdo e designers"
     },
     {
       "id": "design-undraw",
@@ -1140,7 +1287,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "Open Source",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Desenhos e ilustrações modernas gratuitas onde você pode escolher a cor exata para combinar com a sua empresa.",
+      "targetAudience": "Quem quer deixar posts e páginas mais ilustrados"
     },
     {
       "id": "design-humaaans",
@@ -1161,7 +1310,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "CC BY 4.0",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Ilustrações de pessoas onde você pode trocar roupas, cabelos e poses como se fosse um brinquedo de montar.",
+      "targetAudience": "Apresentações e sites modernos"
     },
     {
       "id": "design-hero-patterns",
@@ -1182,7 +1333,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "CC BY 4.0",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Texturas e padrões de fundo elegantes e repetíveis para seu site não ficar com fundo branco sem graça.",
+      "targetAudience": "Designers de landing pages"
     },
     {
       "id": "design-gsap",
@@ -1203,7 +1356,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "Standard GreenSock",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "A ferramenta mais potente do mundo para fazer elementos da página se moverem de forma suave conforme você rola a tela.",
+      "targetAudience": "Desenvolvedores front-end avançados"
     },
     {
       "id": "design-lottiefiles",
@@ -1223,7 +1378,9 @@ window.NEXUS_CATALOG = {
       "source": "Brad Traversy Design Resources",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Animações profissionais super leves (como figurinhas animadas) que não deixam o seu aplicativo ou site pesado.",
+      "targetAudience": "Criadores de aplicativos e sites"
     },
     {
       "id": "design-animate-css",
@@ -1244,7 +1401,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "MIT",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Efeitos prontos de CSS para fazer caixas tremerem, surgirem ou pularem na tela com apenas 1 linha de código.",
+      "targetAudience": "Iniciantes em criação de páginas"
     },
     {
       "id": "design-fontshare",
@@ -1265,7 +1424,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "Free for Commercial",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Fontes tipográficas sofisticadas e gratuitas para dar aspecto de revista de luxo aos seus títulos e textos.",
+      "targetAudience": "Quem quer tipografia de alto nível"
     },
     {
       "id": "design-google-fonts",
@@ -1286,7 +1447,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "license": "OFL",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "O maior diretório do planeta com centenas de letras e fontes seguras, rápidas e gratuitas para usar em qualquer projeto.",
+      "targetAudience": "Todo mundo que escreve na web"
     },
     {
       "id": "design-spline",
@@ -1306,7 +1469,9 @@ window.NEXUS_CATALOG = {
       "source": "Brad Traversy Design Resources",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Crie e brinque com objetos e mundos 3D diretamente no navegador mesmo sem saber computação gráfica avançada.",
+      "targetAudience": "Designers 3D e mentes criativas"
     },
     {
       "id": "design-shots-so",
@@ -1326,7 +1491,9 @@ window.NEXUS_CATALOG = {
       "source": "Brad Traversy Design Resources",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Transforma fotos e prints feios em apresentações elegantes em molduras de celulares e notebooks em 5 segundos.",
+      "targetAudience": "Quem posta nas redes sociais e portfólios"
     },
     {
       "id": "design-mobbin",
@@ -1346,7 +1513,9 @@ window.NEXUS_CATALOG = {
       "source": "Brad Traversy Design Resources",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "openAccess": true
+      "openAccess": true,
+      "deliverable": "Veja exatamente como os melhores aplicativos do mundo (Nubank, Airbnb, Duolingo) desenharam suas telas e fluxos.",
+      "targetAudience": "Empreendedores e designers de produto"
     }
   ]
 };

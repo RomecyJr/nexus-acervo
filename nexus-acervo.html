@@ -3,79 +3,79 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Nexus Acervo - Curadoria premium de ferramentas, repositórios, vídeos e design systems.">
-<title>Nexus Acervo · Hub de Recursos & Engenharia</title>
+<meta name="description" content="Nexus Acervo - Catálogo visual estilo streaming de ferramentas, vídeos, design e engenharia.">
+<title>Nexus Acervo · Hub Visual de Recursos & Engenharia</title>
 <link rel="preconnect" href="https://api.fontshare.com">
-<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,800&display=swap" rel="stylesheet">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,800,900&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-<script src="./data/catalog.js?v=1.1.0"></script>
+<script src="./data/catalog.js?v=1.2.0"></script>
 <style>
 /* ==========================================================================
-   NEXUS ACERVO - DESIGN SYSTEM PREMIUM (Linear / Raycast Aesthetic)
+   NEXUS ACERVO - NETFLIX & STREAMER VISUAL EXPERIENCE
    ========================================================================== */
 :root, [data-theme="light"] {
   --bg: #f8fafc;
-  --bg-gradient: radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 40%),
-                     radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.04) 0%, transparent 40%);
+  --bg-gradient: radial-gradient(circle at 15% 15%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+                     radial-gradient(circle at 85% 85%, rgba(99, 102, 241, 0.06) 0%, transparent 40%);
   --surface: #ffffff;
-  --surface-glass: rgba(255, 255, 255, 0.82);
+  --surface-glass: rgba(255, 255, 255, 0.85);
   --surface2: #f1f5f9;
   --surface3: #e2e8f0;
-  --border: rgba(15, 23, 42, 0.08);
-  --border-focus: rgba(6, 182, 212, 0.5);
+  --border: rgba(15, 23, 42, 0.09);
+  --border-focus: rgba(6, 182, 212, 0.6);
   --text: #0f172a;
   --muted: #475569;
   --faint: #94a3b8;
   --primary: #0891b2;
   --primary-hover: #0e7490;
-  --primary-light: rgba(8, 145, 178, 0.1);
-  --primary-glow: rgba(8, 145, 178, 0.25);
+  --primary-light: rgba(8, 145, 178, 0.12);
+  --primary-glow: rgba(8, 145, 178, 0.3);
   --accent: #6366f1;
-  --accent-light: rgba(99, 102, 241, 0.1);
-  --star: #eab308;
-  --star-bg: rgba(234, 179, 8, 0.12);
-  --danger: #e11d48;
-  --danger-light: rgba(225, 29, 72, 0.1);
-  --card-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
-  --card-shadow-hover: 0 16px 32px -8px rgba(8, 145, 178, 0.12), 0 4px 12px rgba(15, 23, 42, 0.06);
-  --modal-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  --accent-light: rgba(99, 102, 241, 0.12);
+  --zap: #eab308;
+  --zap-bg: rgba(234, 179, 8, 0.12);
+  --star: #f59e0b;
+  --star-bg: rgba(245, 158, 11, 0.14);
+  --card-shadow: 0 6px 20px -4px rgba(15, 23, 42, 0.08), 0 2px 6px rgba(15, 23, 42, 0.04);
+  --card-hover-shadow: 0 20px 35px -8px rgba(8, 145, 178, 0.2), 0 8px 16px rgba(15, 23, 42, 0.08);
+  --modal-shadow: 0 25px 60px -10px rgba(15, 23, 42, 0.35);
   --font: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
 }
 
 [data-theme="dark"] {
   --bg: #090a0f;
-  --bg-gradient: radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 45%),
-                     radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 45%);
+  --bg-gradient: radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.12) 0%, transparent 45%),
+                     radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.12) 0%, transparent 45%);
   --surface: #11131a;
-  --surface-glass: rgba(17, 19, 26, 0.85);
+  --surface-glass: rgba(17, 19, 26, 0.88);
   --surface2: #181b24;
   --surface3: #222734;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-focus: rgba(6, 182, 212, 0.6);
-  --text: #f1f5f9;
+  --border: rgba(255, 255, 255, 0.09);
+  --border-focus: rgba(6, 182, 212, 0.7);
+  --text: #f8fafc;
   --muted: #94a3b8;
   --faint: #64748b;
   --primary: #06b6d4;
   --primary-hover: #22d3ee;
-  --primary-light: rgba(6, 182, 212, 0.12);
-  --primary-glow: rgba(6, 182, 212, 0.35);
+  --primary-light: rgba(6, 182, 212, 0.15);
+  --primary-glow: rgba(6, 182, 212, 0.4);
   --accent: #818cf8;
-  --accent-light: rgba(129, 140, 248, 0.12);
-  --star: #facc15;
-  --star-bg: rgba(250, 204, 21, 0.14);
-  --danger: #f43f5e;
-  --danger-light: rgba(244, 63, 94, 0.14);
-  --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
-  --card-shadow-hover: 0 20px 40px -10px rgba(6, 182, 212, 0.2), 0 0 20px rgba(6, 182, 212, 0.1);
-  --modal-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+  --accent-light: rgba(129, 140, 248, 0.15);
+  --zap: #facc15;
+  --zap-bg: rgba(250, 204, 21, 0.14);
+  --star: #fbbf24;
+  --star-bg: rgba(251, 191, 36, 0.16);
+  --card-shadow: 0 8px 24px -4px rgba(0, 0, 0, 0.5);
+  --card-hover-shadow: 0 24px 48px -12px rgba(6, 182, 212, 0.25), 0 0 24px rgba(6, 182, 212, 0.12);
+  --modal-shadow: 0 30px 80px -15px rgba(0, 0, 0, 0.85);
 }
 
 :root {
-  --radius-sm: 6px;
-  --radius-md: 10px;
-  --radius-lg: 16px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 18px;
   --radius-full: 9999px;
-  --trans: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+  --trans: 220ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -98,12 +98,12 @@ button { cursor: pointer; border: 0; background: transparent; }
 a { color: inherit; text-decoration: none; }
 svg { display: block; flex-shrink: 0; }
 
-.skip { position: absolute; left: -9999px; z-index: 100; background: var(--primary); color: #fff; padding: 0.75rem 1.25rem; font-weight: 600; border-radius: var(--radius-md); }
+.skip { position: absolute; left: -9999px; z-index: 100; background: var(--primary); color: #fff; padding: 0.75rem 1.25rem; font-weight: 700; border-radius: var(--radius-md); }
 .skip:focus { left: 1rem; top: 1rem; }
 :focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
 
 /* ==========================================================================
-   LAYOUT PRINCIPAL
+   APP GRID & SIDEBAR
    ========================================================================== */
 .app {
   display: grid;
@@ -112,7 +112,6 @@ svg { display: block; flex-shrink: 0; }
   grid-template-areas: 'side top' 'side main';
 }
 
-/* SIDEBAR */
 .sidebar {
   grid-area: side;
   background: var(--surface-glass);
@@ -134,22 +133,22 @@ svg { display: block; flex-shrink: 0; }
   border-bottom: 1px solid var(--border);
 }
 .brand-icon {
-  width: 36px;
-  height: 36px;
+  width: 38px;
+  height: 38px;
   border-radius: var(--radius-md);
-  background: linear-gradient(135deg, var(--primary), var(--accent));
+  background: linear-gradient(135deg, #e11d48, var(--primary));
   display: grid;
   place-items: center;
   color: #fff;
-  box-shadow: 0 4px 12px var(--primary-glow);
+  box-shadow: 0 4px 14px rgba(225, 29, 72, 0.35);
 }
-.brand-text { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; line-height: 1.2; }
-.brand-text small { display: block; font-weight: 500; font-size: 0.75rem; color: var(--muted); }
+.brand-text { font-weight: 900; font-size: 1.1rem; letter-spacing: -0.03em; line-height: 1.2; }
+.brand-text small { display: block; font-weight: 600; font-size: 0.75rem; color: var(--muted); }
 
 .nav-label {
   font-size: 0.725rem;
   color: var(--faint);
-  font-weight: 700;
+  font-weight: 800;
   letter-spacing: 0.08em;
   text-transform: uppercase;
   margin: 1.25rem 0.5rem 0.5rem;
@@ -168,7 +167,6 @@ svg { display: block; flex-shrink: 0; }
   color: var(--muted);
   transition: all var(--trans);
   text-align: left;
-  position: relative;
 }
 .nav button i { width: 18px; height: 18px; color: var(--faint); transition: color var(--trans); }
 .nav button:hover { background: var(--surface2); color: var(--text); }
@@ -176,14 +174,14 @@ svg { display: block; flex-shrink: 0; }
 .nav button.active {
   background: var(--primary-light);
   color: var(--primary);
-  font-weight: 700;
+  font-weight: 800;
 }
 .nav button.active i { color: var(--primary); }
 .nav button .nav-count {
   margin-left: auto;
   font-size: 0.75rem;
-  font-weight: 700;
-  padding: 2px 7px;
+  font-weight: 800;
+  padding: 2px 8px;
   border-radius: var(--radius-full);
   background: var(--surface3);
   color: var(--muted);
@@ -206,7 +204,7 @@ svg { display: block; flex-shrink: 0; }
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--primary);
 }
 .status-dot {
@@ -214,12 +212,14 @@ svg { display: block; flex-shrink: 0; }
   height: 8px;
   border-radius: 50%;
   background: var(--primary);
-  box-shadow: 0 0 8px var(--primary);
+  box-shadow: 0 0 10px var(--primary);
   animation: pulse-dot 2s infinite ease-in-out;
 }
-@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+@keyframes pulse-dot { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: 0.4; transform: scale(0.85); } }
 
-/* TOPBAR */
+/* ==========================================================================
+   TOPBAR
+   ========================================================================== */
 .topbar {
   grid-area: top;
   background: var(--surface-glass);
@@ -271,7 +271,7 @@ svg { display: block; flex-shrink: 0; }
   top: 50%;
   transform: translateY(-50%);
   font-size: 0.7rem;
-  font-weight: 700;
+  font-weight: 800;
   color: var(--muted);
   background: var(--surface);
   border: 1px solid var(--border);
@@ -298,7 +298,7 @@ svg { display: block; flex-shrink: 0; }
   justify-content: center;
   gap: 0.5rem;
   font-size: 0.875rem;
-  font-weight: 600;
+  font-weight: 700;
   transition: all var(--trans);
 }
 .btn:hover { background: var(--surface2); border-color: var(--border-focus); }
@@ -319,7 +319,9 @@ svg { display: block; flex-shrink: 0; }
 }
 .btn i { width: 18px; height: 18px; }
 
-/* MAIN CONTENT */
+/* ==========================================================================
+   MAIN CONTENT
+   ========================================================================== */
 main {
   grid-area: main;
   overflow-y: auto;
@@ -327,30 +329,88 @@ main {
   scrollbar-gutter: stable;
 }
 
-.page-header {
+/* HERO SPOTLIGHT (NETFLIX BANNER) */
+.hero-spotlight {
+  position: relative;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-bottom: 1.75rem;
+  background: linear-gradient(135deg, #090d16, #141a29);
+  border: 1px solid var(--border);
+  box-shadow: var(--card-shadow);
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  min-height: 220px;
+}
+.spotlight-content {
+  padding: 2rem;
   display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: 1.5rem;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.65rem;
+  z-index: 2;
 }
-.eyebrow {
-  font-size: 0.75rem;
+.spotlight-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 3px 10px;
+  border-radius: var(--radius-full);
+  background: rgba(225, 29, 72, 0.2);
+  color: #f43f5e;
+  border: 1px solid rgba(225, 29, 72, 0.4);
+  font-size: 0.725rem;
   font-weight: 800;
-  color: var(--primary);
   text-transform: uppercase;
-  letter-spacing: 0.1em;
+  letter-spacing: 0.08em;
+  width: fit-content;
 }
-h1 {
-  font-size: 1.75rem;
-  font-weight: 800;
+.spotlight-title {
+  font-size: 1.6rem;
+  font-weight: 900;
   letter-spacing: -0.03em;
-  line-height: 1.2;
+  color: #fff;
+  line-height: 1.25;
 }
-.subtitle {
-  color: var(--muted);
-  font-size: 0.9375rem;
-  margin-top: 0.25rem;
+.spotlight-deliverable {
+  font-size: 0.95rem;
+  color: #cbd5e1;
+  max-width: 600px;
+  line-height: 1.5;
+}
+.spotlight-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+.spotlight-media {
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+}
+.spotlight-media::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to right, #090d16, transparent 40%);
+}
+.spotlight-play-btn {
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.9);
+  color: #0f172a;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 30px rgba(255, 255, 255, 0.4);
+  z-index: 3;
+  transition: transform var(--trans);
+}
+.spotlight-media:hover .spotlight-play-btn {
+  transform: scale(1.15);
 }
 
 /* KPIS */
@@ -379,22 +439,22 @@ h1 {
   align-items: center;
   color: var(--muted);
   font-size: 0.775rem;
-  font-weight: 700;
+  font-weight: 800;
   text-transform: uppercase;
   letter-spacing: 0.04em;
 }
 .kpi-header i { width: 18px; height: 18px; color: var(--primary); }
 .kpi-value {
   font-size: 1.85rem;
-  font-weight: 800;
+  font-weight: 900;
   display: block;
   margin-top: 0.35rem;
   font-variant-numeric: tabular-nums;
   letter-spacing: -0.03em;
 }
-.kpi-desc { font-size: 0.75rem; color: var(--faint); font-weight: 500; }
+.kpi-desc { font-size: 0.75rem; color: var(--faint); font-weight: 600; }
 
-/* WORKSPACE LAYOUT */
+/* WORKSPACE & CONTROLS */
 .workspace {
   display: grid;
   grid-template-columns: 1fr 310px;
@@ -415,18 +475,18 @@ h1 {
   align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1rem 1.25rem;
+  padding: 1.25rem 1.5rem;
   border-bottom: 1px solid var(--border);
 }
-.panel-head h2 { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; }
+.panel-head h2 { font-size: 1.25rem; font-weight: 900; letter-spacing: -0.02em; }
 .panel-head p { font-size: 0.8rem; color: var(--muted); }
 
-/* CONTROLES E FILTROS */
+/* CONTROLS BAR */
 .controls-bar {
   display: flex;
   flex-wrap: wrap;
   gap: 0.75rem;
-  padding: 0.875rem 1.25rem;
+  padding: 0.875rem 1.5rem;
   border-bottom: 1px solid var(--border);
   background: var(--surface2);
   align-items: center;
@@ -439,7 +499,7 @@ h1 {
   border-radius: var(--radius-md);
   padding: 0 2rem 0 0.875rem;
   font-size: 0.85rem;
-  font-weight: 600;
+  font-weight: 700;
   color: var(--text);
   appearance: none;
   cursor: pointer;
@@ -477,16 +537,16 @@ h1 {
 .view-toggle button.active {
   background: var(--primary-light);
   color: var(--primary);
-  font-weight: 700;
+  font-weight: 800;
 }
 .view-toggle i { width: 17px; height: 17px; }
 
-/* TAG FILTRADA ATIVA */
+/* ACTIVE TAG BAR */
 .active-tag-bar {
   display: none;
   align-items: center;
   gap: 0.5rem;
-  padding: 0.6rem 1.25rem;
+  padding: 0.6rem 1.5rem;
   background: var(--accent-light);
   border-bottom: 1px solid var(--border);
   font-size: 0.825rem;
@@ -501,223 +561,265 @@ h1 {
   border-radius: var(--radius-full);
   background: var(--accent);
   color: #fff;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 0.75rem;
 }
 .tag-clear-btn {
   margin-left: auto;
-  font-weight: 700;
+  font-weight: 800;
   cursor: pointer;
   text-decoration: underline;
 }
 
 /* ==========================================================================
-   CARDS & ITENS (LISTA & GRADE)
+   NETFLIX VISUAL CARDS (GRADE & LISTA)
    ========================================================================== */
 .items {
-  padding: 1rem;
+  padding: 1.25rem;
   display: grid;
-  gap: 0.65rem;
+  gap: 1rem;
   content-visibility: auto;
 }
 
-/* MODO GRADE (GRID VIEW) */
+/* GRADE VISUAL STREAMING (DEFAULT) */
 .items.grid-view {
-  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
-  gap: 1rem;
-  padding: 1.25rem;
+  grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+  gap: 1.25rem;
 }
 
-.item-card {
+.netflix-card {
   background: var(--surface);
   border: 1px solid var(--border);
-  border-radius: var(--radius-md);
-  padding: 1rem;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
   display: flex;
   flex-direction: column;
-  gap: 0.75rem;
   cursor: pointer;
-  transition: all var(--trans);
+  transition: transform var(--trans), box-shadow var(--trans), border-color var(--trans);
   position: relative;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+  box-shadow: var(--card-shadow);
 }
-.item-card:hover {
-  transform: translateY(-3px);
+.netflix-card:hover {
+  transform: translateY(-4px);
   border-color: var(--border-focus);
-  box-shadow: var(--card-shadow-hover);
+  box-shadow: var(--card-hover-shadow);
 }
 
-/* CARD HEADER */
-.card-top {
+/* MEDIA BANNER NO TOPO DO CARD */
+.card-media-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #11141c;
+  overflow: hidden;
   display: flex;
   align-items: center;
-  gap: 0.75rem;
+  justify-content: center;
 }
-.card-icon {
-  width: 42px;
-  height: 42px;
-  border-radius: var(--radius-md);
-  background: var(--surface2);
+.card-media-banner img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.netflix-card:hover .card-media-banner img {
+  transform: scale(1.06);
+}
+
+/* PLAY BADGE OVERLAY */
+.play-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.35);
   display: grid;
   place-items: center;
-  color: var(--primary);
-  flex-shrink: 0;
-  border: 1px solid var(--border);
-  transition: transform var(--trans), background var(--trans);
+  opacity: 0;
+  transition: opacity var(--trans);
 }
-.item-card:hover .card-icon {
+.netflix-card:hover .play-overlay {
+  opacity: 1;
+}
+.play-btn-circle {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+  display: grid;
+  place-items: center;
+  box-shadow: 0 0 24px rgba(255, 255, 255, 0.6);
+  transform: scale(0.9);
+  transition: transform var(--trans);
+}
+.netflix-card:hover .play-btn-circle {
   transform: scale(1.05);
-  background: var(--primary-light);
 }
-.card-icon i { width: 20px; height: 20px; }
+.play-btn-circle i { width: 22px; height: 22px; margin-left: 2px; }
 
-.card-title-group { flex: 1; min-width: 0; }
-.card-title {
-  font-size: 0.95rem;
-  font-weight: 700;
-  letter-spacing: -0.01em;
-  white-space: nowrap;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-.card-badges {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-  margin-top: 2px;
-}
-.pill {
+/* BADGES SOBRE A MEDIA */
+.badge-type-float {
+  position: absolute;
+  top: 0.75rem;
+  left: 0.75rem;
+  padding: 3px 9px;
+  border-radius: var(--radius-full);
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  font-size: 0.7rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
   display: inline-flex;
   align-items: center;
-  gap: 0.25rem;
-  padding: 2px 7px;
-  border-radius: var(--radius-full);
-  font-size: 0.7rem;
-  font-weight: 700;
-  background: var(--surface2);
-  color: var(--muted);
-  border: 1px solid var(--border);
+  gap: 0.3rem;
+  z-index: 2;
 }
-.pill.primary {
-  background: var(--primary-light);
-  color: var(--primary);
-  border-color: rgba(6, 182, 212, 0.2);
-}
-.pill.accent {
-  background: var(--accent-light);
-  color: var(--accent);
-}
-
-/* FAVORITE BUTTON */
-.fav-btn {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-md);
+.fav-btn-float {
+  position: absolute;
+  top: 0.75rem;
+  right: 0.75rem;
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.75);
+  backdrop-filter: blur(8px);
+  color: var(--faint);
   display: grid;
   place-items: center;
-  color: var(--faint);
   transition: all var(--trans);
-  flex-shrink: 0;
+  z-index: 3;
 }
-.fav-btn:hover {
+.fav-btn-float:hover {
   color: var(--star);
-  background: var(--star-bg);
+  background: rgba(15, 23, 42, 0.95);
   transform: scale(1.15);
 }
-.fav-btn.is-fav {
+.fav-btn-float.is-fav {
   color: var(--star);
   fill: var(--star);
 }
-.fav-btn i { width: 18px; height: 18px; }
+.fav-btn-float i { width: 17px; height: 17px; }
 
 /* CARD BODY */
-.card-desc {
-  font-size: 0.825rem;
-  color: var(--muted);
-  line-height: 1.45;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+.card-content {
+  padding: 1.15rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0.65rem;
+}
+.card-title {
+  font-size: 1.05rem;
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  line-height: 1.3;
 }
 
-/* CARD TAGS */
-.card-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.35rem;
-}
-.tag-chip {
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 2px 7px;
-  border-radius: var(--radius-full);
+/* O QUE ENTREGA (DESTAQUE CENTRAL) */
+.deliverable-box {
   background: var(--surface2);
-  color: var(--muted);
   border: 1px solid var(--border);
-  cursor: pointer;
-  transition: all var(--trans);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.85rem;
+  margin-top: 0.25rem;
 }
-.tag-chip:hover {
-  background: var(--primary-light);
-  color: var(--primary);
-  border-color: var(--border-focus);
+.deliverable-header {
+  font-size: 0.7rem;
+  font-weight: 900;
+  color: var(--zap);
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
 }
+.deliverable-header i { width: 13px; height: 13px; }
+.deliverable-text {
+  font-size: 0.825rem;
+  font-weight: 600;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+/* AUDIENCE PILL */
+.audience-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.725rem;
+  color: var(--muted);
+  font-weight: 600;
+}
+.audience-row i { width: 14px; height: 14px; color: var(--primary); }
 
 /* CARD FOOTER */
-.card-foot {
+.card-footer {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin-top: auto;
-  padding-top: 0.65rem;
+  padding-top: 0.75rem;
   border-top: 1px solid var(--border);
   font-size: 0.75rem;
   color: var(--faint);
 }
-.card-actions {
+.card-tag-chips {
   display: flex;
-  align-items: center;
+  gap: 0.3rem;
+  overflow: hidden;
+  max-width: 200px;
+}
+.chip {
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: var(--surface2);
+  color: var(--muted);
+  font-size: 0.675rem;
+  font-weight: 700;
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all var(--trans);
+}
+.chip:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--border-focus);
+}
+.card-actions-group {
+  display: flex;
   gap: 0.35rem;
 }
-.action-icon {
-  width: 30px;
-  height: 30px;
+.action-btn-sm {
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-sm);
   display: grid;
   place-items: center;
   color: var(--muted);
   transition: all var(--trans);
 }
-.action-icon:hover {
+.action-btn-sm:hover {
   background: var(--surface3);
   color: var(--primary);
 }
-.action-icon i { width: 16px; height: 16px; }
+.action-btn-sm i { width: 16px; height: 16px; }
 
-/* MODO LISTA (ROW VIEW) */
-.items:not(.grid-view) .item-card {
+/* MODO LISTA */
+.items:not(.grid-view) .netflix-card {
   flex-direction: row;
   align-items: center;
-  padding: 0.75rem 1rem;
-  gap: 1rem;
 }
-.items:not(.grid-view) .card-top { flex: 0 0 260px; }
-.items:not(.grid-view) .card-desc {
+.items:not(.grid-view) .card-media-banner {
+  width: 220px;
+  min-height: 130px;
+  aspect-ratio: auto;
+  flex-shrink: 0;
+}
+.items:not(.grid-view) .card-content {
+  padding: 0.875rem 1.25rem;
   flex: 1;
-  -webkit-line-clamp: 1;
-  font-size: 0.85rem;
-}
-.items:not(.grid-view) .card-tags {
-  flex: 0 0 180px;
-  overflow: hidden;
-  max-height: 24px;
-}
-.items:not(.grid-view) .card-foot {
-  margin-top: 0;
-  padding-top: 0;
-  border-top: 0;
-  flex: 0 0 auto;
 }
 
 /* ASIDE RAILS */
@@ -733,7 +835,7 @@ h1 {
   display: flex;
   justify-content: space-between;
   font-size: 0.85rem;
-  font-weight: 700;
+  font-weight: 800;
 }
 .progress-bar {
   height: 5px;
@@ -749,102 +851,137 @@ h1 {
   transition: width 0.3s ease;
 }
 
-/* EMPTY STATE */
-.empty-state {
-  text-align: center;
-  padding: 4rem 1.5rem;
-  display: grid;
-  place-items: center;
-  gap: 0.75rem;
-}
-.empty-state i { width: 48px; height: 48px; color: var(--faint); }
-.empty-state h3 { font-size: 1.15rem; font-weight: 700; }
-.empty-state p { color: var(--muted); font-size: 0.875rem; max-width: 320px; }
-
 /* ==========================================================================
-   DRAWERS (SLIDE-OVER MODALS)
+   NETFLIX IMMERSIVE MODAL (COM PLAYER EMBUTIDO)
    ========================================================================== */
-.drawer { position: fixed; inset: 0; z-index: 50; display: none; }
-.drawer.open { display: block; }
-.drawer-backdrop {
-  position: absolute;
+.netflix-modal {
+  position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.5);
-  backdrop-filter: blur(4px);
+  z-index: 80;
+  display: none;
+  place-items: center;
+  padding: 1rem;
+  background: rgba(0, 0, 0, 0.78);
+  backdrop-filter: blur(12px);
+  overflow-y: auto;
+}
+.netflix-modal.open { display: grid; }
+.modal-container {
+  width: min(780px, 100%);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--modal-shadow);
+  overflow: hidden;
+  position: relative;
+  margin: auto;
+  animation: modal-pop 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+@keyframes modal-pop { 0% { opacity: 0; transform: scale(0.95); } 100% { opacity: 1; transform: scale(1); } }
+
+.modal-media-frame {
+  position: relative;
   width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  overflow: hidden;
+}
+.modal-media-frame iframe {
+  width: 100%;
+  height: 100%;
   border: 0;
 }
-.drawer-card {
-  position: absolute;
-  right: 0;
-  top: 0;
+.modal-media-frame img {
+  width: 100%;
   height: 100%;
-  width: min(560px, 100%);
-  background: var(--surface);
-  padding: 2rem;
-  overflow-y: auto;
-  box-shadow: var(--modal-shadow);
-  border-left: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 1.5rem;
+  object-fit: cover;
 }
-.drawer-head {
+.modal-close-btn {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: rgba(15, 23, 42, 0.85);
+  backdrop-filter: blur(8px);
+  color: #fff;
+  display: grid;
+  place-items: center;
+  z-index: 10;
+  transition: transform var(--trans);
+}
+.modal-close-btn:hover { transform: scale(1.1); }
+.modal-close-btn i { width: 20px; height: 20px; }
+
+.modal-body {
+  padding: 1.75rem;
+  display: grid;
+  gap: 1.25rem;
+}
+.modal-header-group {
   display: flex;
-  align-items: flex-start;
   justify-content: space-between;
+  align-items: flex-start;
   gap: 1rem;
 }
-.drawer-head h2 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; }
+.modal-title { font-size: 1.5rem; font-weight: 900; letter-spacing: -0.02em; line-height: 1.2; }
+.modal-badges { display: flex; gap: 0.5rem; margin-top: 0.4rem; }
 
-/* FORMULÁRIO */
-form { display: grid; gap: 1rem; }
-label { display: grid; gap: 0.35rem; font-size: 0.85rem; font-weight: 700; }
-label input, label select, label textarea {
-  border: 1px solid var(--border);
+.modal-deliverable-highlight {
   background: var(--surface2);
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--zap);
   border-radius: var(--radius-md);
-  padding: 0.65rem 0.875rem;
-  font-size: 0.875rem;
-  transition: all var(--trans);
+  padding: 1rem 1.25rem;
 }
-label textarea { min-height: 90px; resize: vertical; }
-label input:focus, label select:focus, label textarea:focus {
-  background: var(--surface);
-  border-color: var(--border-focus);
-  box-shadow: 0 0 0 3px var(--primary-light);
+.modal-deliverable-highlight strong {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: var(--zap);
+  font-size: 0.85rem;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.35rem;
 }
-.form-actions { display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 0.5rem; }
+.modal-deliverable-highlight p {
+  font-size: 1rem;
+  font-weight: 600;
+  line-height: 1.5;
+}
 
-/* DRAWER DE DETALHES */
-.detail-meta-grid {
+.modal-meta-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 0.75rem;
-  padding: 1rem;
   background: var(--surface2);
+  padding: 0.875rem;
   border-radius: var(--radius-md);
   border: 1px solid var(--border);
+  font-size: 0.8rem;
 }
-.detail-meta-item small { display: block; font-size: 0.7rem; color: var(--faint); font-weight: 700; text-transform: uppercase; }
-.detail-meta-item strong { font-size: 0.875rem; font-weight: 700; }
-.detail-actions {
+.modal-meta-grid small { display: block; font-weight: 800; color: var(--faint); text-transform: uppercase; }
+.modal-meta-grid span { font-weight: 700; color: var(--text); }
+
+.modal-actions {
   display: flex;
   gap: 0.75rem;
-  margin-top: 1rem;
+  margin-top: 0.5rem;
 }
-.detail-actions .btn { flex: 1; }
+.modal-actions .btn { flex: 1; }
 
 /* COMMAND PALETTE */
 .cmd-overlay {
   position: fixed;
   inset: 0;
-  z-index: 60;
+  z-index: 90;
   display: none;
   place-items: start center;
   padding-top: 12vh;
-  background: rgba(0, 0, 0, 0.6);
-  backdrop-filter: blur(8px);
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(10px);
 }
 .cmd-overlay.open { display: grid; }
 .cmd-box {
@@ -855,33 +992,10 @@ label input:focus, label select:focus, label textarea:focus {
   box-shadow: var(--modal-shadow);
   overflow: hidden;
 }
-.cmd-header {
-  position: relative;
-  border-bottom: 1px solid var(--border);
-}
-.cmd-header i {
-  position: absolute;
-  left: 1.25rem;
-  top: 50%;
-  transform: translateY(-50%);
-  width: 20px;
-  height: 20px;
-  color: var(--faint);
-}
-.cmd-header input {
-  width: 100%;
-  height: 56px;
-  border: 0;
-  background: transparent;
-  padding: 0 1.25rem 0 3.25rem;
-  font-size: 1rem;
-  font-weight: 600;
-}
-.cmd-list {
-  max-height: 50vh;
-  overflow-y: auto;
-  padding: 0.5rem;
-}
+.cmd-header { position: relative; border-bottom: 1px solid var(--border); }
+.cmd-header i { position: absolute; left: 1.25rem; top: 50%; transform: translateY(-50%); width: 20px; height: 20px; color: var(--faint); }
+.cmd-header input { width: 100%; height: 56px; border: 0; background: transparent; padding: 0 1.25rem 0 3.25rem; font-size: 1rem; font-weight: 700; }
+.cmd-list { max-height: 50vh; overflow-y: auto; padding: 0.5rem; }
 .cmd-item {
   width: 100%;
   display: flex;
@@ -892,29 +1006,10 @@ label input:focus, label select:focus, label textarea:focus {
   text-align: left;
   transition: all var(--trans);
 }
-.cmd-item:hover, .cmd-item.selected {
-  background: var(--primary-light);
-  color: var(--primary);
-}
-.cmd-item-icon {
-  width: 32px;
-  height: 32px;
-  border-radius: var(--radius-sm);
-  background: var(--surface2);
-  display: grid;
-  place-items: center;
-}
-.cmd-item-text strong { display: block; font-size: 0.9rem; }
+.cmd-item:hover, .cmd-item.selected { background: var(--primary-light); color: var(--primary); }
+.cmd-item-thumb { width: 44px; height: 32px; border-radius: 4px; object-fit: cover; }
+.cmd-item-text strong { display: block; font-size: 0.9rem; font-weight: 800; }
 .cmd-item-text small { color: var(--muted); font-size: 0.75rem; }
-.cmd-foot {
-  padding: 0.6rem 1.25rem;
-  border-top: 1px solid var(--border);
-  background: var(--surface2);
-  font-size: 0.725rem;
-  color: var(--faint);
-  display: flex;
-  gap: 1rem;
-}
 
 /* TOAST */
 .toast {
@@ -934,7 +1029,7 @@ label input:focus, label select:focus, label textarea:focus {
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-weight: 600;
+  font-weight: 700;
   font-size: 0.875rem;
 }
 .toast.show { transform: none; opacity: 1; }
@@ -942,6 +1037,8 @@ label input:focus, label select:focus, label textarea:focus {
 
 /* RESPONSIVIDADE */
 @media (max-width: 1100px) {
+  .hero-spotlight { grid-template-columns: 1fr; }
+  .spotlight-media { display: none; }
   .workspace { grid-template-columns: 1fr; }
   .aside-panel { display: none; }
   .kpis { grid-template-columns: repeat(2, 1fr); }
@@ -963,13 +1060,13 @@ label input:focus, label select:focus, label textarea:focus {
   .menu-btn { display: grid; place-items: center; }
   main { overflow: visible; padding: 1rem; }
   .kpis { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
-  .kpi-card { padding: 0.875rem; }
-  .kpi-value { font-size: 1.5rem; }
   .search-kbd { display: none; }
   .top-actions .btn:not(.icon-only) { display: none; }
   .items.grid-view { grid-template-columns: 1fr; }
-  .items:not(.grid-view) .item-card { flex-direction: column; align-items: flex-start; }
-  .items:not(.grid-view) .card-top { flex: 1; width: 100%; }
+  .items:not(.grid-view) .netflix-card { flex-direction: column; }
+  .items:not(.grid-view) .card-media-banner { width: 100%; aspect-ratio: 16 / 9; }
+  .modal-meta-grid { grid-template-columns: 1fr; }
+  .modal-actions { flex-direction: column; }
 }
 
 @media (prefers-reduced-motion: reduce) {
@@ -988,19 +1085,19 @@ label input:focus, label select:focus, label textarea:focus {
   <!-- SIDEBAR -->
   <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
     <div class="brand">
-      <div class="brand-icon"><i data-lucide="compass"></i></div>
-      <div class="brand-text">Nexus Acervo<small>Hub de Recursos & Engenharia</small></div>
+      <div class="brand-icon"><i data-lucide="clapperboard"></i></div>
+      <div class="brand-text">Nexus Acervo<small>Catálogo Visual de Elite</small></div>
     </div>
 
-    <div class="nav-label">Biblioteca</div>
+    <div class="nav-label">Canais & Formatos</div>
     <nav class="nav" id="navKind">
-      <button class="active" data-kind="all"><i data-lucide="layout-dashboard"></i>Visão geral <span class="nav-count" id="countAll">0</span></button>
-      <button data-kind="favorites"><i data-lucide="star"></i>Favoritos <span class="nav-count" id="countFav">0</span></button>
-      <button data-kind="ferramenta"><i data-lucide="wrench"></i>Ferramentas <span class="nav-count" id="countTool">0</span></button>
-      <button data-kind="diretório"><i data-lucide="library"></i>Diretórios <span class="nav-count" id="countDir">0</span></button>
-      <button data-kind="repositório"><i data-lucide="github"></i>Repositórios <span class="nav-count" id="countRepo">0</span></button>
-      <button data-kind="vídeo"><i data-lucide="play-square"></i>Vídeos <span class="nav-count" id="countVideo">0</span></button>
-      <button data-kind="conhecimento"><i data-lucide="notebook-tabs"></i>Conhecimento <span class="nav-count" id="countDoc">0</span></button>
+      <button class="active" data-kind="all"><i data-lucide="sparkles"></i>Todos os Recursos <span class="nav-count" id="countAll">0</span></button>
+      <button data-kind="vídeo"><i data-lucide="play-circle"></i>Vídeos & Aulas <span class="nav-count" id="countVideo">0</span></button>
+      <button data-kind="favorites"><i data-lucide="star"></i>Meus Favoritos <span class="nav-count" id="countFav">0</span></button>
+      <button data-kind="ferramenta"><i data-lucide="wrench"></i>Ferramentas Web <span class="nav-count" id="countTool">0</span></button>
+      <button data-kind="repositório"><i data-lucide="github"></i>Código Aberto <span class="nav-count" id="countRepo">0</span></button>
+      <button data-kind="diretório"><i data-lucide="library"></i>Diretórios & Listas <span class="nav-count" id="countDir">0</span></button>
+      <button data-kind="conhecimento"><i data-lucide="book-marked"></i>Conhecimento <span class="nav-count" id="countDoc">0</span></button>
     </nav>
 
     <div class="nav-label">Ecossistema</div>
@@ -1010,8 +1107,8 @@ label input:focus, label select:focus, label textarea:focus {
     </nav>
 
     <div class="side-foot">
-      <div class="status-pill"><span class="status-dot"></span><span>Catálogo Ativo & Validado</span></div>
-      <div id="versionLabel">v1.1.0 · Brad Traversy Curadoria</div>
+      <div class="status-pill"><span class="status-dot"></span><span>Catálogo Visual Ativo</span></div>
+      <div id="versionLabel">v1.2.0 · Edição Netflix & Thumbs</div>
     </div>
   </aside>
 
@@ -1021,7 +1118,7 @@ label input:focus, label select:focus, label textarea:focus {
 
     <div class="search-box">
       <i data-lucide="search"></i>
-      <input id="searchInput" aria-label="Pesquisar catálogo" placeholder="Buscar ferramentas, tags, design, frameworks… (⌘K)">
+      <input id="searchInput" aria-label="Pesquisar catálogo" placeholder="Buscar vídeos, ferramentas, benefícios e tags… (⌘K)">
       <span class="search-kbd">⌘ K</span>
     </div>
 
@@ -1031,53 +1128,59 @@ label input:focus, label select:focus, label textarea:focus {
     </div>
   </header>
 
-  <!-- MAIN VIEW -->
+  <!-- MAIN -->
   <main id="content">
-    <div class="page-header">
-      <div>
-        <div class="eyebrow">Workstation Curada</div>
-        <h1 id="pageTitle">Seu acervo de elite, organizado.</h1>
-        <p class="subtitle" id="pageSub">Ferramentas de design, inteligência artificial, engenharia e referências.</p>
+    <!-- HERO SPOTLIGHT ROTATIVO -->
+    <section class="hero-spotlight" id="heroSpotlight">
+      <div class="spotlight-content">
+        <span class="spotlight-badge"><i data-lucide="flame"></i> Destaque em Alta</span>
+        <h1 class="spotlight-title" id="spotlightTitle">The first 20 hours — how to learn anything</h1>
+        <p class="spotlight-deliverable" id="spotlightDeliverable">Um método prático para aprender qualquer nova habilidade (como tocar violão ou programar) praticando apenas 45 minutos por dia durante 1 mês.</p>
+        <div class="spotlight-actions">
+          <button class="btn primary" id="btnSpotlightWatch"><i data-lucide="play"></i> Assistir Agora</button>
+          <button class="btn" id="btnSpotlightFav"><i data-lucide="star"></i> Salvar na Lista</button>
+        </div>
       </div>
-      <button class="btn primary" id="btnAddMain"><i data-lucide="plus"></i>Adicionar item</button>
-    </div>
+      <div class="spotlight-media" id="spotlightMedia" style="background-image: url('https://img.youtube.com/vi/5MgBikgcWnY/hqdefault.jpg');">
+        <div class="spotlight-play-btn"><i data-lucide="play"></i></div>
+      </div>
+    </section>
 
-    <!-- KPIS -->
+    <!-- INDICADORES -->
     <section class="kpis" aria-label="Indicadores">
       <article class="kpi-card">
-        <div class="kpi-header">Itens Catalogados<i data-lucide="layers"></i></div>
+        <div class="kpi-header">Recursos Catalogados<i data-lucide="layers"></i></div>
         <strong class="kpi-value" id="kpiTotal">0</strong>
-        <div class="kpi-desc">recursos disponíveis</div>
+        <div class="kpi-desc">itens prontos para consulta</div>
       </article>
       <article class="kpi-card">
-        <div class="kpi-header">Design & UX<i data-lucide="palette"></i></div>
-        <strong class="kpi-value" id="kpiDesign">0</strong>
-        <div class="kpi-desc">ferramentas de interface</div>
+        <div class="kpi-header">Vídeos & Aulas<i data-lucide="play-square"></i></div>
+        <strong class="kpi-value" id="kpiVideos">0</strong>
+        <div class="kpi-desc">com thumbs e player embutido</div>
       </article>
       <article class="kpi-card">
-        <div class="kpi-header">Favoritos<i data-lucide="star"></i></div>
+        <div class="kpi-header">Meus Favoritos<i data-lucide="star"></i></div>
         <strong class="kpi-value" id="kpiFavs">0</strong>
-        <div class="kpi-desc">marcados para acesso rápido</div>
+        <div class="kpi-desc">salvos para acesso rápido</div>
       </article>
       <article class="kpi-card">
         <div class="kpi-header">Segmentos<i data-lucide="grid"></i></div>
         <strong class="kpi-value" id="kpiSegments">0</strong>
-        <div class="kpi-desc">áreas de especialidade</div>
+        <div class="kpi-desc">áreas de conhecimento</div>
       </article>
     </section>
 
     <!-- WORKSPACE -->
     <div class="workspace">
-      <!-- PAINEL CENTRAL -->
       <section class="panel">
         <div class="panel-head">
           <div>
-            <h2>Biblioteca de Recursos</h2>
+            <h2>Catálogo Visual</h2>
             <p id="resultCount">Carregando acervo…</p>
           </div>
           <div class="view-toggle" aria-label="Alternar visualização">
-            <button id="btnViewList" class="active" aria-label="Visualização em Lista" title="Visualização em Lista"><i data-lucide="list"></i></button>
-            <button id="btnViewGrid" aria-label="Visualização em Grade" title="Visualização em Grade"><i data-lucide="layout-grid"></i></button>
+            <button id="btnViewGrid" class="active" aria-label="Visualização em Grade" title="Visualização em Grade"><i data-lucide="layout-grid"></i></button>
+            <button id="btnViewList" aria-label="Visualização em Lista" title="Visualização em Lista"><i data-lucide="list"></i></button>
           </div>
         </div>
 
@@ -1111,163 +1214,84 @@ label input:focus, label select:focus, label textarea:focus {
           <button class="tag-clear-btn" id="btnClearTag">✕ Limpar filtro</button>
         </div>
 
-        <!-- LISTA / GRADE DE ITENS -->
-        <div class="items" id="itemsList"></div>
+        <!-- CARDS NETFLIX -->
+        <div class="items grid-view" id="itemsList"></div>
       </section>
 
-      <!-- ASIDE RAILS -->
+      <!-- LATERAL -->
       <aside>
         <section class="panel aside-panel">
           <div class="panel-head">
             <div>
               <h2>Segmentos</h2>
-              <p>Distribuição do conhecimento</p>
+              <p>Distribuição do catálogo</p>
             </div>
           </div>
           <div class="aside-list" id="segmentsList"></div>
         </section>
 
-        <section class="panel queue" style="margin-top: 1.25rem;">
+        <section class="panel" style="margin-top: 1.25rem;">
           <div class="panel-head">
             <div>
-              <h2>Destaques de Design</h2>
-              <p>Top ferramentas do repositório</p>
+              <h2>🎬 Próximos na Fila</h2>
+              <p>Vídeos recomendados</p>
             </div>
           </div>
-          <div class="items" id="designQueue" style="padding: 0.75rem;"></div>
+          <div class="items" id="videoQueue" style="padding: 0.75rem;"></div>
         </section>
       </aside>
     </div>
   </main>
 </div>
 
-<!-- DRAWER: ADICIONAR ITEM -->
-<section class="drawer" id="addDrawer" aria-hidden="true">
-  <button class="drawer-backdrop" aria-label="Fechar painel"></button>
-  <div class="drawer-card" role="dialog" aria-modal="true" aria-labelledby="addDrawerTitle">
-    <div class="drawer-head">
-      <div>
-        <div class="eyebrow">Novo Recurso</div>
-        <h2 id="addDrawerTitle">Adicionar ao Acervo</h2>
-      </div>
-      <button class="btn icon-only close-drawer" aria-label="Fechar"><i data-lucide="x"></i></button>
-    </div>
+<!-- MODAL IMERSIVO NETFLIX (COM PLAYER EMBUTIDO) -->
+<div class="netflix-modal" id="netflixModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-container">
+    <button class="modal-close-btn" id="btnModalClose" aria-label="Fechar modal"><i data-lucide="x"></i></button>
 
-    <form id="addItemForm">
-      <label>Título do Recurso
-        <input name="title" required placeholder="Ex.: Aceternity UI">
-      </label>
-      <label>URL de Acesso
-        <input name="url" type="url" required placeholder="https://exemplo.com">
-      </label>
-      <label>Tipo
-        <select name="kind">
-          <option>ferramenta</option>
-          <option>diretório</option>
-          <option>repositório</option>
-          <option>vídeo</option>
-          <option>conhecimento</option>
-        </select>
-      </label>
-      <label>Segmento
-        <input name="segment" required list="segmentOptions" placeholder="Design e UX, IA e automação...">
-        <datalist id="segmentOptions"></datalist>
-      </label>
-      <label>Descrição
-        <textarea name="description" required placeholder="Explique como esse recurso agrega aos projetos..."></textarea>
-      </label>
-      <label>Tags (separadas por vírgula)
-        <input name="tags" placeholder="ui-kit, react, tailwind">
-      </label>
-      <div class="form-actions">
-        <button class="btn close-drawer" type="button">Cancelar</button>
-        <button class="btn primary" type="submit">Salvar no Acervo</button>
-      </div>
-    </form>
-  </div>
-</section>
+    <!-- PLAYER OU BANNER -->
+    <div class="modal-media-frame" id="modalMediaFrame"></div>
 
-<!-- DRAWER: DETALHES DO ITEM -->
-<section class="drawer" id="detailDrawer" aria-hidden="true">
-  <button class="drawer-backdrop" aria-label="Fechar painel"></button>
-  <div class="drawer-card" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
-    <div class="drawer-head">
-      <div>
-        <div class="eyebrow" id="detailKind">Ferramenta</div>
-        <h2 id="detailTitle">Nome do Item</h2>
+    <div class="modal-body">
+      <div class="modal-header-group">
+        <div>
+          <h2 class="modal-title" id="modalTitle">Título do Recurso</h2>
+          <div class="modal-badges">
+            <span class="chip" id="modalKind" style="background: var(--primary-light); color: var(--primary); font-weight: 800;">TIPO</span>
+            <span class="chip" id="modalSegment">SEGMENTO</span>
+            <span class="chip" id="modalStatus">ATIVO</span>
+          </div>
+        </div>
       </div>
-      <button class="btn icon-only close-drawer" aria-label="Fechar"><i data-lucide="x"></i></button>
-    </div>
 
-    <p id="detailDesc" style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;"></p>
+      <!-- O QUE ENTREGA HIGHLIGHT -->
+      <div class="modal-deliverable-highlight">
+        <strong><i data-lucide="zap"></i> O que essa ferramenta entrega:</strong>
+        <p id="modalDeliverable">Benefício prático e direto para qualquer pessoa entender em segundos.</p>
+      </div>
 
-    <div class="detail-meta-grid">
-      <div class="detail-meta-item">
-        <small>Segmento</small>
-        <strong id="detailSegment">-</strong>
-      </div>
-      <div class="detail-meta-item">
-        <small>Status</small>
-        <strong id="detailStatus">-</strong>
-      </div>
-      <div class="detail-meta-item">
-        <small>Licença</small>
-        <strong id="detailLicense">-</strong>
-      </div>
-      <div class="detail-meta-item">
-        <small>Fonte</small>
-        <strong id="detailSource">-</strong>
-      </div>
-    </div>
+      <p id="modalDescription" style="color: var(--muted); line-height: 1.6;"></p>
 
-    <div>
-      <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--faint); margin-bottom: 0.5rem;">Tags Relacionadas</div>
-      <div class="card-tags" id="detailTags"></div>
-    </div>
-
-    <div class="detail-actions">
-      <button class="btn" id="btnDetailCopy"><i data-lucide="copy"></i>Copiar Link</button>
-      <button class="btn" id="btnDetailFav"><i data-lucide="star"></i>Favoritar</button>
-      <a class="btn primary" id="btnDetailOpen" href="#" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link"></i>Acessar Recurso</a>
-    </div>
-  </div>
-</section>
-
-<!-- DRAWER: API & OPENAPI -->
-<section class="drawer" id="apiDrawer" aria-hidden="true">
-  <button class="drawer-backdrop" aria-label="Fechar painel"></button>
-  <div class="drawer-card" role="dialog" aria-modal="true" aria-labelledby="apiTitle">
-    <div class="drawer-head">
-      <div>
-        <div class="eyebrow">Integração</div>
-        <h2 id="apiTitle">API REST & OpenAPI 3.1</h2>
+      <div class="modal-meta-grid">
+        <div>
+          <small>👥 Indicado para</small>
+          <span id="modalAudience">-</span>
+        </div>
+        <div>
+          <small>📜 Licença</small>
+          <span id="modalLicense">-</span>
+        </div>
+        <div>
+          <small>📍 Fonte</small>
+          <span id="modalSource">-</span>
+        </div>
       </div>
-      <button class="btn icon-only close-drawer" aria-label="Fechar"><i data-lucide="x"></i></button>
-    </div>
-    <div style="display: grid; gap: 1rem;">
-      <p style="color: var(--muted);">O Nexus Acervo possui contrato estrito e OpenAPI 3.1 para consumo por agentes de IA e aplicações externas.</p>
-      <div style="padding: 1rem; background: var(--surface2); border-radius: var(--radius-md); border: 1px solid var(--border);">
-        <strong>Endpoints Canônicos</strong>
-        <p style="font-family: monospace; font-size: 0.8rem; margin-top: 0.4rem; color: var(--primary);">GET /data/catalog.json</p>
-        <p style="font-family: monospace; font-size: 0.8rem; color: var(--primary);">GET /docs/openapi.yaml</p>
-      </div>
-      <button class="btn primary" id="btnCopyApiEndpoint"><i data-lucide="copy"></i>Copiar URL do Catálogo JSON</button>
-    </div>
-  </div>
-</section>
 
-<!-- COMMAND PALETTE (⌘K) -->
-<div class="cmd-overlay" id="cmdOverlay" role="dialog" aria-modal="true" aria-label="Pesquisa rápida">
-  <div class="cmd-box">
-    <div class="cmd-header">
-      <i data-lucide="search"></i>
-      <input id="cmdInput" placeholder="Digite para buscar qualquer recurso, tag ou assunto...">
-    </div>
-    <div class="cmd-list" id="cmdList"></div>
-    <div class="cmd-foot">
-      <span>↑↓ Navegar</span>
-      <span>↵ Abrir link</span>
-      <span>ESC Fechar</span>
+      <div class="modal-actions">
+        <a class="btn primary" id="btnModalDirect" href="#" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link"></i> Abrir Link Oficial</a>
+        <button class="btn" id="btnModalCopy"><i data-lucide="copy"></i> Copiar Link</button>
+        <button class="btn" id="btnModalFav"><i data-lucide="star"></i> Salvar na Lista</button>
+      </div>
     </div>
   </div>
 </div>
@@ -1278,13 +1302,23 @@ label input:focus, label select:focus, label textarea:focus {
   <span id="toastMsg">Ação concluída com sucesso</span>
 </div>
 
-<!-- SCRIPT PRINCIPAL -->
+<!-- COMMAND PALETTE (⌘K) -->
+<div class="cmd-overlay" id="cmdOverlay" role="dialog" aria-modal="true" aria-label="Pesquisa rápida">
+  <div class="cmd-box">
+    <div class="cmd-header">
+      <i data-lucide="search"></i>
+      <input id="cmdInput" placeholder="Digite para buscar vídeos, ferramentas ou tags...">
+    </div>
+    <div class="cmd-list" id="cmdList"></div>
+  </div>
+</div>
+
+<!-- SCRIPT DA APLICAÇÃO -->
 <script>
-// Estado da Aplicação
-const seedCatalog = window.NEXUS_CATALOG || { meta: { version: '1.1.0' }, items: [], segments: [] };
+const seedCatalog = window.NEXUS_CATALOG || { meta: { version: '1.2.0' }, items: [] };
 const storedCustom = JSON.parse(localStorage.getItem('nexus_custom_items') || '[]');
 const storedFavorites = new Set(JSON.parse(localStorage.getItem('nexus_favorites') || '[]'));
-const viewMode = localStorage.getItem('nexus_view_mode') || 'list';
+const viewMode = localStorage.getItem('nexus_view_mode') || 'grid';
 
 const state = {
   items: [...storedCustom, ...seedCatalog.items],
@@ -1295,21 +1329,12 @@ const state = {
   q: '',
   sort: 'recent',
   view: viewMode,
-  selectedDetail: null,
-  cmdIndex: 0,
-  cmdResults: []
+  selectedItem: null,
+  spotlightItem: null
 };
 
 const $ = s => document.querySelector(s);
 const $$ = s => [...document.querySelectorAll(s)];
-
-const KIND_ICONS = {
-  ferramenta: 'wrench',
-  vídeo: 'play',
-  repositório: 'github',
-  conhecimento: 'book-open',
-  diretório: 'library'
-};
 
 function normalizeStr(v = '') {
   return String(v).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
@@ -1328,7 +1353,22 @@ function safeUrl(v) {
   }
 }
 
-// Filtro de Dados
+// Imagem ou Capa Inteligente para cada recurso
+function getItemThumbnail(item) {
+  if (item.thumbnail) return item.thumbnail;
+  if (item.youtubeId) return `https://img.youtube.com/vi/${item.youtubeId}/hqdefault.jpg`;
+  if (item.url.includes('github.com/')) {
+    const m = item.url.match(/github\.com\/([^\/]+)\/([^\/#?]+)/);
+    if (m && m[1] && m[2]) return `https://opengraph.githubassets.com/1/${m[1]}/${m[2]}`;
+  }
+  try {
+    const u = new URL(item.url);
+    return `https://www.google.com/s2/favicons?domain=${u.hostname}&sz=128`;
+  } catch {
+    return '';
+  }
+}
+
 function getFilteredItems() {
   let list = state.items.filter(item => {
     if (state.kind === 'favorites') {
@@ -1342,7 +1382,7 @@ function getFilteredItems() {
 
     if (state.q.trim()) {
       const qNorm = normalizeStr(state.q);
-      const text = normalizeStr([item.title, item.description, item.segment, ...item.tags].join(' '));
+      const text = normalizeStr([item.title, item.description, item.deliverable, item.segment, ...item.tags].join(' '));
       if (!text.includes(qNorm)) return false;
     }
     return true;
@@ -1356,8 +1396,8 @@ function getFilteredItems() {
   return list;
 }
 
-// Renderização dos Itens
-function renderItems() {
+// Render dos Cards Estilo Netflix
+function renderCards() {
   const container = $('#itemsList');
   const items = getFilteredItems();
 
@@ -1365,47 +1405,59 @@ function renderItems() {
 
   if (!items.length) {
     container.innerHTML = `
-      <div class="empty-state">
-        <i data-lucide="search-x"></i>
-        <h3>Nenhum recurso localizado</h3>
-        <p>Tente ajustar a busca ou limpe os filtros para visualizar outros recursos.</p>
-        <button class="btn" id="btnClearAllFilters" style="margin-top: 0.5rem;">Limpar todos os filtros</button>
+      <div style="grid-column: 1 / -1; padding: 4rem 1rem; text-align: center; color: var(--muted);">
+        <i data-lucide="film" style="width: 48px; height: 48px; margin: 0 auto 1rem; opacity: 0.4;"></i>
+        <h3 style="font-size: 1.25rem; font-weight: 800; color: var(--text);">Nenhum recurso encontrado</h3>
+        <p style="margin-top: 0.25rem;">Tente buscar com outras palavras ou limpe os filtros ativos.</p>
+        <button class="btn" onclick="resetAllFilters()" style="margin-top: 1rem;">Limpar todos os filtros</button>
       </div>`;
-    $('#btnClearAllFilters')?.addEventListener('click', resetAllFilters);
   } else {
     container.innerHTML = items.map(item => {
       const isFav = storedFavorites.has(item.id);
+      const thumb = getItemThumbnail(item);
+      const isVideo = item.kind === 'vídeo' || !!item.youtubeId;
+
       return `
-        <article class="item-card" data-id="${esc(item.id)}">
-          <div class="card-top">
-            <div class="card-icon"><i data-lucide="${KIND_ICONS[item.kind] || 'link'}"></i></div>
-            <div class="card-title-group">
-              <div class="card-title" title="${esc(item.title)}">${esc(item.title)}</div>
-              <div class="card-badges">
-                <span class="pill primary">${esc(item.kind)}</span>
-                <span class="pill">${esc(item.segment)}</span>
-              </div>
-            </div>
-            <button class="fav-btn ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar ${esc(item.title)}" title="Favoritar">
+        <article class="netflix-card" data-id="${esc(item.id)}">
+          <div class="card-media-banner">
+            <span class="badge-type-float">${isVideo ? '<i data-lucide="play" style="width:12px;height:12px;"></i> Vídeo' : esc(item.kind)}</span>
+            <button class="fav-btn-float ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar" title="Favoritar">
               <i data-lucide="star"></i>
             </button>
+            <img src="${thumb}" alt="${esc(item.title)}" loading="lazy" onerror="this.src='https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=600&auto=format&fit=crop&q=80'">
+            <div class="play-overlay">
+              <div class="play-btn-circle">
+                <i data-lucide="${isVideo ? 'play' : 'external-link'}"></i>
+              </div>
+            </div>
           </div>
 
-          <p class="card-desc">${esc(item.description)}</p>
+          <div class="card-content">
+            <h3 class="card-title">${esc(item.title)}</h3>
 
-          <div class="card-tags">
-            ${item.tags.slice(0, 4).map(t => `<span class="tag-chip" data-tag="${esc(t)}">#${esc(t)}</span>`).join('')}
-          </div>
+            <!-- BLOCO: O QUE ENTREGA -->
+            <div class="deliverable-box">
+              <div class="deliverable-header"><i data-lucide="zap"></i> O QUE ENTREGA:</div>
+              <div class="deliverable-text">${esc(item.deliverable || item.description)}</div>
+            </div>
 
-          <div class="card-foot">
-            <span class="pill">${esc(item.status.replaceAll('_', ' '))}</span>
-            <div class="card-actions">
-              <button class="action-icon btn-copy" data-url="${safeUrl(item.url)}" aria-label="Copiar Link" title="Copiar Link">
-                <i data-lucide="copy"></i>
-              </button>
-              <a class="action-icon" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" aria-label="Abrir recurso" title="Abrir recurso" onclick="event.stopPropagation();">
-                <i data-lucide="external-link"></i>
-              </a>
+            <div class="audience-row">
+              <i data-lucide="users"></i>
+              <span>${esc(item.targetAudience || 'Todos os perfis')}</span>
+            </div>
+
+            <div class="card-footer">
+              <div class="card-tag-chips">
+                ${item.tags.slice(0, 3).map(t => `<span class="chip" data-tag="${esc(t)}">#${esc(t)}</span>`).join('')}
+              </div>
+              <div class="card-actions-group">
+                <button class="action-btn-sm btn-copy" data-url="${safeUrl(item.url)}" aria-label="Copiar link" title="Copiar link">
+                  <i data-lucide="copy"></i>
+                </button>
+                <a class="action-btn-sm" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" aria-label="Abrir link externo" onclick="event.stopPropagation();">
+                  <i data-lucide="external-link"></i>
+                </a>
+              </div>
             </div>
           </div>
         </article>
@@ -1413,27 +1465,25 @@ function renderItems() {
     }).join('');
   }
 
-  $('#resultCount').textContent = `${items.length} de ${state.items.length} itens`;
+  $('#resultCount').textContent = `${items.length} de ${state.items.length} recursos disponíveis`;
   updateKpis();
   lucide.createIcons();
   attachCardEvents();
 }
 
-// Eventos dos Cards
 function attachCardEvents() {
-  $$('.item-card').forEach(card => {
+  $$('.netflix-card').forEach(card => {
     card.onclick = e => {
-      if (e.target.closest('.fav-btn') || e.target.closest('.card-actions') || e.target.closest('.tag-chip')) return;
+      if (e.target.closest('.fav-btn-float') || e.target.closest('.btn-copy') || e.target.closest('.chip')) return;
       const item = state.items.find(x => x.id === card.dataset.id);
-      if (item) openDetailDrawer(item);
+      if (item) openNetflixModal(item);
     };
   });
 
-  $$('.fav-btn').forEach(btn => {
+  $$('.fav-btn-float').forEach(btn => {
     btn.onclick = e => {
       e.stopPropagation();
-      const id = btn.dataset.favId;
-      toggleFavorite(id);
+      toggleFavorite(btn.dataset.favId);
     };
   });
 
@@ -1444,12 +1494,47 @@ function attachCardEvents() {
     };
   });
 
-  $$('.tag-chip').forEach(chip => {
+  $$('.chip[data-tag]').forEach(chip => {
     chip.onclick = e => {
       e.stopPropagation();
       filterByTag(chip.dataset.tag);
     };
   });
+}
+
+// Modal Estilo Netflix (com Player Embutido)
+function openNetflixModal(item) {
+  state.selectedItem = item;
+  const frame = $('#modalMediaFrame');
+
+  if (item.youtubeId) {
+    frame.innerHTML = `<iframe src="https://www.youtube.com/embed/${item.youtubeId}?autoplay=1&rel=0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>`;
+  } else {
+    const thumb = getItemThumbnail(item);
+    frame.innerHTML = `<img src="${thumb}" alt="${esc(item.title)}">`;
+  }
+
+  $('#modalTitle').textContent = item.title;
+  $('#modalKind').textContent = item.kind.toUpperCase();
+  $('#modalSegment').textContent = item.segment;
+  $('#modalStatus').textContent = item.status.replaceAll('_', ' ');
+  $('#modalDeliverable').textContent = item.deliverable || item.description;
+  $('#modalDescription').textContent = item.description;
+  $('#modalAudience').textContent = item.targetAudience || 'Qualquer pessoa';
+  $('#modalLicense').textContent = item.license || 'N/A';
+  $('#modalSource').textContent = item.source || 'Curadoria';
+  $('#btnModalDirect').href = safeUrl(item.url);
+
+  const isFav = storedFavorites.has(item.id);
+  $('#btnModalFav').innerHTML = `<i data-lucide="star"></i> ${isFav ? 'Remover da Lista' : 'Salvar na Lista'}`;
+
+  $('#netflixModal').classList.add('open');
+  lucide.createIcons();
+}
+
+function closeNetflixModal() {
+  $('#modalMediaFrame').innerHTML = '';
+  $('#netflixModal').classList.remove('open');
 }
 
 // Favoritos
@@ -1459,25 +1544,24 @@ function toggleFavorite(id) {
     showToast('Removido dos favoritos');
   } else {
     storedFavorites.add(id);
-    showToast('Adicionado aos favoritos ⭐');
+    showToast('Salvo nos favoritos ⭐');
   }
   localStorage.setItem('nexus_favorites', JSON.stringify([...storedFavorites]));
-  renderItems();
-  updateKpis();
+  renderCards();
 }
 
-// Tags
+// Filtragem por Tags
 function filterByTag(tag) {
   state.activeTag = tag;
   $('#activeTagName').textContent = `#${tag}`;
   $('#activeTagBar').classList.add('show');
-  renderItems();
+  renderCards();
 }
 
 function clearTagFilter() {
   state.activeTag = null;
   $('#activeTagBar').classList.remove('show');
-  renderItems();
+  renderCards();
 }
 
 function resetAllFilters() {
@@ -1491,22 +1575,38 @@ function resetAllFilters() {
   $('#selectStatus').value = 'all';
   $('#activeTagBar').classList.remove('show');
   $$('#navKind button').forEach(b => b.classList.toggle('active', b.dataset.kind === 'all'));
-  renderItems();
+  renderCards();
+}
+
+// Hero Spotlight
+function setupSpotlight() {
+  const spotlightCandidates = state.items.filter(x => x.youtubeId);
+  if (!spotlightCandidates.length) return;
+  const picked = spotlightCandidates[0];
+  state.spotlightItem = picked;
+
+  $('#spotlightTitle').textContent = picked.title;
+  $('#spotlightDeliverable').textContent = picked.deliverable || picked.description;
+  $('#spotlightMedia').style.backgroundImage = `url('https://img.youtube.com/vi/${picked.youtubeId}/hqdefault.jpg')`;
+
+  $('#btnSpotlightWatch').onclick = () => openNetflixModal(picked);
+  $('#spotlightMedia').onclick = () => openNetflixModal(picked);
+  $('#btnSpotlightFav').onclick = () => toggleFavorite(picked.id);
 }
 
 // KPIs
 function updateKpis() {
   $('#kpiTotal').textContent = state.items.length;
-  $('#kpiDesign').textContent = state.items.filter(x => x.segment === 'Design e UX').length;
+  $('#kpiVideos').textContent = state.items.filter(x => x.kind === 'vídeo' || !!x.youtubeId).length;
   $('#kpiFavs').textContent = storedFavorites.size;
   $('#kpiSegments').textContent = new Set(state.items.map(x => x.segment)).size;
 
   $('#countAll').textContent = state.items.length;
+  $('#countVideo').textContent = state.items.filter(x => x.kind === 'vídeo').length;
   $('#countFav').textContent = storedFavorites.size;
   $('#countTool').textContent = state.items.filter(x => x.kind === 'ferramenta').length;
-  $('#countDir').textContent = state.items.filter(x => x.kind === 'diretório').length;
   $('#countRepo').textContent = state.items.filter(x => x.kind === 'repositório').length;
-  $('#countVideo').textContent = state.items.filter(x => x.kind === 'vídeo').length;
+  $('#countDir').textContent = state.items.filter(x => x.kind === 'diretório').length;
   $('#countDoc').textContent = state.items.filter(x => x.kind === 'conhecimento').length;
 }
 
@@ -1533,72 +1633,34 @@ function renderSegments() {
   $$('.segment-item').forEach(el => {
     el.onclick = () => {
       const seg = el.dataset.segment;
-      if (state.segment === seg) {
-        state.segment = 'all';
-        $('#selectSegment').value = 'all';
-      } else {
-        state.segment = seg;
-        $('#selectSegment').value = seg;
-      }
+      state.segment = (state.segment === seg) ? 'all' : seg;
+      $('#selectSegment').value = state.segment;
       renderSegments();
-      renderItems();
+      renderCards();
     };
   });
 }
 
-// Fila de Design
-function renderDesignQueue() {
-  const list = state.items.filter(x => x.segment === 'Design e UX').slice(0, 3);
-  $('#designQueue').innerHTML = list.map(item => `
-    <article class="item-card" data-id="${esc(item.id)}" style="padding: 0.65rem 0.85rem;">
-      <div class="card-top">
-        <div class="card-icon" style="width: 32px; height: 32px;"><i data-lucide="${KIND_ICONS[item.kind] || 'link'}" style="width: 16px; height: 16px;"></i></div>
-        <div class="card-title-group">
-          <div class="card-title" style="font-size: 0.85rem;">${esc(item.title)}</div>
-          <small style="color: var(--muted); font-size: 0.7rem;">${esc(item.kind)}</small>
-        </div>
-        <a class="action-icon" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link"></i></a>
+// Fila de Vídeos Recomendados
+function renderVideoQueue() {
+  const vids = state.items.filter(x => x.youtubeId).slice(1, 4);
+  $('#videoQueue').innerHTML = vids.map(v => `
+    <article class="netflix-card" data-id="${esc(v.id)}" style="cursor: pointer; margin-bottom: 0.5rem;">
+      <div class="card-media-banner" style="aspect-ratio: 16 / 9;">
+        <img src="https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg" alt="${esc(v.title)}" loading="lazy">
+        <div class="play-overlay"><div class="play-btn-circle" style="width:36px;height:36px;"><i data-lucide="play" style="width:16px;height:16px;"></i></div></div>
+      </div>
+      <div style="padding: 0.6rem 0.8rem;">
+        <strong style="font-size: 0.8rem; display: block; line-height: 1.3;">${esc(v.title)}</strong>
       </div>
     </article>
   `).join('');
-}
 
-// Drawer de Detalhes
-function openDetailDrawer(item) {
-  state.selectedDetail = item;
-  $('#detailTitle').textContent = item.title;
-  $('#detailKind').textContent = item.kind.toUpperCase();
-  $('#detailDesc').textContent = item.description;
-  $('#detailSegment').textContent = item.segment;
-  $('#detailStatus').textContent = item.status;
-  $('#detailLicense').textContent = item.license || 'N/A';
-  $('#detailSource').textContent = item.source || 'Curadoria';
-  $('#btnDetailOpen').href = safeUrl(item.url);
-
-  const isFav = storedFavorites.has(item.id);
-  $('#btnDetailFav').innerHTML = `<i data-lucide="star"></i>${isFav ? 'Remover Favorito' : 'Favoritar'}`;
-
-  $('#detailTags').innerHTML = item.tags.map(t => `<span class="tag-chip" data-tag="${esc(t)}">#${esc(t)}</span>`).join('');
-  $$('#detailTags .tag-chip').forEach(c => c.onclick = () => {
-    closeAllDrawers();
-    filterByTag(c.dataset.tag);
-  });
-
-  openDrawer($('#detailDrawer'));
-  lucide.createIcons();
-}
-
-// Controle de Drawers
-function openDrawer(el) {
-  el.classList.add('open');
-  el.setAttribute('aria-hidden', 'false');
-  setTimeout(() => el.querySelector('input, button')?.focus(), 40);
-}
-
-function closeAllDrawers() {
-  $$('.drawer').forEach(d => {
-    d.classList.remove('open');
-    d.setAttribute('aria-hidden', 'true');
+  $$('#videoQueue .netflix-card').forEach(c => {
+    c.onclick = () => {
+      const it = state.items.find(x => x.id === c.dataset.id);
+      if (it) openNetflixModal(it);
+    };
   });
 }
 
@@ -1608,136 +1670,72 @@ function showToast(msg) {
   setTimeout(() => $('#toast').classList.remove('show'), 2400);
 }
 
-// Command Palette (⌘K)
-function openCmd() {
-  $('#cmdOverlay').classList.add('open');
-  $('#cmdInput').value = '';
-  renderCmdResults('');
-  $('#cmdInput').focus();
-}
-
-function closeCmd() {
-  $('#cmdOverlay').classList.remove('open');
-}
-
-function renderCmdResults(q = '') {
-  const normQ = normalizeStr(q);
-  state.cmdResults = state.items.filter(x => normalizeStr(x.title + ' ' + x.segment + ' ' + x.tags.join(' ')).includes(normQ)).slice(0, 7);
-  state.cmdIndex = 0;
-
-  const list = $('#cmdList');
-  if (!state.cmdResults.length) {
-    list.innerHTML = `<div style="padding: 1.5rem; text-align: center; color: var(--muted); font-size: 0.85rem;">Nenhum recurso encontrado para "${esc(q)}"</div>`;
-    return;
-  }
-
-  list.innerHTML = state.cmdResults.map((item, idx) => `
-    <button class="cmd-item ${idx === 0 ? 'selected' : ''}" data-idx="${idx}" data-url="${safeUrl(item.url)}">
-      <div class="cmd-item-icon"><i data-lucide="${KIND_ICONS[item.kind] || 'link'}"></i></div>
-      <div class="cmd-item-text">
-        <strong>${esc(item.title)}</strong>
-        <small>${esc(item.kind)} · ${esc(item.segment)}</small>
-      </div>
-    </button>
-  `).join('');
-
-  lucide.createIcons();
-
-  $$('.cmd-item').forEach(b => {
-    b.onclick = () => {
-      window.open(b.dataset.url, '_blank', 'noopener');
-      closeCmd();
-    };
-  });
-}
-
-// Inicialização dos Filtros do Select
+// Select filters
 function initSelectFilters() {
   const segments = [...new Set(state.items.map(x => x.segment))].sort();
   const selectSeg = $('#selectSegment');
-  const datalist = $('#segmentOptions');
-
-  segments.forEach(s => {
-    selectSeg.add(new Option(s, s));
-    const opt = document.createElement('option');
-    opt.value = s;
-    datalist.appendChild(opt);
-  });
+  segments.forEach(s => selectSeg.add(new Option(s, s)));
 
   const statuses = [...new Set(state.items.map(x => x.status))].sort();
   const selectStat = $('#selectStatus');
   statuses.forEach(s => selectStat.add(new Option(s.replaceAll('_', ' '), s)));
 }
 
-// Event Listeners
-$('#searchInput').addEventListener('input', e => {
-  state.q = e.target.value;
-  renderItems();
-});
-
-$('#selectSegment').addEventListener('change', e => {
-  state.segment = e.target.value;
-  renderSegments();
-  renderItems();
-});
-
-$('#selectStatus').addEventListener('change', e => {
-  state.status = e.target.value;
-  renderItems();
-});
-
-$('#selectSort').addEventListener('change', e => {
-  state.sort = e.target.value;
-  renderItems();
-});
-
+// Listeners
+$('#searchInput').addEventListener('input', e => { state.q = e.target.value; renderCards(); });
+$('#selectSegment').addEventListener('change', e => { state.segment = e.target.value; renderSegments(); renderCards(); });
+$('#selectStatus').addEventListener('change', e => { state.status = e.target.value; renderCards(); });
+$('#selectSort').addEventListener('change', e => { state.sort = e.target.value; renderCards(); });
 $('#btnClearTag').addEventListener('click', clearTagFilter);
-
-// Alternador de Visualização (Grade vs Lista)
-$('#btnViewList').addEventListener('click', () => {
-  state.view = 'list';
-  localStorage.setItem('nexus_view_mode', 'list');
-  $('#btnViewList').classList.add('active');
-  $('#btnViewGrid').classList.remove('active');
-  renderItems();
-});
 
 $('#btnViewGrid').addEventListener('click', () => {
   state.view = 'grid';
   localStorage.setItem('nexus_view_mode', 'grid');
   $('#btnViewGrid').classList.add('active');
   $('#btnViewList').classList.remove('active');
-  renderItems();
+  renderCards();
 });
 
-// Navegação por Tipo (Sidebar)
+$('#btnViewList').addEventListener('click', () => {
+  state.view = 'list';
+  localStorage.setItem('nexus_view_mode', 'list');
+  $('#btnViewList').classList.add('active');
+  $('#btnViewGrid').classList.remove('active');
+  renderCards();
+});
+
 $$('#navKind button[data-kind]').forEach(btn => {
   btn.addEventListener('click', () => {
     $$('#navKind button').forEach(b => b.classList.remove('active'));
     btn.classList.add('active');
     state.kind = btn.dataset.kind;
-
-    if (state.kind === 'all') {
-      $('#pageTitle').textContent = 'Seu acervo de elite, organizado.';
-    } else if (state.kind === 'favorites') {
-      $('#pageTitle').textContent = 'Seus Recursos Favoritos ⭐';
-    } else {
-      $('#pageTitle').textContent = btn.textContent.trim().replace(/\d+$/, '');
-    }
-
-    renderItems();
+    renderCards();
     $('#sidebar').classList.remove('open');
   });
 });
 
-// Abertura e Fechamento de Drawers
-$('#btnAddTop').addEventListener('click', () => openDrawer($('#addDrawer')));
-$('#btnAddMain').addEventListener('click', () => openDrawer($('#addDrawer')));
-$('#btnOpenApi').addEventListener('click', () => openDrawer($('#apiDrawer')));
-$$('.close-drawer, .drawer-backdrop').forEach(el => el.addEventListener('click', closeAllDrawers));
+$('#btnModalClose').addEventListener('click', closeNetflixModal);
+$('#netflixModal').addEventListener('click', e => {
+  if (e.target === $('#netflixModal')) closeNetflixModal();
+});
+
+$('#btnModalCopy').addEventListener('click', () => {
+  if (state.selectedItem) {
+    navigator.clipboard.writeText(state.selectedItem.url).then(() => showToast('Link copiado!'));
+  }
+});
+
+$('#btnModalFav').addEventListener('click', () => {
+  if (state.selectedItem) {
+    toggleFavorite(state.selectedItem.id);
+    const isFav = storedFavorites.has(state.selectedItem.id);
+    $('#btnModalFav').innerHTML = `<i data-lucide="star"></i> ${isFav ? 'Remover da Lista' : 'Salvar na Lista'}`;
+    lucide.createIcons();
+  }
+});
+
 $('#btnMenu').addEventListener('click', () => $('#sidebar').classList.toggle('open'));
 
-// Alternância de Tema Claro / Escuro
 $('#btnTheme').addEventListener('click', () => {
   const current = document.documentElement.dataset.theme;
   const next = current === 'dark' ? 'light' : 'dark';
@@ -1747,124 +1745,25 @@ $('#btnTheme').addEventListener('click', () => {
   lucide.createIcons();
 });
 
-// Formulário de Novo Item
-$('#addItemForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const f = new FormData(e.target);
-  const newItem = {
-    id: 'user-' + Date.now(),
-    title: f.get('title'),
-    url: f.get('url'),
-    kind: f.get('kind'),
-    segment: f.get('segment'),
-    description: f.get('description'),
-    tags: String(f.get('tags') || '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean),
-    status: 'ativo',
-    year: 2026,
-    source: 'Adicionado Localmente',
-    addedAt: new Date().toISOString().slice(0, 10),
-    updatedAt: new Date().toISOString().slice(0, 10)
-  };
-
-  state.items.unshift(newItem);
-  storedCustom.unshift(newItem);
-  localStorage.setItem('nexus_custom_items', JSON.stringify(storedCustom));
-
-  e.target.reset();
-  closeAllDrawers();
-  initSelectFilters();
-  renderSegments();
-  renderItems();
-  showToast('Recurso salvo com sucesso!');
-});
-
-// Exportação de JSON
-$('#btnExportJson').addEventListener('click', () => {
-  const blob = new Blob([JSON.stringify({ ...seedCatalog, items: state.items }, null, 2)], { type: 'application/json' });
-  const a = document.createElement('a');
-  a.href = URL.createObjectURL(blob);
-  a.download = 'nexus-acervo-completo.json';
-  a.click();
-  URL.revokeObjectURL(a.href);
-  showToast('Catálogo JSON exportado!');
-});
-
-$('#btnCopyApiEndpoint').addEventListener('click', () => {
-  navigator.clipboard.writeText(window.location.origin + '/data/catalog.json').then(() => showToast('URL copiada!'));
-});
-
-$('#btnDetailCopy').addEventListener('click', () => {
-  if (state.selectedDetail) {
-    navigator.clipboard.writeText(state.selectedDetail.url).then(() => showToast('Link copiado!'));
-  }
-});
-
-$('#btnDetailFav').addEventListener('click', () => {
-  if (state.selectedDetail) {
-    toggleFavorite(state.selectedDetail.id);
-    const isFav = storedFavorites.has(state.selectedDetail.id);
-    $('#btnDetailFav').innerHTML = `<i data-lucide="star"></i>${isFav ? 'Remover Favorito' : 'Favoritar'}`;
-    lucide.createIcons();
-  }
-});
-
-// Command Palette Keyboard
-$('#cmdInput').addEventListener('input', e => renderCmdResults(e.target.value));
-
-$('#cmdOverlay').addEventListener('click', e => {
-  if (e.target === $('#cmdOverlay')) closeCmd();
-});
-
 document.addEventListener('keydown', e => {
-  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-    e.preventDefault();
-    openCmd();
-  } else if (e.key === 'Escape') {
-    closeAllDrawers();
-    closeCmd();
-  } else if ($('#cmdOverlay').classList.contains('open')) {
-    if (e.key === 'ArrowDown') {
-      e.preventDefault();
-      state.cmdIndex = (state.cmdIndex + 1) % state.cmdResults.length;
-      updateCmdSelection();
-    } else if (e.key === 'ArrowUp') {
-      e.preventDefault();
-      state.cmdIndex = (state.cmdIndex - 1 + state.cmdResults.length) % state.cmdResults.length;
-      updateCmdSelection();
-    } else if (e.key === 'Enter') {
-      e.preventDefault();
-      const target = state.cmdResults[state.cmdIndex];
-      if (target) {
-        window.open(target.url, '_blank', 'noopener');
-        closeCmd();
-      }
-    }
-  }
+  if (e.key === 'Escape') closeNetflixModal();
 });
 
-function updateCmdSelection() {
-  $$('.cmd-item').forEach((item, idx) => {
-    item.classList.toggle('selected', idx === state.cmdIndex);
-    if (idx === state.cmdIndex) item.scrollIntoView({ block: 'nearest' });
-  });
-}
-
-// Inicialização de Tema
+// Inicialização
 const savedTheme = localStorage.getItem('nexus_theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
 document.documentElement.dataset.theme = savedTheme;
 $('#btnTheme').innerHTML = `<i data-lucide="${savedTheme === 'dark' ? 'sun' : 'moon'}"></i>`;
 
-// Ajuste do View Mode inicial
-if (state.view === 'grid') {
-  $('#btnViewGrid').classList.add('active');
-  $('#btnViewList').classList.remove('active');
+if (state.view === 'list') {
+  $('#btnViewList').classList.add('active');
+  $('#btnViewGrid').classList.remove('active');
 }
 
-// Inicialização Geral
 initSelectFilters();
+setupSpotlight();
 renderSegments();
-renderDesignQueue();
-renderItems();
+renderVideoQueue();
+renderCards();
 window.addEventListener('load', () => lucide.createIcons());
 </script>
 </body>
