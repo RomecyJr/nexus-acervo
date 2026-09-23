@@ -1296,6 +1296,96 @@ main {
   </div>
 </div>
 
+<!-- MODAL: ADICIONAR RECURSO -->
+<div class="netflix-modal" id="addModal" role="dialog" aria-modal="true" aria-labelledby="addModalTitle">
+  <div class="modal-container" style="max-width: 620px;">
+    <button class="modal-close-btn" id="btnAddModalClose" aria-label="Fechar modal"><i data-lucide="x"></i></button>
+    <div class="modal-body" style="padding: 2rem;">
+      <div class="modal-header-group">
+        <div>
+          <h2 class="modal-title" id="addModalTitle">Adicionar Novo Recurso</h2>
+          <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.25rem;">Adicione vídeos do YouTube, ferramentas web ou links úteis.</p>
+        </div>
+      </div>
+
+      <form id="addItemForm" style="display: grid; gap: 1rem; margin-top: 0.5rem;">
+        <label style="display: grid; gap: 0.35rem; font-size: 0.85rem; font-weight: 700;">Título do Recurso
+          <input name="title" required placeholder="Ex.: The first 20 hours ou Coolors" style="border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-md); padding: 0.7rem 0.9rem;">
+        </label>
+
+        <label style="display: grid; gap: 0.35rem; font-size: 0.85rem; font-weight: 700;">Link / URL de Acesso
+          <input name="url" type="url" required placeholder="https://www.youtube.com/watch?v=... ou https://..." style="border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-md); padding: 0.7rem 0.9rem;">
+        </label>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <label style="display: grid; gap: 0.35rem; font-size: 0.85rem; font-weight: 700;">Formato / Tipo
+            <select name="kind" style="height: 42px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-md); padding: 0 0.9rem; font-weight: 700;">
+              <option value="vídeo">🎬 Vídeo & Aula</option>
+              <option value="ferramenta">🛠️ Ferramenta Web</option>
+              <option value="repositório">💻 Código Aberto (GitHub)</option>
+              <option value="diretório">📚 Diretório & Lista</option>
+              <option value="conhecimento">💡 Conhecimento & Guia</option>
+            </select>
+          </label>
+
+          <label style="display: grid; gap: 0.35rem; font-size: 0.85rem; font-weight: 700;">Segmento
+            <input name="segment" required list="segmentDatalist" placeholder="Ex.: Design e UX, Produtividade..." style="height: 42px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-md); padding: 0 0.9rem;">
+            <datalist id="segmentDatalist"></datalist>
+          </label>
+        </div>
+
+        <label style="display: grid; gap: 0.35rem; font-size: 0.85rem; font-weight: 700;">⚡ O que entrega (em linguagem simples para qualquer um entender)
+          <textarea name="deliverable" required placeholder="Ex.: Ensina o passo a passo prático para aprender qualquer assunto do zero em 20 horas..." style="min-height: 80px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-md); padding: 0.7rem 0.9rem; resize: vertical;"></textarea>
+        </label>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+          <label style="display: grid; gap: 0.35rem; font-size: 0.85rem; font-weight: 700;">👥 Para quem é indicado
+            <input name="targetAudience" placeholder="Ex.: Qualquer pessoa, Estudantes, Designers..." style="border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-md); padding: 0.7rem 0.9rem;">
+          </label>
+
+          <label style="display: grid; gap: 0.35rem; font-size: 0.85rem; font-weight: 700;">🏷️ Tags (separadas por vírgula)
+            <input name="tags" placeholder="youtube, foco, aprendizado" style="border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-md); padding: 0.7rem 0.9rem;">
+          </label>
+        </div>
+
+        <div style="display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 0.5rem;">
+          <button class="btn" type="button" id="btnAddCancel">Cancelar</button>
+          <button class="btn primary" type="submit"><i data-lucide="plus"></i> Salvar no Catálogo</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL: API & OPENAPI -->
+<div class="netflix-modal" id="apiModal" role="dialog" aria-modal="true" aria-labelledby="apiModalTitle">
+  <div class="modal-container" style="max-width: 580px;">
+    <button class="modal-close-btn" id="btnApiModalClose" aria-label="Fechar modal"><i data-lucide="x"></i></button>
+    <div class="modal-body" style="padding: 2rem; display: grid; gap: 1.25rem;">
+      <div>
+        <h2 class="modal-title" id="apiModalTitle">API REST & OpenAPI 3.1</h2>
+        <p style="color: var(--muted); font-size: 0.85rem; margin-top: 0.25rem;">Consuma a base canônica de dados de forma automatizada por agentes de IA ou ferramentas.</p>
+      </div>
+
+      <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-md); padding: 1rem; display: grid; gap: 0.75rem;">
+        <div>
+          <small style="font-weight: 800; color: var(--faint); text-transform: uppercase;">Endpoint Canônico JSON</small>
+          <p style="font-family: monospace; font-size: 0.85rem; color: var(--primary); margin-top: 0.2rem;">/data/catalog.json</p>
+        </div>
+        <div>
+          <small style="font-weight: 800; color: var(--faint); text-transform: uppercase;">Especificação OpenAPI 3.1</small>
+          <p style="font-family: monospace; font-size: 0.85rem; color: var(--primary); margin-top: 0.2rem;">/docs/openapi.yaml</p>
+        </div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem;">
+        <button class="btn primary" id="btnCopyApiUrl" style="flex: 1;"><i data-lucide="copy"></i> Copiar URL da API</button>
+        <a class="btn" href="/docs/openapi.yaml" target="_blank" rel="noopener noreferrer" style="flex: 1;"><i data-lucide="file-code"></i> Ver OpenAPI</a>
+      </div>
+    </div>
+  </div>
+</div>
+
 <!-- TOAST -->
 <div class="toast" id="toast" role="status">
   <i data-lucide="check-circle-2"></i>
@@ -1745,9 +1835,251 @@ $('#btnTheme').addEventListener('click', () => {
   lucide.createIcons();
 });
 
-document.addEventListener('keydown', e => {
-  if (e.key === 'Escape') closeNetflixModal();
+// Funcoes Utilitarias
+function extractYouTubeId(url = '') {
+  try {
+    const regExp = /(?:youtube\.com\/(?:[^\/]+\/.+\/|(?:v|e(?:mbed)?)\/|.*[?&]v=)|youtu\.be\/)([^"&?\/\s]{11})/i;
+    const match = url.match(regExp);
+    return match ? match[1] : null;
+  } catch {
+    return null;
+  }
+}
+
+// Modal de Inclusao (#addModal)
+function openAddModal() {
+  $('#addModal').classList.add('open');
+  const datalist = $('#segmentDatalist');
+  if (datalist) {
+    const segs = [...new Set(state.items.map(x => x.segment))].sort();
+    datalist.innerHTML = segs.map(s => `<option value="${esc(s)}">`).join('');
+  }
+  lucide.createIcons();
+}
+
+function closeAddModal() {
+  $('#addModal').classList.remove('open');
+  $('#addItemForm').reset();
+}
+
+$('#btnAddTop').addEventListener('click', openAddModal);
+$('#btnAddModalClose').addEventListener('click', closeAddModal);
+$('#btnAddCancel').addEventListener('click', closeAddModal);
+$('#addModal').addEventListener('click', e => {
+  if (e.target === $('#addModal')) closeAddModal();
 });
+
+$('#addItemForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const fd = new FormData(e.target);
+  const title = fd.get('title')?.trim();
+  const urlVal = fd.get('url')?.trim();
+  const kind = fd.get('kind');
+  const segment = fd.get('segment')?.trim() || 'Geral';
+  const deliverable = fd.get('deliverable')?.trim();
+  const targetAudience = fd.get('targetAudience')?.trim() || 'Qualquer pessoa';
+  const rawTags = fd.get('tags')?.trim() || '';
+
+  if (!title || !urlVal || !deliverable) {
+    showToast('Preencha os campos obrigatorios');
+    return;
+  }
+
+  const ytId = extractYouTubeId(urlVal);
+  const tags = rawTags.split(',').map(t => t.trim().toLowerCase()).filter(Boolean);
+  if (ytId && !tags.includes('youtube')) tags.unshift('youtube');
+
+  const newItem = {
+    id: `custom_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
+    title,
+    url: urlVal,
+    kind: ytId ? 'vídeo' : kind,
+    segment,
+    deliverable,
+    description: deliverable,
+    targetAudience,
+    status: 'ativo',
+    tags: tags.length ? tags : ['recurso'],
+    source: 'Adicionado pelo Usuário',
+    license: 'Livre / Gratuito',
+    youtubeId: ytId || undefined
+  };
+
+  state.items.unshift(newItem);
+  storedCustom.unshift(newItem);
+  localStorage.setItem('nexus_custom_items', JSON.stringify(storedCustom));
+
+  closeAddModal();
+  initSelectFilters();
+  renderSegments();
+  renderVideoQueue();
+  renderCards();
+  showToast('Recurso adicionado com sucesso! 🎉');
+});
+
+// Modal da API & OpenAPI (#apiModal)
+function openApiModal() {
+  $('#apiModal').classList.add('open');
+  lucide.createIcons();
+}
+
+function closeApiModal() {
+  $('#apiModal').classList.remove('open');
+}
+
+$('#btnOpenApi').addEventListener('click', openApiModal);
+$('#btnApiModalClose').addEventListener('click', closeApiModal);
+$('#apiModal').addEventListener('click', e => {
+  if (e.target === $('#apiModal')) closeApiModal();
+});
+
+$('#btnCopyApiUrl').addEventListener('click', () => {
+  const apiUrl = window.location.origin + '/data/catalog.json';
+  navigator.clipboard.writeText(apiUrl).then(() => showToast('URL da API copiada!'));
+});
+
+// Exportacao JSON (#btnExportJson)
+$('#btnExportJson').addEventListener('click', () => {
+  const exportPayload = {
+    meta: {
+      exportedAt: new Date().toISOString(),
+      totalItems: state.items.length,
+      version: '1.2.0',
+      source: 'Nexus Acervo'
+    },
+    items: state.items
+  };
+  const blob = new Blob([JSON.stringify(exportPayload, null, 2)], { type: 'application/json' });
+  const url = URL.createObjectURL(blob);
+  const a = document.createElement('a');
+  a.href = url;
+  a.download = `nexus-acervo-${new Date().toISOString().slice(0, 10)}.json`;
+  document.body.appendChild(a);
+  a.click();
+  a.remove();
+  URL.revokeObjectURL(url);
+  showToast('Catálogo JSON exportado!');
+});
+
+// Command Palette (⌘K / Ctrl+K)
+let cmdSelectedIndex = 0;
+let cmdCurrentList = [];
+
+function openCmdPalette() {
+  $('#cmdOverlay').classList.add('open');
+  $('#cmdInput').value = '';
+  cmdSelectedIndex = 0;
+  updateCmdResults('');
+  setTimeout(() => $('#cmdInput').focus(), 50);
+  lucide.createIcons();
+}
+
+function closeCmdPalette() {
+  $('#cmdOverlay').classList.remove('open');
+}
+
+function updateCmdResults(query) {
+  const qNorm = normalizeStr(query.trim());
+  if (!qNorm) {
+    cmdCurrentList = state.items.slice(0, 8);
+  } else {
+    cmdCurrentList = state.items.filter(item => {
+      const haystack = normalizeStr([item.title, item.deliverable, item.description, item.segment, ...item.tags].join(' '));
+      return haystack.includes(qNorm);
+    }).slice(0, 8);
+  }
+
+  cmdSelectedIndex = Math.min(cmdSelectedIndex, Math.max(0, cmdCurrentList.length - 1));
+
+  if (!cmdCurrentList.length) {
+    $('#cmdList').innerHTML = `
+      <div style="padding: 1.5rem; text-align: center; color: var(--muted); font-size: 0.9rem;">
+        Nenhum recurso encontrado para "${esc(query)}"
+      </div>`;
+    return;
+  }
+
+  $('#cmdList').innerHTML = cmdCurrentList.map((item, idx) => {
+    const thumb = getItemThumbnail(item);
+    const isSel = idx === cmdSelectedIndex;
+    return `
+      <div class="cmd-item ${isSel ? 'selected' : ''}" data-cmd-id="${esc(item.id)}" data-index="${idx}">
+        <img class="cmd-item-thumb" src="${thumb}" alt="${esc(item.title)}" onerror="this.style.display='none'">
+        <div class="cmd-item-text" style="flex: 1; min-width: 0;">
+          <strong style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(item.title)}</strong>
+          <small style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block;">${esc(item.deliverable || item.segment)}</small>
+        </div>
+        <span class="chip" style="font-size: 0.7rem;">${esc(item.kind)}</span>
+      </div>
+    `;
+  }).join('');
+
+  $$('.cmd-item').forEach(el => {
+    el.addEventListener('click', () => {
+      const it = state.items.find(x => x.id === el.dataset.cmdId);
+      if (it) {
+        closeCmdPalette();
+        openNetflixModal(it);
+      }
+    });
+  });
+}
+
+$('#cmdInput').addEventListener('input', e => {
+  cmdSelectedIndex = 0;
+  updateCmdResults(e.target.value);
+});
+
+$('#cmdInput').addEventListener('keydown', e => {
+  if (e.key === 'ArrowDown') {
+    e.preventDefault();
+    if (cmdCurrentList.length) {
+      cmdSelectedIndex = (cmdSelectedIndex + 1) % cmdCurrentList.length;
+      updateCmdResults($('#cmdInput').value);
+    }
+  } else if (e.key === 'ArrowUp') {
+    e.preventDefault();
+    if (cmdCurrentList.length) {
+      cmdSelectedIndex = (cmdSelectedIndex - 1 + cmdCurrentList.length) % cmdCurrentList.length;
+      updateCmdResults($('#cmdInput').value);
+    }
+  } else if (e.key === 'Enter') {
+    e.preventDefault();
+    if (cmdCurrentList[cmdSelectedIndex]) {
+      const it = cmdCurrentList[cmdSelectedIndex];
+      closeCmdPalette();
+      openNetflixModal(it);
+    }
+  } else if (e.key === 'Escape') {
+    closeCmdPalette();
+  }
+});
+
+$('#cmdOverlay').addEventListener('click', e => {
+  if (e.target === $('#cmdOverlay')) closeCmdPalette();
+});
+
+// Teclado Global: Ctrl+K / Cmd+K e Escape
+document.addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+    e.preventDefault();
+    if ($('#cmdOverlay').classList.contains('open')) {
+      closeCmdPalette();
+    } else {
+      openCmdPalette();
+    }
+  }
+  if (e.key === 'Escape') {
+    closeNetflixModal();
+    closeAddModal();
+    closeApiModal();
+    closeCmdPalette();
+  }
+});
+
+const searchKbd = $('.search-kbd');
+if (searchKbd) searchKbd.addEventListener('click', openCmdPalette);
+
 
 // Inicialização
 const savedTheme = localStorage.getItem('nexus_theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
