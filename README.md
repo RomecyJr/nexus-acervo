@@ -33,6 +33,14 @@ gh repo create nexus-acervo --private --source=. --remote=origin --push
 
 A opção `--private` impede publicação pública. Não versione `.env`, tokens, cookies ou chaves. Para agentes externos, prefira um token com escopo mínimo e acesso apenas a este repositório.
 
+## Deploy Contínuo na Vercel (Online 24/7)
+
+1. Acesse [vercel.com/new](https://vercel.com/new) e faça login com seu GitHub (`RomecyJr`).
+2. Selecione o repositório privado `nexus-acervo` e clique em **Import**.
+3. O arquivo `vercel.json` já configurou automaticamente o `buildCommand` (`npm test`) e a raiz do projeto.
+4. Clique em **Deploy**. A Vercel gerará o link de produção (ex.: `https://nexus-acervo-romecyjr.vercel.app`).
+5. **Cada push para a branch `main` no GitHub atualizará o site automaticamente em segundos!**
+
 ## Consumo por agentes
 
 ### Imediato, via GitHub privado
