@@ -3,75 +3,67 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Nexus Acervo - Segundo Cérebro e Catálogo Pessoal de Elite de Ferramentas, Repositórios, Vídeos e Carrosséis.">
-<title>Nexus Acervo · Segundo Cérebro & Hub Visual</title>
+<meta name="description" content="Nexus Acervo - Segundo Cérebro pessoal contemporâneo de ferramentas, repositórios, vídeos e carrosséis com exemplos práticos.">
+<title>Nexus Acervo · Segundo Cérebro de Elite</title>
 <!-- Google Fonts: Plus Jakarta Sans + JetBrains Mono -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-<script src="./data/catalog.js?v=1.3.0"></script>
+<script src="./data/catalog.js?v=1.4.0"></script>
 <style>
 /* ==========================================================================
-   NEXUS ACERVO - SEGUNDO CÉREBRO & CURADORIA DE ELITE
-   Estética Minimalista, Clean, Profissional & Tipografia de Alto Padrão
+   NEXUS ACERVO - SEGUNDO CÉREBRO CONTEMPORÂNEO (LINEAR & RAYCAST AESTHETIC)
+   Clean, Minimalista, Neutro, Alto Contraste & Tipografia Precisa
    ========================================================================== */
 :root, [data-theme="light"] {
   --bg: #f8fafc;
-  --bg-subtle: #f1f5f9;
   --surface: #ffffff;
-  --surface2: #f8fafc;
+  --surface2: #f1f5f9;
   --surface3: #e2e8f0;
   --border: rgba(15, 23, 42, 0.08);
   --border-strong: rgba(15, 23, 42, 0.16);
-  --border-focus: #0284c7;
-  --text: #0f172a;
-  --muted: #475569;
-  --faint: #94a3b8;
-  --primary: #0284c7;
-  --primary-hover: #0369a1;
-  --primary-light: rgba(2, 132, 199, 0.08);
-  --accent-purple: #7c3aed;
-  --accent-purple-light: rgba(124, 58, 237, 0.08);
-  --accent-green: #059669;
-  --accent-green-light: rgba(5, 150, 105, 0.08);
-  --accent-amber: #d97706;
-  --accent-amber-light: rgba(217, 119, 6, 0.08);
-  --accent-pink: #db2777;
-  --accent-pink-light: rgba(219, 39, 119, 0.08);
-  --card-shadow: 0 1px 3px rgba(15, 23, 42, 0.05), 0 10px 15px -3px rgba(15, 23, 42, 0.02);
-  --card-hover-shadow: 0 10px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
-  --modal-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
-  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --border-focus: #0f172a;
+  --text: #09090b;
+  --muted: #52525b;
+  --faint: #71717a;
+  --primary: #09090b;
+  --primary-text: #ffffff;
+  --primary-hover: #18181b;
+  --primary-light: rgba(9, 9, 11, 0.06);
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
+  --card-hover-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.08);
+  --modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
   --font-mono: 'JetBrains Mono', monospace;
+  --deliverable-border: #f59e0b;
+  --deliverable-bg: rgba(245, 158, 11, 0.06);
+  --example-border: #10b981;
+  --example-bg: rgba(16, 185, 129, 0.06);
 }
 
 [data-theme="dark"] {
-  --bg: #090c12;
-  --bg-subtle: #0e131d;
-  --surface: #111724;
-  --surface2: #161e2e;
-  --surface3: #1f293d;
-  --border: rgba(255, 255, 255, 0.07);
-  --border-strong: rgba(255, 255, 255, 0.14);
-  --border-focus: #38bdf8;
-  --text: #f1f5f9;
-  --muted: #94a3b8;
-  --faint: #64748b;
-  --primary: #38bdf8;
-  --primary-hover: #7dd3fc;
-  --primary-light: rgba(56, 189, 248, 0.12);
-  --accent-purple: #a78bfa;
-  --accent-purple-light: rgba(167, 139, 250, 0.12);
-  --accent-green: #34d399;
-  --accent-green-light: rgba(52, 211, 153, 0.12);
-  --accent-amber: #fbbf24;
-  --accent-amber-light: rgba(251, 191, 36, 0.12);
-  --accent-pink: #f472b6;
-  --accent-pink-light: rgba(244, 114, 182, 0.12);
-  --card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4), 0 2px 4px -2px rgba(0, 0, 0, 0.3);
-  --card-hover-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.6), 0 0 1px 1px var(--border-strong);
-  --modal-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.85);
+  --bg: #09090b;
+  --surface: #121215;
+  --surface2: #18181c;
+  --surface3: #222228;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-strong: rgba(255, 255, 255, 0.15);
+  --border-focus: #ffffff;
+  --text: #f4f4f5;
+  --muted: #a1a1aa;
+  --faint: #71717a;
+  --primary: #f4f4f5;
+  --primary-text: #09090b;
+  --primary-hover: #ffffff;
+  --primary-light: rgba(244, 244, 245, 0.1);
+  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  --card-hover-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.12);
+  --modal-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9);
+  --deliverable-border: #fbbf24;
+  --deliverable-bg: rgba(251, 191, 36, 0.06);
+  --example-border: #34d399;
+  --example-bg: rgba(52, 211, 153, 0.06);
 }
 
 :root {
@@ -80,7 +72,7 @@
   --radius-md: 12px;
   --radius-lg: 16px;
   --radius-full: 9999px;
-  --trans: 180ms cubic-bezier(0.16, 1, 0.3, 1);
+  --trans: 160ms cubic-bezier(0.16, 1, 0.3, 1);
 }
 
 *, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
@@ -104,12 +96,12 @@ svg { display: block; flex-shrink: 0; }
 /* APP LAYOUT */
 .app {
   display: grid;
-  grid-template-columns: 260px 1fr;
+  grid-template-columns: 250px 1fr;
   height: 100dvh;
   overflow: hidden;
 }
 
-/* SIDEBAR */
+/* SIDEBAR MODERNA (ESTILO LINEAR / RAYCAST) */
 .sidebar {
   background: var(--surface);
   border-right: 1px solid var(--border);
@@ -119,155 +111,150 @@ svg { display: block; flex-shrink: 0; }
   z-index: 40;
 }
 
-.brand {
-  padding: 1.25rem 1.25rem 1rem;
+.brand-section {
+  padding: 1.15rem 1.15rem 1rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
   border-bottom: 1px solid var(--border);
 }
 
-.brand-icon {
-  width: 34px;
-  height: 34px;
+.brand-monogram {
+  width: 32px;
+  height: 32px;
   border-radius: var(--radius-sm);
-  background: linear-gradient(135deg, #0284c7, #6366f1);
+  background: var(--primary);
+  color: var(--primary-text);
   display: grid;
   place-items: center;
-  color: #fff;
   font-weight: 800;
-  font-size: 1rem;
-  box-shadow: 0 4px 12px rgba(2, 132, 199, 0.3);
+  font-size: 0.9rem;
 }
 
-.brand-info h1 {
-  font-size: 0.95rem;
-  font-weight: 800;
+.brand-meta h1 {
+  font-size: 0.9rem;
+  font-weight: 700;
   letter-spacing: -0.01em;
+  color: var(--text);
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.35rem;
 }
 
-.brand-info p {
+.brand-meta p {
   font-size: 0.72rem;
-  color: var(--muted);
+  color: var(--faint);
   font-weight: 500;
 }
 
-.nav-scroll {
+.nav-body {
   flex: 1;
   overflow-y: auto;
-  padding: 1rem 0.75rem;
+  padding: 1rem 0.65rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-.nav-group-title {
-  padding: 0 0.5rem 0.4rem;
+.nav-section-title {
+  padding: 0 0.5rem 0.35rem;
   font-size: 0.68rem;
   font-weight: 700;
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--faint);
 }
 
-.nav-items {
+.nav-list {
   display: flex;
   flex-direction: column;
-  gap: 0.2rem;
+  gap: 0.15rem;
 }
 
-.nav-item {
+.nav-btn {
   width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.55rem 0.75rem;
+  padding: 0.5rem 0.65rem;
   border-radius: var(--radius-sm);
-  font-size: 0.825rem;
-  font-weight: 600;
+  font-size: 0.815rem;
+  font-weight: 500;
   color: var(--muted);
   transition: all var(--trans);
 }
 
-.nav-item-left {
+.nav-btn-inner {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.6rem;
 }
 
-.nav-item-left i {
+.nav-btn-inner i {
   width: 16px;
   height: 16px;
-  opacity: 0.8;
+  opacity: 0.75;
 }
 
-.nav-item:hover {
+.nav-btn:hover {
   background: var(--surface2);
   color: var(--text);
 }
 
-.nav-item.active {
+.nav-btn.active {
   background: var(--primary-light);
-  color: var(--primary);
+  color: var(--text);
   font-weight: 700;
 }
 
-.nav-item.active i {
+.nav-btn.active i {
   opacity: 1;
-  color: var(--primary);
+  color: var(--text);
 }
 
-.nav-count {
-  font-size: 0.7rem;
-  padding: 0.15rem 0.45rem;
+.nav-pill-count {
+  font-size: 0.68rem;
+  padding: 0.1rem 0.45rem;
   border-radius: var(--radius-full);
   background: var(--surface3);
-  color: var(--muted);
-  font-weight: 700;
-}
-
-.nav-item.active .nav-count {
-  background: var(--primary);
-  color: #fff;
-}
-
-.sidebar-foot {
-  padding: 0.9rem 1.25rem;
-  border-top: 1px solid var(--border);
-  display: flex;
-  flex-direction: column;
-  gap: 0.4rem;
-  background: var(--surface2);
-}
-
-.status-indicator {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  font-size: 0.72rem;
-  font-weight: 600;
-  color: var(--accent-green);
-}
-
-.status-dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--accent-green);
-  box-shadow: 0 0 8px var(--accent-green);
-}
-
-.version-tag {
-  font-size: 0.68rem;
   color: var(--faint);
+  font-weight: 700;
   font-family: var(--font-mono);
 }
 
-/* MAIN CONTENT */
-.main-wrapper {
+.nav-btn.active .nav-pill-count {
+  background: var(--primary);
+  color: var(--primary-text);
+}
+
+.sidebar-footer {
+  padding: 0.85rem 1rem;
+  border-top: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--surface2);
+  font-size: 0.72rem;
+}
+
+.status-badge-clean {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-weight: 600;
+  color: #10b981;
+}
+
+.status-dot-clean {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+/* MAIN VIEWPORT */
+.main-viewport {
   display: flex;
   flex-direction: column;
   height: 100dvh;
@@ -277,7 +264,7 @@ svg { display: block; flex-shrink: 0; }
 
 /* TOPBAR */
 .topbar {
-  height: 58px;
+  height: 54px;
   background: var(--surface);
   border-bottom: 1px solid var(--border);
   padding: 0 1.5rem;
@@ -292,23 +279,23 @@ svg { display: block; flex-shrink: 0; }
 .topbar-left {
   display: flex;
   align-items: center;
-  gap: 1rem;
+  gap: 0.75rem;
   flex: 1;
-  max-width: 600px;
+  max-width: 580px;
 }
 
-.menu-toggle-btn {
+.menu-trigger-btn {
   display: none;
   padding: 0.4rem;
   color: var(--muted);
 }
 
-.search-input-wrapper {
+.search-field {
   position: relative;
   width: 100%;
 }
 
-.search-input-wrapper i {
+.search-field i {
   position: absolute;
   left: 0.85rem;
   top: 50%;
@@ -318,29 +305,29 @@ svg { display: block; flex-shrink: 0; }
   color: var(--faint);
 }
 
-.search-input {
+.search-field input {
   width: 100%;
-  height: 38px;
+  height: 36px;
   background: var(--surface2);
   border: 1px solid var(--border);
   border-radius: var(--radius-sm);
-  padding: 0 4rem 0 2.5rem;
+  padding: 0 4rem 0 2.4rem;
   font-size: 0.825rem;
   transition: all var(--trans);
 }
 
-.search-input:focus {
+.search-field input:focus {
   outline: none;
   border-color: var(--border-focus);
   background: var(--surface);
 }
 
-.search-shortcut-badge {
+.search-kbd-pill {
   position: absolute;
-  right: 0.6rem;
+  right: 0.5rem;
   top: 50%;
   transform: translateY(-50%);
-  padding: 0.15rem 0.4rem;
+  padding: 0.15rem 0.35rem;
   background: var(--surface3);
   border-radius: var(--radius-xs);
   font-size: 0.65rem;
@@ -353,7 +340,7 @@ svg { display: block; flex-shrink: 0; }
 .topbar-right {
   display: flex;
   align-items: center;
-  gap: 0.65rem;
+  gap: 0.6rem;
 }
 
 .btn {
@@ -361,10 +348,10 @@ svg { display: block; flex-shrink: 0; }
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  height: 38px;
-  padding: 0 0.95rem;
+  height: 36px;
+  padding: 0 0.85rem;
   border-radius: var(--radius-sm);
-  font-size: 0.825rem;
+  font-size: 0.815rem;
   font-weight: 600;
   border: 1px solid var(--border);
   background: var(--surface);
@@ -381,7 +368,7 @@ svg { display: block; flex-shrink: 0; }
 .btn.primary {
   background: var(--primary);
   border-color: var(--primary);
-  color: #fff;
+  color: var(--primary-text);
   font-weight: 700;
 }
 
@@ -390,12 +377,12 @@ svg { display: block; flex-shrink: 0; }
 }
 
 .btn.icon-only {
-  width: 38px;
+  width: 36px;
   padding: 0;
 }
 
-/* CONTENT SCROLLABLE */
-.content-area {
+/* SCROLLABLE MAIN CONTENT */
+.scroll-content {
   flex: 1;
   overflow-y: auto;
   padding: 1.5rem 1.75rem 3rem;
@@ -404,7 +391,7 @@ svg { display: block; flex-shrink: 0; }
   gap: 1.25rem;
 }
 
-/* EXECUTIVE HEADER (CLEAN & PROFESSIONAL - NO FIXED GIANT HERO) */
+/* HEADER EXECUTIVO CONTEMPORÂNEO */
 .exec-header {
   display: flex;
   align-items: flex-end;
@@ -415,7 +402,7 @@ svg { display: block; flex-shrink: 0; }
 }
 
 .exec-header-text h2 {
-  font-size: 1.45rem;
+  font-size: 1.35rem;
   font-weight: 800;
   letter-spacing: -0.02em;
   color: var(--text);
@@ -423,24 +410,24 @@ svg { display: block; flex-shrink: 0; }
 
 .exec-header-text p {
   color: var(--muted);
-  font-size: 0.85rem;
-  margin-top: 0.2rem;
+  font-size: 0.825rem;
+  margin-top: 0.25rem;
   max-width: 650px;
 }
 
-.kpi-strip {
+.stats-cluster {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
   flex-wrap: wrap;
 }
 
-.kpi-pill {
+.stat-chip {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
-  padding: 0.35rem 0.65rem;
-  border-radius: var(--radius-full);
+  gap: 0.35rem;
+  padding: 0.3rem 0.6rem;
+  border-radius: var(--radius-sm);
   background: var(--surface2);
   border: 1px solid var(--border);
   font-size: 0.75rem;
@@ -448,13 +435,14 @@ svg { display: block; flex-shrink: 0; }
   color: var(--muted);
 }
 
-.kpi-pill strong {
+.stat-chip strong {
   color: var(--text);
   font-weight: 800;
+  font-family: var(--font-mono);
 }
 
-/* QUICK FILTER PILLS & TOOLBAR */
-.filter-toolbar {
+/* SEGMENTED CONTROL / CATEGORY BAR */
+.controls-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -462,22 +450,23 @@ svg { display: block; flex-shrink: 0; }
   flex-wrap: wrap;
 }
 
-.category-pills {
+.segmented-control {
   display: flex;
   align-items: center;
-  gap: 0.4rem;
+  gap: 0.25rem;
+  background: var(--surface2);
+  padding: 0.25rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
   overflow-x: auto;
-  padding-bottom: 0.2rem;
 }
 
-.pill-btn {
+.segment-tab {
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.4rem 0.75rem;
-  border-radius: var(--radius-full);
-  background: var(--surface);
-  border: 1px solid var(--border);
+  padding: 0.35rem 0.75rem;
+  border-radius: calc(var(--radius-sm) - 2px);
   font-size: 0.78rem;
   font-weight: 600;
   color: var(--muted);
@@ -485,30 +474,24 @@ svg { display: block; flex-shrink: 0; }
   white-space: nowrap;
 }
 
-.pill-btn:hover {
-  border-color: var(--border-strong);
+.segment-tab:hover {
   color: var(--text);
 }
 
-.pill-btn.active {
-  background: var(--primary-light);
-  border-color: var(--primary);
-  color: var(--primary);
+.segment-tab.active {
+  background: var(--surface);
+  color: var(--text);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
   font-weight: 700;
 }
 
-.pill-btn i {
-  width: 14px;
-  height: 14px;
-}
-
-.toolbar-controls {
+.toolbar-actions {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
-.select-clean {
+.select-box {
   height: 34px;
   padding: 0 0.75rem;
   border-radius: var(--radius-sm);
@@ -520,57 +503,61 @@ svg { display: block; flex-shrink: 0; }
   cursor: pointer;
 }
 
-.select-clean:focus {
+.select-box:focus {
   outline: none;
   border-color: var(--border-focus);
 }
 
-/* ACTIVE TAG BAR */
+/* TAG BANNER */
 .active-tag-banner {
   display: none;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0.85rem;
+  padding: 0.45rem 0.85rem;
   border-radius: var(--radius-sm);
-  background: var(--primary-light);
-  border: 1px solid var(--primary);
-  font-size: 0.8rem;
-  color: var(--primary);
+  background: var(--surface2);
+  border: 1px solid var(--border-strong);
+  font-size: 0.78rem;
+  color: var(--text);
   font-weight: 600;
 }
 
 .active-tag-banner.show { display: flex; }
 
-.tag-clear-btn {
+.clear-tag-link {
   font-size: 0.75rem;
-  color: var(--primary);
+  color: var(--muted);
   text-decoration: underline;
   cursor: pointer;
 }
 
-/* MAIN GRID LAYOUT (ITEMS + COMPACT SIDEBAR) */
-.workspace-grid {
+/* WORKSPACE GRID */
+.workspace-layout {
   display: grid;
-  grid-template-columns: 1fr 280px;
+  grid-template-columns: 1fr 270px;
   gap: 1.5rem;
   align-items: start;
 }
 
-/* ITEMS CONTAINER */
-.items-stream {
+/* CARDS STREAM */
+.stream-container {
   display: grid;
-  gap: 0.85rem;
+  gap: 1rem;
 }
 
-.items-stream.grid-view {
-  grid-template-columns: repeat(auto-fill, minmax(340px, 1fr));
+.stream-container.grid-view {
+  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
 }
 
 /* ==========================================================================
-   CARTOES ESPECIFICOS POR FORMATO (DESIGN INTELIGENTE & MINIMALISTA)
+   CARDS INTELIGENTES COM A FÓRMULA UNIVERSAL:
+   1. Nome & Stack
+   2. O que é / O que faz
+   3. ⚡ O que entrega
+   4. 💡 Exemplo prático de aplicação
    ========================================================================== */
 
-.item-card {
+.card-item {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
@@ -579,141 +566,122 @@ svg { display: block; flex-shrink: 0; }
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  position: relative;
+  cursor: pointer;
 }
 
-.item-card:hover {
+.card-item:hover {
   border-color: var(--border-strong);
   box-shadow: var(--card-hover-shadow);
   transform: translateY(-2px);
 }
 
-/* CARD TIPO: VÍDEO (ESTILO SIDEBAR DO YOUTUBE) */
-.card-video-horizontal {
+/* CARD TIPO: VÍDEO (HORIZONTAL COMPACTO COM THUMBNAIL REAL) */
+.card-video {
   display: grid;
   grid-template-columns: 160px 1fr;
-  cursor: pointer;
 }
 
-.video-thumb-col {
+.card-video-media {
   position: relative;
   background: #000;
   aspect-ratio: 16 / 9;
   height: 100%;
-  min-height: 100px;
+  min-height: 110px;
   overflow: hidden;
   border-right: 1px solid var(--border);
 }
 
-.video-thumb-col img {
+.card-video-media img {
   width: 100%;
   height: 100%;
   object-fit: cover;
-  transition: transform 300ms ease;
+  transition: transform 250ms ease;
 }
 
-.item-card:hover .video-thumb-col img {
+.card-item:hover .card-video-media img {
   transform: scale(1.05);
 }
 
-.video-play-badge {
+.video-hover-play {
   position: absolute;
   inset: 0;
   display: grid;
   place-items: center;
-  background: rgba(0, 0, 0, 0.35);
+  background: rgba(0, 0, 0, 0.4);
   opacity: 0;
   transition: opacity var(--trans);
 }
 
-.item-card:hover .video-play-badge { opacity: 1; }
+.card-item:hover .video-hover-play { opacity: 1; }
 
-.play-circle-icon {
+.play-bubble {
   width: 34px;
   height: 34px;
   border-radius: 50%;
-  background: var(--primary);
-  color: #fff;
+  background: #ffffff;
+  color: #09090b;
   display: grid;
   place-items: center;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.4);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
 }
 
-.video-duration-tag {
+.video-label-badge {
   position: absolute;
   bottom: 6px;
   right: 6px;
   background: rgba(0, 0, 0, 0.8);
   color: #fff;
-  font-size: 0.65rem;
+  font-size: 0.62rem;
   font-weight: 700;
   padding: 0.1rem 0.35rem;
   border-radius: 3px;
   font-family: var(--font-mono);
 }
 
-.video-info-col {
-  padding: 0.85rem 1rem;
+.card-inner-content {
+  padding: 1rem 1.15rem;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  gap: 0.5rem;
+  gap: 0.6rem;
+  min-width: 0;
 }
 
-/* CARD TIPO: REPOSITÓRIO GITHUB (CARD TÉCNICO CLEAN - SEM IMAGEM GIGANTE) */
+/* CARD TIPO: REPOSITÓRIO GITHUB (ENGENHARIA LIMPA) */
 .card-repo {
-  padding: 1.1rem 1.25rem;
-  cursor: pointer;
+  padding: 1.15rem 1.25rem;
 }
 
-.repo-header {
+.repo-badge-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
 }
 
-.repo-identity {
+.repo-name-mono {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   font-family: var(--font-mono);
-  font-size: 0.825rem;
+  font-size: 0.815rem;
   font-weight: 700;
   color: var(--text);
 }
 
-.repo-identity i {
-  color: var(--faint);
-  width: 17px;
-  height: 17px;
+.repo-name-mono i {
+  width: 16px;
+  height: 16px;
+  opacity: 0.85;
 }
-
-.repo-badges {
-  display: flex;
-  align-items: center;
-  gap: 0.4rem;
-}
-
-.badge-tag {
-  font-size: 0.68rem;
-  font-weight: 700;
-  padding: 0.15rem 0.45rem;
-  border-radius: var(--radius-xs);
-  text-transform: uppercase;
-}
-
-.badge-repo { background: var(--surface2); color: var(--muted); border: 1px solid var(--border); }
-.badge-license { background: var(--surface3); color: var(--faint); font-family: var(--font-mono); font-size: 0.65rem; }
 
 /* CARD TIPO: CARROSSEL (INSTAGRAM / REDES) */
 .card-carousel {
   display: grid;
   grid-template-columns: 120px 1fr;
-  cursor: pointer;
 }
 
-.carousel-thumb-col {
+.carousel-cover-col {
   position: relative;
   background: var(--surface2);
   aspect-ratio: 1 / 1;
@@ -721,45 +689,32 @@ svg { display: block; flex-shrink: 0; }
   border-right: 1px solid var(--border);
 }
 
-.carousel-thumb-col img {
+.carousel-cover-col img {
   width: 100%;
   height: 100%;
   object-fit: cover;
 }
 
-.carousel-slides-count {
+.slides-counter-tag {
   position: absolute;
   top: 6px;
   right: 6px;
   background: rgba(0, 0, 0, 0.75);
-  backdrop-filter: blur(4px);
   color: #fff;
   font-size: 0.65rem;
   font-weight: 800;
-  padding: 0.15rem 0.45rem;
+  padding: 0.15rem 0.4rem;
   border-radius: var(--radius-full);
-  display: flex;
-  align-items: center;
-  gap: 0.25rem;
-}
-
-.carousel-info-col {
-  padding: 0.85rem 1rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.5rem;
 }
 
 /* CARD TIPO: FERRAMENTA WEB */
 .card-tool {
-  padding: 1rem 1.15rem;
+  padding: 1.15rem 1.25rem;
   display: flex;
   gap: 1rem;
-  cursor: pointer;
 }
 
-.tool-icon-col {
+.tool-avatar-square {
   width: 44px;
   height: 44px;
   border-radius: var(--radius-sm);
@@ -771,23 +726,14 @@ svg { display: block; flex-shrink: 0; }
   overflow: hidden;
 }
 
-.tool-icon-col img {
+.tool-avatar-square img {
   width: 26px;
   height: 26px;
   object-fit: contain;
 }
 
-.tool-info-col {
-  flex: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.45rem;
-  min-width: 0;
-}
-
-/* BLOCO COMUM: TITULO E DELIVERABLE */
-.card-title-row {
+/* TÍTULO E CABEÇALHO DO CARD */
+.card-title-line {
   display: flex;
   align-items: flex-start;
   justify-content: space-between;
@@ -795,7 +741,7 @@ svg { display: block; flex-shrink: 0; }
 }
 
 .card-title-text {
-  font-size: 0.925rem;
+  font-size: 0.95rem;
   font-weight: 700;
   color: var(--text);
   line-height: 1.35;
@@ -805,57 +751,82 @@ svg { display: block; flex-shrink: 0; }
   overflow: hidden;
 }
 
-.card-fav-btn {
+.card-favorite-toggle {
   color: var(--faint);
-  padding: 0.25rem;
+  padding: 0.2rem;
   border-radius: var(--radius-xs);
   transition: all var(--trans);
 }
 
-.card-fav-btn:hover { color: var(--accent-amber); }
-.card-fav-btn.is-fav { color: var(--accent-amber); }
+.card-favorite-toggle:hover, .card-favorite-toggle.is-fav {
+  color: #f59e0b;
+}
 
-/* "⚡ O QUE ENTREGA:" - LIMPO E ELEGANTE */
-.deliverable-highlight {
-  display: flex;
-  gap: 0.5rem;
-  padding: 0.5rem 0.75rem;
-  background: var(--surface2);
-  border-radius: var(--radius-xs);
-  border-left: 3px solid var(--accent-amber);
+/* O QUE É (RESUMO CONCISO) */
+.card-summary-desc {
   font-size: 0.8rem;
   color: var(--muted);
   line-height: 1.45;
-}
-
-.deliverable-highlight i {
-  color: var(--accent-amber);
-  width: 14px;
-  height: 14px;
-  flex-shrink: 0;
-  margin-top: 2px;
-}
-
-.deliverable-highlight span {
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   overflow: hidden;
 }
 
+/* ⚡ O QUE ENTREGA */
+.callout-deliverable {
+  display: flex;
+  gap: 0.45rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--deliverable-bg);
+  border-radius: var(--radius-xs);
+  border-left: 2px solid var(--deliverable-border);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.callout-deliverable i {
+  color: var(--deliverable-border);
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* 💡 EXEMPLO PRÁTICO DE USO */
+.callout-example {
+  display: flex;
+  gap: 0.45rem;
+  padding: 0.5rem 0.75rem;
+  background: var(--example-bg);
+  border-radius: var(--radius-xs);
+  border-left: 2px solid var(--example-border);
+  font-size: 0.78rem;
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.callout-example i {
+  color: var(--example-border);
+  width: 14px;
+  height: 14px;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
 /* CARD FOOTER */
-.card-meta-foot {
+.card-foot-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  padding-top: 0.4rem;
+  padding-top: 0.45rem;
   border-top: 1px solid var(--border);
   font-size: 0.72rem;
-  color: var(--faint);
 }
 
-.card-tags-list {
+.card-chips-group {
   display: flex;
   align-items: center;
   gap: 0.35rem;
@@ -863,59 +834,59 @@ svg { display: block; flex-shrink: 0; }
   white-space: nowrap;
 }
 
-.tag-badge-sm {
+.meta-chip-tag {
   background: var(--surface2);
   border: 1px solid var(--border);
   padding: 0.1rem 0.4rem;
   border-radius: var(--radius-xs);
   color: var(--muted);
-  font-size: 0.7rem;
+  font-size: 0.68rem;
   cursor: pointer;
   transition: all var(--trans);
 }
 
-.tag-badge-sm:hover {
-  border-color: var(--primary);
-  color: var(--primary);
+.meta-chip-tag:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
 }
 
-.card-actions-quick {
+.card-button-links {
   display: flex;
   align-items: center;
   gap: 0.35rem;
 }
 
-.action-icon-btn {
+.icon-action-btn {
   padding: 0.3rem;
   border-radius: var(--radius-xs);
   color: var(--muted);
   transition: all var(--trans);
 }
 
-.action-icon-btn:hover {
+.icon-action-btn:hover {
   background: var(--surface3);
-  color: var(--primary);
+  color: var(--text);
 }
 
-/* SIDE PANEL (SEGMENTOS & FILA RÁPIDA) */
+/* SIDE PANEL */
 .side-panel {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-.panel-block {
+.panel-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-md);
-  padding: 1.1rem;
+  padding: 1.15rem;
   box-shadow: var(--card-shadow);
 }
 
-.panel-title {
-  font-size: 0.825rem;
+.panel-header-title {
+  font-size: 0.78rem;
   font-weight: 700;
-  letter-spacing: 0.04em;
+  letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--faint);
   margin-bottom: 0.85rem;
@@ -924,25 +895,25 @@ svg { display: block; flex-shrink: 0; }
   justify-content: space-between;
 }
 
-.segment-item-row {
+.segment-row {
   display: flex;
   flex-direction: column;
-  gap: 0.3rem;
-  padding: 0.45rem 0.5rem;
+  gap: 0.25rem;
+  padding: 0.4rem 0.5rem;
   border-radius: var(--radius-xs);
   cursor: pointer;
   transition: all var(--trans);
 }
 
-.segment-item-row:hover, .segment-item-row.active {
+.segment-row:hover, .segment-row.active {
   background: var(--surface2);
 }
 
-.segment-item-row.active {
-  border-left: 2px solid var(--primary);
+.segment-row.active {
+  border-left: 2px solid var(--text);
 }
 
-.segment-row-top {
+.segment-row-header {
   display: flex;
   justify-content: space-between;
   font-size: 0.78rem;
@@ -950,16 +921,16 @@ svg { display: block; flex-shrink: 0; }
   color: var(--muted);
 }
 
-.segment-row-bar {
+.segment-track {
   height: 4px;
   background: var(--surface3);
   border-radius: var(--radius-full);
   overflow: hidden;
 }
 
-.segment-row-fill {
+.segment-fill {
   height: 100%;
-  background: var(--primary);
+  background: var(--muted);
   border-radius: var(--radius-full);
 }
 
@@ -977,12 +948,12 @@ svg { display: block; flex-shrink: 0; }
 
 .clean-modal.open { display: grid; }
 
-.modal-box {
+.modal-dialog {
   background: var(--surface);
   border: 1px solid var(--border-strong);
   border-radius: var(--radius-lg);
   box-shadow: var(--modal-shadow);
-  width: min(760px, 100%);
+  width: min(780px, 100%);
   max-height: 90vh;
   overflow-y: auto;
   position: relative;
@@ -990,7 +961,7 @@ svg { display: block; flex-shrink: 0; }
   flex-direction: column;
 }
 
-.modal-close-corner {
+.modal-close-icon {
   position: absolute;
   top: 1rem;
   right: 1rem;
@@ -1005,13 +976,12 @@ svg { display: block; flex-shrink: 0; }
   transition: all var(--trans);
 }
 
-.modal-close-corner:hover {
+.modal-close-icon:hover {
   background: var(--surface3);
   color: var(--text);
 }
 
-/* MEDIA NO MODAL */
-.modal-media-header {
+.modal-media-wrap {
   width: 100%;
   background: #000;
   border-bottom: 1px solid var(--border);
@@ -1019,15 +989,15 @@ svg { display: block; flex-shrink: 0; }
   overflow: hidden;
 }
 
-.modal-media-header iframe {
+.modal-media-wrap iframe {
   width: 100%;
   aspect-ratio: 16 / 9;
   border: 0;
   display: block;
 }
 
-/* SLIDER DE CARROSSEL INTERATIVO NO MODAL */
-.carousel-slider-wrap {
+/* CARROSSEL NO MODAL */
+.carousel-slider-view {
   position: relative;
   width: 100%;
   background: #000;
@@ -1038,21 +1008,20 @@ svg { display: block; flex-shrink: 0; }
   justify-content: center;
 }
 
-.carousel-slider-wrap img {
+.carousel-slider-view img {
   max-width: 100%;
   max-height: 100%;
   object-fit: contain;
 }
 
-.slider-nav-btn {
+.slider-btn {
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  width: 38px;
-  height: 38px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: rgba(0, 0, 0, 0.7);
-  backdrop-filter: blur(4px);
   color: #fff;
   display: grid;
   place-items: center;
@@ -1060,26 +1029,26 @@ svg { display: block; flex-shrink: 0; }
   transition: all var(--trans);
 }
 
-.slider-nav-btn:hover { background: rgba(0, 0, 0, 0.95); transform: translateY(-50%) scale(1.08); }
-.slider-prev { left: 1rem; }
-.slider-next { right: 1rem; }
+.slider-btn:hover { background: #000; transform: translateY(-50%) scale(1.08); }
+.slider-btn.prev { left: 1rem; }
+.slider-btn.next { right: 1rem; }
 
-.slider-counter-badge {
+.slider-counter {
   position: absolute;
   bottom: 1rem;
   background: rgba(0, 0, 0, 0.75);
   color: #fff;
-  font-size: 0.75rem;
+  font-size: 0.72rem;
   font-weight: 700;
   padding: 0.2rem 0.6rem;
   border-radius: var(--radius-full);
 }
 
-.modal-content-body {
+.modal-inner-padding {
   padding: 1.5rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
 /* COMMAND PALETTE */
@@ -1096,7 +1065,7 @@ svg { display: block; flex-shrink: 0; }
 
 .cmd-backdrop.open { display: grid; }
 
-.cmd-window {
+.cmd-modal-window {
   width: min(600px, calc(100% - 32px));
   background: var(--surface);
   border: 1px solid var(--border-strong);
@@ -1105,38 +1074,38 @@ svg { display: block; flex-shrink: 0; }
   overflow: hidden;
 }
 
-.cmd-search-header {
+.cmd-input-bar {
   position: relative;
   border-bottom: 1px solid var(--border);
 }
 
-.cmd-search-header i {
+.cmd-input-bar i {
   position: absolute;
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
   color: var(--faint);
-  width: 18px;
-  height: 18px;
+  width: 17px;
+  height: 17px;
 }
 
-.cmd-search-header input {
+.cmd-input-bar input {
   width: 100%;
-  height: 52px;
+  height: 50px;
   border: 0;
   background: transparent;
-  padding: 0 1rem 0 2.85rem;
-  font-size: 0.95rem;
+  padding: 0 1rem 0 2.75rem;
+  font-size: 0.9rem;
   font-weight: 600;
 }
 
-.cmd-results-list {
+.cmd-list-items {
   max-height: 48vh;
   overflow-y: auto;
   padding: 0.4rem;
 }
 
-.cmd-row-item {
+.cmd-entry-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -1147,13 +1116,13 @@ svg { display: block; flex-shrink: 0; }
   transition: all var(--trans);
 }
 
-.cmd-row-item:hover, .cmd-row-item.selected {
-  background: var(--primary-light);
-  color: var(--primary);
+.cmd-entry-row:hover, .cmd-entry-row.selected {
+  background: var(--surface2);
+  color: var(--text);
 }
 
 /* TOAST */
-.toast-notice {
+.toast-bar {
   position: fixed;
   bottom: 1.5rem;
   right: 1.5rem;
@@ -1168,24 +1137,16 @@ svg { display: block; flex-shrink: 0; }
   align-items: center;
   gap: 0.6rem;
   font-weight: 600;
-  font-size: 0.825rem;
+  font-size: 0.815rem;
   transform: translateY(150%);
   opacity: 0;
   transition: all var(--trans);
 }
 
-.toast-notice.show {
-  transform: none;
-  opacity: 1;
-}
+.toast-bar.show { transform: none; opacity: 1; }
+.toast-bar i { color: #10b981; width: 17px; height: 17px; }
 
-.toast-notice i {
-  color: var(--primary);
-  width: 18px;
-  height: 18px;
-}
-
-/* RESPONSIVIDADE E ACESSIBILIDADE OBRIGATORIA */
+/* RESPONSIVIDADE E ACESSIBILIDADE OBRIGATÓRIA */
 @media(max-width:767px) {
   .app { grid-template-columns: 1fr; }
   .sidebar {
@@ -1196,12 +1157,12 @@ svg { display: block; flex-shrink: 0; }
     transition: transform var(--trans);
   }
   .sidebar.open { transform: none; box-shadow: 0 0 40px rgba(0,0,0,0.8); }
-  .menu-toggle-btn { display: inline-flex; }
-  .workspace-grid { grid-template-columns: 1fr; }
+  .menu-trigger-btn { display: inline-flex; }
+  .workspace-layout { grid-template-columns: 1fr; }
   .side-panel { display: none; }
-  .card-video-horizontal { grid-template-columns: 1fr; }
+  .card-video { grid-template-columns: 1fr; }
   .card-carousel { grid-template-columns: 1fr; }
-  .video-thumb-col { aspect-ratio: 16 / 9; }
+  .card-video-media { aspect-ratio: 16 / 9; }
   .exec-header { flex-direction: column; align-items: flex-start; }
 }
 
@@ -1218,171 +1179,171 @@ svg { display: block; flex-shrink: 0; }
 <body>
 
 <div class="app">
-  <!-- SIDEBAR NAVEGAÇÃO -->
+  <!-- SIDEBAR (ESTILO CONTEMPORÂNEO LINEAR / RAYCAST) -->
   <aside class="sidebar" id="sidebar" aria-label="Navegação do Segundo Cérebro">
-    <div class="brand">
-      <div class="brand-icon">N</div>
-      <div class="brand-info">
-        <h1>Nexus Acervo <span style="font-size: 0.65rem; background: var(--primary-light); color: var(--primary); padding: 0.1rem 0.35rem; border-radius: 4px;">PRO</span></h1>
-        <p>Segundo Cérebro & Curadoria</p>
+    <div class="brand-section">
+      <div class="brand-monogram">N</div>
+      <div class="brand-meta">
+        <h1>Nexus Acervo</h1>
+        <p>Segundo Cérebro de Elite</p>
       </div>
     </div>
 
-    <div class="nav-scroll">
+    <div class="nav-body">
       <div>
-        <div class="nav-group-title">Canais & Formatos</div>
-        <nav class="nav-items" id="navKind">
-          <button class="nav-item active" data-kind="all" aria-label="Todos os recursos">
-            <span class="nav-item-left"><i data-lucide="layers"></i> Todos os Itens</span>
-            <span class="nav-count" id="countAll">0</span>
+        <div class="nav-section-title">Canais & Formatos</div>
+        <nav class="nav-list" id="navKind">
+          <button class="nav-btn active" data-kind="all" aria-label="Todos os recursos">
+            <span class="nav-btn-inner"><i data-lucide="layers"></i> Todos os Itens</span>
+            <span class="nav-pill-count" id="countAll">0</span>
           </button>
-          <button class="nav-item" data-kind="vídeo" aria-label="Vídeos e aulas">
-            <span class="nav-item-left"><i data-lucide="play-circle"></i> Vídeos & Aulas</span>
-            <span class="nav-count" id="countVideo">0</span>
+          <button class="nav-btn" data-kind="vídeo" aria-label="Vídeos e aulas de estudo">
+            <span class="nav-btn-inner"><i data-lucide="play-circle"></i> Vídeos & Aulas</span>
+            <span class="nav-pill-count" id="countVideo">0</span>
           </button>
-          <button class="nav-item" data-kind="repositório" aria-label="Repositórios GitHub">
-            <span class="nav-item-left"><i data-lucide="github"></i> Repositórios</span>
-            <span class="nav-count" id="countRepo">0</span>
+          <button class="nav-btn" data-kind="repositório" aria-label="Repositórios GitHub de código">
+            <span class="nav-btn-inner"><i data-lucide="github"></i> Repositórios</span>
+            <span class="nav-pill-count" id="countRepo">0</span>
           </button>
-          <button class="nav-item" data-kind="carrossel" aria-label="Carrosséis do Instagram e redes">
-            <span class="nav-item-left"><i data-lucide="gallery-thumbnails"></i> Carrosséis / Posts</span>
-            <span class="nav-count" id="countCarousel">0</span>
+          <button class="nav-btn" data-kind="carrossel" aria-label="Carrosséis do Instagram e posts">
+            <span class="nav-btn-inner"><i data-lucide="gallery-thumbnails"></i> Carrosséis / Posts</span>
+            <span class="nav-pill-count" id="countCarousel">0</span>
           </button>
-          <button class="nav-item" data-kind="ferramenta" aria-label="Ferramentas web">
-            <span class="nav-item-left"><i data-lucide="wrench"></i> Ferramentas Web</span>
-            <span class="nav-count" id="countTool">0</span>
+          <button class="nav-btn" data-kind="ferramenta" aria-label="Ferramentas web de produtividade">
+            <span class="nav-btn-inner"><i data-lucide="wrench"></i> Ferramentas Web</span>
+            <span class="nav-pill-count" id="countTool">0</span>
           </button>
-          <button class="nav-item" data-kind="conhecimento" aria-label="Conhecimento e guias">
-            <span class="nav-item-left"><i data-lucide="book-open"></i> Conhecimento</span>
-            <span class="nav-count" id="countDoc">0</span>
+          <button class="nav-btn" data-kind="conhecimento" aria-label="Conhecimento, guias e notas">
+            <span class="nav-btn-inner"><i data-lucide="book-open"></i> Conhecimento</span>
+            <span class="nav-pill-count" id="countDoc">0</span>
           </button>
-          <button class="nav-item" data-kind="favorites" aria-label="Meus favoritos">
-            <span class="nav-item-left"><i data-lucide="star"></i> Meus Favoritos</span>
-            <span class="nav-count" id="countFav">0</span>
+          <button class="nav-btn" data-kind="favorites" aria-label="Recursos salvos nos favoritos">
+            <span class="nav-btn-inner"><i data-lucide="star"></i> Meus Favoritos</span>
+            <span class="nav-pill-count" id="countFav">0</span>
           </button>
         </nav>
       </div>
 
       <div>
-        <div class="nav-group-title">Ecossistema & Dados</div>
-        <nav class="nav-items">
-          <button class="nav-item" id="btnOpenApi" aria-label="Abrir API e OpenAPI">
-            <span class="nav-item-left"><i data-lucide="braces"></i> API & OpenAPI</span>
+        <div class="nav-section-title">Ecossistema & Dados</div>
+        <nav class="nav-list">
+          <button class="nav-btn" id="btnOpenApi" aria-label="API e documentação OpenAPI">
+            <span class="nav-btn-inner"><i data-lucide="braces"></i> API & OpenAPI</span>
           </button>
-          <button class="nav-item" id="btnExportJson" aria-label="Exportar acervo em JSON">
-            <span class="nav-item-left"><i data-lucide="download"></i> Exportar Acervo</span>
+          <button class="nav-btn" id="btnExportJson" aria-label="Exportar acervo completo em JSON">
+            <span class="nav-btn-inner"><i data-lucide="download"></i> Exportar Acervo</span>
           </button>
         </nav>
       </div>
     </div>
 
-    <div class="sidebar-foot">
-      <div class="status-indicator">
-        <span class="status-dot"></span>
+    <div class="sidebar-footer">
+      <div class="status-badge-clean">
+        <span class="status-dot-clean"></span>
         <span>Segundo Cérebro Ativo</span>
       </div>
-      <div class="version-tag">v1.3.0 · Edição Segundo Cérebro</div>
+      <span style="font-family: var(--font-mono); color: var(--faint);">v1.4</span>
     </div>
   </aside>
 
-  <!-- MAIN WRAPPER -->
-  <div class="main-wrapper">
+  <!-- VIEWPORT PRINCIPAL -->
+  <div class="main-viewport">
     <!-- TOPBAR -->
     <header class="topbar">
       <div class="topbar-left">
-        <button class="menu-toggle-btn" id="btnMenu" aria-label="Abrir menu lateral"><i data-lucide="menu"></i></button>
-        <div class="search-input-wrapper">
+        <button class="menu-trigger-btn" id="btnMenu" aria-label="Abrir menu de navegação"><i data-lucide="menu"></i></button>
+        <div class="search-field">
           <i data-lucide="search"></i>
-          <input class="search-input" id="searchInput" aria-label="Pesquisar catálogo" placeholder="Buscar vídeos, carrosséis, repositórios, benefícios... (⌘K)">
-          <span class="search-shortcut-badge" id="btnKbdTrigger" title="Atalho Ctrl+K">⌘ K</span>
+          <input id="searchInput" aria-label="Pesquisar catálogo" placeholder="Buscar vídeos, carrosséis, repositórios, exemplos práticos... (⌘K)">
+          <span class="search-kbd-pill" id="btnKbdTrigger" title="Atalho Ctrl+K">⌘ K</span>
         </div>
       </div>
 
       <div class="topbar-right">
-        <button class="btn icon-only" id="btnTheme" aria-label="Alternar tema claro/escuro"><i data-lucide="moon"></i></button>
-        <button class="btn primary" id="btnAddTop" aria-label="Adicionar novo recurso"><i data-lucide="plus"></i> Novo Recurso</button>
+        <button class="btn icon-only" id="btnTheme" aria-label="Alternar tema claro e escuro"><i data-lucide="moon"></i></button>
+        <button class="btn primary" id="btnAddTop" aria-label="Adicionar novo recurso"><i data-lucide="plus"></i> Salvar no Acervo</button>
       </div>
     </header>
 
-    <!-- CONTENT SCROLLABLE -->
-    <main class="content-area" id="content">
-      <!-- EXECUTIVE HEADER (CLEAN & DIRECT - NO GIANT FIXED HERO) -->
+    <!-- CONTENT ÁREA -->
+    <main class="scroll-content" id="content">
+      <!-- HEADER EXECUTIVO LIMPO -->
       <section class="exec-header">
         <div class="exec-header-text">
           <h2>Nexus Acervo · Segundo Cérebro</h2>
-          <p>Seu repositório pessoal de ferramentas, códigos de alto nível, vídeos de estudo e carrosséis com foco direto no que cada um entrega.</p>
+          <p>Repositório pessoal de ferramentas, códigos de alto nível, vídeos de estudo e carrosséis com explicação clara do que é, do que entrega e com exemplo prático de aplicação.</p>
         </div>
 
-        <div class="kpi-strip" aria-label="Estatísticas do Acervo">
-          <div class="kpi-pill"><i data-lucide="database" style="width:13px;height:13px;color:var(--primary);"></i> <strong id="kpiTotal">0</strong> itens</div>
-          <div class="kpi-pill"><i data-lucide="play" style="width:13px;height:13px;color:#ef4444;"></i> <strong id="kpiVideos">0</strong> vídeos</div>
-          <div class="kpi-pill"><i data-lucide="github" style="width:13px;height:13px;"></i> <strong id="kpiRepos">0</strong> repos</div>
-          <div class="kpi-pill"><i data-lucide="gallery-thumbnails" style="width:13px;height:13px;color:var(--accent-pink);"></i> <strong id="kpiCarousels">0</strong> carrosséis</div>
-          <div class="kpi-pill"><i data-lucide="star" style="width:13px;height:13px;color:var(--accent-amber);"></i> <strong id="kpiFavs">0</strong> favoritos</div>
+        <div class="stats-cluster" aria-label="Estatísticas do Acervo">
+          <div class="stat-chip"><i data-lucide="database" style="width:13px;height:13px;"></i> <strong id="kpiTotal">0</strong> itens</div>
+          <div class="stat-chip"><i data-lucide="play" style="width:13px;height:13px;"></i> <strong id="kpiVideos">0</strong> vídeos</div>
+          <div class="stat-chip"><i data-lucide="github" style="width:13px;height:13px;"></i> <strong id="kpiRepos">0</strong> repos</div>
+          <div class="stat-chip"><i data-lucide="gallery-thumbnails" style="width:13px;height:13px;"></i> <strong id="kpiCarousels">0</strong> carrosséis</div>
+          <div class="stat-chip"><i data-lucide="star" style="width:13px;height:13px;color:#f59e0b;"></i> <strong id="kpiFavs">0</strong> favoritos</div>
         </div>
       </section>
 
-      <!-- FILTERS & TOOLBAR -->
-      <section class="filter-toolbar">
-        <div class="category-pills" id="categoryPills">
-          <button class="pill-btn active" data-kind="all"><i data-lucide="layers"></i> Todos</button>
-          <button class="pill-btn" data-kind="vídeo"><i data-lucide="play-circle"></i> Vídeos</button>
-          <button class="pill-btn" data-kind="repositório"><i data-lucide="github"></i> Repositórios</button>
-          <button class="pill-btn" data-kind="carrossel"><i data-lucide="gallery-thumbnails"></i> Carrosséis</button>
-          <button class="pill-btn" data-kind="ferramenta"><i data-lucide="wrench"></i> Ferramentas</button>
-          <button class="pill-btn" data-kind="conhecimento"><i data-lucide="book-open"></i> Conhecimento</button>
+      <!-- BARRA DE CATEGORIAS E CONTROLES -->
+      <section class="controls-bar">
+        <div class="segmented-control" id="categoryPills">
+          <button class="segment-tab active" data-kind="all"><i data-lucide="layers" style="width:14px;height:14px;"></i> Todos</button>
+          <button class="segment-tab" data-kind="vídeo"><i data-lucide="play-circle" style="width:14px;height:14px;"></i> Vídeos</button>
+          <button class="segment-tab" data-kind="repositório"><i data-lucide="github" style="width:14px;height:14px;"></i> Repositórios</button>
+          <button class="segment-tab" data-kind="carrossel"><i data-lucide="gallery-thumbnails" style="width:14px;height:14px;"></i> Carrosséis</button>
+          <button class="segment-tab" data-kind="ferramenta"><i data-lucide="wrench" style="width:14px;height:14px;"></i> Ferramentas</button>
+          <button class="segment-tab" data-kind="conhecimento"><i data-lucide="book-open" style="width:14px;height:14px;"></i> Conhecimento</button>
         </div>
 
-        <div class="toolbar-controls">
-          <select class="select-clean" id="selectSegment" aria-label="Filtrar por segmento">
+        <div class="toolbar-actions">
+          <select class="select-box" id="selectSegment" aria-label="Filtrar por segmento">
             <option value="all">Todos os segmentos</option>
           </select>
 
-          <select class="select-clean" id="selectSort" aria-label="Ordenar itens">
+          <select class="select-box" id="selectSort" aria-label="Ordenar itens">
             <option value="recent">Mais recentes</option>
             <option value="title">Título A–Z</option>
             <option value="segment">Segmento</option>
           </select>
 
-          <div style="display: flex; gap: 0.25rem;">
+          <div style="display: flex; gap: 0.2rem;">
             <button class="btn icon-only active" id="btnViewGrid" style="height: 34px; width: 34px;" aria-label="Visualização em Grade" title="Grade"><i data-lucide="layout-grid" style="width:15px;height:15px;"></i></button>
             <button class="btn icon-only" id="btnViewList" style="height: 34px; width: 34px;" aria-label="Visualização em Lista" title="Lista"><i data-lucide="list" style="width:15px;height:15px;"></i></button>
           </div>
         </div>
       </section>
 
-      <!-- ACTIVE TAG BANNER -->
+      <!-- TAG BANNER -->
       <div class="active-tag-banner" id="activeTagBar">
         <span>Filtrando pela tag: <strong id="activeTagName">#design</strong></span>
-        <button class="tag-clear-btn" id="btnClearTag">Limpar filtro ✕</button>
+        <span class="clear-tag-link" id="btnClearTag">Limpar filtro ✕</span>
       </div>
 
-      <!-- WORKSPACE: STREAM + SIDE PANEL -->
-      <div class="workspace-grid">
+      <!-- WORKSPACE -->
+      <div class="workspace-layout">
         <section>
           <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 0.75rem;">
-            <span style="font-size: 0.78rem; font-weight: 700; color: var(--muted);" id="resultCount">Carregando acervo...</span>
+            <span style="font-size: 0.78rem; font-weight: 700; color: var(--faint);" id="resultCount">Carregando acervo...</span>
           </div>
 
-          <div class="items-stream grid-view" id="itemsList"></div>
+          <div class="stream-container grid-view" id="itemsList"></div>
         </section>
 
-        <!-- LATERAL COMPACTA -->
+        <!-- LATERAL SEGMENTOS -->
         <aside class="side-panel">
-          <div class="panel-block">
-            <div class="panel-title">
+          <div class="panel-card">
+            <div class="panel-header-title">
               <span>Segmentos</span>
               <i data-lucide="folder" style="width:14px;height:14px;"></i>
             </div>
             <div id="segmentsList"></div>
           </div>
 
-          <div class="panel-block">
-            <div class="panel-title">
-              <span>🎬 Aulas Recomendadas</span>
-              <i data-lucide="sparkles" style="width:14px;height:14px;color:var(--primary);"></i>
+          <div class="panel-card">
+            <div class="panel-header-title">
+              <span>🎬 Aulas Rápidas</span>
+              <i data-lucide="sparkles" style="width:14px;height:14px;"></i>
             </div>
-            <div id="videoQueue" style="display: flex; flex-direction: column; gap: 0.6rem;"></div>
+            <div id="videoQueue" style="display: flex; flex-direction: column; gap: 0.5rem;"></div>
           </div>
         </aside>
       </div>
@@ -1390,19 +1351,19 @@ svg { display: block; flex-shrink: 0; }
   </div>
 </div>
 
-<!-- MODAL POLIVALENTE (VÍDEO / CARROSSEL / REPOSITÓRIO / FERRAMENTA) -->
-<div class="clean-modal" id="previewModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-  <div class="modal-box">
-    <button class="modal-close-corner" id="btnModalClose" aria-label="Fechar modal"><i data-lucide="x"></i></button>
+<!-- MODAL POLIVALENTE (VÍDEO / REPOSITÓRIO / CARROSSEL / FERRAMENTA) -->
+<div class="clean-modal" id="detailModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+  <div class="modal-dialog">
+    <button class="modal-close-icon" id="btnModalClose" aria-label="Fechar modal"><i data-lucide="x"></i></button>
 
-    <div class="modal-media-header" id="modalMediaHeader"></div>
+    <div class="modal-media-wrap" id="modalMediaContainer"></div>
 
-    <div class="modal-content-body">
+    <div class="modal-inner-padding">
       <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem;">
         <div>
           <div style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.4rem;">
-            <span class="badge-tag badge-repo" id="modalKind">TIPO</span>
-            <span class="badge-tag" style="background: var(--primary-light); color: var(--primary);" id="modalSegment">SEGMENTO</span>
+            <span class="meta-chip-tag" style="text-transform: uppercase; font-weight: 700;" id="modalKind">TIPO</span>
+            <span class="meta-chip-tag" style="background: var(--surface2); color: var(--muted);" id="modalSegment">SEGMENTO</span>
           </div>
           <h2 style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em;" id="modalTitle">Título do Recurso</h2>
         </div>
@@ -1410,42 +1371,61 @@ svg { display: block; flex-shrink: 0; }
         <button class="btn" id="btnModalFav" style="flex-shrink: 0;"><i data-lucide="star"></i> Salvar</button>
       </div>
 
-      <!-- DESTAQUE O QUE ENTREGA -->
-      <div class="deliverable-highlight" style="padding: 0.85rem 1rem; font-size: 0.875rem;">
+      <!-- O QUE É (DESCRIÇÃO DETALHADA) -->
+      <div style="font-size: 0.85rem; color: var(--muted); line-height: 1.6;">
+        <strong style="color: var(--text); display: block; font-size: 0.78rem; text-transform: uppercase; margin-bottom: 0.25rem;">O que é:</strong>
+        <p id="modalDescription">-</p>
+      </div>
+
+      <!-- O QUE ENTREGA -->
+      <div class="callout-deliverable" style="padding: 0.85rem 1rem; font-size: 0.85rem;">
         <i data-lucide="zap"></i>
         <div>
-          <strong style="color: var(--text); display: block; font-size: 0.78rem; text-transform: uppercase; margin-bottom: 0.2rem;">O que essa ferramenta/conteúdo entrega:</strong>
-          <span id="modalDeliverable" style="-webkit-line-clamp: unset;">-</span>
+          <strong style="color: var(--text); display: block; font-size: 0.78rem; text-transform: uppercase; margin-bottom: 0.2rem;">⚡ O que entrega:</strong>
+          <span id="modalDeliverable">-</span>
         </div>
       </div>
 
-      <p id="modalDescription" style="color: var(--muted); font-size: 0.85rem; line-height: 1.6;"></p>
-
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem; padding: 0.85rem; background: var(--surface2); border-radius: var(--radius-sm); font-size: 0.78rem;">
-        <div><span style="color: var(--faint); display: block;">👥 Indicado Para</span><strong id="modalAudience" style="color: var(--text);">-</strong></div>
-        <div><span style="color: var(--faint); display: block;">📜 Licença / Formato</span><strong id="modalLicense" style="color: var(--text);">-</strong></div>
-        <div><span style="color: var(--faint); display: block;">🌐 Fonte / Origem</span><strong id="modalSource" style="color: var(--text);">-</strong></div>
+      <!-- EXEMPLO PRÁTICO DE USO -->
+      <div class="callout-example" style="padding: 0.85rem 1rem; font-size: 0.85rem;">
+        <i data-lucide="lightbulb"></i>
+        <div>
+          <strong style="color: var(--text); display: block; font-size: 0.78rem; text-transform: uppercase; margin-bottom: 0.2rem;">💡 Exemplo prático de aplicação:</strong>
+          <span id="modalPracticalExample">-</span>
+        </div>
       </div>
 
-      <div style="display: flex; gap: 0.75rem; margin-top: 0.5rem;">
-        <a class="btn primary" id="btnModalDirect" target="_blank" rel="noopener noreferrer" style="flex: 1;"><i data-lucide="external-link"></i> Abrir Link Oficial</a>
+      <!-- DETALHES DE FUNCIONAMENTO (NOTES) -->
+      <div id="modalNotesWrap" style="font-size: 0.825rem; color: var(--muted); line-height: 1.6; background: var(--surface2); padding: 0.85rem 1rem; border-radius: var(--radius-sm);">
+        <strong style="color: var(--text); display: block; font-size: 0.75rem; text-transform: uppercase; margin-bottom: 0.25rem;">Como funciona e para que serve:</strong>
+        <p id="modalNotes">-</p>
+      </div>
+
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(130px, 1fr)); gap: 0.75rem; padding: 0.75rem; background: var(--surface2); border-radius: var(--radius-sm); font-size: 0.75rem;">
+        <div><span style="color: var(--faint); display: block;">👥 Indicado Para</span><strong id="modalAudience" style="color: var(--text);">-</strong></div>
+        <div><span style="color: var(--faint); display: block;">📜 Licença</span><strong id="modalLicense" style="color: var(--text);">-</strong></div>
+        <div><span style="color: var(--faint); display: block;">🌐 Fonte</span><strong id="modalSource" style="color: var(--text);">-</strong></div>
+      </div>
+
+      <div style="display: flex; gap: 0.75rem; margin-top: 0.4rem;">
+        <a class="btn primary" id="btnModalDirect" target="_blank" rel="noopener noreferrer" style="flex: 1;"><i data-lucide="external-link"></i> Abrir Recurso Oficial</a>
         <button class="btn" id="btnModalCopy" style="flex: 1;"><i data-lucide="copy"></i> Copiar Link</button>
       </div>
     </div>
   </div>
 </div>
 
-<!-- MODAL ADICIONAR RECURSO (SEGUNDO CÉREBRO) -->
+<!-- MODAL SALVAR NO ACERVO (+ NOVO RECURSO) -->
 <div class="clean-modal" id="addModal" role="dialog" aria-modal="true" aria-labelledby="addModalTitle">
-  <div class="modal-box" style="max-width: 580px;">
-    <button class="modal-close-corner" id="btnAddModalClose" aria-label="Fechar modal"><i data-lucide="x"></i></button>
+  <div class="modal-dialog" style="max-width: 580px;">
+    <button class="modal-close-icon" id="btnAddModalClose" aria-label="Fechar modal"><i data-lucide="x"></i></button>
     <div style="padding: 1.75rem;">
       <h2 style="font-size: 1.2rem; font-weight: 800;" id="addModalTitle">Salvar no Segundo Cérebro</h2>
-      <p style="color: var(--muted); font-size: 0.825rem; margin-top: 0.2rem;">Adicione carrosséis do Instagram, repositórios do GitHub, vídeos de estudo ou ferramentas.</p>
+      <p style="color: var(--muted); font-size: 0.825rem; margin-top: 0.2rem;">Adicione carrosséis do Instagram, repositórios do GitHub, vídeos de estudo ou ferramentas com exemplo prático.</p>
 
-      <form id="addItemForm" style="display: grid; gap: 0.9rem; margin-top: 1.25rem;">
+      <form id="addItemForm" style="display: grid; gap: 0.85rem; margin-top: 1.25rem;">
         <label style="display: grid; gap: 0.35rem; font-size: 0.8rem; font-weight: 700;">Título / Nome do Recurso
-          <input name="title" required placeholder="Ex.: 5 Modelos Mentais ou Scrapling" style="height: 38px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-sm); padding: 0 0.85rem;">
+          <input name="title" required placeholder="Ex.: Scrapling ou 5 Modelos Mentais" style="height: 38px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-sm); padding: 0 0.85rem;">
         </label>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
@@ -1469,13 +1449,20 @@ svg { display: block; flex-shrink: 0; }
           <input name="url" type="url" required placeholder="https://..." style="height: 38px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-sm); padding: 0 0.85rem;">
         </label>
 
-        <!-- CAMPO EXCLUSIVO PARA CARROSSEL DE IMAGENS -->
         <label id="carouselSlidesField" style="display: grid; gap: 0.35rem; font-size: 0.8rem; font-weight: 700;">📸 URLs das Imagens do Carrossel (uma por linha)
-          <textarea name="slides" placeholder="https://exemplo.com/slide1.jpg&#10;https://exemplo.com/slide2.jpg" style="min-height: 70px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem; font-family: var(--font-mono); font-size: 0.78rem;"></textarea>
+          <textarea name="slides" placeholder="https://exemplo.com/slide1.jpg&#10;https://exemplo.com/slide2.jpg" style="min-height: 65px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem; font-family: var(--font-mono); font-size: 0.78rem;"></textarea>
         </label>
 
-        <label style="display: grid; gap: 0.35rem; font-size: 0.8rem; font-weight: 700;">⚡ O que entrega (em linguagem simples e direta)
-          <textarea name="deliverable" required placeholder="Ex.: 5 técnicas práticas para tomar melhores decisões de negócios sem depender da intuição..." style="min-height: 65px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem;"></textarea>
+        <label style="display: grid; gap: 0.35rem; font-size: 0.8rem; font-weight: 700;">O que é / O que faz (Resumo conciso)
+          <textarea name="description" required placeholder="Ex.: Framework em Python que automatiza coleta de dados da web..." style="min-height: 55px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem;"></textarea>
+        </label>
+
+        <label style="display: grid; gap: 0.35rem; font-size: 0.8rem; font-weight: 700;">⚡ O que entrega (Benefício prático e direto)
+          <textarea name="deliverable" required placeholder="Ex.: Extrai dados de páginas protegidas sem tomar bloqueio de IP..." style="min-height: 55px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem;"></textarea>
+        </label>
+
+        <label style="display: grid; gap: 0.35rem; font-size: 0.8rem; font-weight: 700;">💡 Exemplo prático de aplicação (Onde e como usar)
+          <textarea name="practicalExample" required placeholder="Ex.: Ideal para monitorar preços de concorrentes no Mercado Livre e salvar em planilha..." style="min-height: 55px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-sm); padding: 0.6rem 0.85rem;"></textarea>
         </label>
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
@@ -1484,7 +1471,7 @@ svg { display: block; flex-shrink: 0; }
           </label>
 
           <label style="display: grid; gap: 0.35rem; font-size: 0.8rem; font-weight: 700;">🏷️ Tags (separadas por vírgula)
-            <input name="tags" placeholder="foco, mental-models, ux" style="height: 38px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-sm); padding: 0 0.85rem;">
+            <input name="tags" placeholder="scraping, python, automacao" style="height: 38px; border: 1px solid var(--border); background: var(--surface2); border-radius: var(--radius-sm); padding: 0 0.85rem;">
           </label>
         </div>
 
@@ -1499,8 +1486,8 @@ svg { display: block; flex-shrink: 0; }
 
 <!-- MODAL API -->
 <div class="clean-modal" id="apiModal" role="dialog" aria-modal="true" aria-labelledby="apiModalTitle">
-  <div class="modal-box" style="max-width: 520px;">
-    <button class="modal-close-corner" id="btnApiModalClose" aria-label="Fechar modal"><i data-lucide="x"></i></button>
+  <div class="modal-dialog" style="max-width: 520px;">
+    <button class="modal-close-icon" id="btnApiModalClose" aria-label="Fechar modal"><i data-lucide="x"></i></button>
     <div style="padding: 1.75rem; display: grid; gap: 1rem;">
       <h2 style="font-size: 1.2rem; font-weight: 800;" id="apiModalTitle">API & OpenAPI 3.1</h2>
       <p style="color: var(--muted); font-size: 0.825rem;">Consuma a base canônica de dados de forma automatizada por agentes de IA ou scripts.</p>
@@ -1508,11 +1495,11 @@ svg { display: block; flex-shrink: 0; }
       <div style="background: var(--surface2); border: 1px solid var(--border); border-radius: var(--radius-sm); padding: 1rem; display: grid; gap: 0.6rem;">
         <div>
           <small style="font-weight: 700; color: var(--faint); text-transform: uppercase;">Endpoint Canônico JSON</small>
-          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary);">/data/catalog.json</p>
+          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text);">/data/catalog.json</p>
         </div>
         <div>
           <small style="font-weight: 700; color: var(--faint); text-transform: uppercase;">Especificação OpenAPI</small>
-          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--primary);">/docs/openapi.yaml</p>
+          <p style="font-family: var(--font-mono); font-size: 0.8rem; color: var(--text);">/docs/openapi.yaml</p>
         </div>
       </div>
 
@@ -1526,25 +1513,30 @@ svg { display: block; flex-shrink: 0; }
 
 <!-- COMMAND PALETTE (⌘K) -->
 <div class="cmd-backdrop" id="cmdOverlay" role="dialog" aria-modal="true" aria-label="Pesquisa rápida">
-  <div class="cmd-window">
-    <div class="cmd-search-header">
+  <div class="cmd-modal-window">
+    <div class="cmd-input-bar">
       <i data-lucide="search"></i>
-      <input id="cmdInput" placeholder="Buscar no Segundo Cérebro... (digite algo)">
+      <input id="cmdInput" placeholder="Buscar no Segundo Cérebro... (ex: scraping, modelos mentais, hábitos)">
     </div>
-    <div class="cmd-results-list" id="cmdList"></div>
+    <div class="cmd-list-items" id="cmdList"></div>
   </div>
 </div>
 
-<!-- TOAST NOTICE -->
-<div class="toast-notice" id="toast" role="status">
+<!-- TOAST -->
+<div class="toast-bar" id="toast" role="status">
   <i data-lucide="check-circle-2"></i>
-  <span id="toastMsg">Operação realizada</span>
+  <span id="toastMsg">Operação concluída</span>
 </div>
 
 <!-- SCRIPT DA APLICAÇÃO -->
 <script>
-const seedCatalog = window.NEXUS_CATALOG || { meta: { version: '1.3.0' }, items: [] };
-const storedCustom = JSON.parse(localStorage.getItem('nexus_custom_items') || '[]');
+const seedCatalog = window.NEXUS_CATALOG || { meta: { version: '1.4.0' }, items: [] };
+
+// Deduplica itens customizados com os itens semente
+const storedCustomRaw = JSON.parse(localStorage.getItem('nexus_custom_items') || '[]');
+const seedIds = new Set(seedCatalog.items.map(x => x.id));
+const storedCustom = storedCustomRaw.filter(x => !seedIds.has(x.id));
+
 const storedFavorites = new Set(JSON.parse(localStorage.getItem('nexus_favorites') || '[]'));
 const viewMode = localStorage.getItem('nexus_view_mode') || 'grid';
 
@@ -1621,7 +1613,7 @@ function getFilteredItems() {
 
     if (state.q.trim()) {
       const qNorm = normalizeStr(state.q);
-      const text = normalizeStr([item.title, item.description, item.deliverable, item.segment, item.author || '', ...item.tags].join(' '));
+      const text = normalizeStr([item.title, item.description, item.deliverable, item.practicalExample || '', item.segment, ...item.tags].join(' '));
       if (!text.includes(qNorm)) return false;
     }
     return true;
@@ -1635,12 +1627,12 @@ function getFilteredItems() {
   return list;
 }
 
-// RENDER DOS CARDS ESPECÍFICOS POR FORMATO
+// RENDER DOS CARDS ESPECÍFICOS COM A FÓRMULA UNIVERSAL
 function renderCards() {
   const container = $('#itemsList');
   const items = getFilteredItems();
 
-  container.className = `items-stream ${state.view === 'grid' ? 'grid-view' : ''}`;
+  container.className = `stream-container ${state.view === 'grid' ? 'grid-view' : ''}`;
 
   if (!items.length) {
     container.innerHTML = `
@@ -1658,36 +1650,45 @@ function renderCards() {
 
   container.innerHTML = items.map(item => {
     const isFav = storedFavorites.has(item.id);
+    const summary = esc(item.description || '');
     const deliverableText = esc(item.deliverable || item.description);
-    const audience = esc(item.targetAudience || 'Geral');
+    const exampleText = esc(item.practicalExample || 'Aplicável diretamente no fluxo de trabalho e projetos.');
 
-    // 1. VÍDEO (Estilo YouTube Sidebar Horizontal)
+    // 1. VÍDEO (Layout Horizontal Compacto com Capa Real)
     if (item.kind === 'vídeo' || item.youtubeId) {
       const ytId = item.youtubeId || extractYouTubeId(item.url);
       const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : (item.thumbnail || 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400');
       return `
-        <article class="item-card card-video-horizontal" data-id="${esc(item.id)}">
-          <div class="video-thumb-col">
+        <article class="card-item card-video" data-id="${esc(item.id)}">
+          <div class="card-video-media">
             <img src="${thumb}" alt="${esc(item.title)}" loading="lazy">
-            <div class="video-play-badge"><div class="play-circle-icon"><i data-lucide="play" style="width:16px;height:16px;"></i></div></div>
-            <span class="video-duration-tag">VÍDEO</span>
+            <div class="video-hover-play"><div class="play-bubble"><i data-lucide="play" style="width:16px;height:16px;"></i></div></div>
+            <span class="video-label-badge">VÍDEO</span>
           </div>
-          <div class="video-info-col">
+          <div class="card-inner-content">
             <div>
-              <div class="card-title-row">
+              <div class="card-title-line">
                 <h3 class="card-title-text">${esc(item.title)}</h3>
-                <button class="card-fav-btn ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
               </div>
-              <div class="deliverable-highlight" style="margin-top: 0.4rem;">
+              <p class="card-summary-desc" style="margin-top: 0.25rem;">${summary}</p>
+              
+              <div class="callout-deliverable" style="margin-top: 0.45rem;">
                 <i data-lucide="zap"></i>
-                <span>${deliverableText}</span>
+                <span><strong>O que entrega:</strong> ${deliverableText}</span>
+              </div>
+
+              <div class="callout-example" style="margin-top: 0.35rem;">
+                <i data-lucide="lightbulb"></i>
+                <span><strong>Exemplo prático:</strong> ${exampleText}</span>
               </div>
             </div>
-            <div class="card-meta-foot">
-              <span style="font-size:0.7rem;">👥 ${audience}</span>
-              <div class="card-actions-quick">
-                <button class="action-icon-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-                <a class="action-icon-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir no YouTube"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+
+            <div class="card-foot-actions">
+              <span style="font-size:0.7rem; color:var(--faint);">👥 ${esc(item.targetAudience || 'Geral')}</span>
+              <div class="card-button-links">
+                <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
+                <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir no YouTube"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
               </div>
             </div>
           </div>
@@ -1695,73 +1696,88 @@ function renderCards() {
       `;
     }
 
-    // 2. REPOSITÓRIO GITHUB (Card Técnico Minimalista - Sem Banner Gigante)
+    // 2. REPOSITÓRIO GITHUB (Card Técnico de Engenharia)
     if (item.kind === 'repositório') {
       const repoName = extractGitHubRepo(item.url) || esc(item.title);
       const license = esc(item.license || 'Open Source');
       return `
-        <article class="item-card card-repo" data-id="${esc(item.id)}">
-          <div class="repo-header">
-            <div class="repo-identity">
+        <article class="card-item card-repo" data-id="${esc(item.id)}">
+          <div class="repo-badge-row">
+            <div class="repo-name-mono">
               <i data-lucide="github"></i>
               <span>${esc(repoName)}</span>
             </div>
-            <div class="repo-badges">
-              <span class="badge-tag badge-license">${license}</span>
-              <button class="card-fav-btn ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+            <div style="display: flex; align-items: center; gap: 0.4rem;">
+              <span class="meta-chip-tag">${license}</span>
+              <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
             </div>
           </div>
 
-          <div style="margin: 0.6rem 0;">
+          <div style="margin: 0.5rem 0;">
             <h3 class="card-title-text" style="font-size:0.95rem;">${esc(item.title)}</h3>
-            <div class="deliverable-highlight" style="margin-top: 0.45rem;">
+            <p class="card-summary-desc" style="margin-top: 0.25rem;">${summary}</p>
+
+            <div class="callout-deliverable" style="margin-top: 0.45rem;">
               <i data-lucide="zap"></i>
-              <span>${deliverableText}</span>
+              <span><strong>O que entrega:</strong> ${deliverableText}</span>
+            </div>
+
+            <div class="callout-example" style="margin-top: 0.35rem;">
+              <i data-lucide="lightbulb"></i>
+              <span><strong>Exemplo prático:</strong> ${exampleText}</span>
             </div>
           </div>
 
-          <div class="card-meta-foot">
-            <div class="card-tags-list">
-              ${item.tags.slice(0, 3).map(t => `<span class="tag-badge-sm" data-tag="${esc(t)}">#${esc(t)}</span>`).join('')}
+          <div class="card-foot-actions">
+            <div class="card-chips-group">
+              ${item.tags.slice(0, 3).map(t => `<span class="meta-chip-tag" data-tag="${esc(t)}">#${esc(t)}</span>`).join('')}
             </div>
-            <div class="card-actions-quick">
-              <button class="action-icon-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-              <a class="action-icon-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Acessar Repositório"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+            <div class="card-button-links">
+              <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
+              <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Acessar Repositório"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
             </div>
           </div>
         </article>
       `;
     }
 
-    // 3. CARROSSEL / POST (Instagram / Redes)
+    // 3. CARROSSEL (Instagram / Redes)
     if (item.kind === 'carrossel') {
       const slides = Array.isArray(item.slides) && item.slides.length ? item.slides : [item.thumbnail || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400'];
       const author = esc(item.author || '@instagram');
       return `
-        <article class="item-card card-carousel" data-id="${esc(item.id)}">
-          <div class="carousel-thumb-col">
+        <article class="card-item card-carousel" data-id="${esc(item.id)}">
+          <div class="carousel-cover-col">
             <img src="${slides[0]}" alt="${esc(item.title)}" loading="lazy">
-            <div class="carousel-slides-count"><i data-lucide="images" style="width:12px;height:12px;"></i> ${slides.length}</div>
+            <div class="slides-counter-tag"><i data-lucide="images" style="width:12px;height:12px;"></i> ${slides.length}</div>
           </div>
-          <div class="carousel-info-col">
+          <div class="card-inner-content">
             <div>
-              <div class="card-title-row">
+              <div class="card-title-line">
                 <div>
-                  <span style="font-size: 0.68rem; font-weight: 700; color: var(--accent-pink);">${author}</span>
+                  <span style="font-size: 0.68rem; font-weight: 700; color: var(--muted);">${author}</span>
                   <h3 class="card-title-text">${esc(item.title)}</h3>
                 </div>
-                <button class="card-fav-btn ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
               </div>
-              <div class="deliverable-highlight" style="margin-top: 0.4rem;">
+              <p class="card-summary-desc" style="margin-top: 0.25rem;">${summary}</p>
+
+              <div class="callout-deliverable" style="margin-top: 0.45rem;">
                 <i data-lucide="zap"></i>
-                <span>${deliverableText}</span>
+                <span><strong>O que entrega:</strong> ${deliverableText}</span>
+              </div>
+
+              <div class="callout-example" style="margin-top: 0.35rem;">
+                <i data-lucide="lightbulb"></i>
+                <span><strong>Exemplo prático:</strong> ${exampleText}</span>
               </div>
             </div>
-            <div class="card-meta-foot">
-              <span style="font-size:0.7rem;">📸 Carrossel</span>
-              <div class="card-actions-quick">
-                <button class="action-icon-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-                <a class="action-icon-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir Post Original"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+
+            <div class="card-foot-actions">
+              <span style="font-size:0.7rem; color:var(--faint);">📸 Carrossel</span>
+              <div class="card-button-links">
+                <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
+                <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir no Instagram"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
               </div>
             </div>
           </div>
@@ -1773,29 +1789,36 @@ function renderCards() {
     const favicon = getItemFavicon(item.url);
     const isDoc = item.kind === 'conhecimento' || item.kind === 'diretório';
     return `
-      <article class="item-card card-tool" data-id="${esc(item.id)}">
-        <div class="tool-icon-col">
+      <article class="card-item card-tool" data-id="${esc(item.id)}">
+        <div class="tool-avatar-square">
           ${isDoc 
-            ? `<i data-lucide="book-open" style="width:20px;height:20px;color:var(--primary);"></i>` 
-            : `<img src="${favicon}" alt="${esc(item.title)}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2394a3b8%22 stroke-width=%222%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/></svg>'">`}
+            ? `<i data-lucide="book-open" style="width:20px;height:20px;color:var(--text);"></i>` 
+            : `<img src="${favicon}" alt="${esc(item.title)}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2371717a%22 stroke-width=%222%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/></svg>'">`}
         </div>
-        <div class="tool-info-col">
+        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 0.5rem;">
           <div>
-            <div class="card-title-row">
+            <div class="card-title-line">
               <h3 class="card-title-text">${esc(item.title)}</h3>
-              <button class="card-fav-btn ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+              <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
             </div>
-            <div class="deliverable-highlight" style="margin-top: 0.35rem;">
+            <p class="card-summary-desc" style="margin-top: 0.25rem;">${summary}</p>
+
+            <div class="callout-deliverable" style="margin-top: 0.45rem;">
               <i data-lucide="zap"></i>
-              <span>${deliverableText}</span>
+              <span><strong>O que entrega:</strong> ${deliverableText}</span>
+            </div>
+
+            <div class="callout-example" style="margin-top: 0.35rem;">
+              <i data-lucide="lightbulb"></i>
+              <span><strong>Exemplo prático:</strong> ${exampleText}</span>
             </div>
           </div>
 
-          <div class="card-meta-foot">
-            <span style="font-size:0.7rem; color: var(--primary); font-weight:600;">${esc(item.segment)}</span>
-            <div class="card-actions-quick">
-              <button class="action-icon-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-              <a class="action-icon-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Acessar"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+          <div class="card-foot-actions">
+            <span style="font-size:0.7rem; color:var(--muted); font-weight:600;">${esc(item.segment)}</span>
+            <div class="card-button-links">
+              <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
+              <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Acessar Ferramenta"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
             </div>
           </div>
         </div>
@@ -1810,15 +1833,15 @@ function renderCards() {
 }
 
 function attachCardEvents() {
-  $$('.item-card').forEach(card => {
+  $$('.card-item').forEach(card => {
     card.onclick = e => {
-      if (e.target.closest('.card-fav-btn') || e.target.closest('.action-icon-btn') || e.target.closest('.tag-badge-sm')) return;
+      if (e.target.closest('.card-favorite-toggle') || e.target.closest('.icon-action-btn') || e.target.closest('.meta-chip-tag')) return;
       const item = state.items.find(x => x.id === card.dataset.id);
-      if (item) openPreviewModal(item);
+      if (item) openDetailModal(item);
     };
   });
 
-  $$('.card-fav-btn').forEach(btn => {
+  $$('.card-favorite-toggle').forEach(btn => {
     btn.onclick = e => {
       e.stopPropagation();
       toggleFavorite(btn.dataset.favId);
@@ -1832,7 +1855,7 @@ function attachCardEvents() {
     };
   });
 
-  $$('.tag-badge-sm[data-tag]').forEach(tag => {
+  $$('.meta-chip-tag[data-tag]').forEach(tag => {
     tag.onclick = e => {
       e.stopPropagation();
       filterByTag(tag.dataset.tag);
@@ -1840,57 +1863,67 @@ function attachCardEvents() {
   });
 }
 
-// MODAL POLIVALENTE (VÍDEO / CARROSSEL / REPOSITÓRIO / FERRAMENTA)
-function openPreviewModal(item) {
+// MODAL DE DETALHES
+function openDetailModal(item) {
   state.selectedItem = item;
   state.currentSlideIndex = 0;
-  const header = $('#modalMediaHeader');
+  const mediaContainer = $('#modalMediaContainer');
 
   // VÍDEO: Player Embutido
   const ytId = item.youtubeId || extractYouTubeId(item.url);
   if (item.kind === 'vídeo' || ytId) {
-    header.style.display = 'block';
-    header.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>`;
+    mediaContainer.style.display = 'block';
+    mediaContainer.innerHTML = `<iframe src="https://www.youtube.com/embed/${ytId}?autoplay=1&rel=0" allowfullscreen allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"></iframe>`;
   }
   // CARROSSEL: Slider de Imagens
   else if (item.kind === 'carrossel' && Array.isArray(item.slides) && item.slides.length) {
-    header.style.display = 'block';
+    mediaContainer.style.display = 'block';
     renderCarouselSlider(item.slides);
   }
-  // REPOSITÓRIO / FERRAMENTA: Sem banner gigante no topo
+  // REPOSITÓRIO / FERRAMENTA: Sem banner desnecessário
   else {
-    header.style.display = 'none';
-    header.innerHTML = '';
+    mediaContainer.style.display = 'none';
+    mediaContainer.innerHTML = '';
   }
 
   $('#modalTitle').textContent = item.title;
   $('#modalKind').textContent = item.kind.toUpperCase();
   $('#modalSegment').textContent = item.segment;
-  $('#modalDeliverable').textContent = item.deliverable || item.description;
   $('#modalDescription').textContent = item.description;
+  $('#modalDeliverable').textContent = item.deliverable || item.description;
+  $('#modalPracticalExample').textContent = item.practicalExample || 'Aplicável diretamente nos seus projetos e rotina profissional.';
+  
+  const notesWrap = $('#modalNotesWrap');
+  if (item.notes) {
+    notesWrap.style.display = 'block';
+    $('#modalNotes').textContent = item.notes;
+  } else {
+    notesWrap.style.display = 'none';
+  }
+
   $('#modalAudience').textContent = item.targetAudience || 'Qualquer pessoa';
   $('#modalLicense').textContent = item.license || 'Livre / N/A';
-  $('#modalSource').textContent = item.source || 'Curadoria';
+  $('#modalSource').textContent = item.source || 'Segundo Cérebro';
   $('#btnModalDirect').href = safeUrl(item.url);
 
   const isFav = storedFavorites.has(item.id);
   $('#btnModalFav').innerHTML = `<i data-lucide="star"></i> ${isFav ? 'Remover' : 'Favoritar'}`;
 
-  $('#previewModal').classList.add('open');
+  $('#detailModal').classList.add('open');
   lucide.createIcons();
 }
 
 function renderCarouselSlider(slides) {
-  const header = $('#modalMediaHeader');
+  const container = $('#modalMediaContainer');
   const currentImg = slides[state.currentSlideIndex] || slides[0];
 
-  header.innerHTML = `
-    <div class="carousel-slider-wrap">
+  container.innerHTML = `
+    <div class="carousel-slider-view">
       <img id="carouselSlideImg" src="${currentImg}" alt="Slide">
       ${slides.length > 1 ? `
-        <button class="slider-nav-btn slider-prev" id="btnSlidePrev" aria-label="Slide anterior"><i data-lucide="chevron-left"></i></button>
-        <button class="slider-nav-btn slider-next" id="btnSlideNext" aria-label="Próximo slide"><i data-lucide="chevron-right"></i></button>
-        <span class="slider-counter-badge" id="slideCounter">Slide ${state.currentSlideIndex + 1} de ${slides.length}</span>
+        <button class="slider-btn prev" id="btnSlidePrev" aria-label="Slide anterior"><i data-lucide="chevron-left"></i></button>
+        <button class="slider-btn next" id="btnSlideNext" aria-label="Próximo slide"><i data-lucide="chevron-right"></i></button>
+        <span class="slider-counter" id="slideCounter">Slide ${state.currentSlideIndex + 1} de ${slides.length}</span>
       ` : ''}
     </div>
   `;
@@ -1913,9 +1946,9 @@ function updateSlideDisplay(slides) {
   $('#slideCounter').textContent = `Slide ${state.currentSlideIndex + 1} de ${slides.length}`;
 }
 
-function closePreviewModal() {
-  $('#modalMediaHeader').innerHTML = '';
-  $('#previewModal').classList.remove('open');
+function closeDetailModal() {
+  $('#modalMediaContainer').innerHTML = '';
+  $('#detailModal').classList.remove('open');
 }
 
 // FAVORITOS
@@ -1931,7 +1964,7 @@ function toggleFavorite(id) {
   renderCards();
 }
 
-// FILTRO POR TAG
+// FILTRAGEM POR TAG
 function filterByTag(tag) {
   state.activeTag = tag;
   $('#activeTagName').textContent = `#${tag}`;
@@ -1984,18 +2017,18 @@ function renderSegments() {
   $('#segmentsList').innerHTML = Object.entries(counts)
     .sort((a, b) => b[1] - a[1])
     .map(([s, n]) => `
-      <div class="segment-item-row ${state.segment === s ? 'active' : ''}" data-segment="${esc(s)}" tabindex="0">
-        <div class="segment-row-top">
+      <div class="segment-row ${state.segment === s ? 'active' : ''}" data-segment="${esc(s)}" tabindex="0">
+        <div class="segment-row-header">
           <span>${esc(s)}</span>
-          <span style="font-weight:700;">${n}</span>
+          <span style="font-family: var(--font-mono); font-weight:700;">${n}</span>
         </div>
-        <div class="segment-row-bar">
-          <div class="segment-row-fill" style="width: ${(n / max) * 100}%"></div>
+        <div class="segment-track">
+          <div class="segment-fill" style="width: ${(n / max) * 100}%"></div>
         </div>
       </div>
     `).join('');
 
-  $$('.segment-item-row').forEach(el => {
+  $$('.segment-row').forEach(el => {
     el.onclick = () => {
       const seg = el.dataset.segment;
       state.segment = (state.segment === seg) ? 'all' : seg;
@@ -2010,16 +2043,16 @@ function renderSegments() {
 function renderVideoQueue() {
   const vids = state.items.filter(x => x.youtubeId).slice(0, 3);
   $('#videoQueue').innerHTML = vids.map(v => `
-    <div style="display: flex; gap: 0.6rem; cursor: pointer; align-items: center; padding: 0.4rem; border-radius: var(--radius-xs); background: var(--surface2);" data-queue-id="${esc(v.id)}">
-      <img src="https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg" style="width: 60px; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px;" alt="">
-      <strong style="font-size: 0.75rem; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${esc(v.title)}</strong>
+    <div style="display: flex; gap: 0.5rem; cursor: pointer; align-items: center; padding: 0.35rem 0.5rem; border-radius: var(--radius-xs); background: var(--surface2);" data-queue-id="${esc(v.id)}">
+      <img src="https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg" style="width: 54px; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px;" alt="">
+      <strong style="font-size: 0.72rem; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${esc(v.title)}</strong>
     </div>
   `).join('');
 
   $$('#videoQueue [data-queue-id]').forEach(el => {
     el.onclick = () => {
       const it = state.items.find(x => x.id === el.dataset.queueId);
-      if (it) openPreviewModal(it);
+      if (it) openDetailModal(it);
     };
   });
 }
@@ -2059,7 +2092,6 @@ $('#btnViewList').addEventListener('click', () => {
   renderCards();
 });
 
-// Category pills listener
 function setKindFilter(kind) {
   state.kind = kind;
   $$('#navKind button').forEach(b => b.classList.toggle('active', b.dataset.kind === kind));
@@ -2076,9 +2108,9 @@ $$('#categoryPills button[data-kind]').forEach(btn => {
   btn.addEventListener('click', () => setKindFilter(btn.dataset.kind));
 });
 
-$('#btnModalClose').addEventListener('click', closePreviewModal);
-$('#previewModal').addEventListener('click', e => {
-  if (e.target === $('#previewModal')) closePreviewModal();
+$('#btnModalClose').addEventListener('click', closeDetailModal);
+$('#detailModal').addEventListener('click', e => {
+  if (e.target === $('#detailModal')) closeDetailModal();
 });
 
 $('#btnModalCopy').addEventListener('click', () => {
@@ -2146,7 +2178,9 @@ $('#addItemForm').addEventListener('submit', e => {
   const urlVal = fd.get('url')?.trim();
   const kind = fd.get('kind');
   const segment = fd.get('segment')?.trim() || 'Geral';
-  const deliverable = fd.get('deliverable')?.trim();
+  const description = fd.get('description')?.trim() || '';
+  const deliverable = fd.get('deliverable')?.trim() || '';
+  const practicalExample = fd.get('practicalExample')?.trim() || '';
   const targetAudience = fd.get('targetAudience')?.trim() || 'Qualquer pessoa';
   const rawTags = fd.get('tags')?.trim() || '';
   const rawSlides = fd.get('slides')?.trim() || '';
@@ -2166,8 +2200,9 @@ $('#addItemForm').addEventListener('submit', e => {
     url: urlVal,
     kind: ytId ? 'vídeo' : kind,
     segment,
+    description: description || deliverable,
     deliverable,
-    description: deliverable,
+    practicalExample,
     targetAudience,
     status: 'ativo',
     tags: tags.length ? tags : ['recurso'],
@@ -2186,7 +2221,7 @@ $('#addItemForm').addEventListener('submit', e => {
   renderSegments();
   renderVideoQueue();
   renderCards();
-  showToast('Recurso salvo no Segundo Cérebro! 🎉');
+  showToast('Recurso salvo com sucesso! 🎉');
 });
 
 // MODAL API
@@ -2216,7 +2251,7 @@ $('#btnExportJson').addEventListener('click', () => {
     meta: {
       exportedAt: new Date().toISOString(),
       totalItems: state.items.length,
-      version: '1.3.0',
+      version: '1.4.0',
       source: 'Nexus Acervo · Segundo Cérebro'
     },
     items: state.items
@@ -2256,7 +2291,7 @@ function updateCmdResults(query) {
     cmdCurrentList = state.items.slice(0, 8);
   } else {
     cmdCurrentList = state.items.filter(item => {
-      const haystack = normalizeStr([item.title, item.deliverable, item.description, item.segment, ...item.tags].join(' '));
+      const haystack = normalizeStr([item.title, item.deliverable, item.practicalExample || '', item.description, item.segment, ...item.tags].join(' '));
       return haystack.includes(qNorm);
     }).slice(0, 8);
   }
@@ -2271,22 +2306,22 @@ function updateCmdResults(query) {
   $('#cmdList').innerHTML = cmdCurrentList.map((item, idx) => {
     const isSel = idx === cmdSelectedIndex;
     return `
-      <div class="cmd-row-item ${isSel ? 'selected' : ''}" data-cmd-id="${esc(item.id)}" data-index="${idx}">
+      <div class="cmd-entry-row ${isSel ? 'selected' : ''}" data-cmd-id="${esc(item.id)}" data-index="${idx}">
         <div style="flex: 1; min-width: 0;">
           <strong style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; font-size: 0.85rem;">${esc(item.title)}</strong>
           <small style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; font-size: 0.72rem; color: var(--muted);">${esc(item.deliverable || item.segment)}</small>
         </div>
-        <span class="badge-tag badge-repo" style="font-size: 0.65rem;">${esc(item.kind)}</span>
+        <span class="meta-chip-tag" style="font-size: 0.65rem;">${esc(item.kind)}</span>
       </div>
     `;
   }).join('');
 
-  $$('.cmd-row-item').forEach(el => {
+  $$('.cmd-entry-row').forEach(el => {
     el.addEventListener('click', () => {
       const it = state.items.find(x => x.id === el.dataset.cmdId);
       if (it) {
         closeCmdPalette();
-        openPreviewModal(it);
+        openDetailModal(it);
       }
     });
   });
@@ -2315,7 +2350,7 @@ $('#cmdInput').addEventListener('keydown', e => {
     if (cmdCurrentList[cmdSelectedIndex]) {
       const it = cmdCurrentList[cmdSelectedIndex];
       closeCmdPalette();
-      openPreviewModal(it);
+      openDetailModal(it);
     }
   } else if (e.key === 'Escape') {
     closeCmdPalette();
@@ -2337,7 +2372,7 @@ document.addEventListener('keydown', e => {
     }
   }
   if (e.key === 'Escape') {
-    closePreviewModal();
+    closeDetailModal();
     closeAddModal();
     closeApiModal();
     closeCmdPalette();
