@@ -1,10 +1,11 @@
 {
   "meta": {
     "name": "Nexus Acervo",
-    "version": "1.0.0",
+    "version": "1.1.0",
     "generatedAt": "2026-09-23T13:00:00-03:00",
     "language": "pt-BR",
-    "sourceFile": "Relatorio-de-ferramentas-links-e-informacoes-dos-posts-analisados.md"
+    "sourceFile": "Relatorio-de-ferramentas-links-e-informacoes-dos-posts-analisados.md",
+    "updatedAt": "2026-09-23T20:37:29.963Z"
   },
   "segments": [
     {
@@ -929,6 +930,423 @@
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar."
+    },
+    {
+      "id": "design-shadcn-ui",
+      "title": "shadcn/ui",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://ui.shadcn.com/",
+      "description": "Componentes reutilizáveis, acessíveis e customizáveis construídos com Radix UI e Tailwind CSS.",
+      "tags": [
+        "ui-kit",
+        "react",
+        "tailwind",
+        "design-system",
+        "componentes"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "MIT",
+      "openAccess": true
+    },
+    {
+      "id": "design-aceternity-ui",
+      "title": "Aceternity UI",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://ui.aceternity.com/",
+      "description": "Coleção de componentes modernos e interativos com animações Framer Motion e Tailwind CSS.",
+      "tags": [
+        "animacao",
+        "framer-motion",
+        "tailwind",
+        "componentes",
+        "moderno"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "MIT",
+      "openAccess": true
+    },
+    {
+      "id": "design-uiverse",
+      "title": "Uiverse",
+      "kind": "diretório",
+      "segment": "Design e UX",
+      "url": "https://uiverse.io/",
+      "description": "O maior repositório aberto de elementos de UI em CSS puro e Tailwind criados pela comunidade.",
+      "tags": [
+        "css",
+        "tailwind",
+        "botoes",
+        "cards",
+        "loaders"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "Open Source",
+      "openAccess": true
+    },
+    {
+      "id": "design-coolors",
+      "title": "Coolors",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://coolors.co/",
+      "description": "Gerador ultrarrápido de paletas de cores harmônicas com exportação para CSS, SVG e JSON.",
+      "tags": [
+        "cores",
+        "paleta",
+        "gerador",
+        "contraste"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "openAccess": true
+    },
+    {
+      "id": "design-realtime-colors",
+      "title": "Realtime Colors",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://www.realtimecolors.com/",
+      "description": "Ferramenta para testar e visualizar paletas de cores e fontes em uma aplicação real em tempo real.",
+      "tags": [
+        "cores",
+        "preview",
+        "tipografia",
+        "ui-test"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "openAccess": true
+    },
+    {
+      "id": "design-color-hunt",
+      "title": "Color Hunt",
+      "kind": "diretório",
+      "segment": "Design e UX",
+      "url": "https://colorhunt.co/",
+      "description": "Plataforma aberta com milhares de paletas selecionadas manualmente por designers e artistas.",
+      "tags": [
+        "paleta",
+        "inspiracao",
+        "cores",
+        "designers"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "openAccess": true
+    },
+    {
+      "id": "design-lucide-icons",
+      "title": "Lucide Icons",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://lucide.dev/",
+      "description": "Coleção elegante, leve e consistente com mais de 1.400 ícones SVG abertos para web e mobile.",
+      "tags": [
+        "icones",
+        "svg",
+        "lucide",
+        "open-source"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "ISC",
+      "openAccess": true
+    },
+    {
+      "id": "design-tabler-icons",
+      "title": "Tabler Icons",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://tabler.io/icons",
+      "description": "Mais de 5.200 ícones vetoriais personalizáveis de alta resolução para web e aplicativos.",
+      "tags": [
+        "icones",
+        "tabler",
+        "vetor",
+        "svg"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "MIT",
+      "openAccess": true
+    },
+    {
+      "id": "design-simple-icons",
+      "title": "Simple Icons",
+      "kind": "repositório",
+      "segment": "Design e UX",
+      "url": "https://simpleicons.org/",
+      "description": "Mais de 3.000 ícones SVG oficiais de marcas globais, linguagens de programação e ferramentas de tecnologia.",
+      "tags": [
+        "icones",
+        "logos",
+        "marcas",
+        "svg",
+        "tech"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "CC0-1.0",
+      "openAccess": true
+    },
+    {
+      "id": "design-undraw",
+      "title": "unDraw",
+      "kind": "diretório",
+      "segment": "Design e UX",
+      "url": "https://undraw.co/",
+      "description": "Ilustrações vetoriais abertas e modernas que podem ser customizadas com a cor da sua marca.",
+      "tags": [
+        "ilustracao",
+        "svg",
+        "open-source",
+        "vetores"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "Open Source",
+      "openAccess": true
+    },
+    {
+      "id": "design-humaaans",
+      "title": "Humaaans",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://www.humaaans.com/",
+      "description": "Biblioteca modular de ilustrações de pessoas com posições, roupas e estilos intercambiáveis.",
+      "tags": [
+        "ilustracao",
+        "personagens",
+        "modular",
+        "svg"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "CC BY 4.0",
+      "openAccess": true
+    },
+    {
+      "id": "design-hero-patterns",
+      "title": "Hero Patterns",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://heropatterns.com/",
+      "description": "Coleção de padrões de fundo repetíveis em código SVG puro para enriquecer seções hero e cards.",
+      "tags": [
+        "background",
+        "patterns",
+        "svg",
+        "texturas"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "CC BY 4.0",
+      "openAccess": true
+    },
+    {
+      "id": "design-gsap",
+      "title": "GSAP (GreenSock)",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://gsap.com/",
+      "description": "O padrão da indústria para animações JavaScript robustas, ultra fluidas e de alta performance.",
+      "tags": [
+        "animacao",
+        "javascript",
+        "scrolltrigger",
+        "motion"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "Standard GreenSock",
+      "openAccess": true
+    },
+    {
+      "id": "design-lottiefiles",
+      "title": "LottieFiles",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://lottiefiles.com/",
+      "description": "Plataforma de animações interativas ultraleves em formato JSON para web, iOS e Android.",
+      "tags": [
+        "lottie",
+        "animacao",
+        "json",
+        "micro-interacoes"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "openAccess": true
+    },
+    {
+      "id": "design-animate-css",
+      "title": "Animate.css",
+      "kind": "repositório",
+      "segment": "Design e UX",
+      "url": "https://animate.style/",
+      "description": "Biblioteca pronta para uso de animações CSS cross-browser para botões, modais e transições de página.",
+      "tags": [
+        "css",
+        "animacao",
+        "transicoes",
+        "keyframe"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "MIT",
+      "openAccess": true
+    },
+    {
+      "id": "design-fontshare",
+      "title": "Fontshare",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://www.fontshare.com/",
+      "description": "Serviço de fontes tipográficas gratuitas e de nível profissional (incluindo Satoshi e Cabinet Grotesk).",
+      "tags": [
+        "fontes",
+        "tipografia",
+        "satoshi",
+        "webfonts"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "Free for Commercial",
+      "openAccess": true
+    },
+    {
+      "id": "design-google-fonts",
+      "title": "Google Fonts",
+      "kind": "diretório",
+      "segment": "Design e UX",
+      "url": "https://fonts.google.com/",
+      "description": "Catálogo global com mais de 1.600 famílias de fontes abertas e ícones com CDN de alta disponibilidade.",
+      "tags": [
+        "tipografia",
+        "google",
+        "fontes",
+        "icones"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "license": "OFL",
+      "openAccess": true
+    },
+    {
+      "id": "design-spline",
+      "title": "Spline 3D",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://spline.design/",
+      "description": "Ferramenta de design 3D no navegador com suporte a interações em tempo real e exportação para web.",
+      "tags": [
+        "3d",
+        "webgl",
+        "interativo",
+        "threejs"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "openAccess": true
+    },
+    {
+      "id": "design-shots-so",
+      "title": "Shots.so",
+      "kind": "ferramenta",
+      "segment": "Design e UX",
+      "url": "https://shots.so/",
+      "description": "Crie mockups impressionantes para capturas de tela de aplicativos, websites e postagens sociais.",
+      "tags": [
+        "mockup",
+        "apresentacao",
+        "screenshot",
+        "branding"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "openAccess": true
+    },
+    {
+      "id": "design-mobbin",
+      "title": "Mobbin",
+      "kind": "conhecimento",
+      "segment": "Design e UX",
+      "url": "https://mobbin.com/",
+      "description": "O maior arquivo do mundo de telas reais, fluxos de onboarding e padrões de UI/UX de apps e produtos web.",
+      "tags": [
+        "inspiracao",
+        "ui-ux",
+        "fluxos",
+        "referencias"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Brad Traversy Design Resources",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "openAccess": true
     }
   ]
 }

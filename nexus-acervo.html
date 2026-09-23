@@ -1,78 +1,1871 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Acervo privado de ferramentas, vídeos, repositórios e conhecimento para projetos.">
-<title>Nexus Acervo</title>
-<link rel="preconnect" href="https://api.fontshare.com"><link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="Nexus Acervo - Curadoria premium de ferramentas, repositórios, vídeos e design systems.">
+<title>Nexus Acervo · Hub de Recursos & Engenharia</title>
+<link rel="preconnect" href="https://api.fontshare.com">
+<link href="https://api.fontshare.com/v2/css?f[]=satoshi@400,500,600,700,800&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
 <script src="./data/catalog.js"></script>
 <style>
-/* Art direction: acervo técnico pessoal → preciso, sóbrio, denso. Paleta neutra quente + teal. Satoshi. */
-:root,[data-theme="light"]{--bg:#f7f6f2;--surface:#fbfaf7;--surface2:#fff;--offset:#efede7;--border:#d8d5ce;--text:#25241f;--muted:#66645e;--faint:#85827a;--primary:#01696f;--primary-hover:#09545a;--primary-hi:#d9e9e7;--danger:#9b325e;--warn:#9b5718;--shadow:0 8px 24px oklch(0.25 .02 80/.08);--font:'Satoshi','Helvetica Neue',sans-serif}
-[data-theme="dark"]{--bg:#161614;--surface:#1d1c19;--surface2:#23221f;--offset:#2a2925;--border:#3d3b35;--text:#e8e5de;--muted:#b2afa6;--faint:#908d85;--primary:#65b1b5;--primary-hover:#84c5c7;--primary-hi:#263d3c;--danger:#e07daf;--warn:#e3a15f;--shadow:0 10px 30px oklch(0 0 0/.35)}
-:root{--xs:clamp(.75rem,.7rem + .2vw,.875rem);--sm:clamp(.875rem,.82rem + .2vw,1rem);--base:clamp(1rem,.96rem + .16vw,1.0625rem);--lg:clamp(1.125rem,1.03rem + .3vw,1.375rem);--xl:clamp(1.5rem,1.3rem + .65vw,2rem);--s1:.25rem;--s2:.5rem;--s3:.75rem;--s4:1rem;--s5:1.25rem;--s6:1.5rem;--s8:2rem;--rsm:.375rem;--rmd:.625rem;--rlg:.875rem;--trans:180ms cubic-bezier(.16,1,.3,1)}
-*,*:before,*:after{box-sizing:border-box;margin:0;padding:0}html{scroll-behavior:smooth}body{min-height:100dvh;font-family:var(--font);font-size:var(--base);line-height:1.5;color:var(--text);background:var(--bg);overflow:hidden}button,input,select,textarea{font:inherit;color:inherit}button{cursor:pointer}a{color:inherit}svg{display:block}.skip{position:absolute;left:-9999px;z-index:99;background:var(--primary);color:#fff;padding:var(--s3)}.skip:focus{left:var(--s4);top:var(--s4)}:focus-visible{outline:2px solid var(--primary);outline-offset:2px}
-.app{display:grid;grid-template-columns:248px 1fr;grid-template-rows:64px calc(100dvh - 64px);grid-template-areas:'side top' 'side main'}
-.sidebar{grid-area:side;background:var(--surface);border-right:1px solid var(--border);padding:var(--s4);display:flex;flex-direction:column;min-width:0}.brand{display:flex;align-items:center;gap:var(--s3);height:48px;padding-inline:var(--s2);font-weight:700}.brand svg{width:28px;color:var(--primary)}.brand small{display:block;color:var(--muted);font-weight:500;font-size:var(--xs)}.nav-label{font-size:var(--xs);color:var(--faint);font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin:var(--s6) var(--s3) var(--s2)}.nav{display:grid;gap:var(--s1)}.nav button{border:0;background:transparent;display:flex;align-items:center;gap:var(--s3);min-height:44px;padding:0 var(--s3);border-radius:var(--rmd);font-size:var(--sm);text-align:left}.nav button:hover,.nav button.active{background:var(--primary-hi);color:var(--primary)}.nav i{width:18px}.side-foot{margin-top:auto;border-top:1px solid var(--border);padding-top:var(--s4);font-size:var(--xs);color:var(--muted)}.api-ok{display:flex;align-items:center;gap:var(--s2)}.dot{width:8px;height:8px;border-radius:50%;background:var(--primary)}
-.topbar{grid-area:top;background:color-mix(in oklab,var(--surface) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--border);display:flex;align-items:center;gap:var(--s3);padding:var(--s3) var(--s6);z-index:5}.menu{display:none}.search{flex:1;max-width:640px;position:relative}.search i{position:absolute;width:18px;left:var(--s3);top:13px;color:var(--muted)}.search input{width:100%;height:42px;border:1px solid var(--border);border-radius:var(--rmd);background:var(--bg);padding:0 var(--s10,2.5rem);padding-left:2.5rem}.search input::placeholder{color:var(--faint)}.kbd{position:absolute;right:var(--s3);top:10px;font-size:var(--xs);color:var(--muted);border:1px solid var(--border);border-radius:var(--rsm);padding:2px 6px}.top-actions{margin-left:auto;display:flex;gap:var(--s2)}.icon-btn,.button{border:1px solid var(--border);background:var(--surface2);border-radius:var(--rmd);min-height:44px;padding:0 var(--s4);display:inline-flex;align-items:center;justify-content:center;gap:var(--s2);font-size:var(--sm);font-weight:600}.icon-btn{width:44px;padding:0}.button.primary{background:var(--primary);color:#fff;border-color:var(--primary)}.button.primary:hover{background:var(--primary-hover)}
-main{grid-area:main;overflow-y:auto;padding:var(--s6);scrollbar-gutter:stable}.page-head{display:flex;align-items:end;justify-content:space-between;gap:var(--s4);margin-bottom:var(--s5)}h1{font-size:var(--xl);line-height:1.2}h2{font-size:var(--lg)}h3{font-size:var(--base)}.eyebrow{font-size:var(--xs);font-weight:700;color:var(--primary);text-transform:uppercase;letter-spacing:.08em}.sub{color:var(--muted);font-size:var(--sm);margin-top:var(--s1)}
-.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:var(--s3);margin-bottom:var(--s5)}.kpi{background:var(--surface);border:1px solid color-mix(in oklab,var(--text) 12%,transparent);border-radius:var(--rlg);padding:var(--s4);box-shadow:0 1px 2px oklch(0 0 0/.04)}.kpi-label{display:flex;justify-content:space-between;color:var(--muted);font-size:var(--xs);font-weight:600}.kpi-label i{width:17px;color:var(--primary)}.kpi strong{font-size:var(--xl);display:block;margin-top:var(--s2);font-variant-numeric:tabular-nums}.kpi small{font-size:var(--xs);color:var(--muted)}
-.workspace{display:grid;grid-template-columns:1fr 300px;gap:var(--s4)}.panel{background:var(--surface);border:1px solid color-mix(in oklab,var(--text) 12%,transparent);border-radius:var(--rlg);overflow:hidden}.panel-head{display:flex;align-items:center;justify-content:space-between;gap:var(--s3);padding:var(--s4);border-bottom:1px solid var(--border)}.panel-head p{font-size:var(--xs);color:var(--muted)}.filters{display:flex;gap:var(--s2);padding:var(--s3) var(--s4);border-bottom:1px solid var(--border);overflow:auto}.filters select{height:38px;border:1px solid var(--border);background:var(--surface2);border-radius:var(--rmd);padding:0 var(--s3);font-size:var(--sm)}.view-toggle{display:flex;border:1px solid var(--border);border-radius:var(--rmd);overflow:hidden}.view-toggle button{border:0;background:var(--surface2);width:38px;height:36px;display:grid;place-items:center}.view-toggle button.active{background:var(--primary-hi);color:var(--primary)}.view-toggle i{width:17px}
-.items{padding:var(--s3);display:grid;gap:var(--s2)}.item{display:grid;grid-template-columns:42px 1fr auto;gap:var(--s3);align-items:center;padding:var(--s3);border-radius:var(--rmd);border:1px solid transparent;content-visibility:auto}.item:hover{background:var(--surface2);border-color:var(--border)}.item-icon{width:42px;height:42px;border-radius:var(--rmd);background:var(--offset);display:grid;place-items:center;color:var(--primary)}.item-icon i{width:20px}.item-title{display:flex;align-items:center;gap:var(--s2);font-weight:700;font-size:var(--sm)}.item-desc{font-size:var(--xs);color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis;max-width:62ch}.meta{display:flex;gap:var(--s2);align-items:center;margin-top:var(--s1);font-size:var(--xs);color:var(--faint)}.badge{display:inline-flex;align-items:center;min-height:24px;padding:0 var(--s2);border-radius:999px;background:var(--offset);color:var(--muted);font-size:var(--xs);font-weight:600}.badge.type{background:var(--primary-hi);color:var(--primary)}.open{width:40px;height:40px;border:0;background:transparent;border-radius:var(--rmd);display:grid;place-items:center}.open:hover{background:var(--offset);color:var(--primary)}.open i{width:18px}.empty{text-align:center;padding:var(--s8);color:var(--muted)}
-.aside-list{padding:var(--s3)}.segment{padding:var(--s3);border-radius:var(--rmd);cursor:pointer}.segment:hover{background:var(--surface2)}.seg-top{display:flex;justify-content:space-between;font-size:var(--sm);font-weight:600}.bar{height:6px;background:var(--offset);border-radius:999px;margin-top:var(--s2);overflow:hidden}.bar span{display:block;height:100%;background:var(--primary);border-radius:inherit}.queue{margin-top:var(--s4)}.queue .item{grid-template-columns:36px 1fr;padding:var(--s2)}.queue .item-icon{width:36px;height:36px}.queue .item-desc{max-width:22ch}.queue .open{display:none}
-.drawer{position:fixed;inset:0;z-index:20;display:none}.drawer.open{display:block}.backdrop{position:absolute;inset:0;background:oklch(0 0 0/.4);border:0;width:100%}.drawer-card{position:absolute;right:0;top:0;height:100%;width:min(540px,100%);background:var(--surface);padding:var(--s6);overflow:auto;box-shadow:var(--shadow)}.drawer-top{display:flex;justify-content:space-between;gap:var(--s3)}.drawer form{display:grid;gap:var(--s4);margin-top:var(--s6)}label{display:grid;gap:var(--s2);font-size:var(--sm);font-weight:600}input,textarea,select{border:1px solid var(--border);background:var(--surface2);border-radius:var(--rmd);padding:var(--s3)}textarea{min-height:100px;resize:vertical}.form-actions{display:flex;justify-content:flex-end;gap:var(--s2);margin-top:var(--s3)}.notice{margin-top:var(--s5);padding:var(--s3);border-radius:var(--rmd);background:var(--primary-hi);color:var(--primary);font-size:var(--sm)}
-.cmd{position:fixed;inset:0;z-index:30;display:none;place-items:start center;padding-top:10vh;background:oklch(0 0 0/.42)}.cmd.open{display:grid}.cmd-box{width:min(620px,calc(100% - 32px));background:var(--surface);border:1px solid var(--border);border-radius:var(--rlg);box-shadow:var(--shadow);overflow:hidden}.cmd-box input{width:100%;border:0;border-radius:0;padding:var(--s4)}.cmd-results{max-height:55vh;overflow:auto;padding:var(--s2)}.cmd-results button{width:100%;border:0;background:transparent;text-align:left;padding:var(--s3);border-radius:var(--rmd)}.cmd-results button:hover{background:var(--offset)}
-.toast{position:fixed;bottom:var(--s5);right:var(--s5);z-index:50;background:var(--text);color:var(--bg);padding:var(--s3) var(--s4);border-radius:var(--rmd);box-shadow:var(--shadow);transform:translateY(120%);opacity:0;transition:all var(--trans)}.toast.show{transform:none;opacity:1}
-@media(max-width:1100px){.workspace{grid-template-columns:1fr}.aside-panel{display:none}.kpis{grid-template-columns:repeat(2,1fr)}}
-@media(max-width:767px){body{overflow:auto}.app{display:block}.sidebar{position:fixed;z-index:40;inset:0 auto 0 0;width:270px;transform:translateX(-100%);transition:transform var(--trans);box-shadow:var(--shadow)}.sidebar.open{transform:none}.topbar{position:sticky;top:0;height:60px}.menu{display:grid}main{overflow:visible;padding:var(--s4)}.page-head{align-items:start}.page-head .button{font-size:0;width:44px;padding:0}.page-head .button i{margin:0}.kpis{grid-template-columns:repeat(2,1fr);gap:var(--s2)}.kpi{padding:var(--s3)}.kpi strong{font-size:var(--lg)}.filters{padding:var(--s2);}.item{grid-template-columns:40px 1fr auto;padding:var(--s2)}.item-desc{max-width:44vw}.meta .badge:not(.type){display:none}.kbd{display:none}.top-actions .button{display:none}.search{max-width:none}.panel-head{align-items:start}.view-toggle{display:none}}
-@media(max-width:410px){.kpis{grid-template-columns:1fr 1fr}.kpi small{display:none}.item-icon{width:38px;height:38px}.item-desc{max-width:42vw}.topbar{padding-inline:var(--s3)}}
-@media(prefers-reduced-motion:reduce){*,*:before,*:after{animation-duration:.01ms!important;transition-duration:.01ms!important;scroll-behavior:auto!important}}
+/* ==========================================================================
+   NEXUS ACERVO - DESIGN SYSTEM PREMIUM (Linear / Raycast Aesthetic)
+   ========================================================================== */
+:root, [data-theme="light"] {
+  --bg: #f8fafc;
+  --bg-gradient: radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.05) 0%, transparent 40%),
+                     radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.04) 0%, transparent 40%);
+  --surface: #ffffff;
+  --surface-glass: rgba(255, 255, 255, 0.82);
+  --surface2: #f1f5f9;
+  --surface3: #e2e8f0;
+  --border: rgba(15, 23, 42, 0.08);
+  --border-focus: rgba(6, 182, 212, 0.5);
+  --text: #0f172a;
+  --muted: #475569;
+  --faint: #94a3b8;
+  --primary: #0891b2;
+  --primary-hover: #0e7490;
+  --primary-light: rgba(8, 145, 178, 0.1);
+  --primary-glow: rgba(8, 145, 178, 0.25);
+  --accent: #6366f1;
+  --accent-light: rgba(99, 102, 241, 0.1);
+  --star: #eab308;
+  --star-bg: rgba(234, 179, 8, 0.12);
+  --danger: #e11d48;
+  --danger-light: rgba(225, 29, 72, 0.1);
+  --card-shadow: 0 4px 16px -2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03);
+  --card-shadow-hover: 0 16px 32px -8px rgba(8, 145, 178, 0.12), 0 4px 12px rgba(15, 23, 42, 0.06);
+  --modal-shadow: 0 25px 50px -12px rgba(15, 23, 42, 0.25);
+  --font: 'Satoshi', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+[data-theme="dark"] {
+  --bg: #090a0f;
+  --bg-gradient: radial-gradient(circle at 10% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 45%),
+                     radial-gradient(circle at 90% 80%, rgba(99, 102, 241, 0.08) 0%, transparent 45%);
+  --surface: #11131a;
+  --surface-glass: rgba(17, 19, 26, 0.85);
+  --surface2: #181b24;
+  --surface3: #222734;
+  --border: rgba(255, 255, 255, 0.08);
+  --border-focus: rgba(6, 182, 212, 0.6);
+  --text: #f1f5f9;
+  --muted: #94a3b8;
+  --faint: #64748b;
+  --primary: #06b6d4;
+  --primary-hover: #22d3ee;
+  --primary-light: rgba(6, 182, 212, 0.12);
+  --primary-glow: rgba(6, 182, 212, 0.35);
+  --accent: #818cf8;
+  --accent-light: rgba(129, 140, 248, 0.12);
+  --star: #facc15;
+  --star-bg: rgba(250, 204, 21, 0.14);
+  --danger: #f43f5e;
+  --danger-light: rgba(244, 63, 94, 0.14);
+  --card-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.4);
+  --card-shadow-hover: 0 20px 40px -10px rgba(6, 182, 212, 0.2), 0 0 20px rgba(6, 182, 212, 0.1);
+  --modal-shadow: 0 25px 60px -15px rgba(0, 0, 0, 0.7);
+}
+
+:root {
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 16px;
+  --radius-full: 9999px;
+  --trans: 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+*, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; }
+body {
+  min-height: 100dvh;
+  font-family: var(--font);
+  font-size: 0.9375rem;
+  line-height: 1.55;
+  color: var(--text);
+  background: var(--bg);
+  background-image: var(--bg-gradient);
+  background-attachment: fixed;
+  overflow: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+
+button, input, select, textarea { font: inherit; color: inherit; }
+button { cursor: pointer; border: 0; background: transparent; }
+a { color: inherit; text-decoration: none; }
+svg { display: block; flex-shrink: 0; }
+
+.skip { position: absolute; left: -9999px; z-index: 100; background: var(--primary); color: #fff; padding: 0.75rem 1.25rem; font-weight: 600; border-radius: var(--radius-md); }
+.skip:focus { left: 1rem; top: 1rem; }
+:focus-visible { outline: 2px solid var(--primary); outline-offset: 2px; }
+
+/* ==========================================================================
+   LAYOUT PRINCIPAL
+   ========================================================================== */
+.app {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  grid-template-rows: 68px calc(100dvh - 68px);
+  grid-template-areas: 'side top' 'side main';
+}
+
+/* SIDEBAR */
+.sidebar {
+  grid-area: side;
+  background: var(--surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-right: 1px solid var(--border);
+  padding: 1.25rem 1rem;
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  z-index: 20;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.5rem 0.5rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.brand-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  display: grid;
+  place-items: center;
+  color: #fff;
+  box-shadow: 0 4px 12px var(--primary-glow);
+}
+.brand-text { font-weight: 800; font-size: 1.05rem; letter-spacing: -0.02em; line-height: 1.2; }
+.brand-text small { display: block; font-weight: 500; font-size: 0.75rem; color: var(--muted); }
+
+.nav-label {
+  font-size: 0.725rem;
+  color: var(--faint);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  margin: 1.25rem 0.5rem 0.5rem;
+}
+
+.nav { display: grid; gap: 0.25rem; }
+.nav button {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  min-height: 42px;
+  padding: 0 0.75rem;
+  border-radius: var(--radius-md);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--muted);
+  transition: all var(--trans);
+  text-align: left;
+  position: relative;
+}
+.nav button i { width: 18px; height: 18px; color: var(--faint); transition: color var(--trans); }
+.nav button:hover { background: var(--surface2); color: var(--text); }
+.nav button:hover i { color: var(--primary); }
+.nav button.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+}
+.nav button.active i { color: var(--primary); }
+.nav button .nav-count {
+  margin-left: auto;
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: var(--surface3);
+  color: var(--muted);
+}
+.nav button.active .nav-count {
+  background: var(--primary);
+  color: #fff;
+}
+
+.side-foot {
+  margin-top: auto;
+  border-top: 1px solid var(--border);
+  padding-top: 1rem;
+  font-size: 0.75rem;
+  color: var(--muted);
+  display: grid;
+  gap: 0.35rem;
+}
+.status-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-weight: 600;
+  color: var(--primary);
+}
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--primary);
+  box-shadow: 0 0 8px var(--primary);
+  animation: pulse-dot 2s infinite ease-in-out;
+}
+@keyframes pulse-dot { 0%, 100% { opacity: 1; } 50% { opacity: 0.4; } }
+
+/* TOPBAR */
+.topbar {
+  grid-area: top;
+  background: var(--surface-glass);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 1.5rem;
+  z-index: 15;
+}
+.menu-btn { display: none; }
+
+.search-box {
+  flex: 1;
+  max-width: 580px;
+  position: relative;
+}
+.search-box i {
+  position: absolute;
+  left: 0.875rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  height: 18px;
+  color: var(--faint);
+  pointer-events: none;
+}
+.search-box input {
+  width: 100%;
+  height: 42px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface2);
+  padding: 0 4.5rem 0 2.5rem;
+  font-size: 0.875rem;
+  transition: all var(--trans);
+}
+.search-box input:focus {
+  background: var(--surface);
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+.search-box input::placeholder { color: var(--faint); }
+.search-kbd {
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: var(--muted);
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 4px;
+  padding: 2px 6px;
+  pointer-events: none;
+}
+
+.top-actions {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.btn {
+  border: 1px solid var(--border);
+  background: var(--surface);
+  color: var(--text);
+  border-radius: var(--radius-md);
+  min-height: 42px;
+  padding: 0 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: all var(--trans);
+}
+.btn:hover { background: var(--surface2); border-color: var(--border-focus); }
+.btn.primary {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  border-color: transparent;
+  box-shadow: 0 4px 14px var(--primary-glow);
+}
+.btn.primary:hover {
+  filter: brightness(1.1);
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px var(--primary-glow);
+}
+.btn.icon-only {
+  width: 42px;
+  padding: 0;
+}
+.btn i { width: 18px; height: 18px; }
+
+/* MAIN CONTENT */
+main {
+  grid-area: main;
+  overflow-y: auto;
+  padding: 1.5rem;
+  scrollbar-gutter: stable;
+}
+
+.page-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.eyebrow {
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--primary);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+h1 {
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  line-height: 1.2;
+}
+.subtitle {
+  color: var(--muted);
+  font-size: 0.9375rem;
+  margin-top: 0.25rem;
+}
+
+/* KPIS */
+.kpis {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1rem;
+  margin-bottom: 1.5rem;
+}
+.kpi-card {
+  background: var(--surface-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  padding: 1rem 1.25rem;
+  box-shadow: var(--card-shadow);
+  transition: transform var(--trans), border-color var(--trans);
+}
+.kpi-card:hover {
+  transform: translateY(-2px);
+  border-color: var(--border-focus);
+}
+.kpi-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: var(--muted);
+  font-size: 0.775rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+.kpi-header i { width: 18px; height: 18px; color: var(--primary); }
+.kpi-value {
+  font-size: 1.85rem;
+  font-weight: 800;
+  display: block;
+  margin-top: 0.35rem;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.03em;
+}
+.kpi-desc { font-size: 0.75rem; color: var(--faint); font-weight: 500; }
+
+/* WORKSPACE LAYOUT */
+.workspace {
+  display: grid;
+  grid-template-columns: 1fr 310px;
+  gap: 1.25rem;
+  align-items: start;
+}
+
+.panel {
+  background: var(--surface-glass);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--card-shadow);
+  overflow: hidden;
+}
+.panel-head {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+}
+.panel-head h2 { font-size: 1.15rem; font-weight: 800; letter-spacing: -0.02em; }
+.panel-head p { font-size: 0.8rem; color: var(--muted); }
+
+/* CONTROLES E FILTROS */
+.controls-bar {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  padding: 0.875rem 1.25rem;
+  border-bottom: 1px solid var(--border);
+  background: var(--surface2);
+  align-items: center;
+}
+.select-wrapper { position: relative; }
+.select-wrapper select {
+  height: 38px;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  padding: 0 2rem 0 0.875rem;
+  font-size: 0.85rem;
+  font-weight: 600;
+  color: var(--text);
+  appearance: none;
+  cursor: pointer;
+  transition: all var(--trans);
+}
+.select-wrapper select:hover { border-color: var(--border-focus); }
+.select-wrapper::after {
+  content: '▾';
+  position: absolute;
+  right: 0.75rem;
+  top: 50%;
+  transform: translateY(-50%);
+  pointer-events: none;
+  font-size: 0.75rem;
+  color: var(--muted);
+}
+
+.view-toggle {
+  display: flex;
+  border: 1px solid var(--border);
+  background: var(--surface);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-left: auto;
+}
+.view-toggle button {
+  width: 38px;
+  height: 36px;
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  transition: all var(--trans);
+}
+.view-toggle button:hover { color: var(--text); }
+.view-toggle button.active {
+  background: var(--primary-light);
+  color: var(--primary);
+  font-weight: 700;
+}
+.view-toggle i { width: 17px; height: 17px; }
+
+/* TAG FILTRADA ATIVA */
+.active-tag-bar {
+  display: none;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.25rem;
+  background: var(--accent-light);
+  border-bottom: 1px solid var(--border);
+  font-size: 0.825rem;
+  color: var(--accent);
+}
+.active-tag-bar.show { display: flex; }
+.tag-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  background: var(--accent);
+  color: #fff;
+  font-weight: 700;
+  font-size: 0.75rem;
+}
+.tag-clear-btn {
+  margin-left: auto;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+/* ==========================================================================
+   CARDS & ITENS (LISTA & GRADE)
+   ========================================================================== */
+.items {
+  padding: 1rem;
+  display: grid;
+  gap: 0.65rem;
+  content-visibility: auto;
+}
+
+/* MODO GRADE (GRID VIEW) */
+.items.grid-view {
+  grid-template-columns: repeat(auto-fill, minmax(310px, 1fr));
+  gap: 1rem;
+  padding: 1.25rem;
+}
+
+.item-card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: all var(--trans);
+  position: relative;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.02);
+}
+.item-card:hover {
+  transform: translateY(-3px);
+  border-color: var(--border-focus);
+  box-shadow: var(--card-shadow-hover);
+}
+
+/* CARD HEADER */
+.card-top {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.card-icon {
+  width: 42px;
+  height: 42px;
+  border-radius: var(--radius-md);
+  background: var(--surface2);
+  display: grid;
+  place-items: center;
+  color: var(--primary);
+  flex-shrink: 0;
+  border: 1px solid var(--border);
+  transition: transform var(--trans), background var(--trans);
+}
+.item-card:hover .card-icon {
+  transform: scale(1.05);
+  background: var(--primary-light);
+}
+.card-icon i { width: 20px; height: 20px; }
+
+.card-title-group { flex: 1; min-width: 0; }
+.card-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.card-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 2px;
+}
+.pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  font-size: 0.7rem;
+  font-weight: 700;
+  background: var(--surface2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+}
+.pill.primary {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-color: rgba(6, 182, 212, 0.2);
+}
+.pill.accent {
+  background: var(--accent-light);
+  color: var(--accent);
+}
+
+/* FAVORITE BUTTON */
+.fav-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-md);
+  display: grid;
+  place-items: center;
+  color: var(--faint);
+  transition: all var(--trans);
+  flex-shrink: 0;
+}
+.fav-btn:hover {
+  color: var(--star);
+  background: var(--star-bg);
+  transform: scale(1.15);
+}
+.fav-btn.is-fav {
+  color: var(--star);
+  fill: var(--star);
+}
+.fav-btn i { width: 18px; height: 18px; }
+
+/* CARD BODY */
+.card-desc {
+  font-size: 0.825rem;
+  color: var(--muted);
+  line-height: 1.45;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* CARD TAGS */
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+}
+.tag-chip {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 7px;
+  border-radius: var(--radius-full);
+  background: var(--surface2);
+  color: var(--muted);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all var(--trans);
+}
+.tag-chip:hover {
+  background: var(--primary-light);
+  color: var(--primary);
+  border-color: var(--border-focus);
+}
+
+/* CARD FOOTER */
+.card-foot {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: auto;
+  padding-top: 0.65rem;
+  border-top: 1px solid var(--border);
+  font-size: 0.75rem;
+  color: var(--faint);
+}
+.card-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.action-icon {
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  display: grid;
+  place-items: center;
+  color: var(--muted);
+  transition: all var(--trans);
+}
+.action-icon:hover {
+  background: var(--surface3);
+  color: var(--primary);
+}
+.action-icon i { width: 16px; height: 16px; }
+
+/* MODO LISTA (ROW VIEW) */
+.items:not(.grid-view) .item-card {
+  flex-direction: row;
+  align-items: center;
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+}
+.items:not(.grid-view) .card-top { flex: 0 0 260px; }
+.items:not(.grid-view) .card-desc {
+  flex: 1;
+  -webkit-line-clamp: 1;
+  font-size: 0.85rem;
+}
+.items:not(.grid-view) .card-tags {
+  flex: 0 0 180px;
+  overflow: hidden;
+  max-height: 24px;
+}
+.items:not(.grid-view) .card-foot {
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+  flex: 0 0 auto;
+}
+
+/* ASIDE RAILS */
+.aside-list { padding: 0.75rem; display: grid; gap: 0.25rem; }
+.segment-item {
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-md);
+  cursor: pointer;
+  transition: all var(--trans);
+}
+.segment-item:hover, .segment-item.active { background: var(--surface2); }
+.segment-top {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+.progress-bar {
+  height: 5px;
+  background: var(--surface3);
+  border-radius: var(--radius-full);
+  margin-top: 0.4rem;
+  overflow: hidden;
+}
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--primary), var(--accent));
+  border-radius: inherit;
+  transition: width 0.3s ease;
+}
+
+/* EMPTY STATE */
+.empty-state {
+  text-align: center;
+  padding: 4rem 1.5rem;
+  display: grid;
+  place-items: center;
+  gap: 0.75rem;
+}
+.empty-state i { width: 48px; height: 48px; color: var(--faint); }
+.empty-state h3 { font-size: 1.15rem; font-weight: 700; }
+.empty-state p { color: var(--muted); font-size: 0.875rem; max-width: 320px; }
+
+/* ==========================================================================
+   DRAWERS (SLIDE-OVER MODALS)
+   ========================================================================== */
+.drawer { position: fixed; inset: 0; z-index: 50; display: none; }
+.drawer.open { display: block; }
+.drawer-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.5);
+  backdrop-filter: blur(4px);
+  width: 100%;
+  border: 0;
+}
+.drawer-card {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  width: min(560px, 100%);
+  background: var(--surface);
+  padding: 2rem;
+  overflow-y: auto;
+  box-shadow: var(--modal-shadow);
+  border-left: 1px solid var(--border);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+.drawer-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+.drawer-head h2 { font-size: 1.4rem; font-weight: 800; letter-spacing: -0.02em; }
+
+/* FORMULÁRIO */
+form { display: grid; gap: 1rem; }
+label { display: grid; gap: 0.35rem; font-size: 0.85rem; font-weight: 700; }
+label input, label select, label textarea {
+  border: 1px solid var(--border);
+  background: var(--surface2);
+  border-radius: var(--radius-md);
+  padding: 0.65rem 0.875rem;
+  font-size: 0.875rem;
+  transition: all var(--trans);
+}
+label textarea { min-height: 90px; resize: vertical; }
+label input:focus, label select:focus, label textarea:focus {
+  background: var(--surface);
+  border-color: var(--border-focus);
+  box-shadow: 0 0 0 3px var(--primary-light);
+}
+.form-actions { display: flex; justify-content: flex-end; gap: 0.75rem; margin-top: 0.5rem; }
+
+/* DRAWER DE DETALHES */
+.detail-meta-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 0.75rem;
+  padding: 1rem;
+  background: var(--surface2);
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border);
+}
+.detail-meta-item small { display: block; font-size: 0.7rem; color: var(--faint); font-weight: 700; text-transform: uppercase; }
+.detail-meta-item strong { font-size: 0.875rem; font-weight: 700; }
+.detail-actions {
+  display: flex;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+.detail-actions .btn { flex: 1; }
+
+/* COMMAND PALETTE */
+.cmd-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 60;
+  display: none;
+  place-items: start center;
+  padding-top: 12vh;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+}
+.cmd-overlay.open { display: grid; }
+.cmd-box {
+  width: min(640px, calc(100% - 32px));
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--modal-shadow);
+  overflow: hidden;
+}
+.cmd-header {
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+.cmd-header i {
+  position: absolute;
+  left: 1.25rem;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 20px;
+  height: 20px;
+  color: var(--faint);
+}
+.cmd-header input {
+  width: 100%;
+  height: 56px;
+  border: 0;
+  background: transparent;
+  padding: 0 1.25rem 0 3.25rem;
+  font-size: 1rem;
+  font-weight: 600;
+}
+.cmd-list {
+  max-height: 50vh;
+  overflow-y: auto;
+  padding: 0.5rem;
+}
+.cmd-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1rem;
+  border-radius: var(--radius-md);
+  text-align: left;
+  transition: all var(--trans);
+}
+.cmd-item:hover, .cmd-item.selected {
+  background: var(--primary-light);
+  color: var(--primary);
+}
+.cmd-item-icon {
+  width: 32px;
+  height: 32px;
+  border-radius: var(--radius-sm);
+  background: var(--surface2);
+  display: grid;
+  place-items: center;
+}
+.cmd-item-text strong { display: block; font-size: 0.9rem; }
+.cmd-item-text small { color: var(--muted); font-size: 0.75rem; }
+.cmd-foot {
+  padding: 0.6rem 1.25rem;
+  border-top: 1px solid var(--border);
+  background: var(--surface2);
+  font-size: 0.725rem;
+  color: var(--faint);
+  display: flex;
+  gap: 1rem;
+}
+
+/* TOAST */
+.toast {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  z-index: 100;
+  background: var(--surface);
+  color: var(--text);
+  border: 1px solid var(--border);
+  padding: 0.75rem 1.25rem;
+  border-radius: var(--radius-md);
+  box-shadow: var(--modal-shadow);
+  transform: translateY(120%);
+  opacity: 0;
+  transition: all var(--trans);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-weight: 600;
+  font-size: 0.875rem;
+}
+.toast.show { transform: none; opacity: 1; }
+.toast i { width: 18px; height: 18px; color: var(--primary); }
+
+/* RESPONSIVIDADE */
+@media (max-width: 1100px) {
+  .workspace { grid-template-columns: 1fr; }
+  .aside-panel { display: none; }
+  .kpis { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media(max-width:767px){
+  body { overflow: auto; }
+  .app { display: block; }
+  .sidebar {
+    position: fixed;
+    inset: 0 auto 0 0;
+    width: 280px;
+    transform: translateX(-100%);
+    transition: transform var(--trans);
+    box-shadow: var(--modal-shadow);
+  }
+  .sidebar.open { transform: none; }
+  .topbar { position: sticky; top: 0; height: 60px; padding: 0 1rem; }
+  .menu-btn { display: grid; place-items: center; }
+  main { overflow: visible; padding: 1rem; }
+  .kpis { grid-template-columns: repeat(2, 1fr); gap: 0.75rem; }
+  .kpi-card { padding: 0.875rem; }
+  .kpi-value { font-size: 1.5rem; }
+  .search-kbd { display: none; }
+  .top-actions .btn:not(.icon-only) { display: none; }
+  .items.grid-view { grid-template-columns: 1fr; }
+  .items:not(.grid-view) .item-card { flex-direction: column; align-items: flex-start; }
+  .items:not(.grid-view) .card-top { flex: 1; width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *:before, *:after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
 </style>
 </head>
 <body>
 <a class="skip" href="#content">Pular para o conteúdo</a>
+
 <div class="app">
-<aside class="sidebar" id="sidebar" aria-label="Navegação principal">
-<div class="brand"><svg aria-label="Nexus Acervo" viewBox="0 0 32 32" fill="none"><path d="M5 8.5 16 3l11 5.5v15L16 29 5 23.5v-15Z" stroke="currentColor" stroke-width="2"/><path d="m10 11 6 3 6-3M16 14v10" stroke="currentColor" stroke-width="2"/></svg><div>Nexus Acervo<small>Base privada de conhecimento</small></div></div>
-<div class="nav-label">Biblioteca</div><nav class="nav" id="nav">
-<button class="active" data-kind="all"><i data-lucide="layout-dashboard"></i>Visão geral</button>
-<button data-kind="ferramenta"><i data-lucide="wrench"></i>Ferramentas</button>
-<button data-kind="vídeo"><i data-lucide="play-square"></i>Vídeos</button>
-<button data-kind="repositório"><i data-lucide="github"></i>Repositórios</button>
-<button data-kind="conhecimento"><i data-lucide="notebook-tabs"></i>Conhecimento</button>
-</nav><div class="nav-label">Integração</div><nav class="nav"><button id="apiBtn"><i data-lucide="braces"></i>API & dados</button><button id="exportBtn"><i data-lucide="download"></i>Exportar JSON</button></nav>
-<div class="side-foot"><div class="api-ok"><span class="dot"></span>Catálogo pronto para API</div><div id="version">v1.0.0 · atualização 23/09/2026</div></div>
-</aside>
-<header class="topbar"><button class="icon-btn menu" id="menuBtn" aria-label="Abrir menu"><i data-lucide="menu"></i></button><div class="search"><i data-lucide="search"></i><input id="search" aria-label="Pesquisar no acervo" placeholder="Buscar ferramenta, vídeo, tag ou assunto…"><span class="kbd">⌘ K</span></div><div class="top-actions"><button class="icon-btn" id="themeBtn" aria-label="Alternar tema"><i data-lucide="moon"></i></button><button class="button" id="addTop"><i data-lucide="plus"></i>Novo item</button></div></header>
-<main id="content"><div class="page-head"><div><div class="eyebrow">Painel de conhecimento</div><h1 id="pageTitle">Seu acervo, organizado.</h1><p class="sub" id="pageSub">Ferramentas, vídeos, repositórios e referências em uma única base.</p></div><button class="button primary" id="addBtn"><i data-lucide="plus"></i>Adicionar item</button></div>
-<section class="kpis" aria-label="Indicadores"><article class="kpi"><div class="kpi-label">Itens catalogados<i data-lucide="library"></i></div><strong id="totalKpi">0</strong><small>na base atual</small></article><article class="kpi"><div class="kpi-label">Para assistir<i data-lucide="clock-3"></i></div><strong id="videoKpi">0</strong><small>vídeos na fila</small></article><article class="kpi"><div class="kpi-label">Open source<i data-lucide="git-fork"></i></div><strong id="repoKpi">0</strong><small>repositórios mapeados</small></article><article class="kpi"><div class="kpi-label">Segmentos<i data-lucide="layers-3"></i></div><strong id="segmentKpi">0</strong><small>áreas organizadas</small></article></section>
-<div class="workspace"><section class="panel"><div class="panel-head"><div><h2>Biblioteca</h2><p id="resultCount">Carregando catálogo…</p></div><div class="view-toggle" aria-label="Visualização"><button class="active" aria-label="Lista"><i data-lucide="list"></i></button><button aria-label="Grade"><i data-lucide="layout-grid"></i></button></div></div><div class="filters"><select id="segmentFilter" aria-label="Filtrar por segmento"><option value="all">Todos os segmentos</option></select><select id="statusFilter" aria-label="Filtrar por status"><option value="all">Todos os status</option></select><select id="sortFilter" aria-label="Ordenar"><option value="recent">Mais recentes</option><option value="title">Título A–Z</option><option value="segment">Segmento</option></select></div><div class="items" id="items"></div></section>
-<aside><section class="panel aside-panel"><div class="panel-head"><div><h2>Segmentos</h2><p>Distribuição do catálogo</p></div></div><div class="aside-list" id="segments"></div></section><section class="panel queue"><div class="panel-head"><div><h2>Próximos vídeos</h2><p>Fila de aprendizado</p></div></div><div class="items" id="queue"></div></section></aside></div></main>
+  <!-- SIDEBAR -->
+  <aside class="sidebar" id="sidebar" aria-label="Navegação principal">
+    <div class="brand">
+      <div class="brand-icon"><i data-lucide="compass"></i></div>
+      <div class="brand-text">Nexus Acervo<small>Hub de Recursos & Engenharia</small></div>
+    </div>
+
+    <div class="nav-label">Biblioteca</div>
+    <nav class="nav" id="navKind">
+      <button class="active" data-kind="all"><i data-lucide="layout-dashboard"></i>Visão geral <span class="nav-count" id="countAll">0</span></button>
+      <button data-kind="favorites"><i data-lucide="star"></i>Favoritos <span class="nav-count" id="countFav">0</span></button>
+      <button data-kind="ferramenta"><i data-lucide="wrench"></i>Ferramentas <span class="nav-count" id="countTool">0</span></button>
+      <button data-kind="diretório"><i data-lucide="library"></i>Diretórios <span class="nav-count" id="countDir">0</span></button>
+      <button data-kind="repositório"><i data-lucide="github"></i>Repositórios <span class="nav-count" id="countRepo">0</span></button>
+      <button data-kind="vídeo"><i data-lucide="play-square"></i>Vídeos <span class="nav-count" id="countVideo">0</span></button>
+      <button data-kind="conhecimento"><i data-lucide="notebook-tabs"></i>Conhecimento <span class="nav-count" id="countDoc">0</span></button>
+    </nav>
+
+    <div class="nav-label">Ecossistema</div>
+    <nav class="nav">
+      <button id="btnOpenApi"><i data-lucide="braces"></i>API & OpenAPI</button>
+      <button id="btnExportJson"><i data-lucide="download"></i>Exportar Catálogo</button>
+    </nav>
+
+    <div class="side-foot">
+      <div class="status-pill"><span class="status-dot"></span><span>Catálogo Ativo & Validado</span></div>
+      <div id="versionLabel">v1.1.0 · Brad Traversy Curadoria</div>
+    </div>
+  </aside>
+
+  <!-- TOPBAR -->
+  <header class="topbar">
+    <button class="btn icon-only menu-btn" id="btnMenu" aria-label="Abrir menu"><i data-lucide="menu"></i></button>
+
+    <div class="search-box">
+      <i data-lucide="search"></i>
+      <input id="searchInput" aria-label="Pesquisar catálogo" placeholder="Buscar ferramentas, tags, design, frameworks… (⌘K)">
+      <span class="search-kbd">⌘ K</span>
+    </div>
+
+    <div class="top-actions">
+      <button class="btn icon-only" id="btnTheme" aria-label="Alternar tema"><i data-lucide="moon"></i></button>
+      <button class="btn primary" id="btnAddTop"><i data-lucide="plus"></i>Novo recurso</button>
+    </div>
+  </header>
+
+  <!-- MAIN VIEW -->
+  <main id="content">
+    <div class="page-header">
+      <div>
+        <div class="eyebrow">Workstation Curada</div>
+        <h1 id="pageTitle">Seu acervo de elite, organizado.</h1>
+        <p class="subtitle" id="pageSub">Ferramentas de design, inteligência artificial, engenharia e referências.</p>
+      </div>
+      <button class="btn primary" id="btnAddMain"><i data-lucide="plus"></i>Adicionar item</button>
+    </div>
+
+    <!-- KPIS -->
+    <section class="kpis" aria-label="Indicadores">
+      <article class="kpi-card">
+        <div class="kpi-header">Itens Catalogados<i data-lucide="layers"></i></div>
+        <strong class="kpi-value" id="kpiTotal">0</strong>
+        <div class="kpi-desc">recursos disponíveis</div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-header">Design & UX<i data-lucide="palette"></i></div>
+        <strong class="kpi-value" id="kpiDesign">0</strong>
+        <div class="kpi-desc">ferramentas de interface</div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-header">Favoritos<i data-lucide="star"></i></div>
+        <strong class="kpi-value" id="kpiFavs">0</strong>
+        <div class="kpi-desc">marcados para acesso rápido</div>
+      </article>
+      <article class="kpi-card">
+        <div class="kpi-header">Segmentos<i data-lucide="grid"></i></div>
+        <strong class="kpi-value" id="kpiSegments">0</strong>
+        <div class="kpi-desc">áreas de especialidade</div>
+      </article>
+    </section>
+
+    <!-- WORKSPACE -->
+    <div class="workspace">
+      <!-- PAINEL CENTRAL -->
+      <section class="panel">
+        <div class="panel-head">
+          <div>
+            <h2>Biblioteca de Recursos</h2>
+            <p id="resultCount">Carregando acervo…</p>
+          </div>
+          <div class="view-toggle" aria-label="Alternar visualização">
+            <button id="btnViewList" class="active" aria-label="Visualização em Lista" title="Visualização em Lista"><i data-lucide="list"></i></button>
+            <button id="btnViewGrid" aria-label="Visualização em Grade" title="Visualização em Grade"><i data-lucide="layout-grid"></i></button>
+          </div>
+        </div>
+
+        <!-- FILTROS -->
+        <div class="controls-bar">
+          <div class="select-wrapper">
+            <select id="selectSegment" aria-label="Filtrar por segmento">
+              <option value="all">Todos os segmentos</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <select id="selectStatus" aria-label="Filtrar por status">
+              <option value="all">Todos os status</option>
+            </select>
+          </div>
+
+          <div class="select-wrapper">
+            <select id="selectSort" aria-label="Ordenar">
+              <option value="recent">Mais recentes</option>
+              <option value="title">Título A–Z</option>
+              <option value="segment">Segmento</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- TAG FILTRADA ATIVA -->
+        <div class="active-tag-bar" id="activeTagBar">
+          <span>Filtrando pela tag:</span>
+          <span class="tag-badge" id="activeTagName">#design</span>
+          <button class="tag-clear-btn" id="btnClearTag">✕ Limpar filtro</button>
+        </div>
+
+        <!-- LISTA / GRADE DE ITENS -->
+        <div class="items" id="itemsList"></div>
+      </section>
+
+      <!-- ASIDE RAILS -->
+      <aside>
+        <section class="panel aside-panel">
+          <div class="panel-head">
+            <div>
+              <h2>Segmentos</h2>
+              <p>Distribuição do conhecimento</p>
+            </div>
+          </div>
+          <div class="aside-list" id="segmentsList"></div>
+        </section>
+
+        <section class="panel queue" style="margin-top: 1.25rem;">
+          <div class="panel-head">
+            <div>
+              <h2>Destaques de Design</h2>
+              <p>Top ferramentas do repositório</p>
+            </div>
+          </div>
+          <div class="items" id="designQueue" style="padding: 0.75rem;"></div>
+        </section>
+      </aside>
+    </div>
+  </main>
 </div>
-<section class="drawer" id="drawer" aria-hidden="true"><button class="backdrop" aria-label="Fechar painel"></button><div class="drawer-card" role="dialog" aria-modal="true" aria-labelledby="drawerTitle"><div class="drawer-top"><div><div class="eyebrow">Curadoria</div><h2 id="drawerTitle">Adicionar ao acervo</h2></div><button class="icon-btn close" aria-label="Fechar"><i data-lucide="x"></i></button></div><form id="itemForm"><label>Título<input name="title" required placeholder="Nome do recurso"></label><label>URL<input name="url" type="url" required placeholder="https://"></label><label>Tipo<select name="kind"><option>ferramenta</option><option>vídeo</option><option>repositório</option><option>conhecimento</option><option>diretório</option></select></label><label>Segmento<input name="segment" required placeholder="IA e automação"></label><label>Descrição<textarea name="description" required placeholder="Como esse recurso ajuda nos projetos"></textarea></label><label>Tags<input name="tags" placeholder="api, automação, github"></label><div class="form-actions"><button class="button close" type="button">Cancelar</button><button class="button primary" type="submit">Adicionar na sessão</button></div></form><p class="notice">Itens adicionados aqui ficam na sessão atual. Para persistir e disponibilizar à API, inclua-os em <strong>data/catalog.json</strong> e execute <strong>npm run sync</strong>.</p></div></section>
-<section class="drawer" id="apiDrawer" aria-hidden="true"><button class="backdrop" aria-label="Fechar painel"></button><div class="drawer-card" role="dialog" aria-modal="true" aria-labelledby="apiTitle"><div class="drawer-top"><div><div class="eyebrow">Integração</div><h2 id="apiTitle">API & dados</h2></div><button class="icon-btn close" aria-label="Fechar"><i data-lucide="x"></i></button></div><div class="notice">Fonte canônica: <strong>data/catalog.json</strong>. Contrato: <strong>schema/catalog.schema.json</strong>.</div><div style="margin-top:1.5rem;display:grid;gap:1rem"><h3>Endpoints previstos</h3><p><code>GET /api/v1/items</code> — lista com filtros <code>kind</code>, <code>segment</code>, <code>tag</code> e <code>q</code>.</p><p><code>GET /api/v1/items/:id</code> — item individual.</p><p><code>GET /api/v1/segments</code> — segmentos e contagens.</p><h3>Consumo estático imediato</h3><p>Agentes podem ler o JSON bruto autenticando no GitHub privado, ou consumir uma API implantada a partir da especificação OpenAPI incluída.</p></div></div></section>
-<div class="cmd" id="cmd"><div class="cmd-box" role="dialog" aria-modal="true" aria-label="Pesquisa rápida"><input id="cmdInput" placeholder="Digite para localizar qualquer item…"><div class="cmd-results" id="cmdResults"></div></div></div><div class="toast" id="toast" role="status"></div>
+
+<!-- DRAWER: ADICIONAR ITEM -->
+<section class="drawer" id="addDrawer" aria-hidden="true">
+  <button class="drawer-backdrop" aria-label="Fechar painel"></button>
+  <div class="drawer-card" role="dialog" aria-modal="true" aria-labelledby="addDrawerTitle">
+    <div class="drawer-head">
+      <div>
+        <div class="eyebrow">Novo Recurso</div>
+        <h2 id="addDrawerTitle">Adicionar ao Acervo</h2>
+      </div>
+      <button class="btn icon-only close-drawer" aria-label="Fechar"><i data-lucide="x"></i></button>
+    </div>
+
+    <form id="addItemForm">
+      <label>Título do Recurso
+        <input name="title" required placeholder="Ex.: Aceternity UI">
+      </label>
+      <label>URL de Acesso
+        <input name="url" type="url" required placeholder="https://exemplo.com">
+      </label>
+      <label>Tipo
+        <select name="kind">
+          <option>ferramenta</option>
+          <option>diretório</option>
+          <option>repositório</option>
+          <option>vídeo</option>
+          <option>conhecimento</option>
+        </select>
+      </label>
+      <label>Segmento
+        <input name="segment" required list="segmentOptions" placeholder="Design e UX, IA e automação...">
+        <datalist id="segmentOptions"></datalist>
+      </label>
+      <label>Descrição
+        <textarea name="description" required placeholder="Explique como esse recurso agrega aos projetos..."></textarea>
+      </label>
+      <label>Tags (separadas por vírgula)
+        <input name="tags" placeholder="ui-kit, react, tailwind">
+      </label>
+      <div class="form-actions">
+        <button class="btn close-drawer" type="button">Cancelar</button>
+        <button class="btn primary" type="submit">Salvar no Acervo</button>
+      </div>
+    </form>
+  </div>
+</section>
+
+<!-- DRAWER: DETALHES DO ITEM -->
+<section class="drawer" id="detailDrawer" aria-hidden="true">
+  <button class="drawer-backdrop" aria-label="Fechar painel"></button>
+  <div class="drawer-card" role="dialog" aria-modal="true" aria-labelledby="detailTitle">
+    <div class="drawer-head">
+      <div>
+        <div class="eyebrow" id="detailKind">Ferramenta</div>
+        <h2 id="detailTitle">Nome do Item</h2>
+      </div>
+      <button class="btn icon-only close-drawer" aria-label="Fechar"><i data-lucide="x"></i></button>
+    </div>
+
+    <p id="detailDesc" style="color: var(--muted); font-size: 0.95rem; line-height: 1.6;"></p>
+
+    <div class="detail-meta-grid">
+      <div class="detail-meta-item">
+        <small>Segmento</small>
+        <strong id="detailSegment">-</strong>
+      </div>
+      <div class="detail-meta-item">
+        <small>Status</small>
+        <strong id="detailStatus">-</strong>
+      </div>
+      <div class="detail-meta-item">
+        <small>Licença</small>
+        <strong id="detailLicense">-</strong>
+      </div>
+      <div class="detail-meta-item">
+        <small>Fonte</small>
+        <strong id="detailSource">-</strong>
+      </div>
+    </div>
+
+    <div>
+      <div style="font-size: 0.75rem; font-weight: 700; text-transform: uppercase; color: var(--faint); margin-bottom: 0.5rem;">Tags Relacionadas</div>
+      <div class="card-tags" id="detailTags"></div>
+    </div>
+
+    <div class="detail-actions">
+      <button class="btn" id="btnDetailCopy"><i data-lucide="copy"></i>Copiar Link</button>
+      <button class="btn" id="btnDetailFav"><i data-lucide="star"></i>Favoritar</button>
+      <a class="btn primary" id="btnDetailOpen" href="#" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link"></i>Acessar Recurso</a>
+    </div>
+  </div>
+</section>
+
+<!-- DRAWER: API & OPENAPI -->
+<section class="drawer" id="apiDrawer" aria-hidden="true">
+  <button class="drawer-backdrop" aria-label="Fechar painel"></button>
+  <div class="drawer-card" role="dialog" aria-modal="true" aria-labelledby="apiTitle">
+    <div class="drawer-head">
+      <div>
+        <div class="eyebrow">Integração</div>
+        <h2 id="apiTitle">API REST & OpenAPI 3.1</h2>
+      </div>
+      <button class="btn icon-only close-drawer" aria-label="Fechar"><i data-lucide="x"></i></button>
+    </div>
+    <div style="display: grid; gap: 1rem;">
+      <p style="color: var(--muted);">O Nexus Acervo possui contrato estrito e OpenAPI 3.1 para consumo por agentes de IA e aplicações externas.</p>
+      <div style="padding: 1rem; background: var(--surface2); border-radius: var(--radius-md); border: 1px solid var(--border);">
+        <strong>Endpoints Canônicos</strong>
+        <p style="font-family: monospace; font-size: 0.8rem; margin-top: 0.4rem; color: var(--primary);">GET /data/catalog.json</p>
+        <p style="font-family: monospace; font-size: 0.8rem; color: var(--primary);">GET /docs/openapi.yaml</p>
+      </div>
+      <button class="btn primary" id="btnCopyApiEndpoint"><i data-lucide="copy"></i>Copiar URL do Catálogo JSON</button>
+    </div>
+  </div>
+</section>
+
+<!-- COMMAND PALETTE (⌘K) -->
+<div class="cmd-overlay" id="cmdOverlay" role="dialog" aria-modal="true" aria-label="Pesquisa rápida">
+  <div class="cmd-box">
+    <div class="cmd-header">
+      <i data-lucide="search"></i>
+      <input id="cmdInput" placeholder="Digite para buscar qualquer recurso, tag ou assunto...">
+    </div>
+    <div class="cmd-list" id="cmdList"></div>
+    <div class="cmd-foot">
+      <span>↑↓ Navegar</span>
+      <span>↵ Abrir link</span>
+      <span>ESC Fechar</span>
+    </div>
+  </div>
+</div>
+
+<!-- TOAST -->
+<div class="toast" id="toast" role="status">
+  <i data-lucide="check-circle-2"></i>
+  <span id="toastMsg">Ação concluída com sucesso</span>
+</div>
+
+<!-- SCRIPT PRINCIPAL -->
 <script>
-const seed=window.NEXUS_CATALOG||{meta:{version:'0'},items:[],segments:[]};const state={items:[...seed.items],kind:'all',segment:'all',status:'all',q:'',sort:'recent'};const $=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];const icons={ferramenta:'wrench',vídeo:'play',repositório:'github',conhecimento:'book-open',diretório:'library'};
-function norm(v=''){return v.normalize('NFD').replace(/[\u0300-\u036f]/g,'').toLowerCase()}
-function filtered(){let r=state.items.filter(x=>(state.kind==='all'||x.kind===state.kind)&&(state.segment==='all'||x.segment===state.segment)&&(state.status==='all'||x.status===state.status)&&norm([x.title,x.description,x.segment,...x.tags].join(' ')).includes(norm(state.q)));if(state.sort==='title')r.sort((a,b)=>a.title.localeCompare(b.title));if(state.sort==='segment')r.sort((a,b)=>a.segment.localeCompare(b.segment));return r}
-function itemHtml(x){return `<article class="item"><div class="item-icon"><i data-lucide="${icons[x.kind]||'link'}"></i></div><div><div class="item-title">${esc(x.title)} <span class="badge type">${esc(x.kind)}</span></div><div class="item-desc">${esc(x.description)}</div><div class="meta"><span>${esc(x.segment)}</span><span>•</span><span class="badge">${esc(x.status.replaceAll('_',' '))}</span>${x.license?`<span class="badge">${esc(x.license)}</span>`:''}</div></div><a class="open" href="${safeUrl(x.url)}" target="_blank" rel="noopener noreferrer" aria-label="Abrir ${esc(x.title)}"><i data-lucide="external-link"></i></a></article>`}
-function esc(v=''){return String(v).replace(/[&<>'"]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;',"'":'&#39;','"':'&quot;'}[c]))}function safeUrl(v){try{const u=new URL(v);return ['http:','https:'].includes(u.protocol)?esc(u.href):'#'}catch{return '#'}}
-function render(){const r=filtered();$('#items').innerHTML=r.length?r.map(itemHtml).join(''):'<div class="empty"><h3>Nenhum item encontrado</h3><p>Ajuste os filtros ou adicione um novo recurso.</p></div>';$('#resultCount').textContent=`${r.length} de ${state.items.length} itens`;$('#totalKpi').textContent=state.items.length;$('#videoKpi').textContent=state.items.filter(x=>x.kind==='vídeo'&&x.status==='a_assistir').length;$('#repoKpi').textContent=state.items.filter(x=>x.kind==='repositório').length;$('#segmentKpi').textContent=new Set(state.items.map(x=>x.segment)).size;renderSegments();renderQueue();lucide.createIcons()}
-function renderSegments(){const counts={};state.items.forEach(x=>counts[x.segment]=(counts[x.segment]||0)+1);const max=Math.max(...Object.values(counts),1);$('#segments').innerHTML=Object.entries(counts).sort((a,b)=>b[1]-a[1]).map(([s,n])=>`<div class="segment" data-segment="${esc(s)}" tabindex="0"><div class="seg-top"><span>${esc(s)}</span><span>${n}</span></div><div class="bar"><span style="width:${n/max*100}%"></span></div></div>`).join('');$$('.segment').forEach(el=>{el.onclick=()=>{$('#segmentFilter').value=el.dataset.segment;state.segment=el.dataset.segment;render()};el.onkeydown=e=>{if(e.key==='Enter')el.click()}})}
-function renderQueue(){$('#queue').innerHTML=state.items.filter(x=>x.kind==='vídeo'&&x.status==='a_assistir').slice(0,4).map(itemHtml).join('')}
-function initFilters(){[...new Set(state.items.map(x=>x.segment))].sort().forEach(v=>$('#segmentFilter').add(new Option(v,v)));[...new Set(state.items.map(x=>x.status))].sort().forEach(v=>$('#statusFilter').add(new Option(v.replaceAll('_',' '),v)))}
-function openDrawer(el){el.classList.add('open');el.setAttribute('aria-hidden','false');setTimeout(()=>el.querySelector('input,button')?.focus(),30)}function closeDrawer(el){el.classList.remove('open');el.setAttribute('aria-hidden','true')}
-function toast(t){$('#toast').textContent=t;$('#toast').classList.add('show');setTimeout(()=>$('#toast').classList.remove('show'),2200)}
-$('#search').oninput=e=>{state.q=e.target.value;render()};$('#segmentFilter').onchange=e=>{state.segment=e.target.value;render()};$('#statusFilter').onchange=e=>{state.status=e.target.value;render()};$('#sortFilter').onchange=e=>{state.sort=e.target.value;render()};
-$$('#nav button[data-kind]').forEach(b=>b.onclick=()=>{$$('#nav button').forEach(x=>x.classList.remove('active'));b.classList.add('active');state.kind=b.dataset.kind;$('#pageTitle').textContent=b.dataset.kind==='all'?'Seu acervo, organizado.':b.textContent.trim();render();$('#sidebar').classList.remove('open')});
-$('#addBtn').onclick=$('#addTop').onclick=()=>openDrawer($('#drawer'));$('#apiBtn').onclick=()=>openDrawer($('#apiDrawer'));$$('.drawer .close,.drawer .backdrop').forEach(b=>b.onclick=()=>closeDrawer(b.closest('.drawer')));$('#menuBtn').onclick=()=>$('#sidebar').classList.toggle('open');
-$('#themeBtn').onclick=()=>{const d=document.documentElement.dataset.theme==='dark'?'light':'dark';document.documentElement.dataset.theme=d;$('#themeBtn').innerHTML=`<i data-lucide="${d==='dark'?'sun':'moon'}"></i>`;lucide.createIcons()};document.documentElement.dataset.theme=matchMedia('(prefers-color-scheme:dark)').matches?'dark':'light';
-$('#itemForm').onsubmit=e=>{e.preventDefault();const f=new FormData(e.target),title=f.get('title');state.items.unshift({id:'session-'+Date.now(),title,url:f.get('url'),kind:f.get('kind'),segment:f.get('segment'),description:f.get('description'),tags:String(f.get('tags')).split(',').map(x=>x.trim()).filter(Boolean),status:'novo',year:2026,source:'Sessão local',addedAt:'2026-09-23',updatedAt:'2026-09-23'});e.target.reset();closeDrawer($('#drawer'));initFilters();render();toast('Item adicionado à sessão')};
-$('#exportBtn').onclick=()=>{const blob=new Blob([JSON.stringify({...seed,items:state.items},null,2)],{type:'application/json'}),a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download='nexus-acervo-catalog.json';a.click();URL.revokeObjectURL(a.href);toast('JSON exportado')};
-function openCmd(){const c=$('#cmd');c.classList.add('open');$('#cmdInput').value='';cmdRender('');$('#cmdInput').focus()}function cmdRender(q){const r=state.items.filter(x=>norm(x.title+' '+x.segment).includes(norm(q))).slice(0,8);$('#cmdResults').innerHTML=r.map(x=>`<button data-id="${x.id}"><strong>${esc(x.title)}</strong><br><small>${esc(x.kind)} · ${esc(x.segment)}</small></button>`).join('');$$('#cmdResults button').forEach(b=>b.onclick=()=>{const x=state.items.find(i=>i.id===b.dataset.id);window.open(x.url,'_blank','noopener');$('#cmd').classList.remove('open')})}$('#cmdInput').oninput=e=>cmdRender(e.target.value);$('#cmd').onclick=e=>{if(e.target===$('#cmd'))$('#cmd').classList.remove('open')};
-document.onkeydown=e=>{if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==='k'){e.preventDefault();openCmd()}if(e.key==='Escape'){$$('#drawer.open,#apiDrawer.open').forEach(closeDrawer);$('#cmd').classList.remove('open')}};
-initFilters();render();$('#version').textContent=`v${seed.meta.version} · atualização 23/09/2026`;window.addEventListener('load',()=>lucide.createIcons());
+// Estado da Aplicação
+const seedCatalog = window.NEXUS_CATALOG || { meta: { version: '1.1.0' }, items: [], segments: [] };
+const storedCustom = JSON.parse(localStorage.getItem('nexus_custom_items') || '[]');
+const storedFavorites = new Set(JSON.parse(localStorage.getItem('nexus_favorites') || '[]'));
+const viewMode = localStorage.getItem('nexus_view_mode') || 'list';
+
+const state = {
+  items: [...storedCustom, ...seedCatalog.items],
+  kind: 'all',
+  segment: 'all',
+  status: 'all',
+  activeTag: null,
+  q: '',
+  sort: 'recent',
+  view: viewMode,
+  selectedDetail: null,
+  cmdIndex: 0,
+  cmdResults: []
+};
+
+const $ = s => document.querySelector(s);
+const $$ = s => [...document.querySelectorAll(s)];
+
+const KIND_ICONS = {
+  ferramenta: 'wrench',
+  vídeo: 'play',
+  repositório: 'github',
+  conhecimento: 'book-open',
+  diretório: 'library'
+};
+
+function normalizeStr(v = '') {
+  return String(v).normalize('NFD').replace(/[\u0300-\u036f]/g, '').toLowerCase();
+}
+
+function esc(v = '') {
+  return String(v).replace(/[&<>'"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', "'": '&#39;', '"': '&quot;' }[c]));
+}
+
+function safeUrl(v) {
+  try {
+    const u = new URL(v);
+    return ['http:', 'https:'].includes(u.protocol) ? esc(u.href) : '#';
+  } catch {
+    return '#';
+  }
+}
+
+// Filtro de Dados
+function getFilteredItems() {
+  let list = state.items.filter(item => {
+    if (state.kind === 'favorites') {
+      if (!storedFavorites.has(item.id)) return false;
+    } else if (state.kind !== 'all' && item.kind !== state.kind) {
+      return false;
+    }
+    if (state.segment !== 'all' && item.segment !== state.segment) return false;
+    if (state.status !== 'all' && item.status !== state.status) return false;
+    if (state.activeTag && !item.tags.includes(state.activeTag)) return false;
+
+    if (state.q.trim()) {
+      const qNorm = normalizeStr(state.q);
+      const text = normalizeStr([item.title, item.description, item.segment, ...item.tags].join(' '));
+      if (!text.includes(qNorm)) return false;
+    }
+    return true;
+  });
+
+  if (state.sort === 'title') {
+    list.sort((a, b) => a.title.localeCompare(b.title));
+  } else if (state.sort === 'segment') {
+    list.sort((a, b) => a.segment.localeCompare(b.segment));
+  }
+  return list;
+}
+
+// Renderização dos Itens
+function renderItems() {
+  const container = $('#itemsList');
+  const items = getFilteredItems();
+
+  container.className = `items ${state.view === 'grid' ? 'grid-view' : ''}`;
+
+  if (!items.length) {
+    container.innerHTML = `
+      <div class="empty-state">
+        <i data-lucide="search-x"></i>
+        <h3>Nenhum recurso localizado</h3>
+        <p>Tente ajustar a busca ou limpe os filtros para visualizar outros recursos.</p>
+        <button class="btn" id="btnClearAllFilters" style="margin-top: 0.5rem;">Limpar todos os filtros</button>
+      </div>`;
+    $('#btnClearAllFilters')?.addEventListener('click', resetAllFilters);
+  } else {
+    container.innerHTML = items.map(item => {
+      const isFav = storedFavorites.has(item.id);
+      return `
+        <article class="item-card" data-id="${esc(item.id)}">
+          <div class="card-top">
+            <div class="card-icon"><i data-lucide="${KIND_ICONS[item.kind] || 'link'}"></i></div>
+            <div class="card-title-group">
+              <div class="card-title" title="${esc(item.title)}">${esc(item.title)}</div>
+              <div class="card-badges">
+                <span class="pill primary">${esc(item.kind)}</span>
+                <span class="pill">${esc(item.segment)}</span>
+              </div>
+            </div>
+            <button class="fav-btn ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar ${esc(item.title)}" title="Favoritar">
+              <i data-lucide="star"></i>
+            </button>
+          </div>
+
+          <p class="card-desc">${esc(item.description)}</p>
+
+          <div class="card-tags">
+            ${item.tags.slice(0, 4).map(t => `<span class="tag-chip" data-tag="${esc(t)}">#${esc(t)}</span>`).join('')}
+          </div>
+
+          <div class="card-foot">
+            <span class="pill">${esc(item.status.replaceAll('_', ' '))}</span>
+            <div class="card-actions">
+              <button class="action-icon btn-copy" data-url="${safeUrl(item.url)}" aria-label="Copiar Link" title="Copiar Link">
+                <i data-lucide="copy"></i>
+              </button>
+              <a class="action-icon" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" aria-label="Abrir recurso" title="Abrir recurso" onclick="event.stopPropagation();">
+                <i data-lucide="external-link"></i>
+              </a>
+            </div>
+          </div>
+        </article>
+      `;
+    }).join('');
+  }
+
+  $('#resultCount').textContent = `${items.length} de ${state.items.length} itens`;
+  updateKpis();
+  lucide.createIcons();
+  attachCardEvents();
+}
+
+// Eventos dos Cards
+function attachCardEvents() {
+  $$('.item-card').forEach(card => {
+    card.onclick = e => {
+      if (e.target.closest('.fav-btn') || e.target.closest('.card-actions') || e.target.closest('.tag-chip')) return;
+      const item = state.items.find(x => x.id === card.dataset.id);
+      if (item) openDetailDrawer(item);
+    };
+  });
+
+  $$('.fav-btn').forEach(btn => {
+    btn.onclick = e => {
+      e.stopPropagation();
+      const id = btn.dataset.favId;
+      toggleFavorite(id);
+    };
+  });
+
+  $$('.btn-copy').forEach(btn => {
+    btn.onclick = e => {
+      e.stopPropagation();
+      navigator.clipboard.writeText(btn.dataset.url).then(() => showToast('Link copiado com sucesso!'));
+    };
+  });
+
+  $$('.tag-chip').forEach(chip => {
+    chip.onclick = e => {
+      e.stopPropagation();
+      filterByTag(chip.dataset.tag);
+    };
+  });
+}
+
+// Favoritos
+function toggleFavorite(id) {
+  if (storedFavorites.has(id)) {
+    storedFavorites.delete(id);
+    showToast('Removido dos favoritos');
+  } else {
+    storedFavorites.add(id);
+    showToast('Adicionado aos favoritos ⭐');
+  }
+  localStorage.setItem('nexus_favorites', JSON.stringify([...storedFavorites]));
+  renderItems();
+  updateKpis();
+}
+
+// Tags
+function filterByTag(tag) {
+  state.activeTag = tag;
+  $('#activeTagName').textContent = `#${tag}`;
+  $('#activeTagBar').classList.add('show');
+  renderItems();
+}
+
+function clearTagFilter() {
+  state.activeTag = null;
+  $('#activeTagBar').classList.remove('show');
+  renderItems();
+}
+
+function resetAllFilters() {
+  state.kind = 'all';
+  state.segment = 'all';
+  state.status = 'all';
+  state.activeTag = null;
+  state.q = '';
+  $('#searchInput').value = '';
+  $('#selectSegment').value = 'all';
+  $('#selectStatus').value = 'all';
+  $('#activeTagBar').classList.remove('show');
+  $$('#navKind button').forEach(b => b.classList.toggle('active', b.dataset.kind === 'all'));
+  renderItems();
+}
+
+// KPIs
+function updateKpis() {
+  $('#kpiTotal').textContent = state.items.length;
+  $('#kpiDesign').textContent = state.items.filter(x => x.segment === 'Design e UX').length;
+  $('#kpiFavs').textContent = storedFavorites.size;
+  $('#kpiSegments').textContent = new Set(state.items.map(x => x.segment)).size;
+
+  $('#countAll').textContent = state.items.length;
+  $('#countFav').textContent = storedFavorites.size;
+  $('#countTool').textContent = state.items.filter(x => x.kind === 'ferramenta').length;
+  $('#countDir').textContent = state.items.filter(x => x.kind === 'diretório').length;
+  $('#countRepo').textContent = state.items.filter(x => x.kind === 'repositório').length;
+  $('#countVideo').textContent = state.items.filter(x => x.kind === 'vídeo').length;
+  $('#countDoc').textContent = state.items.filter(x => x.kind === 'conhecimento').length;
+}
+
+// Segmentos Laterais
+function renderSegments() {
+  const counts = {};
+  state.items.forEach(x => counts[x.segment] = (counts[x.segment] || 0) + 1);
+  const max = Math.max(...Object.values(counts), 1);
+
+  $('#segmentsList').innerHTML = Object.entries(counts)
+    .sort((a, b) => b[1] - a[1])
+    .map(([s, n]) => `
+      <div class="segment-item ${state.segment === s ? 'active' : ''}" data-segment="${esc(s)}" tabindex="0">
+        <div class="segment-top">
+          <span>${esc(s)}</span>
+          <span>${n}</span>
+        </div>
+        <div class="progress-bar">
+          <div class="progress-fill" style="width: ${(n / max) * 100}%"></div>
+        </div>
+      </div>
+    `).join('');
+
+  $$('.segment-item').forEach(el => {
+    el.onclick = () => {
+      const seg = el.dataset.segment;
+      if (state.segment === seg) {
+        state.segment = 'all';
+        $('#selectSegment').value = 'all';
+      } else {
+        state.segment = seg;
+        $('#selectSegment').value = seg;
+      }
+      renderSegments();
+      renderItems();
+    };
+  });
+}
+
+// Fila de Design
+function renderDesignQueue() {
+  const list = state.items.filter(x => x.segment === 'Design e UX').slice(0, 3);
+  $('#designQueue').innerHTML = list.map(item => `
+    <article class="item-card" data-id="${esc(item.id)}" style="padding: 0.65rem 0.85rem;">
+      <div class="card-top">
+        <div class="card-icon" style="width: 32px; height: 32px;"><i data-lucide="${KIND_ICONS[item.kind] || 'link'}" style="width: 16px; height: 16px;"></i></div>
+        <div class="card-title-group">
+          <div class="card-title" style="font-size: 0.85rem;">${esc(item.title)}</div>
+          <small style="color: var(--muted); font-size: 0.7rem;">${esc(item.kind)}</small>
+        </div>
+        <a class="action-icon" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer"><i data-lucide="external-link"></i></a>
+      </div>
+    </article>
+  `).join('');
+}
+
+// Drawer de Detalhes
+function openDetailDrawer(item) {
+  state.selectedDetail = item;
+  $('#detailTitle').textContent = item.title;
+  $('#detailKind').textContent = item.kind.toUpperCase();
+  $('#detailDesc').textContent = item.description;
+  $('#detailSegment').textContent = item.segment;
+  $('#detailStatus').textContent = item.status;
+  $('#detailLicense').textContent = item.license || 'N/A';
+  $('#detailSource').textContent = item.source || 'Curadoria';
+  $('#btnDetailOpen').href = safeUrl(item.url);
+
+  const isFav = storedFavorites.has(item.id);
+  $('#btnDetailFav').innerHTML = `<i data-lucide="star"></i>${isFav ? 'Remover Favorito' : 'Favoritar'}`;
+
+  $('#detailTags').innerHTML = item.tags.map(t => `<span class="tag-chip" data-tag="${esc(t)}">#${esc(t)}</span>`).join('');
+  $$('#detailTags .tag-chip').forEach(c => c.onclick = () => {
+    closeAllDrawers();
+    filterByTag(c.dataset.tag);
+  });
+
+  openDrawer($('#detailDrawer'));
+  lucide.createIcons();
+}
+
+// Controle de Drawers
+function openDrawer(el) {
+  el.classList.add('open');
+  el.setAttribute('aria-hidden', 'false');
+  setTimeout(() => el.querySelector('input, button')?.focus(), 40);
+}
+
+function closeAllDrawers() {
+  $$('.drawer').forEach(d => {
+    d.classList.remove('open');
+    d.setAttribute('aria-hidden', 'true');
+  });
+}
+
+function showToast(msg) {
+  $('#toastMsg').textContent = msg;
+  $('#toast').classList.add('show');
+  setTimeout(() => $('#toast').classList.remove('show'), 2400);
+}
+
+// Command Palette (⌘K)
+function openCmd() {
+  $('#cmdOverlay').classList.add('open');
+  $('#cmdInput').value = '';
+  renderCmdResults('');
+  $('#cmdInput').focus();
+}
+
+function closeCmd() {
+  $('#cmdOverlay').classList.remove('open');
+}
+
+function renderCmdResults(q = '') {
+  const normQ = normalizeStr(q);
+  state.cmdResults = state.items.filter(x => normalizeStr(x.title + ' ' + x.segment + ' ' + x.tags.join(' ')).includes(normQ)).slice(0, 7);
+  state.cmdIndex = 0;
+
+  const list = $('#cmdList');
+  if (!state.cmdResults.length) {
+    list.innerHTML = `<div style="padding: 1.5rem; text-align: center; color: var(--muted); font-size: 0.85rem;">Nenhum recurso encontrado para "${esc(q)}"</div>`;
+    return;
+  }
+
+  list.innerHTML = state.cmdResults.map((item, idx) => `
+    <button class="cmd-item ${idx === 0 ? 'selected' : ''}" data-idx="${idx}" data-url="${safeUrl(item.url)}">
+      <div class="cmd-item-icon"><i data-lucide="${KIND_ICONS[item.kind] || 'link'}"></i></div>
+      <div class="cmd-item-text">
+        <strong>${esc(item.title)}</strong>
+        <small>${esc(item.kind)} · ${esc(item.segment)}</small>
+      </div>
+    </button>
+  `).join('');
+
+  lucide.createIcons();
+
+  $$('.cmd-item').forEach(b => {
+    b.onclick = () => {
+      window.open(b.dataset.url, '_blank', 'noopener');
+      closeCmd();
+    };
+  });
+}
+
+// Inicialização dos Filtros do Select
+function initSelectFilters() {
+  const segments = [...new Set(state.items.map(x => x.segment))].sort();
+  const selectSeg = $('#selectSegment');
+  const datalist = $('#segmentOptions');
+
+  segments.forEach(s => {
+    selectSeg.add(new Option(s, s));
+    const opt = document.createElement('option');
+    opt.value = s;
+    datalist.appendChild(opt);
+  });
+
+  const statuses = [...new Set(state.items.map(x => x.status))].sort();
+  const selectStat = $('#selectStatus');
+  statuses.forEach(s => selectStat.add(new Option(s.replaceAll('_', ' '), s)));
+}
+
+// Event Listeners
+$('#searchInput').addEventListener('input', e => {
+  state.q = e.target.value;
+  renderItems();
+});
+
+$('#selectSegment').addEventListener('change', e => {
+  state.segment = e.target.value;
+  renderSegments();
+  renderItems();
+});
+
+$('#selectStatus').addEventListener('change', e => {
+  state.status = e.target.value;
+  renderItems();
+});
+
+$('#selectSort').addEventListener('change', e => {
+  state.sort = e.target.value;
+  renderItems();
+});
+
+$('#btnClearTag').addEventListener('click', clearTagFilter);
+
+// Alternador de Visualização (Grade vs Lista)
+$('#btnViewList').addEventListener('click', () => {
+  state.view = 'list';
+  localStorage.setItem('nexus_view_mode', 'list');
+  $('#btnViewList').classList.add('active');
+  $('#btnViewGrid').classList.remove('active');
+  renderItems();
+});
+
+$('#btnViewGrid').addEventListener('click', () => {
+  state.view = 'grid';
+  localStorage.setItem('nexus_view_mode', 'grid');
+  $('#btnViewGrid').classList.add('active');
+  $('#btnViewList').classList.remove('active');
+  renderItems();
+});
+
+// Navegação por Tipo (Sidebar)
+$$('#navKind button[data-kind]').forEach(btn => {
+  btn.addEventListener('click', () => {
+    $$('#navKind button').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    state.kind = btn.dataset.kind;
+
+    if (state.kind === 'all') {
+      $('#pageTitle').textContent = 'Seu acervo de elite, organizado.';
+    } else if (state.kind === 'favorites') {
+      $('#pageTitle').textContent = 'Seus Recursos Favoritos ⭐';
+    } else {
+      $('#pageTitle').textContent = btn.textContent.trim().replace(/\d+$/, '');
+    }
+
+    renderItems();
+    $('#sidebar').classList.remove('open');
+  });
+});
+
+// Abertura e Fechamento de Drawers
+$('#btnAddTop').addEventListener('click', () => openDrawer($('#addDrawer')));
+$('#btnAddMain').addEventListener('click', () => openDrawer($('#addDrawer')));
+$('#btnOpenApi').addEventListener('click', () => openDrawer($('#apiDrawer')));
+$$('.close-drawer, .drawer-backdrop').forEach(el => el.addEventListener('click', closeAllDrawers));
+$('#btnMenu').addEventListener('click', () => $('#sidebar').classList.toggle('open'));
+
+// Alternância de Tema Claro / Escuro
+$('#btnTheme').addEventListener('click', () => {
+  const current = document.documentElement.dataset.theme;
+  const next = current === 'dark' ? 'light' : 'dark';
+  document.documentElement.dataset.theme = next;
+  localStorage.setItem('nexus_theme', next);
+  $('#btnTheme').innerHTML = `<i data-lucide="${next === 'dark' ? 'sun' : 'moon'}"></i>`;
+  lucide.createIcons();
+});
+
+// Formulário de Novo Item
+$('#addItemForm').addEventListener('submit', e => {
+  e.preventDefault();
+  const f = new FormData(e.target);
+  const newItem = {
+    id: 'user-' + Date.now(),
+    title: f.get('title'),
+    url: f.get('url'),
+    kind: f.get('kind'),
+    segment: f.get('segment'),
+    description: f.get('description'),
+    tags: String(f.get('tags') || '').split(',').map(s => s.trim().toLowerCase()).filter(Boolean),
+    status: 'ativo',
+    year: 2026,
+    source: 'Adicionado Localmente',
+    addedAt: new Date().toISOString().slice(0, 10),
+    updatedAt: new Date().toISOString().slice(0, 10)
+  };
+
+  state.items.unshift(newItem);
+  storedCustom.unshift(newItem);
+  localStorage.setItem('nexus_custom_items', JSON.stringify(storedCustom));
+
+  e.target.reset();
+  closeAllDrawers();
+  initSelectFilters();
+  renderSegments();
+  renderItems();
+  showToast('Recurso salvo com sucesso!');
+});
+
+// Exportação de JSON
+$('#btnExportJson').addEventListener('click', () => {
+  const blob = new Blob([JSON.stringify({ ...seedCatalog, items: state.items }, null, 2)], { type: 'application/json' });
+  const a = document.createElement('a');
+  a.href = URL.createObjectURL(blob);
+  a.download = 'nexus-acervo-completo.json';
+  a.click();
+  URL.revokeObjectURL(a.href);
+  showToast('Catálogo JSON exportado!');
+});
+
+$('#btnCopyApiEndpoint').addEventListener('click', () => {
+  navigator.clipboard.writeText(window.location.origin + '/data/catalog.json').then(() => showToast('URL copiada!'));
+});
+
+$('#btnDetailCopy').addEventListener('click', () => {
+  if (state.selectedDetail) {
+    navigator.clipboard.writeText(state.selectedDetail.url).then(() => showToast('Link copiado!'));
+  }
+});
+
+$('#btnDetailFav').addEventListener('click', () => {
+  if (state.selectedDetail) {
+    toggleFavorite(state.selectedDetail.id);
+    const isFav = storedFavorites.has(state.selectedDetail.id);
+    $('#btnDetailFav').innerHTML = `<i data-lucide="star"></i>${isFav ? 'Remover Favorito' : 'Favoritar'}`;
+    lucide.createIcons();
+  }
+});
+
+// Command Palette Keyboard
+$('#cmdInput').addEventListener('input', e => renderCmdResults(e.target.value));
+
+$('#cmdOverlay').addEventListener('click', e => {
+  if (e.target === $('#cmdOverlay')) closeCmd();
+});
+
+document.addEventListener('keydown', e => {
+  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
+    e.preventDefault();
+    openCmd();
+  } else if (e.key === 'Escape') {
+    closeAllDrawers();
+    closeCmd();
+  } else if ($('#cmdOverlay').classList.contains('open')) {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault();
+      state.cmdIndex = (state.cmdIndex + 1) % state.cmdResults.length;
+      updateCmdSelection();
+    } else if (e.key === 'ArrowUp') {
+      e.preventDefault();
+      state.cmdIndex = (state.cmdIndex - 1 + state.cmdResults.length) % state.cmdResults.length;
+      updateCmdSelection();
+    } else if (e.key === 'Enter') {
+      e.preventDefault();
+      const target = state.cmdResults[state.cmdIndex];
+      if (target) {
+        window.open(target.url, '_blank', 'noopener');
+        closeCmd();
+      }
+    }
+  }
+});
+
+function updateCmdSelection() {
+  $$('.cmd-item').forEach((item, idx) => {
+    item.classList.toggle('selected', idx === state.cmdIndex);
+    if (idx === state.cmdIndex) item.scrollIntoView({ block: 'nearest' });
+  });
+}
+
+// Inicialização de Tema
+const savedTheme = localStorage.getItem('nexus_theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+document.documentElement.dataset.theme = savedTheme;
+$('#btnTheme').innerHTML = `<i data-lucide="${savedTheme === 'dark' ? 'sun' : 'moon'}"></i>`;
+
+// Ajuste do View Mode inicial
+if (state.view === 'grid') {
+  $('#btnViewGrid').classList.add('active');
+  $('#btnViewList').classList.remove('active');
+}
+
+// Inicialização Geral
+initSelectFilters();
+renderSegments();
+renderDesignQueue();
+renderItems();
+window.addEventListener('load', () => lucide.createIcons());
 </script>
-</body></html>
+</body>
+</html>
