@@ -1936,6 +1936,8 @@ function openDetailModal(item) {
   $('#btnModalFav').innerHTML = `<i data-lucide="star"></i> ${isFav ? 'Remover' : 'Favoritar'}`;
 
   $('#detailModal').classList.add('open');
+  const dialog = document.querySelector('.modal-dialog');
+  if (dialog) dialog.scrollTop = 0;
   lucide.createIcons();
 }
 
