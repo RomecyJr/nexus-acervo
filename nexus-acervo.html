@@ -1,171 +1,159 @@
-<!doctype html>
-<html lang="pt-BR" data-theme="dark">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<meta name="description" content="Nexus Acervo - Segundo Cérebro pessoal contemporâneo de ferramentas, repositórios, vídeos e carrosséis com exemplos práticos.">
-<title>Nexus Acervo · Segundo Cérebro de Elite</title>
-<!-- Google Fonts: Plus Jakarta Sans + JetBrains Mono -->
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
-<script src="./data/catalog.js?v=1.4.0"></script>
-<style>
-/* ==========================================================================
-   NEXUS ACERVO - SEGUNDO CÉREBRO CONTEMPORÂNEO (LINEAR & RAYCAST AESTHETIC)
-   Clean, Minimalista, Neutro, Alto Contraste & Tipografia Precisa
-   ========================================================================== */
-:root, [data-theme="light"] {
+/* --- DESIGN TOKENS SHADCN/UI (OFICIAIS DARK MODE) --- */
+:root[data-theme="dark"] {
+  --background: 240 10% 3.9%;
+  --foreground: 0 0% 98%;
+  --card: 240 10% 4.9%;
+  --card-foreground: 0 0% 98%;
+  --popover: 240 10% 4.9%;
+  --popover-foreground: 0 0% 98%;
+  --primary: 0 0% 98%;
+  --primary-foreground: 240 5.9% 10%;
+  --secondary: 240 3.7% 15.9%;
+  --secondary-foreground: 0 0% 98%;
+  --muted: 240 3.7% 15.9%;
+  --muted-foreground: 240 5% 64.9%;
+  --accent: 240 3.7% 15.9%;
+  --accent-foreground: 0 0% 98%;
+  --destructive: 0 62.8% 30.6%;
+  --destructive-foreground: 0 0% 98%;
+  --border: 240 3.7% 15.9%;
+  --input: 240 3.7% 15.9%;
+  --ring: 240 4.9% 83.9%;
+  --radius: 0.5rem;
+
+  --bg: #09090b;
+  --surface: #121215;
+  --surface2: #18181b;
+  --surface3: #27272a;
+  --text: #fafafa;
+  --muted-text: #a1a1aa;
+  --faint: #71717a;
+  --border-color: #27272a;
+  --border-strong: #3f3f46;
+  --border-focus: #e4e4e7;
+  --primary-bg: #fafafa;
+  --primary-text: #09090b;
+  --primary-hover: #e4e4e7;
+
+  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.4), 0 1px 2px rgba(0, 0, 0, 0.24);
+  --card-hover-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.4);
+  --modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.75);
+
+  --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --trans: 160ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+:root[data-theme="light"] {
   --bg: #f8fafc;
   --surface: #ffffff;
   --surface2: #f1f5f9;
   --surface3: #e2e8f0;
-  --border: rgba(15, 23, 42, 0.08);
-  --border-strong: rgba(15, 23, 42, 0.16);
-  --border-focus: #0f172a;
   --text: #09090b;
-  --muted: #52525b;
-  --faint: #71717a;
-  --primary: #09090b;
-  --primary-text: #ffffff;
-  --primary-hover: #18181b;
-  --primary-light: rgba(9, 9, 11, 0.06);
-  --card-shadow: 0 1px 3px rgba(0, 0, 0, 0.04), 0 4px 12px rgba(0, 0, 0, 0.03);
-  --card-hover-shadow: 0 12px 24px -4px rgba(0, 0, 0, 0.08);
-  --modal-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.2);
-  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-  --font-mono: 'JetBrains Mono', monospace;
-  --deliverable-border: #f59e0b;
-  --deliverable-bg: rgba(245, 158, 11, 0.06);
-  --example-border: #10b981;
-  --example-bg: rgba(16, 185, 129, 0.06);
+  --muted-text: #64748b;
+  --faint: #94a3b8;
+  --border-color: #e2e8f0;
+  --border-strong: #cbd5e1;
+  --border-focus: #0f172a;
+  --primary-bg: #09090b;
+  --primary-text: #fafafa;
+  --primary-hover: #1e293b;
+  --card-shadow: 0 1px 3px rgba(0,0,0,0.06);
+  --card-hover-shadow: 0 10px 20px rgba(0,0,0,0.08);
+  --modal-shadow: 0 20px 40px rgba(0,0,0,0.15);
 }
 
-[data-theme="dark"] {
-  --bg: #09090b;
-  --surface: #121215;
-  --surface2: #18181c;
-  --surface3: #222228;
-  --border: rgba(255, 255, 255, 0.08);
-  --border-strong: rgba(255, 255, 255, 0.15);
-  --border-focus: #ffffff;
-  --text: #f4f4f5;
-  --muted: #a1a1aa;
-  --faint: #71717a;
-  --primary: #f4f4f5;
-  --primary-text: #09090b;
-  --primary-hover: #ffffff;
-  --primary-light: rgba(244, 244, 245, 0.1);
-  --card-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
-  --card-hover-shadow: 0 14px 28px -4px rgba(0, 0, 0, 0.6), 0 0 1px 1px rgba(255, 255, 255, 0.12);
-  --modal-shadow: 0 30px 60px -15px rgba(0, 0, 0, 0.9);
-  --deliverable-border: #fbbf24;
-  --deliverable-bg: rgba(251, 191, 36, 0.06);
-  --example-border: #34d399;
-  --example-bg: rgba(52, 211, 153, 0.06);
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: inherit;
 }
 
-:root {
-  --radius-xs: 4px;
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 16px;
-  --radius-full: 9999px;
-  --trans: 160ms cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-*, *:before, *:after { box-sizing: border-box; margin: 0; padding: 0; }
-html { scroll-behavior: smooth; }
 body {
-  min-height: 100dvh;
-  font-family: var(--font-sans);
-  font-size: 0.875rem;
-  line-height: 1.5;
-  color: var(--text);
   background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-sans);
+  height: 100dvh;
   overflow: hidden;
   -webkit-font-smoothing: antialiased;
 }
 
-button, input, select, textarea { font: inherit; color: inherit; }
-button { cursor: pointer; border: 0; background: transparent; }
 a { color: inherit; text-decoration: none; }
-svg { display: block; flex-shrink: 0; }
+button, input, select, textarea { font-family: inherit; color: inherit; border: none; background: none; }
 
 /* APP LAYOUT */
 .app {
   display: grid;
-  grid-template-columns: 250px 1fr;
+  grid-template-columns: 240px 1fr;
   height: 100dvh;
   overflow: hidden;
 }
 
-/* SIDEBAR MODERNA (ESTILO LINEAR / RAYCAST) */
+/* SIDEBAR LINEAR / RAYCAST */
 .sidebar {
   background: var(--surface);
-  border-right: 1px solid var(--border);
+  border-right: 1px solid var(--border-color);
   display: flex;
   flex-direction: column;
-  height: 100dvh;
+  justify-content: space-between;
+  overflow-y: auto;
   z-index: 40;
 }
 
-.brand-section {
-  padding: 1.15rem 1.15rem 1rem;
+.sidebar-header {
+  padding: 1.15rem 1rem 0.85rem;
   display: flex;
   align-items: center;
   gap: 0.75rem;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-color);
 }
 
-.brand-monogram {
+.brand-icon-box {
   width: 32px;
   height: 32px;
-  border-radius: var(--radius-sm);
-  background: var(--primary);
-  color: var(--primary-text);
+  border-radius: var(--radius);
+  background: var(--text);
+  color: var(--bg);
   display: grid;
   place-items: center;
   font-weight: 800;
-  font-size: 0.9rem;
+  font-size: 0.95rem;
+  flex-shrink: 0;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-.brand-meta h1 {
-  font-size: 0.9rem;
+.brand-title-group h1 {
+  font-size: 0.875rem;
   font-weight: 700;
   letter-spacing: -0.01em;
   color: var(--text);
-  display: flex;
-  align-items: center;
-  gap: 0.35rem;
 }
 
-.brand-meta p {
-  font-size: 0.72rem;
+.brand-title-group span {
+  font-size: 0.7rem;
   color: var(--faint);
-  font-weight: 500;
+  display: block;
 }
 
-.nav-body {
-  flex: 1;
-  overflow-y: auto;
+.sidebar-menu-body {
   padding: 1rem 0.65rem;
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-.nav-section-title {
-  padding: 0 0.5rem 0.35rem;
+.menu-group-label {
   font-size: 0.68rem;
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
   color: var(--faint);
+  padding: 0 0.5rem;
+  margin-bottom: 0.35rem;
 }
 
-.nav-list {
+.nav-pills-list {
   display: flex;
   flex-direction: column;
   gap: 0.15rem;
@@ -176,12 +164,13 @@ svg { display: block; flex-shrink: 0; }
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 0.5rem 0.65rem;
-  border-radius: var(--radius-sm);
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius);
   font-size: 0.815rem;
   font-weight: 500;
-  color: var(--muted);
+  color: var(--muted-text);
   transition: all var(--trans);
+  cursor: pointer;
 }
 
 .nav-btn-inner {
@@ -191,9 +180,9 @@ svg { display: block; flex-shrink: 0; }
 }
 
 .nav-btn-inner i {
-  width: 16px;
-  height: 16px;
-  opacity: 0.75;
+  width: 15px;
+  height: 15px;
+  opacity: 0.8;
 }
 
 .nav-btn:hover {
@@ -202,34 +191,29 @@ svg { display: block; flex-shrink: 0; }
 }
 
 .nav-btn.active {
-  background: var(--primary-light);
+  background: var(--surface3);
   color: var(--text);
   font-weight: 700;
-}
-
-.nav-btn.active i {
-  opacity: 1;
-  color: var(--text);
 }
 
 .nav-pill-count {
   font-size: 0.68rem;
   padding: 0.1rem 0.45rem;
-  border-radius: var(--radius-full);
-  background: var(--surface3);
+  border-radius: 9999px;
+  background: var(--surface2);
   color: var(--faint);
   font-weight: 700;
   font-family: var(--font-mono);
 }
 
 .nav-btn.active .nav-pill-count {
-  background: var(--primary);
-  color: var(--primary-text);
+  background: var(--text);
+  color: var(--bg);
 }
 
 .sidebar-footer {
   padding: 0.85rem 1rem;
-  border-top: 1px solid var(--border);
+  border-top: 1px solid var(--border-color);
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -264,9 +248,9 @@ svg { display: block; flex-shrink: 0; }
 
 /* TOPBAR */
 .topbar {
-  height: 54px;
+  height: 52px;
   background: var(--surface);
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-color);
   padding: 0 1.5rem;
   display: flex;
   align-items: center;
@@ -281,13 +265,14 @@ svg { display: block; flex-shrink: 0; }
   align-items: center;
   gap: 0.75rem;
   flex: 1;
-  max-width: 580px;
+  max-width: 540px;
 }
 
 .menu-trigger-btn {
   display: none;
   padding: 0.4rem;
-  color: var(--muted);
+  color: var(--muted-text);
+  cursor: pointer;
 }
 
 .search-field {
@@ -297,7 +282,7 @@ svg { display: block; flex-shrink: 0; }
 
 .search-field i {
   position: absolute;
-  left: 0.85rem;
+  left: 0.75rem;
   top: 50%;
   transform: translateY(-50%);
   width: 15px;
@@ -307,12 +292,12 @@ svg { display: block; flex-shrink: 0; }
 
 .search-field input {
   width: 100%;
-  height: 36px;
+  height: 34px;
   background: var(--surface2);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-sm);
-  padding: 0 4rem 0 2.4rem;
-  font-size: 0.825rem;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  padding: 0 3.75rem 0 2.25rem;
+  font-size: 0.815rem;
   transition: all var(--trans);
 }
 
@@ -324,12 +309,12 @@ svg { display: block; flex-shrink: 0; }
 
 .search-kbd-pill {
   position: absolute;
-  right: 0.5rem;
+  right: 0.45rem;
   top: 50%;
   transform: translateY(-50%);
   padding: 0.15rem 0.35rem;
   background: var(--surface3);
-  border-radius: var(--radius-xs);
+  border-radius: 4px;
   font-size: 0.65rem;
   font-family: var(--font-mono);
   font-weight: 700;
@@ -340,24 +325,26 @@ svg { display: block; flex-shrink: 0; }
 .topbar-right {
   display: flex;
   align-items: center;
-  gap: 0.6rem;
+  gap: 0.5rem;
 }
 
+/* SHADCN BUTTONS */
 .btn {
   display: inline-flex;
   align-items: center;
   justify-content: center;
   gap: 0.45rem;
-  height: 36px;
-  padding: 0 0.85rem;
-  border-radius: var(--radius-sm);
+  height: 34px;
+  padding: 0 0.8rem;
+  border-radius: var(--radius);
   font-size: 0.815rem;
   font-weight: 600;
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   background: var(--surface);
   color: var(--text);
   transition: all var(--trans);
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .btn:hover {
@@ -366,8 +353,8 @@ svg { display: block; flex-shrink: 0; }
 }
 
 .btn.primary {
-  background: var(--primary);
-  border-color: var(--primary);
+  background: var(--primary-bg);
+  border-color: var(--primary-bg);
   color: var(--primary-text);
   font-weight: 700;
 }
@@ -376,8 +363,18 @@ svg { display: block; flex-shrink: 0; }
   background: var(--primary-hover);
 }
 
+.btn.secondary {
+  background: var(--surface2);
+  border-color: var(--border-color);
+  color: var(--text);
+}
+
+.btn.secondary:hover {
+  background: var(--surface3);
+}
+
 .btn.icon-only {
-  width: 36px;
+  width: 34px;
   padding: 0;
 }
 
@@ -385,10 +382,10 @@ svg { display: block; flex-shrink: 0; }
 .scroll-content {
   flex: 1;
   overflow-y: auto;
-  padding: 1.5rem 1.75rem 3rem;
+  padding: 1.25rem 1.5rem 3rem;
   display: flex;
   flex-direction: column;
-  gap: 1.25rem;
+  gap: 1.15rem;
 }
 
 /* HEADER EXECUTIVO CONTEMPORÂNEO */
@@ -397,8 +394,8 @@ svg { display: block; flex-shrink: 0; }
   align-items: flex-end;
   justify-content: space-between;
   gap: 1.5rem;
-  padding-bottom: 1.25rem;
-  border-bottom: 1px solid var(--border);
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .exec-header-text h2 {
@@ -409,16 +406,16 @@ svg { display: block; flex-shrink: 0; }
 }
 
 .exec-header-text p {
-  color: var(--muted);
-  font-size: 0.825rem;
-  margin-top: 0.25rem;
+  color: var(--muted-text);
+  font-size: 0.815rem;
+  margin-top: 0.2rem;
   max-width: 650px;
 }
 
 .stats-cluster {
   display: flex;
   align-items: center;
-  gap: 0.5rem;
+  gap: 0.45rem;
   flex-wrap: wrap;
 }
 
@@ -426,13 +423,13 @@ svg { display: block; flex-shrink: 0; }
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  padding: 0.3rem 0.6rem;
-  border-radius: var(--radius-sm);
+  padding: 0.25rem 0.55rem;
+  border-radius: var(--radius);
   background: var(--surface2);
-  border: 1px solid var(--border);
+  border: 1px solid var(--border-color);
   font-size: 0.75rem;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--muted-text);
 }
 
 .stat-chip strong {
@@ -441,23 +438,23 @@ svg { display: block; flex-shrink: 0; }
   font-family: var(--font-mono);
 }
 
-/* SEGMENTED CONTROL / CATEGORY BAR */
+/* SHADCN TOOLBAR & VIEW CONTROLS */
 .controls-bar {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 1rem;
+  gap: 0.85rem;
   flex-wrap: wrap;
 }
 
 .segmented-control {
   display: flex;
   align-items: center;
-  gap: 0.25rem;
+  gap: 0.2rem;
   background: var(--surface2);
-  padding: 0.25rem;
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border);
+  padding: 0.2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
   overflow-x: auto;
 }
 
@@ -465,13 +462,14 @@ svg { display: block; flex-shrink: 0; }
   display: inline-flex;
   align-items: center;
   gap: 0.4rem;
-  padding: 0.35rem 0.75rem;
-  border-radius: calc(var(--radius-sm) - 2px);
+  padding: 0.3rem 0.65rem;
+  border-radius: calc(var(--radius) - 2px);
   font-size: 0.78rem;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--muted-text);
   transition: all var(--trans);
   white-space: nowrap;
+  cursor: pointer;
 }
 
 .segment-tab:hover {
@@ -481,54 +479,159 @@ svg { display: block; flex-shrink: 0; }
 .segment-tab.active {
   background: var(--surface);
   color: var(--text);
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0,0,0,0.2);
   font-weight: 700;
 }
 
-.toolbar-actions {
+.toolbar-right-cluster {
   display: flex;
   align-items: center;
   gap: 0.5rem;
+  flex-wrap: wrap;
 }
 
-.select-box {
-  height: 34px;
-  padding: 0 0.75rem;
-  border-radius: var(--radius-sm);
-  background: var(--surface);
-  border: 1px solid var(--border);
-  font-size: 0.78rem;
-  font-weight: 600;
-  color: var(--muted);
-  cursor: pointer;
-}
-
-.select-box:focus {
-  outline: none;
-  border-color: var(--border-focus);
-}
-
-/* TAG BANNER */
-.active-tag-banner {
-  display: none;
+/* TOGGLE GROUP DE MODOS (GRID / LISTA / TILES) */
+.view-toggle-group {
+  display: flex;
   align-items: center;
-  justify-content: space-between;
-  padding: 0.45rem 0.85rem;
-  border-radius: var(--radius-sm);
   background: var(--surface2);
-  border: 1px solid var(--border-strong);
-  font-size: 0.78rem;
-  color: var(--text);
-  font-weight: 600;
+  padding: 0.2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
 }
 
-.active-tag-banner.show { display: flex; }
-
-.clear-tag-link {
+.view-toggle-btn {
+  padding: 0.3rem 0.55rem;
+  border-radius: calc(var(--radius) - 2px);
+  color: var(--muted-text);
   font-size: 0.75rem;
-  color: var(--muted);
-  text-decoration: underline;
+  font-weight: 600;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
   cursor: pointer;
+  transition: all var(--trans);
+}
+
+.view-toggle-btn:hover {
+  color: var(--text);
+}
+
+.view-toggle-btn.active {
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+/* POPOVER DE CUSTOMIZAÇÃO SHADCN */
+.customizer-popover-wrap {
+  position: relative;
+}
+
+.customizer-menu {
+  position: absolute;
+  top: calc(100% + 6px);
+  right: 0;
+  width: 320px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  border-radius: var(--radius);
+  box-shadow: var(--modal-shadow);
+  padding: 1rem;
+  z-index: 100;
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.customizer-menu.open {
+  display: flex;
+  animation: popoverFadeIn 150ms ease forwards;
+}
+
+@keyframes popoverFadeIn {
+  from { opacity: 0; transform: translateY(-4px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.customizer-section-title {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--faint);
+  margin-bottom: 0.4rem;
+}
+
+.customizer-btn-cluster {
+  display: flex;
+  gap: 0.3rem;
+  background: var(--surface2);
+  padding: 0.2rem;
+  border-radius: var(--radius);
+  border: 1px solid var(--border-color);
+}
+
+.customizer-option-btn {
+  flex: 1;
+  padding: 0.35rem 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 600;
+  text-align: center;
+  border-radius: calc(var(--radius) - 2px);
+  color: var(--muted-text);
+  cursor: pointer;
+  transition: all var(--trans);
+  white-space: nowrap;
+}
+
+.customizer-option-btn:hover {
+  color: var(--text);
+}
+
+.customizer-option-btn.active {
+  background: var(--surface);
+  color: var(--text);
+  font-weight: 700;
+  box-shadow: 0 1px 2px rgba(0,0,0,0.15);
+}
+
+/* FILTRO CHIPS HORIZONTAIS */
+.filter-chips-row {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  overflow-x: auto;
+  padding-bottom: 0.25rem;
+}
+
+.filter-chip-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: 9999px;
+  background: var(--surface2);
+  border: 1px solid var(--border-color);
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--muted-text);
+  cursor: pointer;
+  transition: all var(--trans);
+  white-space: nowrap;
+}
+
+.filter-chip-item:hover {
+  border-color: var(--border-strong);
+  color: var(--text);
+}
+
+.filter-chip-item.active {
+  background: var(--surface3);
+  border-color: var(--border-strong);
+  color: var(--text);
+  font-weight: 700;
 }
 
 /* WORKSPACE GRID */
@@ -539,34 +642,51 @@ svg { display: block; flex-shrink: 0; }
   align-items: start;
 }
 
-/* CARDS STREAM */
+/* STREAM CONTAINER (MULTI-MODAL: GRID, LISTA, TILES) */
 .stream-container {
   display: grid;
-  gap: 1rem;
+  transition: all var(--trans);
 }
 
-.stream-container.grid-view {
-  grid-template-columns: repeat(auto-fill, minmax(360px, 1fr));
+/* 1. MODO GRID (CARDS MULTI-COLUNA) */
+.stream-container.view-grid {
+  grid-template-columns: repeat(var(--ui-cols, 3), minmax(0, 1fr));
+  gap: var(--ui-gap, 1.25rem);
 }
 
-/* ==========================================================================
-   CARDS INTELIGENTES COM A FÓRMULA UNIVERSAL:
-   1. Nome & Stack
-   2. O que é / O que faz
-   3. ⚡ O que entrega
-   4. 💡 Exemplo prático de aplicação
-   ========================================================================== */
+.stream-container.cols-2 { --ui-cols: 2; }
+.stream-container.cols-3 { --ui-cols: 3; }
+.stream-container.cols-4 { --ui-cols: 4; }
 
+.stream-container.gap-compact { --ui-gap: 0.75rem; }
+.stream-container.gap-normal { --ui-gap: 1.25rem; }
+.stream-container.gap-relaxed { --ui-gap: 1.75rem; }
+
+/* 2. MODO LISTA */
+.stream-container.view-list {
+  display: flex;
+  flex-direction: column;
+  gap: 0.55rem;
+}
+
+/* 3. MODO TILES / BOTÕES */
+.stream-container.view-tiles {
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 0.65rem;
+}
+
+/* CARDS SHADCN (FÓRMULA UNIVERSAL ESTRUTURADA) */
 .card-item {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
   box-shadow: var(--card-shadow);
   transition: transform var(--trans), border-color var(--trans), box-shadow var(--trans);
   display: flex;
   flex-direction: column;
   overflow: hidden;
   cursor: pointer;
+  position: relative;
 }
 
 .card-item:hover {
@@ -575,42 +695,25 @@ svg { display: block; flex-shrink: 0; }
   transform: translateY(-2px);
 }
 
-/* CARD TIPO: VÍDEO (HORIZONTAL COMPACTO COM THUMBNAIL REAL ESTILO SIDEBAR YOUTUBE) */
-.card-video {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 1.15rem;
-  padding: 1.15rem 1.25rem;
-}
-
-.card-video-media {
+/* THUMBNAIL DO VÍDEO NO MODO GRID VERTICAL */
+.card-thumb-top {
   position: relative;
-  width: 154px;
-  min-width: 154px;
-  max-width: 154px;
+  width: 100%;
   aspect-ratio: 16 / 9;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
   background: #000;
-  border: 1px solid var(--border);
-  flex-shrink: 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.card-video .card-inner-content {
-  padding: 0;
-  flex: 1;
-  min-width: 0;
-}
-
-.card-video-media img {
+.card-thumb-top img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
   transition: transform 250ms ease;
 }
 
-.card-item:hover .card-video-media img {
+.card-item:hover .card-thumb-top img {
   transform: scale(1.05);
 }
 
@@ -627,8 +730,8 @@ svg { display: block; flex-shrink: 0; }
 .card-item:hover .video-hover-play { opacity: 1; }
 
 .play-bubble {
-  width: 34px;
-  height: 34px;
+  width: 36px;
+  height: 36px;
   border-radius: 50%;
   background: #ffffff;
   color: #09090b;
@@ -639,126 +742,119 @@ svg { display: block; flex-shrink: 0; }
 
 .video-label-badge {
   position: absolute;
-  bottom: 6px;
-  right: 6px;
-  background: rgba(0, 0, 0, 0.8);
+  bottom: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.85);
   color: #fff;
   font-size: 0.62rem;
   font-weight: 700;
-  padding: 0.1rem 0.35rem;
-  border-radius: 3px;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
   font-family: var(--font-mono);
 }
 
-.card-inner-content {
-  padding: 1rem 1.15rem;
+/* VÍDEO HORIZONTAL (QUANDO MINIATURA É MÉDIA / PEQUENA) */
+.card-video-horizontal {
   display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  gap: 0.6rem;
-  min-width: 0;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1rem;
+  padding: 1.15rem;
 }
 
-/* CARD TIPO: REPOSITÓRIO GITHUB (ENGENHARIA LIMPA) */
-.card-repo {
-  padding: 1.15rem 1.25rem;
+.card-video-horizontal .card-thumb-side {
+  position: relative;
+  width: 160px;
+  min-width: 160px;
+  max-width: 160px;
+  aspect-ratio: 16 / 9;
+  border-radius: calc(var(--radius) - 2px);
+  overflow: hidden;
+  background: #000;
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
 }
 
-.repo-badge-row {
+.card-video-horizontal.thumb-sm .card-thumb-side {
+  width: 110px;
+  min-width: 110px;
+  max-width: 110px;
+}
+
+.card-video-horizontal .card-thumb-side img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.card-video-horizontal .card-content-body {
+  padding: 0;
+}
+
+/* REPOSITÓRIO GITHUB */
+.card-repo-header {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
 }
 
-.repo-name-mono {
+.repo-mono-title {
   display: flex;
   align-items: center;
   gap: 0.45rem;
   font-family: var(--font-mono);
-  font-size: 0.815rem;
+  font-size: 0.825rem;
   font-weight: 700;
   color: var(--text);
 }
 
-.repo-name-mono i {
-  width: 16px;
-  height: 16px;
-  opacity: 0.85;
+.repo-mono-title i {
+  width: 15px;
+  height: 15px;
 }
 
-/* CARD TIPO: CARROSSEL (INSTAGRAM / REDES) */
-.card-carousel {
-  display: flex;
-  flex-direction: row;
-  align-items: flex-start;
-  gap: 1.15rem;
-  padding: 1.15rem 1.25rem;
-}
-
-.carousel-cover-col {
+/* CARROSSEL NO GRID */
+.card-carousel-cover {
   position: relative;
-  width: 104px;
-  min-width: 104px;
-  max-width: 104px;
+  width: 100%;
   aspect-ratio: 1 / 1;
-  border-radius: var(--radius-sm);
-  overflow: hidden;
   background: var(--surface2);
-  border: 1px solid var(--border);
-  flex-shrink: 0;
+  overflow: hidden;
+  border-bottom: 1px solid var(--border-color);
 }
 
-.card-carousel .card-inner-content {
-  padding: 0;
-  flex: 1;
-  min-width: 0;
-}
-
-.carousel-cover-col img {
+.card-carousel-cover img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  display: block;
 }
 
 .slides-counter-tag {
   position: absolute;
-  top: 6px;
-  right: 6px;
-  background: rgba(0, 0, 0, 0.75);
+  top: 8px;
+  right: 8px;
+  background: rgba(0, 0, 0, 0.8);
   color: #fff;
   font-size: 0.65rem;
   font-weight: 800;
-  padding: 0.15rem 0.4rem;
-  border-radius: var(--radius-full);
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
 }
 
-/* CARD TIPO: FERRAMENTA WEB */
-.card-tool {
+/* CORPO DO CARD COM ESPAÇAMENTO INTENCIONAL */
+.card-content-body {
   padding: 1.15rem 1.25rem;
   display: flex;
-  gap: 1rem;
+  flex-direction: column;
+  justify-content: space-between;
+  flex: 1;
+  gap: 0.75rem;
+  min-width: 0;
 }
 
-.tool-avatar-square {
-  width: 44px;
-  height: 44px;
-  border-radius: var(--radius-sm);
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  display: grid;
-  place-items: center;
-  flex-shrink: 0;
-  overflow: hidden;
-}
-
-.tool-avatar-square img {
-  width: 26px;
-  height: 26px;
-  object-fit: contain;
-}
-
-/* TÍTULO E CABEÇALHO DO CARD */
 .card-title-line {
   display: flex;
   align-items: flex-start;
@@ -771,151 +867,280 @@ svg { display: block; flex-shrink: 0; }
   font-weight: 700;
   color: var(--text);
   line-height: 1.35;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
 }
 
-.card-favorite-toggle {
-  color: var(--faint);
-  padding: 0.2rem;
-  border-radius: var(--radius-xs);
-  transition: all var(--trans);
-}
-
-.card-favorite-toggle:hover, .card-favorite-toggle.is-fav {
-  color: #f59e0b;
-}
-
-/* O QUE É (RESUMO CONCISO) */
 .card-summary-desc {
-  font-size: 0.8rem;
-  color: var(--muted);
-  line-height: 1.45;
-  display: -webkit-box;
-  -webkit-line-clamp: 2;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
+  font-size: 0.815rem;
+  color: var(--muted-text);
+  line-height: 1.5;
 }
 
-/* ⚡ O QUE ENTREGA */
+/* CAIXAS DE DESTAQUE ELEGANTES (O QUE ENTREGA / EXEMPLO PRÁTICO) */
 .callout-deliverable {
   display: flex;
-  gap: 0.45rem;
-  padding: 0.5rem 0.75rem;
-  background: var(--deliverable-bg);
-  border-radius: var(--radius-xs);
-  border-left: 2px solid var(--deliverable-border);
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: calc(var(--radius) - 2px);
+  background: rgba(245, 158, 11, 0.05);
+  border: 1px solid rgba(245, 158, 11, 0.2);
   font-size: 0.78rem;
-  line-height: 1.4;
   color: var(--text);
+  line-height: 1.45;
 }
 
 .callout-deliverable i {
-  color: var(--deliverable-border);
-  width: 14px;
-  height: 14px;
+  color: #f59e0b;
   flex-shrink: 0;
   margin-top: 1px;
+  width: 14px;
+  height: 14px;
 }
 
-/* 💡 EXEMPLO PRÁTICO DE USO */
 .callout-example {
   display: flex;
-  gap: 0.45rem;
-  padding: 0.5rem 0.75rem;
-  background: var(--example-bg);
-  border-radius: var(--radius-xs);
-  border-left: 2px solid var(--example-border);
+  align-items: flex-start;
+  gap: 0.55rem;
+  padding: 0.55rem 0.75rem;
+  border-radius: calc(var(--radius) - 2px);
+  background: rgba(16, 185, 129, 0.05);
+  border: 1px solid rgba(16, 185, 129, 0.2);
   font-size: 0.78rem;
-  line-height: 1.4;
   color: var(--text);
+  line-height: 1.45;
 }
 
 .callout-example i {
-  color: var(--example-border);
-  width: 14px;
-  height: 14px;
+  color: #10b981;
   flex-shrink: 0;
   margin-top: 1px;
+  width: 14px;
+  height: 14px;
 }
 
-/* CARD FOOTER */
 .card-foot-actions {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 0.5rem;
-  padding-top: 0.45rem;
-  border-top: 1px solid var(--border);
-  font-size: 0.72rem;
+  padding-top: 0.55rem;
+  border-top: 1px solid var(--border-color);
+  margin-top: auto;
 }
 
 .card-chips-group {
   display: flex;
   align-items: center;
   gap: 0.35rem;
-  overflow: hidden;
-  white-space: nowrap;
+  flex-wrap: wrap;
 }
 
 .meta-chip-tag {
-  background: var(--surface2);
-  border: 1px solid var(--border);
-  padding: 0.1rem 0.4rem;
-  border-radius: var(--radius-xs);
-  color: var(--muted);
   font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.15rem 0.45rem;
+  border-radius: calc(var(--radius) - 3px);
+  background: var(--surface2);
+  border: 1px solid var(--border-color);
+  color: var(--muted-text);
   cursor: pointer;
   transition: all var(--trans);
 }
 
 .meta-chip-tag:hover {
-  border-color: var(--border-strong);
+  background: var(--surface3);
   color: var(--text);
+}
+
+.card-favorite-toggle {
+  padding: 0.3rem;
+  color: var(--faint);
+  cursor: pointer;
+  transition: all var(--trans);
+  border-radius: 4px;
+}
+
+.card-favorite-toggle:hover {
+  color: #f59e0b;
+}
+
+.card-favorite-toggle.is-fav {
+  color: #f59e0b;
 }
 
 .card-button-links {
   display: flex;
   align-items: center;
-  gap: 0.35rem;
+  gap: 0.25rem;
 }
 
 .icon-action-btn {
-  padding: 0.3rem;
-  border-radius: var(--radius-xs);
-  color: var(--muted);
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+  color: var(--muted-text);
+  background: var(--surface2);
+  border: 1px solid var(--border-color);
+  cursor: pointer;
   transition: all var(--trans);
 }
 
 .icon-action-btn:hover {
   background: var(--surface3);
   color: var(--text);
+  border-color: var(--border-strong);
 }
 
-/* SIDE PANEL */
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DO MODO LISTA (LINHAS EXECUTIVAS TABULADAS)
+   ========================================================================== */
+.list-row-item {
+  display: grid;
+  grid-template-columns: 80px minmax(220px, 1.2fr) 2fr auto;
+  align-items: center;
+  gap: 1.25rem;
+  padding: 0.65rem 1rem;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: all 150ms ease;
+  cursor: pointer;
+}
+
+.list-row-item:hover {
+  background: var(--surface2);
+  border-color: var(--border-strong);
+  transform: translateX(2px);
+}
+
+.list-thumb-img {
+  width: 76px;
+  aspect-ratio: 16 / 9;
+  border-radius: 4px;
+  object-fit: cover;
+  background: #000;
+  border: 1px solid var(--border-color);
+}
+
+.list-avatar-icon {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius);
+  background: var(--surface2);
+  border: 1px solid var(--border-color);
+  display: grid;
+  place-items: center;
+}
+
+.list-col-title {
+  min-width: 0;
+}
+
+.list-col-deliverable {
+  min-width: 0;
+}
+
+.list-deliverable-text {
+  font-size: 0.78rem;
+  color: var(--muted-text);
+  line-height: 1.4;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.list-col-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+/* ==========================================================================
+   ESTILOS ESPECÍFICOS DO MODO BOTÕES / MOSAICO (TILES DINÂMICOS)
+   ========================================================================== */
+.tile-button-card {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding: 0.75rem 0.85rem;
+  background: var(--surface);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
+  transition: all 150ms ease;
+  cursor: pointer;
+  text-align: left;
+  position: relative;
+}
+
+.tile-button-card:hover {
+  background: var(--surface2);
+  border-color: var(--border-strong);
+  transform: translateY(-2px);
+  box-shadow: var(--card-hover-shadow);
+}
+
+.tile-media-avatar {
+  width: 34px;
+  height: 34px;
+  border-radius: 6px;
+  display: grid;
+  place-items: center;
+  background: var(--surface2);
+  border: 1px solid var(--border-color);
+  flex-shrink: 0;
+  overflow: hidden;
+}
+
+.tile-media-avatar img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.tile-info-block {
+  flex: 1;
+  min-width: 0;
+}
+
+.tile-info-title {
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--text);
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.tile-info-meta {
+  font-size: 0.68rem;
+  color: var(--muted-text);
+  margin-top: 1px;
+}
+
+/* SIDE PANEL DIREITO */
 .side-panel {
   display: flex;
   flex-direction: column;
   gap: 1.25rem;
 }
 
-.panel-card {
+.panel-card-box {
   background: var(--surface);
-  border: 1px solid var(--border);
-  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius);
   padding: 1.15rem;
-  box-shadow: var(--card-shadow);
 }
 
 .panel-header-title {
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 700;
   letter-spacing: 0.05em;
   text-transform: uppercase;
   color: var(--faint);
-  margin-bottom: 0.85rem;
+  margin-bottom: 0.75rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -925,8 +1150,8 @@ svg { display: block; flex-shrink: 0; }
   display: flex;
   flex-direction: column;
   gap: 0.25rem;
-  padding: 0.4rem 0.5rem;
-  border-radius: var(--radius-xs);
+  padding: 0.35rem 0.5rem;
+  border-radius: 4px;
   cursor: pointer;
   transition: all var(--trans);
 }
@@ -942,25 +1167,25 @@ svg { display: block; flex-shrink: 0; }
 .segment-row-header {
   display: flex;
   justify-content: space-between;
-  font-size: 0.78rem;
+  font-size: 0.75rem;
   font-weight: 600;
-  color: var(--muted);
+  color: var(--muted-text);
 }
 
 .segment-track {
   height: 4px;
   background: var(--surface3);
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
   overflow: hidden;
 }
 
 .segment-fill {
   height: 100%;
-  background: var(--muted);
-  border-radius: var(--radius-full);
+  background: var(--muted-text);
+  border-radius: 9999px;
 }
 
-/* MODAIS */
+/* MODAIS SHADCN */
 .clean-modal {
   position: fixed;
   inset: 0;
@@ -977,7 +1202,7 @@ svg { display: block; flex-shrink: 0; }
 .modal-dialog {
   background: var(--surface);
   border: 1px solid var(--border-strong);
-  border-radius: var(--radius-lg);
+  border-radius: var(--radius);
   box-shadow: var(--modal-shadow);
   width: min(780px, 100%);
   max-height: 90vh;
@@ -995,11 +1220,12 @@ svg { display: block; flex-shrink: 0; }
   height: 32px;
   border-radius: 50%;
   background: var(--surface2);
-  color: var(--muted);
+  color: var(--muted-text);
   display: grid;
   place-items: center;
   z-index: 20;
   transition: all var(--trans);
+  cursor: pointer;
 }
 
 .modal-close-icon:hover {
@@ -1017,7 +1243,7 @@ svg { display: block; flex-shrink: 0; }
 
 .modal-media-wrap.has-video {
   aspect-ratio: 16 / 9;
-  border-bottom: 1px solid var(--border);
+  border-bottom: 1px solid var(--border-color);
 }
 
 .modal-media-wrap.has-video iframe {
@@ -1030,7 +1256,6 @@ svg { display: block; flex-shrink: 0; }
   display: block;
 }
 
-/* CARROSSEL NO MODAL */
 .carousel-slider-view {
   position: relative;
   width: 100%;
@@ -1075,7 +1300,7 @@ svg { display: block; flex-shrink: 0; }
   font-size: 0.72rem;
   font-weight: 700;
   padding: 0.2rem 0.6rem;
-  border-radius: var(--radius-full);
+  border-radius: 9999px;
 }
 
 .modal-inner-padding {
@@ -1090,7 +1315,7 @@ svg { display: block; flex-shrink: 0; }
   position: fixed;
   inset: 0;
   z-index: 1000;
-  background: rgba(0, 0, 0, 0.7);
+  background: rgba(0, 0, 0, 0.75);
   backdrop-filter: blur(8px);
   display: none;
   place-items: start center;
@@ -1103,21 +1328,20 @@ svg { display: block; flex-shrink: 0; }
   width: min(600px, calc(100% - 32px));
   background: var(--surface);
   border: 1px solid var(--border-strong);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius);
   box-shadow: var(--modal-shadow);
   overflow: hidden;
 }
 
 .cmd-input-bar {
-  position: relative;
-  border-bottom: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.85rem 1.15rem;
+  border-bottom: 1px solid var(--border-color);
 }
 
 .cmd-input-bar i {
-  position: absolute;
-  left: 1rem;
-  top: 50%;
-  transform: translateY(-50%);
   color: var(--faint);
   width: 17px;
   height: 17px;
@@ -1125,37 +1349,31 @@ svg { display: block; flex-shrink: 0; }
 
 .cmd-input-bar input {
   width: 100%;
-  height: 50px;
-  border: 0;
-  background: transparent;
-  padding: 0 1rem 0 2.75rem;
-  font-size: 0.9rem;
-  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--text);
+  outline: none;
 }
 
-.cmd-list-items {
-  max-height: 48vh;
+.cmd-results-list {
+  max-height: 380px;
   overflow-y: auto;
-  padding: 0.4rem;
+  padding: 0.5rem;
 }
 
-.cmd-entry-row {
+.cmd-item-row {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 0.75rem;
-  padding: 0.65rem 0.85rem;
-  border-radius: var(--radius-xs);
+  padding: 0.6rem 0.85rem;
+  border-radius: calc(var(--radius) - 2px);
   cursor: pointer;
   transition: all var(--trans);
 }
 
-.cmd-entry-row:hover, .cmd-entry-row.selected {
+.cmd-item-row:hover, .cmd-item-row.active {
   background: var(--surface2);
-  color: var(--text);
 }
 
-/* TOAST */
 .toast-bar {
   position: fixed;
   bottom: 1.5rem;
@@ -1164,13 +1382,12 @@ svg { display: block; flex-shrink: 0; }
   background: var(--surface);
   color: var(--text);
   border: 1px solid var(--border-strong);
-  padding: 0.75rem 1.25rem;
-  border-radius: var(--radius-sm);
-  box-shadow: var(--modal-shadow);
+  border-radius: var(--radius);
+  padding: 0.65rem 1rem;
+  box-shadow: var(--card-hover-shadow);
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  font-weight: 600;
   font-size: 0.815rem;
   transform: translateY(150%);
   opacity: 0;
@@ -1194,9 +1411,10 @@ svg { display: block; flex-shrink: 0; }
   .menu-trigger-btn { display: inline-flex; }
   .workspace-layout { grid-template-columns: 1fr; }
   .side-panel { display: none; }
-  .card-video, .card-carousel { flex-direction: column; }
-  .card-video-media { width: 100%; min-width: 100%; max-width: 100%; }
-  .carousel-cover-col { width: 100%; min-width: 100%; max-width: 100%; }
+  .stream-container.view-grid { grid-template-columns: 1fr !important; }
+  .stream-container.view-tiles { grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); }
+  .list-row-item { grid-template-columns: 60px 1fr auto; }
+  .list-col-deliverable { display: none; }
   .exec-header { flex-direction: column; align-items: flex-start; }
 }
 
@@ -1317,39 +1535,103 @@ svg { display: block; flex-shrink: 0; }
         </div>
       </section>
 
-      <!-- BARRA DE CATEGORIAS E CONTROLES -->
-      <section class="controls-bar">
-        <div class="segmented-control" id="categoryPills">
-          <button class="segment-tab active" data-kind="all"><i data-lucide="layers" style="width:14px;height:14px;"></i> Todos</button>
-          <button class="segment-tab" data-kind="vídeo"><i data-lucide="play-circle" style="width:14px;height:14px;"></i> Vídeos</button>
-          <button class="segment-tab" data-kind="repositório"><i data-lucide="github" style="width:14px;height:14px;"></i> Repositórios</button>
-          <button class="segment-tab" data-kind="carrossel"><i data-lucide="gallery-thumbnails" style="width:14px;height:14px;"></i> Carrosséis</button>
-          <button class="segment-tab" data-kind="ferramenta"><i data-lucide="wrench" style="width:14px;height:14px;"></i> Ferramentas</button>
-          <button class="segment-tab" data-kind="conhecimento"><i data-lucide="book-open" style="width:14px;height:14px;"></i> Conhecimento</button>
+      <!-- BARRA DE CONTROLES SHADCN UI -->
+      <section class="controls-bar" style="margin-top: 1rem;">
+        <!-- SEGMENTED TABS (FORMATO) -->
+        <div class="segmented-control" id="categoryTabs">
+          <button class="segment-tab active" data-kind="all" aria-label="Todos os formatos"><i data-lucide="layout-grid" style="width:14px;height:14px;"></i> Todos</button>
+          <button class="segment-tab" data-kind="vídeo" aria-label="Vídeos"><i data-lucide="play-circle" style="width:14px;height:14px;"></i> Vídeos</button>
+          <button class="segment-tab" data-kind="repositório" aria-label="Repositórios"><i data-lucide="git-branch" style="width:14px;height:14px;"></i> Repositórios</button>
+          <button class="segment-tab" data-kind="carrossel" aria-label="Carrosséis"><i data-lucide="layers" style="width:14px;height:14px;"></i> Carrosséis</button>
+          <button class="segment-tab" data-kind="ferramenta" aria-label="Ferramentas"><i data-lucide="wrench" style="width:14px;height:14px;"></i> Ferramentas</button>
+          <button class="segment-tab" data-kind="conhecimento" aria-label="Conhecimento"><i data-lucide="book-open" style="width:14px;height:14px;"></i> Conhecimento</button>
         </div>
 
-        <div class="toolbar-actions">
-          <select class="select-box" id="selectSegment" aria-label="Filtrar por segmento">
-            <option value="all">Todos os segmentos</option>
-          </select>
-
-          <select class="select-box" id="selectSort" aria-label="Ordenar itens">
-            <option value="recent">Mais recentes</option>
-            <option value="title">Título A–Z</option>
-            <option value="segment">Segmento</option>
-          </select>
-
-          <div style="display: flex; gap: 0.2rem;">
-            <button class="btn icon-only active" id="btnViewGrid" style="height: 34px; width: 34px;" aria-label="Visualização em Grade" title="Grade"><i data-lucide="layout-grid" style="width:15px;height:15px;"></i></button>
-            <button class="btn icon-only" id="btnViewList" style="height: 34px; width: 34px;" aria-label="Visualização em Lista" title="Lista"><i data-lucide="list" style="width:15px;height:15px;"></i></button>
+        <div class="toolbar-right-cluster">
+          <!-- TOGGLE GROUP DE MODOS SHADCN -->
+          <div class="view-toggle-group" role="group" aria-label="Modo de visualização">
+            <button class="view-toggle-btn active" id="btnModeGrid" data-mode="grid" aria-label="Visualização em Cards Multi-Coluna" title="Cards / Grade"><i data-lucide="layout-grid" style="width:14px;height:14px;"></i> Cards</button>
+            <button class="view-toggle-btn" id="btnModeList" data-mode="list" aria-label="Visualização em Lista Executiva" title="Lista"><i data-lucide="list" style="width:14px;height:14px;"></i> Lista</button>
+            <button class="view-toggle-btn" id="btnModeTiles" data-mode="tiles" aria-label="Visualização em Botões e Mosaico" title="Botões / Mosaico"><i data-lucide="grid-3x3" style="width:14px;height:14px;"></i> Botões</button>
           </div>
+
+          <!-- BOTÃO E POPOVER DE CUSTOMIZAÇÃO AO VIVO -->
+          <div class="customizer-popover-wrap">
+            <button class="btn secondary" id="btnCustomizerToggle" aria-label="Personalizar layout e caixas">
+              <i data-lucide="sliders-horizontal" style="width:14px;height:14px;"></i>
+              <span>Personalizar</span>
+              <i data-lucide="chevron-down" style="width:12px;height:12px;opacity:0.6;"></i>
+            </button>
+
+            <div class="customizer-menu" id="customizerMenu">
+              <div>
+                <div class="customizer-section-title">Colunas no Grid (Cards)</div>
+                <div class="customizer-btn-cluster" id="colCluster">
+                  <button class="customizer-option-btn" data-cols="2" aria-label="2 Colunas">2 Colunas</button>
+                  <button class="customizer-option-btn active" data-cols="3" aria-label="3 Colunas">3 Colunas</button>
+                  <button class="customizer-option-btn" data-cols="4" aria-label="4 Colunas">4 Colunas</button>
+                </div>
+              </div>
+
+              <div>
+                <div class="customizer-section-title">Miniatura do YouTube</div>
+                <div class="customizer-btn-cluster" id="thumbCluster">
+                  <button class="customizer-option-btn active" data-thumb="large" aria-label="Miniatura Grande 16:9 no Topo">Topo (16:9)</button>
+                  <button class="customizer-option-btn" data-thumb="medium" aria-label="Miniatura Média Lateral">Lateral</button>
+                  <button class="customizer-option-btn" data-thumb="small" aria-label="Miniatura Pequena">Pequena</button>
+                  <button class="customizer-option-btn" data-thumb="none" aria-label="Sem Miniatura">Ocultar</button>
+                </div>
+              </div>
+
+              <div>
+                <div class="customizer-section-title">Nível de Detalhe</div>
+                <div class="customizer-btn-cluster" id="detailCluster">
+                  <button class="customizer-option-btn active" data-detail="full" aria-label="Detalhe Completo">Completo</button>
+                  <button class="customizer-option-btn" data-detail="focused" aria-label="Foco no Entregável">Foco Entrega</button>
+                  <button class="customizer-option-btn" data-detail="minimal" aria-label="Minimalista">Minimalista</button>
+                </div>
+              </div>
+
+              <div>
+                <div class="customizer-section-title">Espaçamento Entre Caixas</div>
+                <div class="customizer-btn-cluster" id="gapCluster">
+                  <button class="customizer-option-btn" data-gap="compact" aria-label="Espaçamento Compacto">Compacto</button>
+                  <button class="customizer-option-btn active" data-gap="normal" aria-label="Espaçamento Padrão">Padrão</button>
+                  <button class="customizer-option-btn" data-gap="relaxed" aria-label="Espaçamento Amplo">Amplo</button>
+                </div>
+              </div>
+
+              <div style="display: flex; justify-content: space-between; align-items: center; padding-top: 0.5rem; border-top: 1px solid var(--border-color);">
+                <button class="btn" id="btnResetPrefs" style="font-size:0.72rem; height:28px; padding:0 0.5rem;" aria-label="Restaurar padrão">Restaurar Padrão</button>
+                <button class="btn primary" id="btnCloseCustomizer" style="font-size:0.72rem; height:28px; padding:0 0.6rem;" aria-label="Fechar configurações">Fechar</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- ORDENAÇÃO SHADCN -->
+          <select class="btn secondary" id="sortSelect" aria-label="Ordenar itens" style="padding-right: 1.5rem; cursor: pointer;">
+            <option value="recent">Mais recentes</option>
+            <option value="title">Título (A-Z)</option>
+            <option value="segment">Por segmento</option>
+          </select>
         </div>
       </section>
 
+      <!-- FILTROS POR CHIP INLINE -->
+      <div class="filter-chips-row" style="margin-top: 0.5rem;">
+        <button class="filter-chip-item active" data-segment="all" aria-label="Todos os segmentos">Todos os segmentos</button>
+        <button class="filter-chip-item" data-segment="Design e UX" aria-label="Segmento Design e UX">🎨 Design e UX</button>
+        <button class="filter-chip-item" data-segment="Aprendizado" aria-label="Segmento Aprendizado">🧠 Aprendizado</button>
+        <button class="filter-chip-item" data-segment="Conteúdo e mídia" aria-label="Segmento Conteúdo e Mídia">🎬 Conteúdo & Mídia</button>
+        <button class="filter-chip-item" data-segment="Métricas de negócio" aria-label="Segmento Métricas">📈 Métricas</button>
+        <button class="filter-chip-item" data-segment="Produtividade" aria-label="Segmento Produtividade">⚡ Produtividade</button>
+        <button class="filter-chip-item" data-segment="Importação" aria-label="Segmento Importação">📦 Importação</button>
+      </div>
+
       <!-- TAG BANNER -->
-      <div class="active-tag-banner" id="activeTagBar">
+      <div class="active-tag-banner" id="activeTagBar" style="margin-top: 0.5rem;">
         <span>Filtrando pela tag: <strong id="activeTagName">#design</strong></span>
-        <span class="clear-tag-link" id="btnClearTag">Limpar filtro ✕</span>
+        <span class="clear-tag-link" id="btnClearTag" role="button" tabindex="0" aria-label="Limpar filtro de tag">Limpar filtro ✕</span>
       </div>
 
       <!-- WORKSPACE -->
@@ -1572,7 +1854,21 @@ const seedIds = new Set(seedCatalog.items.map(x => x.id));
 const storedCustom = storedCustomRaw.filter(x => !seedIds.has(x.id));
 
 const storedFavorites = new Set(JSON.parse(localStorage.getItem('nexus_favorites') || '[]'));
-const viewMode = localStorage.getItem('nexus_view_mode') || 'grid';
+
+// PREFERÊNCIAS DE CUSTOMIZAÇÃO DO USUÁRIO (SHADCN CUSTOMIZER)
+const defaultPrefs = {
+  viewMode: 'grid',    // 'grid' | 'list' | 'tiles'
+  gridCols: '3',       // '2' | '3' | '4'
+  thumbSize: 'large',  // 'large' (topo 16:9) | 'medium' (lateral 160px) | 'small' (lateral 110px) | 'none' (sem thumb)
+  detailLevel: 'full', // 'full' (completo) | 'focused' (só o que entrega) | 'minimal' (só título e badges)
+  gapSize: 'normal'    // 'compact' | 'normal' | 'relaxed'
+};
+
+let uiPrefs = { ...defaultPrefs, ...JSON.parse(localStorage.getItem('nexus_customizer_prefs') || '{}') };
+
+function saveUiPrefs() {
+  localStorage.setItem('nexus_customizer_prefs', JSON.stringify(uiPrefs));
+}
 
 const state = {
   items: [...storedCustom, ...seedCatalog.items],
@@ -1581,7 +1877,6 @@ const state = {
   activeTag: null,
   q: '',
   sort: 'recent',
-  view: viewMode,
   selectedItem: null,
   currentSlideIndex: 0
 };
@@ -1661,20 +1956,23 @@ function getFilteredItems() {
   return list;
 }
 
-// RENDER DOS CARDS ESPECÍFICOS COM A FÓRMULA UNIVERSAL
+// ==========================================================================
+// RENDERIZADOR DINÂMICO MULTI-MODO (CARDS / LISTA / BOTÕES TILES)
+// ==========================================================================
 function renderCards() {
   const container = $('#itemsList');
   const items = getFilteredItems();
 
-  container.className = `stream-container ${state.view === 'grid' ? 'grid-view' : ''}`;
+  // Aplica classes de customização do layout no container
+  container.className = `stream-container view-${uiPrefs.viewMode} cols-${uiPrefs.gridCols} gap-${uiPrefs.gapSize}`;
 
   if (!items.length) {
     container.innerHTML = `
-      <div style="grid-column: 1 / -1; padding: 3.5rem 1rem; text-align: center; color: var(--muted);">
+      <div style="grid-column: 1 / -1; padding: 3.5rem 1rem; text-align: center; color: var(--muted-text);">
         <i data-lucide="inbox" style="width: 40px; height: 40px; margin: 0 auto 0.75rem; opacity: 0.4;"></i>
         <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text);">Nenhum recurso encontrado</h3>
         <p style="font-size: 0.825rem; margin-top: 0.2rem;">Tente pesquisar outros termos ou limpe os filtros ativos.</p>
-        <button class="btn" onclick="resetAllFilters()" style="margin-top: 0.85rem;">Limpar todos os filtros</button>
+        <button class="btn" onclick="resetAllFilters()" style="margin-top: 0.85rem;" aria-label="Limpar todos os filtros">Limpar todos os filtros</button>
       </div>`;
     $('#resultCount').textContent = '0 recursos encontrados';
     lucide.createIcons();
@@ -1682,192 +1980,317 @@ function renderCards() {
     return;
   }
 
-  container.innerHTML = items.map(item => {
-    const isFav = storedFavorites.has(item.id);
-    const summary = esc(item.description || '');
-    const deliverableText = esc(item.deliverable || item.description);
-    const exampleText = esc(item.practicalExample || 'Aplicável diretamente no fluxo de trabalho e projetos.');
-
-    // 1. VÍDEO (Layout Horizontal Compacto com Capa Real)
-    if (item.kind === 'vídeo' || item.youtubeId) {
+  // 1. MODO LISTA EXECUTIVA
+  if (uiPrefs.viewMode === 'list') {
+    container.innerHTML = items.map(item => {
+      const isFav = storedFavorites.has(item.id);
       const ytId = item.youtubeId || extractYouTubeId(item.url);
-      const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : (item.thumbnail || 'https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=400');
+      const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : (item.thumbnail || '');
+      const isVideo = item.kind === 'vídeo' || !!ytId;
+      const favicon = getItemFavicon(item.url);
+      const deliverable = esc(item.deliverable || item.description);
+
       return `
-        <article class="card-item card-video" data-id="${esc(item.id)}">
-          <div class="card-video-media">
-            <img src="${thumb}" alt="${esc(item.title)}" loading="lazy">
-            <div class="video-hover-play"><div class="play-bubble"><i data-lucide="play" style="width:16px;height:16px;"></i></div></div>
-            <span class="video-label-badge">VÍDEO</span>
-          </div>
-          <div class="card-inner-content">
-            <div>
-              <div class="card-title-line">
-                <h3 class="card-title-text">${esc(item.title)}</h3>
-                <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
-              </div>
-              <p class="card-summary-desc" style="margin-top: 0.25rem;">${summary}</p>
-              
-              <div class="callout-deliverable" style="margin-top: 0.45rem;">
-                <i data-lucide="zap"></i>
-                <span><strong>O que entrega:</strong> ${deliverableText}</span>
-              </div>
-
-              <div class="callout-example" style="margin-top: 0.35rem;">
-                <i data-lucide="lightbulb"></i>
-                <span><strong>Exemplo prático:</strong> ${exampleText}</span>
-              </div>
-            </div>
-
-            <div class="card-foot-actions">
-              <span style="font-size:0.7rem; color:var(--faint);">👥 ${esc(item.targetAudience || 'Geral')}</span>
-              <div class="card-button-links">
-                <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-                <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir no YouTube"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-              </div>
-            </div>
-          </div>
-        </article>
-      `;
-    }
-
-    // 2. REPOSITÓRIO GITHUB (Card Técnico de Engenharia)
-    if (item.kind === 'repositório') {
-      const repoName = extractGitHubRepo(item.url) || esc(item.title);
-      const license = esc(item.license || 'Open Source');
-      return `
-        <article class="card-item card-repo" data-id="${esc(item.id)}">
-          <div class="repo-badge-row">
-            <div class="repo-name-mono">
-              <i data-lucide="github"></i>
-              <span>${esc(repoName)}</span>
-            </div>
-            <div style="display: flex; align-items: center; gap: 0.4rem;">
-              <span class="meta-chip-tag">${license}</span>
-              <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
-            </div>
-          </div>
-
-          <div style="margin: 0.5rem 0;">
-            <h3 class="card-title-text" style="font-size:0.95rem;">${esc(item.title)}</h3>
-            <p class="card-summary-desc" style="margin-top: 0.25rem;">${summary}</p>
-
-            <div class="callout-deliverable" style="margin-top: 0.45rem;">
-              <i data-lucide="zap"></i>
-              <span><strong>O que entrega:</strong> ${deliverableText}</span>
-            </div>
-
-            <div class="callout-example" style="margin-top: 0.35rem;">
-              <i data-lucide="lightbulb"></i>
-              <span><strong>Exemplo prático:</strong> ${exampleText}</span>
-            </div>
-          </div>
-
-          <div class="card-foot-actions">
-            <div class="card-chips-group">
-              ${item.tags.slice(0, 3).map(t => `<span class="meta-chip-tag" data-tag="${esc(t)}">#${esc(t)}</span>`).join('')}
-            </div>
-            <div class="card-button-links">
-              <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-              <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Acessar Repositório"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-            </div>
-          </div>
-        </article>
-      `;
-    }
-
-    // 3. CARROSSEL (Instagram / Redes)
-    if (item.kind === 'carrossel') {
-      const slides = Array.isArray(item.slides) && item.slides.length ? item.slides : [item.thumbnail || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400'];
-      const author = esc(item.author || '@instagram');
-      return `
-        <article class="card-item card-carousel" data-id="${esc(item.id)}">
-          <div class="carousel-cover-col">
-            <img src="${slides[0]}" alt="${esc(item.title)}" loading="lazy">
-            <div class="slides-counter-tag"><i data-lucide="images" style="width:12px;height:12px;"></i> ${slides.length}</div>
-          </div>
-          <div class="card-inner-content">
-            <div>
-              <div class="card-title-line">
-                <div>
-                  <span style="font-size: 0.68rem; font-weight: 700; color: var(--muted);">${author}</span>
-                  <h3 class="card-title-text">${esc(item.title)}</h3>
-                </div>
-                <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
-              </div>
-              <p class="card-summary-desc" style="margin-top: 0.25rem;">${summary}</p>
-
-              <div class="callout-deliverable" style="margin-top: 0.45rem;">
-                <i data-lucide="zap"></i>
-                <span><strong>O que entrega:</strong> ${deliverableText}</span>
-              </div>
-
-              <div class="callout-example" style="margin-top: 0.35rem;">
-                <i data-lucide="lightbulb"></i>
-                <span><strong>Exemplo prático:</strong> ${exampleText}</span>
-              </div>
-            </div>
-
-            <div class="card-foot-actions">
-              <span style="font-size:0.7rem; color:var(--faint);">📸 Carrossel</span>
-              <div class="card-button-links">
-                <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-                <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir no Instagram"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-              </div>
-            </div>
-          </div>
-        </article>
-      `;
-    }
-
-    // 4. FERRAMENTA WEB & CONHECIMENTO
-    const favicon = getItemFavicon(item.url);
-    const isDoc = item.kind === 'conhecimento' || item.kind === 'diretório';
-    return `
-      <article class="card-item card-tool" data-id="${esc(item.id)}">
-        <div class="tool-avatar-square">
-          ${isDoc 
-            ? `<i data-lucide="book-open" style="width:20px;height:20px;color:var(--text);"></i>` 
-            : `<img src="${favicon}" alt="${esc(item.title)}" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2371717a%22 stroke-width=%222%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/></svg>'">`}
-        </div>
-        <div style="flex: 1; min-width: 0; display: flex; flex-direction: column; justify-content: space-between; gap: 0.5rem;">
+        <article class="list-row-item" data-id="${esc(item.id)}">
           <div>
-            <div class="card-title-line">
+            ${isVideo && thumb
+              ? `<img class="list-thumb-img" src="${thumb}" alt="" loading="lazy">`
+              : `<div class="list-avatar-icon"><img src="${favicon}" style="width:20px;height:20px;object-fit:contain;" alt="" onerror="this.style.display='none'"></div>`}
+          </div>
+
+          <div class="list-col-title">
+            <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+              <span class="meta-chip-tag" style="text-transform: uppercase;">${esc(item.kind)}</span>
+              <span class="meta-chip-tag" style="color:var(--faint);">${esc(item.segment)}</span>
+            </div>
+            <h3 style="font-size: 0.9rem; font-weight: 700; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${esc(item.title)}</h3>
+          </div>
+
+          <div class="list-col-deliverable">
+            <span class="list-deliverable-text">⚡ ${deliverable}</span>
+          </div>
+
+          <div class="list-col-actions">
+            <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+            <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
+            <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir link externo" aria-label="Abrir link externo"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+          </div>
+        </article>
+      `;
+    }).join('');
+  }
+
+  // 2. MODO BOTÕES / MOSAICO DINÂMICO
+  else if (uiPrefs.viewMode === 'tiles') {
+    container.innerHTML = items.map(item => {
+      const isFav = storedFavorites.has(item.id);
+      const ytId = item.youtubeId || extractYouTubeId(item.url);
+      const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : (item.thumbnail || '');
+      const favicon = getItemFavicon(item.url);
+
+      return `
+        <button class="tile-button-card" data-id="${esc(item.id)}" title="${esc(item.deliverable || item.description)}">
+          <div class="tile-media-avatar">
+            ${thumb 
+              ? `<img src="${thumb}" alt="">` 
+              : `<img src="${favicon}" alt="" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2371717a%22 stroke-width=%222%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/></svg>'">`}
+          </div>
+          <div class="tile-info-block">
+            <div class="tile-info-title">${esc(item.title)}</div>
+            <div class="tile-info-meta">${esc(item.kind.toUpperCase())} · ${esc(item.segment)}</div>
+          </div>
+          <span class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" style="margin-left: auto;" aria-label="Favoritar"><i data-lucide="star" style="width:13px;height:13px;"></i></span>
+        </button>
+      `;
+    }).join('');
+  }
+
+  // 3. MODO CARDS MULTI-COLUNA (DEFAULT)
+  else {
+    container.innerHTML = items.map(item => {
+      const isFav = storedFavorites.has(item.id);
+      const summary = esc(item.description || '');
+      const deliverableText = esc(item.deliverable || item.description);
+      const exampleText = esc(item.practicalExample || 'Aplicável diretamente no fluxo de trabalho e projetos.');
+      const showSummary = uiPrefs.detailLevel === 'full';
+      const showDeliverable = uiPrefs.detailLevel === 'full' || uiPrefs.detailLevel === 'focused';
+      const showExample = uiPrefs.detailLevel === 'full';
+
+      // A. VÍDEO
+      if (item.kind === 'vídeo' || item.youtubeId) {
+        const ytId = item.youtubeId || extractYouTubeId(item.url);
+        const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : (item.thumbnail || '');
+        const isHorizontal = uiPrefs.thumbSize === 'medium' || uiPrefs.thumbSize === 'small';
+        const showThumb = uiPrefs.thumbSize !== 'none';
+
+        if (isHorizontal && showThumb) {
+          return `
+            <article class="card-item card-video-horizontal ${uiPrefs.thumbSize === 'small' ? 'thumb-sm' : ''}" data-id="${esc(item.id)}">
+              <div class="card-thumb-side">
+                <img src="${thumb}" alt="${esc(item.title)}" loading="lazy">
+                <div class="video-hover-play"><div class="play-bubble"><i data-lucide="play" style="width:15px;height:15px;"></i></div></div>
+                <span class="video-label-badge">VÍDEO</span>
+              </div>
+              <div class="card-content-body">
+                <div>
+                  <div class="card-title-line">
+                    <h3 class="card-title-text">${esc(item.title)}</h3>
+                    <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                  </div>
+                  ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
+                  ${showDeliverable ? `
+                    <div class="callout-deliverable" style="margin-top: 0.45rem;">
+                      <i data-lucide="zap"></i>
+                      <span><strong>O que entrega:</strong> ${deliverableText}</span>
+                    </div>` : ''}
+                  ${showExample ? `
+                    <div class="callout-example" style="margin-top: 0.35rem;">
+                      <i data-lucide="lightbulb"></i>
+                      <span><strong>Exemplo prático:</strong> ${exampleText}</span>
+                    </div>` : ''}
+                </div>
+                <div class="card-foot-actions">
+                  <span style="font-size:0.7rem; color:var(--faint);">👥 ${esc(item.targetAudience || 'Geral')}</span>
+                  <div class="card-button-links">
+                    <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
+                    <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir no YouTube" aria-label="Abrir no YouTube"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+                  </div>
+                </div>
+              </div>
+            </article>
+          `;
+        }
+
+        return `
+          <article class="card-item" data-id="${esc(item.id)}">
+            ${showThumb ? `
+              <div class="card-thumb-top">
+                <img src="${thumb}" alt="${esc(item.title)}" loading="lazy">
+                <div class="video-hover-play"><div class="play-bubble"><i data-lucide="play" style="width:16px;height:16px;"></i></div></div>
+                <span class="video-label-badge">VÍDEO</span>
+              </div>` : ''}
+            <div class="card-content-body">
+              <div>
+                <div class="card-title-line">
+                  <h3 class="card-title-text">${esc(item.title)}</h3>
+                  <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                </div>
+                ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
+                ${showDeliverable ? `
+                  <div class="callout-deliverable" style="margin-top: 0.5rem;">
+                    <i data-lucide="zap"></i>
+                    <span><strong>O que entrega:</strong> ${deliverableText}</span>
+                  </div>` : ''}
+                ${showExample ? `
+                  <div class="callout-example" style="margin-top: 0.4rem;">
+                    <i data-lucide="lightbulb"></i>
+                    <span><strong>Exemplo prático:</strong> ${exampleText}</span>
+                  </div>` : ''}
+              </div>
+              <div class="card-foot-actions">
+                <span style="font-size:0.7rem; color:var(--faint);">👥 ${esc(item.targetAudience || 'Geral')}</span>
+                <div class="card-button-links">
+                  <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
+                  <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir no YouTube" aria-label="Abrir no YouTube"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      // B. REPOSITÓRIO GITHUB
+      if (item.kind === 'repositório') {
+        const repoName = extractGitHubRepo(item.url) || esc(item.title);
+        const license = esc(item.license || 'Open Source');
+        return `
+          <article class="card-item" data-id="${esc(item.id)}">
+            <div class="card-content-body">
+              <div>
+                <div class="card-repo-header" style="margin-bottom: 0.5rem;">
+                  <div class="repo-mono-title">
+                    <i data-lucide="github"></i>
+                    <span>${esc(repoName)}</span>
+                  </div>
+                  <div style="display: flex; align-items: center; gap: 0.4rem;">
+                    <span class="meta-chip-tag">${license}</span>
+                    <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                  </div>
+                </div>
+
+                <h3 class="card-title-text">${esc(item.title)}</h3>
+                ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
+
+                ${showDeliverable ? `
+                  <div class="callout-deliverable" style="margin-top: 0.5rem;">
+                    <i data-lucide="zap"></i>
+                    <span><strong>O que entrega:</strong> ${deliverableText}</span>
+                  </div>` : ''}
+
+                ${showExample ? `
+                  <div class="callout-example" style="margin-top: 0.4rem;">
+                    <i data-lucide="lightbulb"></i>
+                    <span><strong>Exemplo prático:</strong> ${exampleText}</span>
+                  </div>` : ''}
+              </div>
+
+              <div class="card-foot-actions">
+                <div class="card-chips-group">
+                  ${item.tags.slice(0, 3).map(t => `<span class="meta-chip-tag" data-tag="${esc(t)}">#${esc(t)}</span>`).join('')}
+                </div>
+                <div class="card-button-links">
+                  <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
+                  <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Acessar Repositório" aria-label="Acessar Repositório"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      // C. CARROSSEL (Instagram / Redes)
+      if (item.kind === 'carrossel') {
+        const slides = Array.isArray(item.slides) && item.slides.length ? item.slides : [item.thumbnail || 'https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=400'];
+        const author = esc(item.author || '@instagram');
+        const showThumb = uiPrefs.thumbSize !== 'none';
+        return `
+          <article class="card-item" data-id="${esc(item.id)}">
+            ${showThumb ? `
+              <div class="card-carousel-cover">
+                <img src="${slides[0]}" alt="${esc(item.title)}" loading="lazy">
+                <div class="slides-counter-tag"><i data-lucide="images" style="width:12px;height:12px;"></i> ${slides.length}</div>
+              </div>` : ''}
+            <div class="card-content-body">
+              <div>
+                <div class="card-title-line">
+                  <div>
+                    <span style="font-size: 0.68rem; font-weight: 700; color: var(--muted-text);">${author}</span>
+                    <h3 class="card-title-text">${esc(item.title)}</h3>
+                  </div>
+                  <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                </div>
+                ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
+                ${showDeliverable ? `
+                  <div class="callout-deliverable" style="margin-top: 0.5rem;">
+                    <i data-lucide="zap"></i>
+                    <span><strong>O que entrega:</strong> ${deliverableText}</span>
+                  </div>` : ''}
+                ${showExample ? `
+                  <div class="callout-example" style="margin-top: 0.4rem;">
+                    <i data-lucide="lightbulb"></i>
+                    <span><strong>Exemplo prático:</strong> ${exampleText}</span>
+                  </div>` : ''}
+              </div>
+              <div class="card-foot-actions">
+                <span style="font-size:0.7rem; color:var(--faint);">📸 Carrossel</span>
+                <div class="card-button-links">
+                  <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
+                  <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir no Instagram" aria-label="Abrir no Instagram"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+                </div>
+              </div>
+            </div>
+          </article>
+        `;
+      }
+
+      // D. FERRAMENTAS WEB E CONHECIMENTO
+      const favicon = getItemFavicon(item.url);
+      const isDoc = item.kind === 'conhecimento' || item.kind === 'diretório';
+      return `
+        <article class="card-item" data-id="${esc(item.id)}">
+          <div class="card-content-body">
+            <div>
+              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem;">
+                <div style="width: 36px; height: 36px; border-radius: var(--radius); background: var(--surface2); border: 1px solid var(--border-color); display: grid; place-items: center; overflow: hidden;">
+                  ${isDoc 
+                    ? `<i data-lucide="book-open" style="width:18px;height:18px;color:var(--text);"></i>` 
+                    : `<img src="${favicon}" alt="" style="width:20px;height:20px;object-fit:contain;" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2371717a%22 stroke-width=%222%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/></svg>'">`}
+                </div>
+                <div style="display: flex; align-items: center; gap: 0.4rem;">
+                  <span class="meta-chip-tag">${esc(item.segment)}</span>
+                  <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                </div>
+              </div>
+
               <h3 class="card-title-text">${esc(item.title)}</h3>
-              <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
-            </div>
-            <p class="card-summary-desc" style="margin-top: 0.25rem;">${summary}</p>
+              ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
 
-            <div class="callout-deliverable" style="margin-top: 0.45rem;">
-              <i data-lucide="zap"></i>
-              <span><strong>O que entrega:</strong> ${deliverableText}</span>
+              ${showDeliverable ? `
+                <div class="callout-deliverable" style="margin-top: 0.5rem;">
+                  <i data-lucide="zap"></i>
+                  <span><strong>O que entrega:</strong> ${deliverableText}</span>
+                </div>` : ''}
+
+              ${showExample ? `
+                <div class="callout-example" style="margin-top: 0.4rem;">
+                  <i data-lucide="lightbulb"></i>
+                  <span><strong>Exemplo prático:</strong> ${exampleText}</span>
+                </div>` : ''}
             </div>
 
-            <div class="callout-example" style="margin-top: 0.35rem;">
-              <i data-lucide="lightbulb"></i>
-              <span><strong>Exemplo prático:</strong> ${exampleText}</span>
+            <div class="card-foot-actions">
+              <div class="card-chips-group">
+                ${item.tags.slice(0, 3).map(t => `<span class="meta-chip-tag" data-tag="${esc(t)}">#${esc(t)}</span>`).join('')}
+              </div>
+              <div class="card-button-links">
+                <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
+                <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Acessar Ferramenta" aria-label="Acessar Ferramenta"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+              </div>
             </div>
           </div>
+        </article>
+      `;
+    }).join('');
+  }
 
-          <div class="card-foot-actions">
-            <span style="font-size:0.7rem; color:var(--muted); font-weight:600;">${esc(item.segment)}</span>
-            <div class="card-button-links">
-              <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-              <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Acessar Ferramenta"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-            </div>
-          </div>
-        </div>
-      </article>
-    `;
-  }).join('');
-
-  $('#resultCount').textContent = `${items.length} de ${state.items.length} recursos disponíveis`;
+  $('#resultCount').textContent = `Exibindo ${items.length} de ${state.items.length} recursos`;
   updateKpis();
   lucide.createIcons();
   attachCardEvents();
 }
 
 function attachCardEvents() {
-  $$('.card-item').forEach(card => {
+  $$('.card-item, .list-row-item, .tile-button-card').forEach(card => {
     card.onclick = e => {
       if (e.target.closest('.card-favorite-toggle') || e.target.closest('.icon-action-btn') || e.target.closest('.meta-chip-tag')) return;
       const item = state.items.find(x => x.id === card.dataset.id);
@@ -1897,7 +2320,7 @@ function attachCardEvents() {
   });
 }
 
-// MODAL DE DETALHES
+// MODAL DE DETALHES MULTIMÍDIA
 function openDetailModal(item) {
   state.selectedItem = item;
   state.currentSlideIndex = 0;
@@ -1970,40 +2393,32 @@ function renderCarouselSlider(slides) {
   if (slides.length > 1) {
     $('#btnSlidePrev').onclick = () => {
       state.currentSlideIndex = (state.currentSlideIndex - 1 + slides.length) % slides.length;
-      updateSlideDisplay(slides);
+      renderCarouselSlider(slides);
     };
     $('#btnSlideNext').onclick = () => {
       state.currentSlideIndex = (state.currentSlideIndex + 1) % slides.length;
-      updateSlideDisplay(slides);
+      renderCarouselSlider(slides);
     };
   }
-  lucide.createIcons();
-}
-
-function updateSlideDisplay(slides) {
-  $('#carouselSlideImg').src = slides[state.currentSlideIndex];
-  $('#slideCounter').textContent = `Slide ${state.currentSlideIndex + 1} de ${slides.length}`;
 }
 
 function closeDetailModal() {
-  $('#modalMediaContainer').innerHTML = '';
   $('#detailModal').classList.remove('open');
+  $('#modalMediaContainer').innerHTML = '';
 }
 
-// FAVORITOS
 function toggleFavorite(id) {
   if (storedFavorites.has(id)) {
     storedFavorites.delete(id);
     showToast('Removido dos favoritos');
   } else {
     storedFavorites.add(id);
-    showToast('Salvo nos favoritos ⭐');
+    showToast('Adicionado aos favoritos ⭐');
   }
   localStorage.setItem('nexus_favorites', JSON.stringify([...storedFavorites]));
   renderCards();
 }
 
-// FILTRAGEM POR TAG
 function filterByTag(tag) {
   state.activeTag = tag;
   $('#activeTagName').textContent = `#${tag}`;
@@ -2023,418 +2438,392 @@ function resetAllFilters() {
   state.activeTag = null;
   state.q = '';
   $('#searchInput').value = '';
-  $('#selectSegment').value = 'all';
   $('#activeTagBar').classList.remove('show');
-  $$('#navKind button').forEach(b => b.classList.toggle('active', b.dataset.kind === 'all'));
-  $$('#categoryPills button').forEach(b => b.classList.toggle('active', b.dataset.kind === 'all'));
+  syncFilterControls();
   renderCards();
 }
 
-// KPIS
-function updateKpis() {
-  $('#kpiTotal').textContent = state.items.length;
-  $('#kpiVideos').textContent = state.items.filter(x => x.kind === 'vídeo' || !!x.youtubeId).length;
-  $('#kpiRepos').textContent = state.items.filter(x => x.kind === 'repositório').length;
-  $('#kpiCarousels').textContent = state.items.filter(x => x.kind === 'carrossel').length;
-  $('#kpiFavs').textContent = storedFavorites.size;
-
-  $('#countAll').textContent = state.items.length;
-  $('#countVideo').textContent = state.items.filter(x => x.kind === 'vídeo' || !!x.youtubeId).length;
-  $('#countRepo').textContent = state.items.filter(x => x.kind === 'repositório').length;
-  $('#countCarousel').textContent = state.items.filter(x => x.kind === 'carrossel').length;
-  $('#countTool').textContent = state.items.filter(x => x.kind === 'ferramenta').length;
-  $('#countDoc').textContent = state.items.filter(x => x.kind === 'conhecimento').length;
-  $('#countFav').textContent = storedFavorites.size;
+function syncFilterControls() {
+  $$('#categoryTabs .segment-tab').forEach(b => {
+    b.classList.toggle('active', b.dataset.kind === state.kind);
+  });
+  $$('.nav-btn[data-kind]').forEach(b => {
+    b.classList.toggle('active', b.dataset.kind === state.kind);
+  });
+  $$('.filter-chip-item').forEach(b => {
+    b.classList.toggle('active', b.dataset.segment === state.segment);
+  });
 }
 
-// SEGMENTOS LATERAIS
-function renderSegments() {
+function updateKpis() {
+  const all = state.items;
+  $('#kpiTotal').textContent = all.length;
+  $('#kpiVideos').textContent = all.filter(x => x.kind === 'vídeo' || !!x.youtubeId).length;
+  $('#kpiRepos').textContent = all.filter(x => x.kind === 'repositório').length;
+  $('#kpiCarousels').textContent = all.filter(x => x.kind === 'carrossel').length;
+  $('#kpiFavs').textContent = storedFavorites.size;
+
+  $('#countAll').textContent = all.length;
+  $('#countVideo').textContent = all.filter(x => x.kind === 'vídeo' || !!x.youtubeId).length;
+  $('#countRepo').textContent = all.filter(x => x.kind === 'repositório').length;
+  $('#countCarousel').textContent = all.filter(x => x.kind === 'carrossel').length;
+  $('#countTool').textContent = all.filter(x => x.kind === 'ferramenta').length;
+  $('#countDoc').textContent = all.filter(x => x.kind === 'conhecimento' || x.kind === 'diretório').length;
+  $('#countFav').textContent = storedFavorites.size;
+
+  renderSegmentList();
+  renderQueuePreview();
+}
+
+function renderSegmentList() {
   const counts = {};
-  state.items.forEach(x => counts[x.segment] = (counts[x.segment] || 0) + 1);
+  state.items.forEach(x => {
+    counts[x.segment] = (counts[x.segment] || 0) + 1;
+  });
+
   const max = Math.max(...Object.values(counts), 1);
-
-  $('#segmentsList').innerHTML = Object.entries(counts)
-    .sort((a, b) => b[1] - a[1])
-    .map(([s, n]) => `
-      <div class="segment-row ${state.segment === s ? 'active' : ''}" data-segment="${esc(s)}" tabindex="0">
+  const container = $('#segmentsList');
+  container.innerHTML = Object.entries(counts).map(([seg, count]) => {
+    const pct = Math.round((count / max) * 100);
+    const active = state.segment === seg ? 'active' : '';
+    return `
+      <div class="segment-row ${active}" data-segment="${esc(seg)}">
         <div class="segment-row-header">
-          <span>${esc(s)}</span>
-          <span style="font-family: var(--font-mono); font-weight:700;">${n}</span>
+          <span>${esc(seg)}</span>
+          <strong style="color:var(--text);">${count}</strong>
         </div>
-        <div class="segment-track">
-          <div class="segment-fill" style="width: ${(n / max) * 100}%"></div>
-        </div>
+        <div class="segment-track"><div class="segment-fill" style="width: ${pct}%;"></div></div>
       </div>
-    `).join('');
+    `;
+  }).join('');
 
-  $$('.segment-row').forEach(el => {
-    el.onclick = () => {
-      const seg = el.dataset.segment;
-      state.segment = (state.segment === seg) ? 'all' : seg;
-      $('#selectSegment').value = state.segment;
-      renderSegments();
+  $$('.segment-row').forEach(row => {
+    row.onclick = () => {
+      state.segment = state.segment === row.dataset.segment ? 'all' : row.dataset.segment;
+      syncFilterControls();
       renderCards();
     };
   });
 }
 
-// VÍDEOS RECOMENDADOS NA LATERAL
-function renderVideoQueue() {
+function renderQueuePreview() {
   const vids = state.items.filter(x => x.youtubeId).slice(0, 3);
   $('#videoQueue').innerHTML = vids.map(v => `
-    <div style="display: flex; gap: 0.5rem; cursor: pointer; align-items: center; padding: 0.35rem 0.5rem; border-radius: var(--radius-xs); background: var(--surface2);" data-queue-id="${esc(v.id)}">
+    <div style="display: flex; gap: 0.6rem; align-items: center; cursor: pointer; padding: 0.35rem 0.5rem; border-radius: 4px; background: var(--surface2);" onclick="openDetailModal(state.items.find(x => x.id === '${v.id}'))">
       <img src="https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg" style="width: 54px; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px;" alt="">
-      <strong style="font-size: 0.72rem; line-height: 1.25; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden;">${esc(v.title)}</strong>
+      <span style="font-size: 0.72rem; font-weight: 600; color: var(--text); line-height: 1.3; overflow: hidden; text-overflow: ellipsis; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical;">${esc(v.title)}</span>
     </div>
   `).join('');
-
-  $$('#videoQueue [data-queue-id]').forEach(el => {
-    el.onclick = () => {
-      const it = state.items.find(x => x.id === el.dataset.queueId);
-      if (it) openDetailModal(it);
-    };
-  });
 }
 
 function showToast(msg) {
+  const toast = $('#toast');
   $('#toastMsg').textContent = msg;
-  $('#toast').classList.add('show');
-  setTimeout(() => $('#toast').classList.remove('show'), 2400);
+  toast.classList.add('show');
+  setTimeout(() => toast.classList.remove('show'), 2600);
 }
 
-function initSelectFilters() {
-  const segments = [...new Set(state.items.map(x => x.segment))].sort();
-  const selectSeg = $('#selectSegment');
-  selectSeg.innerHTML = '<option value="all">Todos os segmentos</option>';
-  segments.forEach(s => selectSeg.add(new Option(s, s)));
+// SINCRONIZAÇÃO DAS OPÇÕES NO POPOVER DE CUSTOMIZAÇÃO
+function syncCustomizerUi() {
+  // Modo de exibição
+  $$('.view-toggle-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.mode === uiPrefs.viewMode);
+  });
+  // Colunas
+  $$('#colCluster .customizer-option-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.cols === uiPrefs.gridCols);
+  });
+  // Thumbnails
+  $$('#thumbCluster .customizer-option-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.thumb === uiPrefs.thumbSize);
+  });
+  // Detalhe
+  $$('#detailCluster .customizer-option-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.detail === uiPrefs.detailLevel);
+  });
+  // Espaçamento
+  $$('#gapCluster .customizer-option-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.gap === uiPrefs.gapSize);
+  });
 }
 
-// LISTENERS
-$('#searchInput').addEventListener('input', e => { state.q = e.target.value; renderCards(); });
-$('#selectSegment').addEventListener('change', e => { state.segment = e.target.value; renderSegments(); renderCards(); });
-$('#selectSort').addEventListener('change', e => { state.sort = e.target.value; renderCards(); });
-$('#btnClearTag').addEventListener('click', clearTagFilter);
-
-$('#btnViewGrid').addEventListener('click', () => {
-  state.view = 'grid';
-  localStorage.setItem('nexus_view_mode', 'grid');
-  $('#btnViewGrid').classList.add('active');
-  $('#btnViewList').classList.remove('active');
+// INICIALIZAÇÃO DE EVENTOS
+document.addEventListener('DOMContentLoaded', () => {
+  syncCustomizerUi();
   renderCards();
-});
 
-$('#btnViewList').addEventListener('click', () => {
-  state.view = 'list';
-  localStorage.setItem('nexus_view_mode', 'list');
-  $('#btnViewList').classList.add('active');
-  $('#btnViewGrid').classList.remove('active');
-  renderCards();
-});
+  // 1. Alternador de Modo de Exibição
+  $$('.view-toggle-btn').forEach(btn => {
+    btn.onclick = () => {
+      uiPrefs.viewMode = btn.dataset.mode;
+      saveUiPrefs();
+      syncCustomizerUi();
+      renderCards();
+    };
+  });
 
-function setKindFilter(kind) {
-  state.kind = kind;
-  $$('#navKind button').forEach(b => b.classList.toggle('active', b.dataset.kind === kind));
-  $$('#categoryPills button').forEach(b => b.classList.toggle('active', b.dataset.kind === kind));
-  renderCards();
-  $('#sidebar').classList.remove('open');
-}
+  // 2. Customizer Popover Toggle & Options
+  const popover = $('#customizerMenu');
+  $('#btnCustomizerToggle').onclick = e => {
+    e.stopPropagation();
+    popover.classList.toggle('open');
+  };
 
-$$('#navKind button[data-kind]').forEach(btn => {
-  btn.addEventListener('click', () => setKindFilter(btn.dataset.kind));
-});
+  $('#btnCloseCustomizer').onclick = () => popover.classList.remove('open');
 
-$$('#categoryPills button[data-kind]').forEach(btn => {
-  btn.addEventListener('click', () => setKindFilter(btn.dataset.kind));
-});
+  document.addEventListener('click', e => {
+    if (!e.target.closest('.customizer-popover-wrap')) {
+      popover.classList.remove('open');
+    }
+  });
 
-$('#btnModalClose').addEventListener('click', closeDetailModal);
-$('#detailModal').addEventListener('click', e => {
-  if (e.target === $('#detailModal')) closeDetailModal();
-});
+  // Colunas
+  $$('#colCluster .customizer-option-btn').forEach(btn => {
+    btn.onclick = () => {
+      uiPrefs.gridCols = btn.dataset.cols;
+      saveUiPrefs();
+      syncCustomizerUi();
+      renderCards();
+    };
+  });
 
-$('#btnModalCopy').addEventListener('click', () => {
-  if (state.selectedItem) {
-    navigator.clipboard.writeText(state.selectedItem.url).then(() => showToast('Link copiado!'));
-  }
-});
+  // Thumbnails
+  $$('#thumbCluster .customizer-option-btn').forEach(btn => {
+    btn.onclick = () => {
+      uiPrefs.thumbSize = btn.dataset.thumb;
+      saveUiPrefs();
+      syncCustomizerUi();
+      renderCards();
+    };
+  });
 
-$('#btnModalFav').addEventListener('click', () => {
-  if (state.selectedItem) {
-    toggleFavorite(state.selectedItem.id);
-    const isFav = storedFavorites.has(state.selectedItem.id);
-    $('#btnModalFav').innerHTML = `<i data-lucide="star"></i> ${isFav ? 'Remover' : 'Favoritar'}`;
+  // Detalhes
+  $$('#detailCluster .customizer-option-btn').forEach(btn => {
+    btn.onclick = () => {
+      uiPrefs.detailLevel = btn.dataset.detail;
+      saveUiPrefs();
+      syncCustomizerUi();
+      renderCards();
+    };
+  });
+
+  // Espaçamento
+  $$('#gapCluster .customizer-option-btn').forEach(btn => {
+    btn.onclick = () => {
+      uiPrefs.gapSize = btn.dataset.gap;
+      saveUiPrefs();
+      syncCustomizerUi();
+      renderCards();
+    };
+  });
+
+  // Restaurar Padrão
+  $('#btnResetPrefs').onclick = () => {
+    uiPrefs = { ...defaultPrefs };
+    saveUiPrefs();
+    syncCustomizerUi();
+    renderCards();
+    showToast('Preferências restauradas!');
+  };
+
+  // 3. Segmented Tabs de Formato
+  $$('#categoryTabs .segment-tab').forEach(btn => {
+    btn.onclick = () => {
+      state.kind = btn.dataset.kind;
+      syncFilterControls();
+      renderCards();
+    };
+  });
+
+  // 4. Sidebar Nav Pills
+  $$('.nav-btn[data-kind]').forEach(btn => {
+    btn.onclick = () => {
+      state.kind = btn.dataset.kind;
+      syncFilterControls();
+      renderCards();
+      if (window.innerWidth <= 767) $('.sidebar').classList.remove('open');
+    };
+  });
+
+  // 5. Filtro por Chips de Segmento
+  $$('.filter-chip-item').forEach(chip => {
+    chip.onclick = () => {
+      state.segment = chip.dataset.segment;
+      syncFilterControls();
+      renderCards();
+    };
+  });
+
+  // 6. Ordenação
+  $('#sortSelect').onchange = e => {
+    state.sort = e.target.value;
+    renderCards();
+  };
+
+  // 7. Busca em Tempo Real
+  $('#searchInput').oninput = e => {
+    state.q = e.target.value;
+    renderCards();
+  };
+
+  // Limpar Tag
+  $('#btnClearTag').onclick = clearTagFilter;
+
+  // Tema Claro / Escuro
+  $('#btnTheme').onclick = () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'dark';
+    const next = current === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('nexus_theme', next);
+    $('#btnTheme').innerHTML = `<i data-lucide="${next === 'dark' ? 'sun' : 'moon'}"></i>`;
     lucide.createIcons();
-  }
-});
-
-$('#btnMenu').addEventListener('click', () => $('#sidebar').classList.toggle('open'));
-
-$('#btnTheme').addEventListener('click', () => {
-  const current = document.documentElement.dataset.theme;
-  const next = current === 'dark' ? 'light' : 'dark';
-  document.documentElement.dataset.theme = next;
-  localStorage.setItem('nexus_theme', next);
-  $('#btnTheme').innerHTML = `<i data-lucide="${next === 'dark' ? 'sun' : 'moon'}"></i>`;
-  lucide.createIcons();
-});
-
-// MODAL DE CADASTRO (+ NOVO RECURSO)
-const addKindSelect = $('#addKindSelect');
-const carouselSlidesField = $('#carouselSlidesField');
-
-if (addKindSelect && carouselSlidesField) {
-  addKindSelect.addEventListener('change', () => {
-    carouselSlidesField.style.display = addKindSelect.value === 'carrossel' ? 'grid' : 'none';
-  });
-}
-
-function openAddModal() {
-  $('#addModal').classList.add('open');
-  const datalist = $('#segmentDatalist');
-  if (datalist) {
-    const segs = [...new Set(state.items.map(x => x.segment))].sort();
-    datalist.innerHTML = segs.map(s => `<option value="${esc(s)}">`).join('');
-  }
-  lucide.createIcons();
-}
-
-function closeAddModal() {
-  $('#addModal').classList.remove('open');
-  $('#addItemForm').reset();
-}
-
-$('#btnAddTop').addEventListener('click', openAddModal);
-$('#btnAddModalClose').addEventListener('click', closeAddModal);
-$('#btnAddCancel').addEventListener('click', closeAddModal);
-$('#addModal').addEventListener('click', e => {
-  if (e.target === $('#addModal')) closeAddModal();
-});
-
-$('#addItemForm').addEventListener('submit', e => {
-  e.preventDefault();
-  const fd = new FormData(e.target);
-  const title = fd.get('title')?.trim();
-  const urlVal = fd.get('url')?.trim();
-  const kind = fd.get('kind');
-  const segment = fd.get('segment')?.trim() || 'Geral';
-  const description = fd.get('description')?.trim() || '';
-  const deliverable = fd.get('deliverable')?.trim() || '';
-  const practicalExample = fd.get('practicalExample')?.trim() || '';
-  const targetAudience = fd.get('targetAudience')?.trim() || 'Qualquer pessoa';
-  const rawTags = fd.get('tags')?.trim() || '';
-  const rawSlides = fd.get('slides')?.trim() || '';
-
-  if (!title || !urlVal || !deliverable) {
-    showToast('Preencha os campos obrigatórios');
-    return;
-  }
-
-  const ytId = extractYouTubeId(urlVal);
-  const tags = rawTags.split(',').map(t => t.trim().toLowerCase()).filter(Boolean);
-  const slides = rawSlides.split('\n').map(s => s.trim()).filter(Boolean);
-
-  const newItem = {
-    id: `custom_${Date.now()}_${Math.random().toString(36).slice(2, 6)}`,
-    title,
-    url: urlVal,
-    kind: ytId ? 'vídeo' : kind,
-    segment,
-    description: description || deliverable,
-    deliverable,
-    practicalExample,
-    targetAudience,
-    status: 'ativo',
-    tags: tags.length ? tags : ['recurso'],
-    source: 'Segundo Cérebro',
-    license: 'Livre / N/A',
-    youtubeId: ytId || undefined,
-    slides: slides.length ? slides : undefined
   };
 
-  state.items.unshift(newItem);
-  storedCustom.unshift(newItem);
-  localStorage.setItem('nexus_custom_items', JSON.stringify(storedCustom));
+  // Menu Mobile
+  $('#btnMenu').onclick = () => $('.sidebar').classList.toggle('open');
 
-  closeAddModal();
-  initSelectFilters();
-  renderSegments();
-  renderVideoQueue();
-  renderCards();
-  showToast('Recurso salvo com sucesso! 🎉');
-});
-
-// MODAL API
-function openApiModal() {
-  $('#apiModal').classList.add('open');
-  lucide.createIcons();
-}
-
-function closeApiModal() {
-  $('#apiModal').classList.remove('open');
-}
-
-$('#btnOpenApi').addEventListener('click', openApiModal);
-$('#btnApiModalClose').addEventListener('click', closeApiModal);
-$('#apiModal').addEventListener('click', e => {
-  if (e.target === $('#apiModal')) closeApiModal();
-});
-
-$('#btnCopyApiUrl').addEventListener('click', () => {
-  const apiUrl = window.location.origin + '/data/catalog.json';
-  navigator.clipboard.writeText(apiUrl).then(() => showToast('URL da API copiada!'));
-});
-
-// EXPORTAÇÃO JSON
-$('#btnExportJson').addEventListener('click', () => {
-  const exportPayload = {
-    meta: {
-      exportedAt: new Date().toISOString(),
-      totalItems: state.items.length,
-      version: '1.4.0',
-      source: 'Nexus Acervo · Segundo Cérebro'
-    },
-    items: state.items
+  // Modais Close
+  $('#btnModalClose').onclick = closeDetailModal;
+  $('#detailModal').onclick = e => { if (e.target === $('#detailModal')) closeDetailModal(); };
+  $('#btnAddModalClose').onclick = () => $('#addModal').classList.remove('open');
+  $('#addModal').onclick = e => { if (e.target === $('#addModal')) $('#addModal').classList.remove('open'); };
+  $('#btnAddTop').onclick = () => $('#addModal').classList.add('open');
+  $('#btnModalFav').onclick = () => {
+    if (state.selectedItem) {
+      toggleFavorite(state.selectedItem.id);
+      const isFav = storedFavorites.has(state.selectedItem.id);
+      $('#btnModalFav').innerHTML = `<i data-lucide="star"></i> ${isFav ? 'Remover' : 'Favoritar'}`;
+      lucide.createIcons();
+    }
   };
-  const blob = new Blob([JSON.stringify(exportPayload, null, 2)], { type: 'application/json' });
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement('a');
-  a.href = url;
-  a.download = `nexus-acervo-${new Date().toISOString().slice(0, 10)}.json`;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  URL.revokeObjectURL(url);
-  showToast('Acervo exportado em JSON!');
-});
+  $('#btnModalCopy').onclick = () => {
+    if (state.selectedItem) {
+      navigator.clipboard.writeText(state.selectedItem.url).then(() => showToast('Link copiado!'));
+    }
+  };
 
-// COMMAND PALETTE
-let cmdSelectedIndex = 0;
-let cmdCurrentList = [];
+  // Modal API
+  $('#btnOpenApi').onclick = () => $('#apiModal').classList.add('open');
+  $('#btnApiModalClose').onclick = () => $('#apiModal').classList.remove('open');
+  $('#apiModal').onclick = e => { if (e.target === $('#apiModal')) $('#apiModal').classList.remove('open'); };
+  $('#btnCopyApiUrl').onclick = () => {
+    navigator.clipboard.writeText(window.location.origin + '/data/catalog.json').then(() => showToast('Endpoint da API copiado!'));
+  };
 
-function openCmdPalette() {
-  $('#cmdOverlay').classList.add('open');
-  $('#cmdInput').value = '';
-  cmdSelectedIndex = 0;
-  updateCmdResults('');
-  setTimeout(() => $('#cmdInput').focus(), 50);
-  lucide.createIcons();
-}
+  // Exportar Acervo
+  $('#btnExportJson').onclick = () => {
+    const dataStr = 'data:text/json;charset=utf-8,' + encodeURIComponent(JSON.stringify({ meta: seedCatalog.meta, items: state.items }, null, 2));
+    const dl = document.createElement('a');
+    dl.setAttribute('href', dataStr);
+    dl.setAttribute('download', `nexus_acervo_export_${new Date().toISOString().split('T')[0]}.json`);
+    dl.click();
+    showToast('Acervo JSON exportado!');
+  };
 
-function closeCmdPalette() {
-  $('#cmdOverlay').classList.remove('open');
-}
+  // Command Palette (⌘K)
+  const cmdOverlay = $('#cmdOverlay');
+  const cmdInput = $('#cmdInput');
+  const cmdList = $('#cmdList');
 
-function updateCmdResults(query) {
-  const qNorm = normalizeStr(query.trim());
-  if (!qNorm) {
-    cmdCurrentList = state.items.slice(0, 8);
-  } else {
-    cmdCurrentList = state.items.filter(item => {
-      const haystack = normalizeStr([item.title, item.deliverable, item.practicalExample || '', item.description, item.segment, ...item.tags].join(' '));
-      return haystack.includes(qNorm);
-    }).slice(0, 8);
+  function openCmd() {
+    cmdOverlay.classList.add('open');
+    cmdInput.value = '';
+    renderCmdResults('');
+    setTimeout(() => cmdInput.focus(), 50);
   }
 
-  cmdSelectedIndex = Math.min(cmdSelectedIndex, Math.max(0, cmdCurrentList.length - 1));
-
-  if (!cmdCurrentList.length) {
-    $('#cmdList').innerHTML = `<div style="padding: 1.25rem; text-align: center; color: var(--muted); font-size: 0.825rem;">Nenhum recurso encontrado para "${esc(query)}"</div>`;
-    return;
+  function closeCmd() {
+    cmdOverlay.classList.remove('open');
   }
 
-  $('#cmdList').innerHTML = cmdCurrentList.map((item, idx) => {
-    const isSel = idx === cmdSelectedIndex;
-    return `
-      <div class="cmd-entry-row ${isSel ? 'selected' : ''}" data-cmd-id="${esc(item.id)}" data-index="${idx}">
-        <div style="flex: 1; min-width: 0;">
-          <strong style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; font-size: 0.85rem;">${esc(item.title)}</strong>
-          <small style="white-space: nowrap; overflow: hidden; text-overflow: ellipsis; display: block; font-size: 0.72rem; color: var(--muted);">${esc(item.deliverable || item.segment)}</small>
+  function renderCmdResults(q) {
+    const qNorm = normalizeStr(q);
+    const results = state.items.filter(x => !qNorm || normalizeStr([x.title, x.deliverable, x.segment, ...x.tags].join(' ')).includes(qNorm)).slice(0, 8);
+    cmdList.innerHTML = results.map(item => `
+      <div class="cmd-item-row" data-id="${item.id}">
+        <div>
+          <strong style="color:var(--text);font-size:0.85rem;">${esc(item.title)}</strong>
+          <span style="display:block;font-size:0.72rem;color:var(--muted-text);">${esc(item.deliverable || item.description)}</span>
         </div>
-        <span class="meta-chip-tag" style="font-size: 0.65rem;">${esc(item.kind)}</span>
+        <span class="meta-chip-tag" style="text-transform:uppercase;">${esc(item.kind)}</span>
       </div>
-    `;
-  }).join('');
+    `).join('');
 
-  $$('.cmd-entry-row').forEach(el => {
-    el.addEventListener('click', () => {
-      const it = state.items.find(x => x.id === el.dataset.cmdId);
-      if (it) {
-        closeCmdPalette();
-        openDetailModal(it);
-      }
+    $$('.cmd-item-row').forEach(row => {
+      row.onclick = () => {
+        const item = state.items.find(x => x.id === row.dataset.id);
+        if (item) {
+          closeCmd();
+          openDetailModal(item);
+        }
+      };
     });
+  }
+
+  $('#btnKbdTrigger').onclick = openCmd;
+  cmdInput.oninput = e => renderCmdResults(e.target.value);
+  cmdOverlay.onclick = e => { if (e.target === cmdOverlay) closeCmd(); };
+
+  document.addEventListener('keydown', e => {
+    if ((e.metaKey || e.ctrlKey) && e.key === 'k') {
+      e.preventDefault();
+      openCmd();
+    }
+    if (e.key === 'Escape') {
+      closeDetailModal();
+      closeCmd();
+      $('#addModal').classList.remove('open');
+      $('#apiModal').classList.remove('open');
+      popover.classList.remove('open');
+    }
   });
-}
 
-$('#cmdInput').addEventListener('input', e => {
-  cmdSelectedIndex = 0;
-  updateCmdResults(e.target.value);
-});
+  // Formulário Salvar no Acervo
+  const addKindSelect = $('select[name="kind"]');
+  const carouselGroup = $('#carouselFieldsGroup');
+  addKindSelect.onchange = () => {
+    carouselGroup.style.display = addKindSelect.value === 'carrossel' ? 'grid' : 'none';
+  };
 
-$('#cmdInput').addEventListener('keydown', e => {
-  if (e.key === 'ArrowDown') {
+  $('#btnAddCancel').onclick = () => $('#addModal').classList.remove('open');
+  $('#addItemForm').onsubmit = e => {
     e.preventDefault();
-    if (cmdCurrentList.length) {
-      cmdSelectedIndex = (cmdSelectedIndex + 1) % cmdCurrentList.length;
-      updateCmdResults($('#cmdInput').value);
-    }
-  } else if (e.key === 'ArrowUp') {
-    e.preventDefault();
-    if (cmdCurrentList.length) {
-      cmdSelectedIndex = (cmdSelectedIndex - 1 + cmdCurrentList.length) % cmdCurrentList.length;
-      updateCmdResults($('#cmdInput').value);
-    }
-  } else if (e.key === 'Enter') {
-    e.preventDefault();
-    if (cmdCurrentList[cmdSelectedIndex]) {
-      const it = cmdCurrentList[cmdSelectedIndex];
-      closeCmdPalette();
-      openDetailModal(it);
-    }
-  } else if (e.key === 'Escape') {
-    closeCmdPalette();
-  }
+    const fd = new FormData(e.target);
+    const kind = fd.get('kind');
+    const url = fd.get('url').trim();
+    const ytId = kind === 'vídeo' ? extractYouTubeId(url) : null;
+    const slides = kind === 'carrossel' ? fd.get('slides').split('\n').map(s => s.trim()).filter(Boolean) : [];
+
+    const newItem = {
+      id: `custom-${Date.now()}`,
+      title: fd.get('title').trim(),
+      kind: kind,
+      segment: fd.get('segment'),
+      url: url,
+      description: fd.get('description').trim(),
+      deliverable: fd.get('deliverable').trim() || fd.get('description').trim(),
+      practicalExample: fd.get('practicalExample').trim(),
+      targetAudience: fd.get('targetAudience').trim() || 'Qualquer pessoa',
+      tags: fd.get('tags').split(',').map(t => t.trim()).filter(Boolean),
+      youtubeId: ytId || undefined,
+      slides: slides.length ? slides : undefined,
+      status: 'estudo',
+      year: new Date().getFullYear(),
+      source: 'Nexus Segundo Cérebro',
+      addedAt: new Date().toISOString().split('T')[0]
+    };
+
+    state.items.unshift(newItem);
+    const customList = JSON.parse(localStorage.getItem('nexus_custom_items') || '[]');
+    customList.unshift(newItem);
+    localStorage.setItem('nexus_custom_items', JSON.stringify(customList));
+
+    e.target.reset();
+    $('#addModal').classList.remove('open');
+    renderCards();
+    showToast('Recurso salvo no Acervo com sucesso!');
+  };
 });
-
-$('#cmdOverlay').addEventListener('click', e => {
-  if (e.target === $('#cmdOverlay')) closeCmdPalette();
-});
-
-// ATALHOS GLOBAIS
-document.addEventListener('keydown', e => {
-  if ((e.metaKey || e.ctrlKey) && e.key.toLowerCase() === 'k') {
-    e.preventDefault();
-    if ($('#cmdOverlay').classList.contains('open')) {
-      closeCmdPalette();
-    } else {
-      openCmdPalette();
-    }
-  }
-  if (e.key === 'Escape') {
-    closeDetailModal();
-    closeAddModal();
-    closeApiModal();
-    closeCmdPalette();
-  }
-});
-
-$('#btnKbdTrigger')?.addEventListener('click', openCmdPalette);
-
-// INICIALIZAÇÃO
-const savedTheme = localStorage.getItem('nexus_theme') || (matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
-document.documentElement.dataset.theme = savedTheme;
-$('#btnTheme').innerHTML = `<i data-lucide="${savedTheme === 'dark' ? 'sun' : 'moon'}"></i>`;
-
-if (state.view === 'list') {
-  $('#btnViewList').classList.add('active');
-  $('#btnViewGrid').classList.remove('active');
-}
-
-initSelectFilters();
-renderSegments();
-renderVideoQueue();
-renderCards();
-window.addEventListener('load', () => lucide.createIcons());
 </script>
 </body>
 </html>
