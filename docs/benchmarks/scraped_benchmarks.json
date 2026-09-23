@@ -1,0 +1,426 @@
+[
+  {
+    "name": "Sindresorhus Awesome (O Pai de Todos os Acervos)",
+    "url": "https://raw.githubusercontent.com/sindresorhus/awesome/main/readme.md",
+    "category": "Curated Root Index",
+    "key_lesson": "Taxonomia hierárquica rigorosa, sem poluição de imagens gigantes, categorização por intenção real do usuário.",
+    "total_lines": 866,
+    "sections_count": 15,
+    "sections": [
+      "Contents",
+      "Platforms",
+      "Programming Languages",
+      "Front-End Development",
+      "Back-End Development",
+      "Computer Science",
+      "Big Data",
+      "Theory",
+      "Books",
+      "Editors",
+      "Gaming",
+      "Development Environment",
+      "Entertainment",
+      "Databases",
+      "Media"
+    ],
+    "sample_items": [
+      {
+        "title": "Node.js",
+        "url": "https://github.com/sindresorhus/awesome-nodejs#readme",
+        "deliverable": "Async non-blocking event-driven JavaScript runtime built on Chrome's V8 JavaScript engine."
+      },
+      {
+        "title": "Cross-Platform",
+        "url": "https://github.com/bcoe/awesome-cross-platform-nodejs#readme",
+        "deliverable": "Writing cross-platform code on Node.js."
+      },
+      {
+        "title": "Frontend Development",
+        "url": "https://github.com/dypsilon/frontend-dev-bookmarks#readme",
+        "deliverable": "Recurso com acesso direto e sem jargões."
+      },
+      {
+        "title": "iOS",
+        "url": "https://github.com/vsouza/awesome-ios#readme",
+        "deliverable": "Mobile operating system for Apple phones and tablets."
+      },
+      {
+        "title": "Android",
+        "url": "https://github.com/JStumpp/awesome-android#readme",
+        "deliverable": "Mobile operating system developed by Google."
+      },
+      {
+        "title": "IoT & Hybrid Apps",
+        "url": "https://github.com/weblancaster/awesome-IoT-hybrid#readme",
+        "deliverable": "Recurso com acesso direto e sem jargões."
+      },
+      {
+        "title": "Electron",
+        "url": "https://github.com/sindresorhus/awesome-electron#readme",
+        "deliverable": "Cross-platform native desktop apps using JavaScript/HTML/CSS."
+      },
+      {
+        "title": "Cordova",
+        "url": "https://github.com/busterc/awesome-cordova#readme",
+        "deliverable": "JavaScript API for hybrid apps."
+      },
+      {
+        "title": "React Native",
+        "url": "https://github.com/jondot/awesome-react-native#readme",
+        "deliverable": "JavaScript framework for writing natively rendering mobile apps for iOS and Android."
+      },
+      {
+        "title": "Containers",
+        "url": "https://github.com/Friz-zy/awesome-linux-containers#readme",
+        "deliverable": "Recurso com acesso direto e sem jargões."
+      },
+      {
+        "title": "eBPF",
+        "url": "https://github.com/zoidbergwill/awesome-ebpf#readme",
+        "deliverable": "Virtual machine that allows you to write more efficient and powerful tracing and monitoring for Linux systems."
+      },
+      {
+        "title": "Arch-based Projects",
+        "url": "https://github.com/PandaFoss/Awesome-Arch#readme",
+        "deliverable": "Linux distributions and projects based on Arch Linux."
+      }
+    ]
+  },
+  {
+    "name": "Free for Developers (ripienaar/free-for-dev - >90k stars)",
+    "url": "https://raw.githubusercontent.com/ripienaar/free-for-dev/master/README.md",
+    "category": "Developer Free Tier & Tools",
+    "key_lesson": "Resumo de 1 linha ('O que entrega'), links diretos sem fricção, agrupamento funcional por tags.",
+    "total_lines": 1713,
+    "sections_count": 15,
+    "sections": [
+      "Major Cloud Providers",
+      "Cloud management solutions",
+      "Source Code Repos",
+      "APIs, Data, and ML",
+      "Artifact Repos",
+      "Tools for Teams and Collaboration",
+      "CMS",
+      "Code Generation",
+      "Code Quality",
+      "Code Search and Browsing",
+      "CI and CD",
+      "Testing",
+      "Security and PKI",
+      "Authentication, Authorization, and User Management",
+      "Mobile App Distribution and Feedback"
+    ],
+    "sample_items": [
+      {
+        "title": "Google Cloud Platform",
+        "url": "https://cloud.google.com",
+        "deliverable": "Recurso com acesso direto e sem jargões."
+      },
+      {
+        "title": "Google Colab",
+        "url": "https://colab.research.google.com/",
+        "deliverable": "Free Jupyter Notebooks development environment."
+      },
+      {
+        "title": "Kaggle",
+        "url": "https://www.kaggle.com/",
+        "deliverable": "Jupyter Notebooks with 4 CPU cores and 30 GB RAM computational environment without any weekly usage limits. With Phone number verification, 1 Nvidia Tesla P100 GPU or 2x Nvidia Tesla T4 GPU can be added with a usage limit of 30 GPU hours/week for free. With Identity verification - 1 TPU v3-8 with 96 CPU cores and 330 GB RAM is available with a usage limit of 20 hours/week for free. Check [Technical Specifications](https://www.kaggle.com/docs/notebooks#technical-specifications) for more details."
+      },
+      {
+        "title": "ChromeRemoteDesktop",
+        "url": "https://remotedesktop.google.com/",
+        "deliverable": "Free remote desktop app with practically no limit on the number of devices, owned by Google, so needs a Google account."
+      },
+      {
+        "title": "Google AI Studio",
+        "url": "https://aistudio.google.com/",
+        "deliverable": "Get free access to Gemini 3.5 Flash, Gemini 3 Flash and Gemma 4 models. The free tier for Flash offers 5 requests per minute, 20 requests per day, and 250k input tokens per minute. Meanwhile the free tier for Gemma 4 offers 30 requests per minute, 14.4k requests per day, but (only) 16k input tokens per minute."
+      },
+      {
+        "title": "Amazon Web Services",
+        "url": "https://aws.amazon.com",
+        "deliverable": "Recurso com acesso direto e sem jargões."
+      },
+      {
+        "title": "CloudFront",
+        "url": "https://aws.amazon.com/cloudfront/",
+        "deliverable": "1TB egress/month, 10M HTTP requests, and 2M Function invocations/month"
+      },
+      {
+        "title": "CloudWatch",
+        "url": "https://aws.amazon.com/cloudwatch/",
+        "deliverable": "10 custom metrics and alarms, 1M API requests, 5GB of log data ingestion and 5GB of log data archive"
+      },
+      {
+        "title": "CodeBuild",
+        "url": "https://aws.amazon.com/codebuild/",
+        "deliverable": "100min of build time/month"
+      },
+      {
+        "title": "CodeCommit",
+        "url": "https://aws.amazon.com/codecommit/",
+        "deliverable": "5 active users, 5k repositories/account, 50GB storage/month and 10K requests/month"
+      },
+      {
+        "title": "CodePipeline",
+        "url": "https://aws.amazon.com/codepipeline/",
+        "deliverable": "1 active pipeline/month"
+      },
+      {
+        "title": "DynamoDB",
+        "url": "https://aws.amazon.com/dynamodb/",
+        "deliverable": "25GB NoSQL DB"
+      }
+    ]
+  },
+  {
+    "name": "Awesome Self Hosted (Software & Repositórios Próprios)",
+    "url": "https://raw.githubusercontent.com/awesome-selfhosted/awesome-selfhosted/master/README.md",
+    "category": "Self Hosted Software & Repos",
+    "key_lesson": "Cards enxutos para repositórios com licença, stack/linguagem, sem forçar imagens desnecessárias.",
+    "total_lines": 2363,
+    "sections_count": 7,
+    "sections": [
+      "Table of contents",
+      "Software",
+      "List of Licenses",
+      "Anti-features",
+      "External Links",
+      "Contributing",
+      "License"
+    ],
+    "sample_items": [
+      {
+        "title": "ANALOG",
+        "url": "https://github.com/orangecoloured/analog",
+        "deliverable": "A minimal analytics tool. Tracks events in a span of 10-30 days. `MIT` `Nodejs/Docker`"
+      },
+      {
+        "title": "Aptabase",
+        "url": "https://aptabase.com/",
+        "deliverable": "Privacy first and simple analytics for mobile and desktop apps. ([Source Code](https://github.com/aptabase/aptabase)) `AGPL-3.0` `Docker`"
+      },
+      {
+        "title": "AWStats",
+        "url": "http://www.awstats.org/",
+        "deliverable": "Generate statistics from web, streaming, ftp or mail server logfiles. ([Demo](https://www.awstats.org/#DEMO), [Source Code](https://github.com/eldy/awstats)) `GPL-3.0` `Perl`"
+      },
+      {
+        "title": "Countly Community Edition",
+        "url": "https://count.ly",
+        "deliverable": "Real time mobile and web analytics, crash reporting and push notifications platform. ([Source Code](https://github.com/Countly/countly-server)) `AGPL-3.0` `Nodejs/Docker`"
+      },
+      {
+        "title": "d8a.tech",
+        "url": "https://d8a.tech",
+        "deliverable": "A data collection service that works with your existing Google Analytics setup to capture user activity and send it straight to your own private database. ([Demo](https://lookerstudio.google.com/u/0/reporting/0e4102b6-c38b-4f55-aa25-c1fe91d1c1e9), [Source Code](https://github.com/d8a-tech/d8a)) `MIT` `Go/Docker`"
+      },
+      {
+        "title": "Daily Stars Explorer",
+        "url": "https://emanuelef.github.io/daily-stars-explorer",
+        "deliverable": "`⚠` - Track GitHub repo trends with daily star insights to see growth and community interest over time. ([Demo](https://emanuelef.github.io/daily-stars-explorer), [Source Code](https://github.com/emanuelef/daily-stars-explorer)) `MIT` `Go/Nodejs/Docker`"
+      },
+      {
+        "title": "Druid",
+        "url": "https://druid.apache.org",
+        "deliverable": "Distributed, column-oriented, real-time analytics data store. ([Source Code](https://github.com/apache/druid)) `Apache-2.0` `Java/Docker`"
+      },
+      {
+        "title": "EDA",
+        "url": "https://github.com/jortilles/EDA",
+        "deliverable": "Web application for data analysis and visualization. `AGPL-3.0` `Nodejs/Docker`"
+      },
+      {
+        "title": "GoAccess",
+        "url": "http://goaccess.io/",
+        "deliverable": "Real-time web log analyzer and interactive viewer that runs in a terminal. ([Source Code](https://github.com/allinurl/goaccess)) `GPL-2.0` `C`"
+      },
+      {
+        "title": "GoatCounter",
+        "url": "https://www.goatcounter.com",
+        "deliverable": "Easy web statistics without tracking of personal data. ([Source Code](https://github.com/arp242/goatcounter)) `EUPL-1.2` `Go`"
+      },
+      {
+        "title": "HitKeep",
+        "url": "https://hitkeep.com/",
+        "deliverable": "Privacy-first web analytics with goals, funnels, ecommerce tracking, and team management in a single binary with embedded DuckDB (alternative to Google Analytics, Plausible, Umami). ([Source Code](https://github.com/pascalebeier/hitkeep)) `MIT` `Go/Docker`"
+      },
+      {
+        "title": "Litlyx",
+        "url": "https://litlyx.com",
+        "deliverable": "All-in-one Analytics Solution. Setup in 30 seconds. Display all your data on an AI-powered dashboard. Fully self-hostable and GDPR compliant. ([Source Code](https://github.com/Litlyx/litlyx)) `Apache-2.0` `Docker`"
+      }
+    ]
+  },
+  {
+    "name": "Brad Traversy Design Resources for Developers",
+    "url": "https://raw.githubusercontent.com/bradtraversy/design-resources-for-developers/master/readme.md",
+    "category": "Design & UI Tools",
+    "key_lesson": "Curadoria focada em entrega direta, links oficiais e distinção clara entre ferramentas, inspiração e ícones.",
+    "total_lines": 1526,
+    "sections_count": 15,
+    "sections": [
+      "Table of Contents",
+      "UI Graphics",
+      "Fonts",
+      "Colors",
+      "Icons",
+      "Logos",
+      "Favicons",
+      "Icon Fonts",
+      "Stock Photos",
+      "Stock Videos",
+      "Stock Music & Sound Effects",
+      "Vectors & Clip Art",
+      "Product & Image Mockups",
+      "HTML & CSS Templates",
+      "CSS Frameworks"
+    ],
+    "sample_items": [
+      {
+        "title": "SVG sine waves",
+        "url": "https://www.sinwaver.com/",
+        "deliverable": "Export perfect sine waves as SVG for your front-end projects"
+      },
+      {
+        "title": "UI Design Daily",
+        "url": "https://uidesigndaily.com/",
+        "deliverable": "Awesome UI Components of all types"
+      },
+      {
+        "title": "100 Daily UI",
+        "url": "https://100dailyui.webflow.io/",
+        "deliverable": "Free Figma library of products, elements, and screens"
+      },
+      {
+        "title": "Sketch App Sources",
+        "url": "https://www.sketchappsources.com/",
+        "deliverable": "Sketch UIs, wireframes, icons and much more"
+      },
+      {
+        "title": "Humaaans",
+        "url": "https://www.humaaans.com/",
+        "deliverable": "Cool illustrations of people with the ability to mix and match"
+      },
+      {
+        "title": "Paaatterns",
+        "url": "https://products.ls.graphics/paaatterns/",
+        "deliverable": "Free collection of beautiful patterns for all vector formats"
+      },
+      {
+        "title": "Drawkit.io",
+        "url": "https://www.drawkit.io/",
+        "deliverable": "Illustrations for designers and startups"
+      },
+      {
+        "title": "Absurd.design",
+        "url": "https://absurd.design/",
+        "deliverable": "Free surrealist illustrations for designers and developers"
+      },
+      {
+        "title": "Undraw.co",
+        "url": "https://undraw.co/",
+        "deliverable": "Open-source illustrations for any idea you can imagine and create"
+      },
+      {
+        "title": "Manypixels.co",
+        "url": "https://www.manypixels.co/gallery/",
+        "deliverable": "Monochromatic, Isometric high-quality illustrations"
+      },
+      {
+        "title": "Open Peeps",
+        "url": "https://www.openpeeps.com/",
+        "deliverable": "Hand drawn illustration library"
+      },
+      {
+        "title": "InvisionApp",
+        "url": "https://www.invisionapp.com/inside-design/design-resources/",
+        "deliverable": "Library of free, high-quality UI kits, icon packs, and mockups"
+      }
+    ]
+  },
+  {
+    "name": "Awesome Second Brain (Mindola-ai / PKM de Elite)",
+    "url": "https://raw.githubusercontent.com/Mindola-ai/awesome-second-brain/main/README.md",
+    "category": "Personal Knowledge Management & Second Brain",
+    "key_lesson": "Captura rápida multimídia: notas curtas, carrosséis/slides de referência, repositórios e vídeos de estudo.",
+    "total_lines": 263,
+    "sections_count": 12,
+    "sections": [
+      "Contents",
+      "Personal AI & Digital Twins",
+      "AI Over Your Own Notes",
+      "Note-Taking & PKM Apps",
+      "Open-Source & Self-Hosted",
+      "Capture, Read-It-Later & Highlights",
+      "Methods & Frameworks",
+      "Books & Courses",
+      "Creators, Newsletters & Podcasts",
+      "Communities",
+      "Ecosystem & Publishing",
+      "Contributing"
+    ],
+    "sample_items": [
+      {
+        "title": "AI Twin by OpenHome",
+        "url": "https://openhome.com",
+        "deliverable": "iOS app that clones your voice and personality from a short setup so you can talk with an AI version of yourself `free` `ai` `mobile`."
+      },
+      {
+        "title": "Character.ai",
+        "url": "https://character.ai",
+        "deliverable": "Lets anyone create and chat with custom AI characters, including personas modeled on themselves, on web and mobile `free` `ai` `mobile`."
+      },
+      {
+        "title": "Coachvox AI",
+        "url": "https://coachvox.ai",
+        "deliverable": "Creates an AI version of a coach or entrepreneur that answers client questions in their style and captures leads `paid` `ai`."
+      },
+      {
+        "title": "Delphi",
+        "url": "https://delphi.ai",
+        "deliverable": "Turns a creator's books, talks, and posts into an interactive AI their audience can chat with anytime `ai`."
+      },
+      {
+        "title": "HeyGen",
+        "url": "https://www.heygen.com",
+        "deliverable": "Creates a video avatar clone of a person, including a real-time interactive avatar others can talk to `free` `ai` `mobile`."
+      },
+      {
+        "title": "Kin",
+        "url": "https://mykin.ai",
+        "deliverable": "Private, local-first personal AI with on-device memory offering journaling and a board of AI advisors on mobile `local` `free` `ai` `mobile`."
+      },
+      {
+        "title": "Me.bot",
+        "url": "https://www.me.bot",
+        "deliverable": "Personal AI companion that turns notes, memories, and chats into an organized, queryable second brain `free` `ai` `mobile`."
+      },
+      {
+        "title": "MindBank AI",
+        "url": "https://www.mindbank.ai",
+        "deliverable": "Creates a digital twin from a person's voice and knowledge that can answer questions and coach in 40+ languages `free` `ai`."
+      },
+      {
+        "title": "Mindola",
+        "url": "https://mindola.ai",
+        "deliverable": "Turns a professional's site, PDFs, and videos into a source-grounded AI lens visitors can chat with `free` `ai`."
+      },
+      {
+        "title": "MyClone",
+        "url": "https://www.myclone.is",
+        "deliverable": "Creates an AI clone that answers in a user's voice and captures leads, embeddable on sites or shared as a widget `ai`."
+      },
+      {
+        "title": "Personal.ai",
+        "url": "https://www.personal.ai",
+        "deliverable": "Builds a private personal AI with long-term memory that answers in the user's own voice from their messages and notes `ai` `mobile`."
+      },
+      {
+        "title": "Second Me",
+        "url": "https://github.com/mindverse/Second-Me",
+        "deliverable": "Open-source, locally trained and hosted AI self built from your data using hierarchical memory modeling `oss` `selfhost` `local` `free` `ai`."
+      }
+    ]
+  }
+]

@@ -1516,6 +1516,65 @@
       "openAccess": true,
       "deliverable": "Veja exatamente como os melhores aplicativos do mundo (Nubank, Airbnb, Duolingo) desenharam suas telas e fluxos.",
       "targetAudience": "Empreendedores e designers de produto"
+    },
+    {
+      "id": "carrossel-modelos-mentais",
+      "title": "Carrossel: Os 5 Modelos Mentais de Charlie Munger para Decisões",
+      "kind": "carrossel",
+      "segment": "Produtividade",
+      "url": "https://www.instagram.com/p/C-mental-models/",
+      "description": "Carrossel visual explicando Inversão, Círculo de Competência, Efeito Lollapalooza e Princípio 80/20 com exemplos práticos.",
+      "tags": [
+        "carrossel",
+        "mental-models",
+        "decisao",
+        "produtividade",
+        "instagram"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Segundo Cérebro / Instagram",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "openAccess": true,
+      "deliverable": "5 regras mentais práticas de investidores lendários para nunca mais tomar decisões erradas em negócios ou na vida pessoal.",
+      "targetAudience": "Empreendedores, investidores e qualquer pessoa que queira pensar melhor",
+      "author": "@mentalmodels",
+      "slides": [
+        "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80"
+      ]
+    },
+    {
+      "id": "carrossel-micro-interacoes",
+      "title": "Carrossel: Segredos de Micro-Interações que Enriquecem Qualquer App",
+      "kind": "carrossel",
+      "segment": "Design e UX",
+      "url": "https://www.instagram.com/p/C-micro-interactions/",
+      "description": "Guia em slides sobre curvas de animação Bezier, feedback tátil, tempos de resposta de 100ms e micro-movimentos que encantam o usuário.",
+      "tags": [
+        "carrossel",
+        "design",
+        "micro-interacoes",
+        "ux",
+        "instagram"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Segundo Cérebro / Instagram",
+      "addedAt": "2026-09-23",
+      "updatedAt": "2026-09-23",
+      "openAccess": true,
+      "deliverable": "Detalhes visuais simples que transformam uma interface comum em uma experiência fluida de padrão internacional.",
+      "targetAudience": "Designers e desenvolvedores frontend",
+      "author": "@uxsecrets",
+      "slides": [
+        "https://images.unsplash.com/photo-1618005182384-a83a8bd57fbe?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80",
+        "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80"
+      ]
     }
   ]
 }
