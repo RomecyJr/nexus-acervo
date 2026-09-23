@@ -1,0 +1,53 @@
+openapi: 3.1.0
+info:
+  title: Nexus Acervo API
+  version: 1.0.0
+  description: API de leitura do acervo privado para agentes e ferramentas externas.
+servers:
+  - url: https://SEU-DOMINIO/api/v1
+security:
+  - bearerAuth: []
+paths:
+  /items:
+    get:
+      summary: Lista itens do acervo
+      parameters:
+        - {name: kind, in: query, schema: {type: string}}
+        - {name: segment, in: query, schema: {type: string}}
+        - {name: tag, in: query, schema: {type: string}}
+        - {name: q, in: query, schema: {type: string}}
+      responses:
+        '200':
+          description: Catálogo filtrado
+          content:
+            application/json:
+              schema: {type: array, items: {$ref: '#/components/schemas/Item'}}
+  /items/{id}:
+    get:
+      summary: Retorna um item
+      parameters:
+        - {name: id, in: path, required: true, schema: {type: string}}
+      responses:
+        '200': {description: Item encontrado, content: {application/json: {schema: {$ref: '#/components/schemas/Item'}}}}
+        '404': {description: Item não encontrado}
+  /segments:
+    get:
+      summary: Lista segmentos e contagens
+      responses:
+        '200': {description: Segmentos}
+components:
+  securitySchemes:
+    bearerAuth: {type: http, scheme: bearer}
+  schemas:
+    Item:
+      type: object
+      required: [id, title, kind, segment, url, description, tags, status]
+      properties:
+        id: {type: string}
+        title: {type: string}
+        kind: {type: string, enum: [ferramenta, vídeo, repositório, conhecimento, diretório]}
+        segment: {type: string}
+        url: {type: string, format: uri}
+        description: {type: string}
+        tags: {type: array, items: {type: string}}
+        status: {type: string}

@@ -1,0 +1,12 @@
+{
+  "name": "nexus-acervo",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sync": "node scripts/sync-data.mjs",
+    "validate": "node scripts/validate.mjs",
+    "test": "npm run sync && npm run validate",
+    "serve": "npx --yes serve ."
+  }
+}

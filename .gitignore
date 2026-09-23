@@ -1,0 +1,8 @@
+node_modules/
+.env
+.env.*
+!.env.example
+.DS_Store
+*.log
+00_Backup_Original/
+*.tar.gz
