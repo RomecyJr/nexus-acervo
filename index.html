@@ -575,20 +575,32 @@ svg { display: block; flex-shrink: 0; }
   transform: translateY(-2px);
 }
 
-/* CARD TIPO: VÍDEO (HORIZONTAL COMPACTO COM THUMBNAIL REAL) */
+/* CARD TIPO: VÍDEO (HORIZONTAL COMPACTO COM THUMBNAIL REAL ESTILO SIDEBAR YOUTUBE) */
 .card-video {
-  display: grid;
-  grid-template-columns: 160px 1fr;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.15rem;
+  padding: 1.15rem 1.25rem;
 }
 
 .card-video-media {
   position: relative;
-  background: #000;
+  width: 154px;
+  min-width: 154px;
+  max-width: 154px;
   aspect-ratio: 16 / 9;
-  height: 100%;
-  min-height: 110px;
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  border-right: 1px solid var(--border);
+  background: #000;
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.card-video .card-inner-content {
+  padding: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .card-video-media img {
@@ -677,16 +689,30 @@ svg { display: block; flex-shrink: 0; }
 
 /* CARD TIPO: CARROSSEL (INSTAGRAM / REDES) */
 .card-carousel {
-  display: grid;
-  grid-template-columns: 120px 1fr;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  gap: 1.15rem;
+  padding: 1.15rem 1.25rem;
 }
 
 .carousel-cover-col {
   position: relative;
-  background: var(--surface2);
+  width: 104px;
+  min-width: 104px;
+  max-width: 104px;
   aspect-ratio: 1 / 1;
+  border-radius: var(--radius-sm);
   overflow: hidden;
-  border-right: 1px solid var(--border);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  flex-shrink: 0;
+}
+
+.card-carousel .card-inner-content {
+  padding: 0;
+  flex: 1;
+  min-width: 0;
 }
 
 .carousel-cover-col img {
@@ -1160,9 +1186,9 @@ svg { display: block; flex-shrink: 0; }
   .menu-trigger-btn { display: inline-flex; }
   .workspace-layout { grid-template-columns: 1fr; }
   .side-panel { display: none; }
-  .card-video { grid-template-columns: 1fr; }
-  .card-carousel { grid-template-columns: 1fr; }
-  .card-video-media { aspect-ratio: 16 / 9; }
+  .card-video, .card-carousel { flex-direction: column; }
+  .card-video-media { width: 100%; min-width: 100%; max-width: 100%; }
+  .carousel-cover-col { width: 100%; min-width: 100%; max-width: 100%; }
   .exec-header { flex-direction: column; align-items: flex-start; }
 }
 
