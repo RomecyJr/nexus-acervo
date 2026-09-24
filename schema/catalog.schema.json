@@ -89,7 +89,10 @@
           "items": { "type": "string" }
         },
         "author": { "type": "string" },
-        "stack": { "type": "string" }
+        "stack": { "type": "string" },
+        "stars": { "type": "integer", "minimum": 0 },
+        "forks": { "type": "integer", "minimum": 0 },
+        "githubRepo": { "type": "string" }
       },
       "additionalProperties": true
     }

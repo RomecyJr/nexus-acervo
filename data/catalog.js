@@ -504,7 +504,10 @@ window.NEXUS_CATALOG = {
       "deliverable": "Transforma seus PDFs, notas e livros em uma central de inteligência privada onde você faz perguntas e recebe respostas instantâneas com fontes.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Suba o manual de 300 páginas de um equipamento da sua empresa ou 10 artigos científicos e pergunte: \"Quais são as 5 principais falhas conhecidas e as soluções recomendadas no capítulo 4?\".",
-      "notes": "Roda 100% privado no seu próprio computador ou servidor. Seus dados sigilosos e contratos nunca são enviados para servidores externos de inteligência artificial."
+      "notes": "Roda 100% privado no seu próprio computador ou servidor. Seus dados sigilosos e contratos nunca são enviados para servidores externos de inteligência artificial.",
+      "stars": 39458,
+      "forks": 4570,
+      "githubRepo": "lfnovo/open-notebook"
     },
     {
       "id": "repo-no-ai-slop",
@@ -529,7 +532,10 @@ window.NEXUS_CATALOG = {
       "deliverable": "Limpa suas pesquisas e redes sociais de artigos genéricos e caça-cliques, deixando visíveis apenas conteúdos profundos criados por humanos.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ao pesquisar uma dúvida técnica no Google ou fóruns, elimine automaticamente páginas clonadas que repetem a mesma resposta rasa gerada por robôs.",
-      "notes": "Implementa heurísticas de vocabulário e padrões de repetição sintática típicos de LLMs para devolver a sensação de navegar na internet autêntica pré-2022."
+      "notes": "Implementa heurísticas de vocabulário e padrões de repetição sintática típicos de LLMs para devolver a sensação de navegar na internet autêntica pré-2022.",
+      "stars": 11184,
+      "forks": 757,
+      "githubRepo": "petergyang/no-ai-slop"
     },
     {
       "id": "repo-agenticseek",
@@ -554,7 +560,10 @@ window.NEXUS_CATALOG = {
       "deliverable": "Código e documentação aberta e pronta para usar em projetos de ia e automação.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "Alternativa local e self-hosted a agentes autônomos proprietários em nuvem como Manus AI e Devin. Executa navegação web, terminal e código mantendo 100% da soberania de dados no dispositivo local."
+      "notes": "Alternativa local e self-hosted a agentes autônomos proprietários em nuvem como Manus AI e Devin. Executa navegação web, terminal e código mantendo 100% da soberania de dados no dispositivo local.",
+      "stars": 27306,
+      "forks": 3061,
+      "githubRepo": "Fosowl/agenticSeek"
     },
     {
       "id": "repo-coolify",
@@ -579,7 +588,10 @@ window.NEXUS_CATALOG = {
       "deliverable": "Código e documentação aberta e pronta para usar em projetos de infraestrutura.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "Alternativa self-hosted a Vercel, Heroku, Netlify e Render. Permite deploy de aplicações full-stack, bancos de dados e serviços em VPS própria (Hetzner, DigitalOcean, AWS) sem limites abusivos de bandwidth."
+      "notes": "Alternativa self-hosted a Vercel, Heroku, Netlify e Render. Permite deploy de aplicações full-stack, bancos de dados e serviços em VPS própria (Hetzner, DigitalOcean, AWS) sem limites abusivos de bandwidth.",
+      "stars": 62237,
+      "forks": 5540,
+      "githubRepo": "coollabsio/coolify"
     },
     {
       "id": "repo-scrapling",
@@ -604,7 +616,10 @@ window.NEXUS_CATALOG = {
       "deliverable": "Extrai dados de sites protegidos, tabelas e catálogos sem cair em captchas nem tomar bloqueio de IP.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Crie um robô que roda todo dia às 7h da manhã para coletar os preços de 50 produtos em lojas concorrentes e salvar uma planilha no seu Google Drive com alertas de promoções.",
-      "notes": "Alternativa de alta performance a Bright Data, ScraperAPI e Zyte. Framework adaptativo de web scraping com recuperação automática de seletores quando o layout muda, bypass inteligente e rotação de proxies."
+      "notes": "Alternativa de alta performance a Bright Data, ScraperAPI e Zyte. Framework adaptativo de web scraping com recuperação automática de seletores quando o layout muda, bypass inteligente e rotação de proxies.",
+      "stars": 83418,
+      "forks": 8525,
+      "githubRepo": "D4Vinci/Scrapling"
     },
     {
       "id": "repo-openbb",
@@ -629,7 +644,10 @@ window.NEXUS_CATALOG = {
       "deliverable": "Código e documentação aberta e pronta para usar em projetos de dados e apis.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "Substituto open-source completo para Bloomberg Terminal, Refinitiv Eikon, FactSet e plataformas de dados de mercado com assinaturas de US$ 24k+/ano. Integração direta com Python, APIs quants e agentes de IA."
+      "notes": "Substituto open-source completo para Bloomberg Terminal, Refinitiv Eikon, FactSet e plataformas de dados de mercado com assinaturas de US$ 24k+/ano. Integração direta com Python, APIs quants e agentes de IA.",
+      "stars": 73438,
+      "forks": 7602,
+      "githubRepo": "OpenBB-finance/OpenBB"
     },
     {
       "id": "repo-documenso",
@@ -659,7 +677,10 @@ window.NEXUS_CATALOG = {
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Suba um contrato de prestação de serviços ou proposta comercial em PDF com campos de assinatura, rubrica e data para o cliente assinar diretamente pelo navegador com validade jurídica e hash SHA-256.",
       "notes": "Construído com Next.js, Hono, Prisma, PostgreSQL, Tailwind CSS e componentes shadcn/ui. Suporta auto-hospedagem com Docker em 1 comando (docker compose up -d).",
-      "youtubeId": "Y0ppIQrEnZs"
+      "youtubeId": "Y0ppIQrEnZs",
+      "stars": 15177,
+      "forks": 3270,
+      "githubRepo": "documenso/documenso"
     },
     {
       "id": "repo-twenty",
@@ -684,7 +705,10 @@ window.NEXUS_CATALOG = {
       "deliverable": "Código e documentação aberta e pronta para usar em projetos de negócios.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "Alternativa open-source self-hosted ao Salesforce CRM e HubSpot CRM, eliminando cobrança por assento/usuário mensal (seat-based pricing). Suporta objetos personalizados, pipelines e IA."
+      "notes": "Alternativa open-source self-hosted ao Salesforce CRM e HubSpot CRM, eliminando cobrança por assento/usuário mensal (seat-based pricing). Suporta objetos personalizados, pipelines e IA.",
+      "stars": 57445,
+      "forks": 9275,
+      "githubRepo": "twentyhq/twenty"
     },
     {
       "id": "repo-openvoice",
@@ -709,7 +733,10 @@ window.NEXUS_CATALOG = {
       "deliverable": "Código e documentação aberta e pronta para usar em projetos de conteúdo e mídia.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "Alternativa de clonagem instantânea de voz com controle granular de tom e estilo ao ElevenLabs e Resemble AI, sem custo de caracteres por API e com suporte a V2 multilíngue."
+      "notes": "Alternativa de clonagem instantânea de voz com controle granular de tom e estilo ao ElevenLabs e Resemble AI, sem custo de caracteres por API e com suporte a V2 multilíngue.",
+      "stars": 37655,
+      "forks": 4243,
+      "githubRepo": "myshell-ai/OpenVoice"
     },
     {
       "id": "video-natureza-humana",
@@ -1370,7 +1397,10 @@ window.NEXUS_CATALOG = {
       "targetAudience": "Criadores de conteúdo e designers",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
       "notes": "Mais de 3.000 ícones SVG oficiais de marcas globais, linguagens de programação e ferramentas de tecnologia. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://simpleicons.org/.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80",
+      "stars": 25906,
+      "forks": 3170,
+      "githubRepo": "simple-icons/simple-icons"
     },
     {
       "id": "design-undraw",
@@ -1520,7 +1550,10 @@ window.NEXUS_CATALOG = {
       "targetAudience": "Iniciantes em criação de páginas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
       "notes": "Biblioteca pronta para uso de animações CSS cross-browser para botões, modais e transições de página. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://animate.style/.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80",
+      "stars": 82816,
+      "forks": 15891,
+      "githubRepo": "animate-css/animate.css"
     },
     {
       "id": "design-fontshare",
@@ -1781,7 +1814,10 @@ window.NEXUS_CATALOG = {
       "license": "Open Source",
       "openAccess": true,
       "author": "BraveOPotato",
-      "thumbnail": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
+      "stars": 4340,
+      "forks": 257,
+      "githubRepo": "BraveOPotato/FckSignups"
     },
     {
       "id": "conhecimento-cssbuy-guia",
