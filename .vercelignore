@@ -1,0 +1,10 @@
+# Arquivos e diretórios de desenvolvimento ignorados no deploy da Vercel (SEC-03)
+scripts/
+docs/
+schema/
+.github/
+*.md
+package.json
+package-lock.json
+.git/
+.gitignore

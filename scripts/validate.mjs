@@ -1,7 +1,9 @@
 import fs from 'node:fs';
 const html=fs.readFileSync(new URL('../nexus-acervo.html',import.meta.url),'utf8');
 const data=JSON.parse(fs.readFileSync(new URL('../data/catalog.json',import.meta.url),'utf8'));
-const js=html.match(/<script>([\s\S]*?)<\/script>\s*<\/body>/)?.[1];
+const scripts = html.match(/<script[\s\S]*?<\/script>/g) || [];
+const lastScriptTag = [...scripts].reverse().find(s => !/^<script[^>]*src=/i.test(s) && !s.includes('id="theme-anti-flash"'));
+const js = lastScriptTag ? lastScriptTag.replace(/^<script[^>]*>/, '').replace(/<\/script>$/, '') : null;
 if(!js) throw new Error('JavaScript inline não encontrado');
 new Function(js);
 if(new Set(data.items.map(x=>x.id)).size!==data.items.length) throw new Error('IDs duplicados');
