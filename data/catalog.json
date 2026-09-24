@@ -2,7 +2,7 @@
   "meta": {
     "name": "Nexus Acervo",
     "version": "1.5.0",
-    "generatedAt": "2026-09-24T13:46:48.048Z",
+    "generatedAt": "2026-09-24T18:39:26.071Z",
     "language": "pt-BR",
     "sourceFile": "Relatorio-de-ferramentas-links-e-informacoes-dos-posts-analisados.md",
     "updatedAt": "2026-09-24T12:30:37.020Z"
@@ -62,7 +62,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Extensão especializada para traduzir vitrines da China (Taobao e Xianyu), converter moedas em tempo real e orçar redirecionamentos.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Ao garimpar componentes no Taobao, veja preços convertidos para Reais e envie pedidos para consolidação aduaneira sem travar com ideogramas."
+      "practicalExample": "Ao garimpar componentes no Taobao, veja preços convertidos para Reais e envie pedidos para consolidação aduaneira sem travar com ideogramas.",
+      "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-goofish",
@@ -82,7 +83,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Maior marketplace de itens de segunda mão da Alibaba para encontrar produtos vintage, eletrônicos seminovos e hardware com desconto.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Encontre teclados mecânicos raros, placas controladoras e peças de reposição importadas por até metade do preço praticado no ocidente."
+      "practicalExample": "Encontre teclados mecânicos raros, placas controladoras e peças de reposição importadas por até metade do preço praticado no ocidente.",
+      "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-taobao",
@@ -102,7 +104,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Acesso direto à maior plataforma de compras da Ásia, conectando consumidores diretamente a fabricantes e distribuidores de Shenzhen.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Compre lotes de ferramentas, sensores para automação residencial e protótipos diretamente de fábricas usando agentes de importação."
+      "practicalExample": "Compre lotes de ferramentas, sensores para automação residencial e protótipos diretamente de fábricas usando agentes de importação.",
+      "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-cssbuy",
@@ -123,7 +126,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Agente e armazém de compras na China com pesagem de precisão, fotos detalhadas de inspeção de qualidade e consolidação de fretes.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Receba encomendas de múltiplos fornecedores em um único galpão em Guangzhou, retire caixas desnecessárias e envie tudo em um pacote único."
+      "practicalExample": "Receba encomendas de múltiplos fornecedores em um único galpão em Guangzhou, retire caixas desnecessárias e envie tudo em um pacote único.",
+      "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-ai-studio",
@@ -144,7 +148,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Ambiente oficial do Google para prototipagem de engenharia de prompt, ajuste de temperatura e geração de chaves de API dos modelos Gemini.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Carregue um documento técnico denso de 200 páginas e teste a janela de 1 milhão de tokens do Gemini para extrair schemas JSON estruturados."
+      "practicalExample": "Carregue um documento técnico denso de 200 páginas e teste a janela de 1 milhão de tokens do Gemini para extrair schemas JSON estruturados.",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-factory",
@@ -165,7 +170,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Agentes autônomos de engenharia de software treinados para auditar código, corrigir falhas de build em CI e propor refatorações seguras.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Integre com seu repositório GitHub para analisar automaticamente pull requests abertos, detectando vulnerabilidades antes do merge."
+      "practicalExample": "Integre com seu repositório GitHub para analisar automaticamente pull requests abertos, detectando vulnerabilidades antes do merge.",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-tubelab",
@@ -186,7 +192,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Ferramenta especializada em inteligência competitiva e benchmarking de retenção, tags e padrões de títulos para o YouTube.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Descubra os vídeos com maior aceleração de visualizações nos últimos 7 dias dentro do seu nicho para identificar temas em alta."
+      "practicalExample": "Descubra os vídeos com maior aceleração de visualizações nos últimos 7 dias dentro do seu nicho para identificar temas em alta.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-vidiq",
@@ -207,7 +214,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Painel analítico e extensão de SEO para criadores no YouTube com análise de concorrência e sugestões de títulos otimizados para clique.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Avalie a pontuação de relevância e competitividade de uma palavra-chave antes de gravar um vídeo novo para maximizar a descoberta orgânica."
+      "practicalExample": "Avalie a pontuação de relevância e competitividade de uma palavra-chave antes de gravar um vídeo novo para maximizar a descoberta orgânica.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-vidrush",
@@ -228,7 +236,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Esteira automatizada para fatiar vídeos longos e podcasts em cortes verticais envolventes com legendas dinâmicas pré-sincronizadas.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Transforme uma aula ao vivo de 40 minutos em 5 pílulas verticais prontas para Reels e TikTok com legendas coloridas e cortes rápidos."
+      "practicalExample": "Transforme uma aula ao vivo de 40 minutos em 5 pílulas verticais prontas para Reels e TikTok com legendas coloridas e cortes rápidos.",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-pikzels",
@@ -249,7 +258,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Estúdio de inteligência artificial focado em geração de thumbnails de alto CTR com iluminação de estúdio e contraste agressivo.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Crie variações de miniaturas chamativas com rostos expressivos e texto legível em dispositivos móveis para testes A/B no YouTube."
+      "practicalExample": "Crie variações de miniaturas chamativas com rostos expressivos e texto legível em dispositivos móveis para testes A/B no YouTube.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-elevenlabs",
@@ -270,7 +280,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Líder em geração de áudio neural realista, clonagem de voz e dublagem multilíngue com entonação humana ultraprecisa.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Gere a locução profissional do roteiro de uma aula em português com pausas naturais sem precisar de estúdio físico ou microfone caro."
+      "practicalExample": "Gere a locução profissional do roteiro de uma aula em português com pausas naturais sem precisar de estúdio físico ou microfone caro.",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-nosignups",
@@ -291,7 +302,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Conhecimento essencial e mastigado para entender nosignups com rapidez.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-bundlephobia",
@@ -312,7 +324,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Auditor de performance para ecossistema NPM que calcula o tamanho minificado e o tempo de download de pacotes JavaScript.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Consulte o custo de instalar uma biblioteca no frontend antes do npm install, evitando dependências gigantes que atrasam o carregamento da página."
+      "practicalExample": "Consulte o custo de instalar uma biblioteca no frontend antes do npm install, evitando dependências gigantes que atrasam o carregamento da página.",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-excalidraw",
@@ -333,7 +346,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Quadro branco virtual com estética de traço à mão para desenhar arquiteturas de software, wireframes e fluxos de sistemas.",
       "targetAudience": "Quem precisa explicar ideias visualmente",
-      "practicalExample": "Esboce a topologia de microsserviços da sua empresa durante uma reunião técnica e exporte como SVG vetorial limpo para o README do projeto."
+      "practicalExample": "Esboce a topologia de microsserviços da sua empresa durante uma reunião técnica e exporte como SVG vetorial limpo para o README do projeto.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-drawdb",
@@ -354,7 +368,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Editor visual de modelagem de entidades e relacionamentos (ERD) direto no navegador com geração instantânea de SQL DDL.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Desenhe visualmente as tabelas, chaves primárias e relacionamentos do banco de dados e exporte o script CREATE TABLE para PostgreSQL."
+      "practicalExample": "Desenhe visualmente as tabelas, chaves primárias e relacionamentos do banco de dados e exporte o script CREATE TABLE para PostgreSQL.",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-graphite",
@@ -375,7 +390,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Plataforma para empilhamento de alterações (Stacked PRs) no Git, acelerando o fluxo de revisão de código em equipes de alta velocidade.",
       "targetAudience": "Ilustradores e designers",
-      "practicalExample": "Divida uma refatoração grande em 4 pull requests pequenos e encadeados, permitindo que a equipe aprove por partes sem bloquear seu trabalho."
+      "practicalExample": "Divida uma refatoração grande em 4 pull requests pequenos e encadeados, permitindo que a equipe aprove por partes sem bloquear seu trabalho.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-stackedit",
@@ -396,7 +412,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Editor Markdown no navegador com prévia simultânea em duas colunas, sincronização com GitHub/Google Drive e suporte a KaTeX.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Elabore documentações técnicas e artigos com tabelas e fórmulas matemáticas sem depender de IDE pesada, exportando diretamente para HTML ou PDF."
+      "practicalExample": "Elabore documentações técnicas e artigos com tabelas e fórmulas matemáticas sem depender de IDE pesada, exportando diretamente para HTML ou PDF.",
+      "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-opencut",
@@ -417,7 +434,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Editor de vídeo e áudio leve no navegador para aparar gravações, cortar silêncios e exportar mídias sem perda de fidelidade.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Remova os segundos iniciais e finais de uma gravação de tela com rapidez sem a complexidade de abrir softwares profissionais de edição."
+      "practicalExample": "Remova os segundos iniciais e finais de uma gravação de tela com rapidez sem a complexidade de abrir softwares profissionais de edição.",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-hoppscotch",
@@ -438,7 +456,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Cliente de testes de API web open-source e extremamente ágil, servindo como alternativa leve e privativa ao Postman.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Valide rotas RESTful e GraphQL enviando payloads JSON e headers de autenticação diretamente do browser com zero tempo de inicialização."
+      "practicalExample": "Valide rotas RESTful e GraphQL enviando payloads JSON e headers de autenticação diretamente do browser com zero tempo de inicialização.",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "tool-logseq",
@@ -459,7 +478,8 @@
       "updatedAt": "2026-09-23",
       "deliverable": "Aplicativo open-source de gerenciamento de conhecimento pessoal centrado na privacidade com grafo bidirecional sobre arquivos Markdown.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Conecte conceitos de estudo e referências de projetos via links bidirecionais [[exemplo]], visualizando um grafo dinâmico do seu conhecimento."
+      "practicalExample": "Conecte conceitos de estudo e referências de projetos via links bidirecionais [[exemplo]], visualizando um grafo dinâmico do seu conhecimento.",
+      "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "repo-open-notebook",
@@ -706,9 +726,9 @@
       "year": 2026,
       "source": "SejaUmaPessoaMelhor",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "RTo2akdZ7Dc",
-      "thumbnail": "https://img.youtube.com/vi/RTo2akdZ7Dc/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/RTo2akdZ7Dc/hqdefault.jpg",
       "deliverable": "Síntese profunda sobre motivações inconscientes, leitura comportamental e inteligência emocional para antecipar reações humanas.",
       "targetAudience": "Qualquer pessoa que queira se relacionar melhor",
       "practicalExample": "Analise atitudes de colegas e parceiros comerciais observando padrões de inveja, orgulho ou fragilidade antes de reuniões decisivas.",
@@ -729,9 +749,9 @@
       "year": 2026,
       "source": "TEDxCSU",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "5MgBikgcWnY",
-      "thumbnail": "https://img.youtube.com/vi/5MgBikgcWnY/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/5MgBikgcWnY/hqdefault.jpg",
       "deliverable": "Metodologia acelerada de 4 etapas para atingir nível de proficiência satisfatório em qualquer nova disciplina com 20 horas de treino intencional.",
       "targetAudience": "Estudantes e mentes curiosas",
       "practicalExample": "Decomponha uma habilidade como falar em público ou tocar instrumento em 3 sub-habilidades fundamentais e pratique 45 minutos por dia durante um mês.",
@@ -752,9 +772,9 @@
       "year": 2026,
       "source": "TED",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "_X0mgOOSpLU",
-      "thumbnail": "https://img.youtube.com/vi/_X0mgOOSpLU/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/_X0mgOOSpLU/hqdefault.jpg",
       "deliverable": "Conceito científico de Mentalidade de Crescimento (Growth Mindset) comprovando que habilidades cognitivas e técnicas são maleáveis.",
       "targetAudience": "Estudantes, pais e profissionais",
       "practicalExample": "Ao cometer um erro de código ou receber feedback duro de cliente, substitua a frase \"não sei fazer isso\" por \"ainda não domino isso esta semana\".",
@@ -775,9 +795,9 @@
       "year": 2026,
       "source": "Lento Ponto",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "ZQUxL4Jm1Lo",
-      "thumbnail": "https://img.youtube.com/vi/I6B_v3eR5Wk/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/ZQUxL4Jm1Lo/hqdefault.jpg",
       "deliverable": "Explicação psicológica animada de por que profissionais de alto desempenho sentem que são fraudes e técnicas práticas para neutralizar essa ilusão.",
       "targetAudience": "Profissionais e empreendedores",
       "practicalExample": "Mantenha um diário de fatos concretos (elogios documentados, entregas concluídas e métricas batidas) para consultar sempre que a sensação de fraude surgir.",
@@ -797,9 +817,9 @@
       "year": 2026,
       "source": "Bárbara Tovar",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "phgjouv0BUA",
-      "thumbnail": "https://img.youtube.com/vi/uK4eT3c4G0M/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/phgjouv0BUA/hqdefault.jpg",
       "deliverable": "Framework comprovado de debates de classe mundial para desarmar conflitos e defender posições com elegância sem criar atrito pessoal.",
       "targetAudience": "Qualquer pessoa",
       "practicalExample": "Em uma negociação tensa, valide primeiro a intenção positiva da outra parte antes de contra-argumentar, separando o problema da pessoa.",
@@ -820,9 +840,9 @@
       "year": 2026,
       "source": "Eslen Delanogare",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "faE1EGQJ0lQ",
-      "thumbnail": "https://img.youtube.com/vi/faE1EGQJ0lQ/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/faE1EGQJ0lQ/hqdefault.jpg",
       "deliverable": "Explicação neurocientífica sobre regulação de dopamina, tolerância ao desconforto e criação de rituais de início imediato de tarefas difíceis.",
       "targetAudience": "Quem sofre com prazos e tarefas acumuladas",
       "practicalExample": "Estabeleça a regra dos 5 minutos: comprometa-se a apenas abrir o arquivo e trabalhar 5 minutos sem compromisso de concluir; a inércia faz você continuar.",
@@ -843,9 +863,9 @@
       "year": 2026,
       "source": "Bagetti",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "MtSE4rglxbY",
-      "thumbnail": "https://img.youtube.com/vi/cnqxuqMvZaM/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/MtSE4rglxbY/hqdefault.jpg",
       "deliverable": "Ensaio filosófico essencial da The School of Life sobre a ansiedade de status e a armadilha de medir valor próprio pela régua alheia.",
       "targetAudience": "Usuários de redes sociais",
       "practicalExample": "Defina seu próprio placar interno de sucesso (liberdade de horário, saúde e qualidade das relações) para não se abalar com conquistas exibidas em feeds sociais.",
@@ -866,9 +886,9 @@
       "year": 2026,
       "source": "Luana Carolina",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "mScpHTIi-kM",
-      "thumbnail": "https://img.youtube.com/vi/cnqxuqMvZaM/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/mScpHTIi-kM/hqdefault.jpg",
       "deliverable": "Simulação matemática de cooperação, traição e equilíbrio de Nash aplicada a interações humanas, mercado e estratégias de sobrevivência.",
       "targetAudience": "Quem está em encruzilhadas na carreira ou vida",
       "practicalExample": "Adote a estratégia \"Tit for Tat\": inicie sempre cooperando em parcerias, retalie desvios pontualmente e perdoe de imediato se o outro voltar a cooperar.",
@@ -888,9 +908,9 @@
       "year": 2026,
       "source": "Eslen Delanogare",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "U_nzqnXWvSo",
-      "thumbnail": "https://img.youtube.com/vi/RZRritkIEA0/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/U_nzqnXWvSo/hqdefault.jpg",
       "deliverable": "Sistema prático de formação de hábitos baseado em pistas visuais, redução de atrito e reforço de identidade para transformações de longo prazo.",
       "targetAudience": "Quem quer melhorar sua produtividade diária",
       "practicalExample": "Deixe o livro técnico aberto na mesa de trabalho ou posicione o ícone da ferramenta de estudo na barra de tarefas para zerar o atrito de começar.",
@@ -898,7 +918,7 @@
     },
     {
       "id": "video-hacks",
-      "title": "Os Melhores Hacks de Produtividade de Todos os Tempos — Ali Abdaal",
+      "title": "Os Melhores Hacks de Produtividade Testados — Ali Abdaal",
       "kind": "vídeo",
       "segment": "Aprendizado e Filosofia",
       "url": "https://www.youtube.com/watch?v=4aYVLpY5FYU",
@@ -910,9 +930,9 @@
       "year": 2026,
       "source": "Lil code",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "4aYVLpY5FYU",
-      "thumbnail": "https://img.youtube.com/vi/RZRritkIEA0/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/4aYVLpY5FYU/hqdefault.jpg",
       "deliverable": "Auditoria e ranking testado de dezenas de técnicas de gestão de tempo, bloqueio de agenda e execução fluida sem esgotamento mental.",
       "targetAudience": "Quem busca mais tempo livre no dia",
       "practicalExample": "Aplique o conceito de \"Timeblocking\": reserve blocos fixos e inegociáveis de 90 minutos pela manhã dedicados exclusivamente ao projeto mais importante do dia.",
@@ -920,7 +940,7 @@
     },
     {
       "id": "video-pensar-papel",
-      "title": "Construindo um Segundo Cérebro: O Sistema Definitivo de Produtividade — Ali Abdaal & Tiago Forte",
+      "title": "Construindo um Segundo Cérebro — Tiago Forte",
       "kind": "vídeo",
       "segment": "Aprendizado e Filosofia",
       "url": "https://www.youtube.com/watch?v=OP3dA2GcAh8",
@@ -933,9 +953,9 @@
       "year": 2026,
       "source": "Matheus Menucci",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "OP3dA2GcAh8",
-      "thumbnail": "https://img.youtube.com/vi/RTo2akdZ7Dc/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/OP3dA2GcAh8/hqdefault.jpg",
       "deliverable": "Framework CODE (Capture, Organize, Distill, Express) e método PARA para gerenciar conhecimento pessoal e transformar consumo passivo em criação ativa.",
       "targetAudience": "Quem se sente sobrecarregado de informações",
       "practicalExample": "Estruture suas pastas e notas digitais em apenas 4 níveis: Projetos ativos, Áreas de responsabilidade, Recursos de referência e Arquivo inativo.",
@@ -956,9 +976,9 @@
       "year": 2026,
       "source": "JOTA JOTA Podcast",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "youtubeId": "jYdE1f_bK38",
-      "thumbnail": "https://img.youtube.com/vi/jYdE1f_bK38/hqdefault.jpg",
+      "thumbnail": "https://i.ytimg.com/vi/jYdE1f_bK38/hqdefault.jpg",
       "deliverable": "Lições de trincheira sobre resiliência operacional, vendas, gestão de crises e a mentalidade necessária para construir empresas multimilionárias.",
       "targetAudience": "Empreendedores e sonhadores",
       "practicalExample": "Ao lançar um novo produto, foque obsessivamente em validação direta de caixa e clientes pagantes antes de desenhar planos ou apresentações complexas.",
@@ -984,7 +1004,8 @@
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
       "deliverable": "Fórmula matemática essencial ((Ganho - Custo) / Custo * 100) para medir com precisão se o capital aplicado em projetos trouxe lucro ou prejuízo.",
       "targetAudience": "Qualquer pessoa que cuida do próprio dinheiro ou negócio",
-      "practicalExample": "Se você gastou R$ 5.000 em uma campanha e gerou R$ 25.000 em receita líquida, seu ROI foi de 400% (R$ 4 de retorno para cada R$ 1 investido)."
+      "practicalExample": "Se você gastou R$ 5.000 em uma campanha e gerou R$ 25.000 em receita líquida, seu ROI foi de 400% (R$ 4 de retorno para cada R$ 1 investido).",
+      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "metric-cac",
@@ -1006,7 +1027,8 @@
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
       "deliverable": "Indicador financeiro ((Custos de Vendas + Marketing) / Novos Clientes) que revela na ponta do lápis o custo real de colocar cada cliente na empresa.",
       "targetAudience": "Empreendedores e comerciantes",
-      "practicalExample": "Se a soma de anúncios e salários comerciais atingiu R$ 20.000 e 40 clientes entraram no mês, seu CAC é de exatamente R$ 500 por cliente."
+      "practicalExample": "Se a soma de anúncios e salários comerciais atingiu R$ 20.000 e 40 clientes entraram no mês, seu CAC é de exatamente R$ 500 por cliente.",
+      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "metric-aov",
@@ -1028,7 +1050,8 @@
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
       "deliverable": "Métrica de monetização (Receita Total / Número de Pedidos) para identificar o valor médio gasto por cliente em cada transação comercial.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Com faturamento de R$ 120.000 em 800 pedidos, seu AOV é R$ 150. Ofereça frete grátis ou descontos a partir de R$ 190 para forçar o aumento do ticket."
+      "practicalExample": "Com faturamento de R$ 120.000 em 800 pedidos, seu AOV é R$ 150. Ofereça frete grátis ou descontos a partir de R$ 190 para forçar o aumento do ticket.",
+      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "metric-runway",
@@ -1050,7 +1073,8 @@
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
       "deliverable": "Contagem regressiva (Saldo de Caixa / Burn Rate Mensal) que determina com rigor quantos meses a empresa sobrevive antes de zerar o caixa.",
       "targetAudience": "Startups e donos de empresas",
-      "practicalExample": "Uma startup com R$ 600.000 no banco e prejuízo operacional mensal de R$ 50.000 possui 12 meses de Runway para atingir ponto de equilíbrio."
+      "practicalExample": "Uma startup com R$ 600.000 no banco e prejuízo operacional mensal de R$ 50.000 possui 12 meses de Runway para atingir ponto de equilíbrio.",
+      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "metric-churn",
@@ -1072,7 +1096,8 @@
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
       "deliverable": "Métrica vital de retenção (Clientes Cancelados / Clientes Ativos * 100) que acende o sinal de alerta sobre a evasão da base de assinantes.",
       "targetAudience": "Negócios de assinatura e serviços",
-      "practicalExample": "Se sua base iniciou o mês com 1.000 assinantes e 30 cancelaram, o Churn foi de 3%. Em empresas SaaS B2B, a meta saudável deve ficar abaixo de 1% a 2%."
+      "practicalExample": "Se sua base iniciou o mês com 1.000 assinantes e 30 cancelaram, o Churn foi de 3%. Em empresas SaaS B2B, a meta saudável deve ficar abaixo de 1% a 2%.",
+      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "metric-mrr",
@@ -1094,7 +1119,8 @@
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
       "deliverable": "O termômetro definitivo da previsibilidade financeira (Assinantes Ativos * Mensalidade Média) para modelos de assinatura e SaaS.",
       "targetAudience": "Empresas de SaaS e escolas",
-      "practicalExample": "Com 200 clientes no plano de R$ 150/mês e 20 no plano Enterprise de R$ 1.000/mês, seu MRR é de R$ 50.000 (equivalente a R$ 600.000 de ARR)."
+      "practicalExample": "Com 200 clientes no plano de R$ 150/mês e 20 no plano Enterprise de R$ 1.000/mês, seu MRR é de R$ 50.000 (equivalente a R$ 600.000 de ARR).",
+      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "metric-ebitda",
@@ -1116,7 +1142,8 @@
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
       "deliverable": "Lucro antes de Juros, Impostos, Depreciação e Amortização, mensurando o potencial genuíno de geração de caixa operacional da empresa.",
       "targetAudience": "Investidores e empresários",
-      "practicalExample": "Com receita de R$ 1.500.000 e custos operacionais de R$ 1.050.000, o EBITDA é de R$ 450.000 (margem de 30%), métrica essencial para valuation."
+      "practicalExample": "Com receita de R$ 1.500.000 e custos operacionais de R$ 1.050.000, o EBITDA é de R$ 450.000 (margem de 30%), métrica essencial para valuation.",
+      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-shadcn-ui",
@@ -1141,7 +1168,8 @@
       "openAccess": true,
       "deliverable": "Coleção de componentes de UI reutilizáveis e acessíveis em Tailwind CSS com código-fonte aberto para controle total do design.",
       "targetAudience": "Desenvolvedores e criadores de sites",
-      "practicalExample": "Copie e cole componentes pré-construídos (modais, menus suspensos, abas) diretamente no seu projeto sem ficar amarrado a uma biblioteca externa."
+      "practicalExample": "Copie e cole componentes pré-construídos (modais, menus suspensos, abas) diretamente no seu projeto sem ficar amarrado a uma biblioteca externa.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-aceternity-ui",
@@ -1166,7 +1194,8 @@
       "openAccess": true,
       "deliverable": "Componentes avançados com animações fluidas em Framer Motion e Tailwind CSS desenhados para landing pages de alto impacto visual.",
       "targetAudience": "Designers e programadores web",
-      "practicalExample": "Implemente efeitos de grade cibernética no fundo, brilho direcional em cartões e animações de texto para impressionar usuários na primeira dobra."
+      "practicalExample": "Implemente efeitos de grade cibernética no fundo, brilho direcional em cartões e animações de texto para impressionar usuários na primeira dobra.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-uiverse",
@@ -1191,7 +1220,8 @@
       "openAccess": true,
       "deliverable": "Um shopping grátis com mais de 3.000 botões, cartões e loaders animados criados pela comunidade para copiar e colar.",
       "targetAudience": "Qualquer pessoa montando um site",
-      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-coolors",
@@ -1214,7 +1244,8 @@
       "openAccess": true,
       "deliverable": "Gerador inteligente de paletas harmônicas com ferramenta de bloqueio de cores e verificação rigorosa de contraste de acessibilidade.",
       "targetAudience": "Designers, artistas e iniciantes",
-      "practicalExample": "Pressione espaço para gerar combinações de cores equilibradas e exporte os códigos HEX direto para as variáveis do seu tema de design."
+      "practicalExample": "Pressione espaço para gerar combinações de cores equilibradas e exporte os códigos HEX direto para as variáveis do seu tema de design.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-realtime-colors",
@@ -1237,7 +1268,8 @@
       "openAccess": true,
       "deliverable": "Simulador em tempo real para visualizar como uma paleta de cores se comporta na prática aplicada a uma landing page completa.",
       "targetAudience": "Quem está criando a identidade de um projeto",
-      "practicalExample": "Valide a legibilidade dos botões de ação e o contraste do texto de parágrafos antes de escrever a primeira linha de folha de estilo."
+      "practicalExample": "Valide a legibilidade dos botões de ação e o contraste do texto de parágrafos antes de escrever a primeira linha de folha de estilo.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-color-hunt",
@@ -1260,7 +1292,8 @@
       "openAccess": true,
       "deliverable": "Milhares de paletas de cores prontas e consagradas para você nunca mais ter dúvida sobre qual cor usar na sua arte.",
       "targetAudience": "Designers gráficos e criadores",
-      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-lucide-icons",
@@ -1284,7 +1317,8 @@
       "openAccess": true,
       "deliverable": "Conjunto de ícones vetoriais modernos, limpos e consistentes para web e apps com espessura e tamanho customizáveis.",
       "targetAudience": "Quem precisa de símbolos visuais limpos",
-      "practicalExample": "Adicione símbolos visuais intuitivos em botões e menus mantendo o peso da página irrisório e a consistência visual impecável."
+      "practicalExample": "Adicione símbolos visuais intuitivos em botões e menus mantendo o peso da página irrisório e a consistência visual impecável.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-tabler-icons",
@@ -1308,7 +1342,8 @@
       "openAccess": true,
       "deliverable": "Mais de 5.000 ícones em grade 24x24 px desenvolvidos sob medida para dashboards corporativos e interfaces de gerenciamento densas.",
       "targetAudience": "Designers e programadores",
-      "practicalExample": "Utilize ícones especializados de métricas financeiras, gráficos de rede e dispositivos de hardware que não existem em pacotes básicos."
+      "practicalExample": "Utilize ícones especializados de métricas financeiras, gráficos de rede e dispositivos de hardware que não existem em pacotes básicos.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-simple-icons",
@@ -1334,7 +1369,8 @@
       "deliverable": "Todos os logotipos oficiais de marcas (Instagram, Google, WhatsApp, Apple) em formato vetor limpo e perfeito.",
       "targetAudience": "Criadores de conteúdo e designers",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "Mais de 3.000 ícones SVG oficiais de marcas globais, linguagens de programação e ferramentas de tecnologia. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://simpleicons.org/."
+      "notes": "Mais de 3.000 ícones SVG oficiais de marcas globais, linguagens de programação e ferramentas de tecnologia. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://simpleicons.org/.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-undraw",
@@ -1358,7 +1394,8 @@
       "openAccess": true,
       "deliverable": "Desenhos e ilustrações modernas gratuitas onde você pode escolher a cor exata para combinar com a sua empresa.",
       "targetAudience": "Quem quer deixar posts e páginas mais ilustrados",
-      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-humaaans",
@@ -1382,7 +1419,8 @@
       "openAccess": true,
       "deliverable": "Ilustrações vetoriais modulares de personagens onde você pode misturar corpos, roupas e poses para compor cenas humanizadas.",
       "targetAudience": "Apresentações e sites modernos",
-      "practicalExample": "Crie ilustrações personalizadas e acolhedoras para páginas de boas-vindas e estados vazios sem precisar contratar um ilustrador externo."
+      "practicalExample": "Crie ilustrações personalizadas e acolhedoras para páginas de boas-vindas e estados vazios sem precisar contratar um ilustrador externo.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-hero-patterns",
@@ -1406,7 +1444,8 @@
       "openAccess": true,
       "deliverable": "Galeria de texturas e padrões de fundo vetoriais em SVG repetíveis e customizáveis por código para conferir profundidade visual.",
       "targetAudience": "Designers de landing pages",
-      "practicalExample": "Aplique uma textura sutil no cabeçalho da sua aplicação pesando menos de 1 KB, substituindo banners de imagens rasterizadas pesadas."
+      "practicalExample": "Aplique uma textura sutil no cabeçalho da sua aplicação pesando menos de 1 KB, substituindo banners de imagens rasterizadas pesadas.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-gsap",
@@ -1430,7 +1469,8 @@
       "openAccess": true,
       "deliverable": "O motor de animações JavaScript mais rápido e premiado do mercado para coreografar interações de scroll e timelines no browser.",
       "targetAudience": "Desenvolvedores front-end avançados",
-      "practicalExample": "Crie animações ligadas à barra de rolagem (ScrollTrigger) onde seções da página se fixam e elementos deslizam com suavidade extrema."
+      "practicalExample": "Crie animações ligadas à barra de rolagem (ScrollTrigger) onde seções da página se fixam e elementos deslizam com suavidade extrema.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-lottiefiles",
@@ -1453,7 +1493,8 @@
       "openAccess": true,
       "deliverable": "Ecossistema de animações vetoriais ultraleves em formato JSON baseadas em After Effects com execução a 60fps em qualquer tela.",
       "targetAudience": "Criadores de aplicativos e sites",
-      "practicalExample": "Substitua ícones estáticos por animações interativas de check de pagamento confirmado ou carregamento acionadas ao clique do usuário."
+      "practicalExample": "Substitua ícones estáticos por animações interativas de check de pagamento confirmado ou carregamento acionadas ao clique do usuário.",
+      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-animate-css",
@@ -1478,7 +1519,8 @@
       "deliverable": "Efeitos prontos de CSS para fazer caixas tremerem, surgirem ou pularem na tela com apenas 1 linha de código.",
       "targetAudience": "Iniciantes em criação de páginas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "Biblioteca pronta para uso de animações CSS cross-browser para botões, modais e transições de página. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://animate.style/."
+      "notes": "Biblioteca pronta para uso de animações CSS cross-browser para botões, modais e transições de página. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://animate.style/.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-fontshare",
@@ -1502,7 +1544,8 @@
       "openAccess": true,
       "deliverable": "Fundição de fontes tipográficas profissionais gratuitas de nível internacional para uso pessoal e comercial sem custos de licença.",
       "targetAudience": "Quem quer tipografia de alto nível",
-      "practicalExample": "Utilize fontes contemporâneas como Satoshi, Clash Display ou General Sans para dar personalidade premium ao branding do seu projeto."
+      "practicalExample": "Utilize fontes contemporâneas como Satoshi, Clash Display ou General Sans para dar personalidade premium ao branding do seu projeto.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-google-fonts",
@@ -1526,7 +1569,8 @@
       "openAccess": true,
       "deliverable": "O maior diretório do planeta com centenas de letras e fontes seguras, rápidas e gratuitas para usar em qualquer projeto.",
       "targetAudience": "Todo mundo que escreve na web",
-      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-spline",
@@ -1549,7 +1593,8 @@
       "openAccess": true,
       "deliverable": "Software de design e renderização 3D intuitivo direto no navegador com suporte a interações em tempo real e exportação para a web.",
       "targetAudience": "Designers 3D e mentes criativas",
-      "practicalExample": "Modele um objeto 3D que acompanha a posição do cursor do mouse do visitante e incorpore na tela inicial do seu site com um iframe limpo."
+      "practicalExample": "Modele um objeto 3D que acompanha a posição do cursor do mouse do visitante e incorpore na tela inicial do seu site com um iframe limpo.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-shots-so",
@@ -1572,7 +1617,8 @@
       "openAccess": true,
       "deliverable": "Criador profissional de apresentações visuais de produtos para enquadrar capturas de tela em molduras fotorrealistas de notebooks e celulares.",
       "targetAudience": "Quem posta nas redes sociais e portfólios",
-      "practicalExample": "Insira o print do seu sistema em uma moldura de MacBook com sombra suave e fundo degradê para publicar no portfólio ou redes sociais."
+      "practicalExample": "Insira o print do seu sistema em uma moldura de MacBook com sombra suave e fundo degradê para publicar no portfólio ou redes sociais.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "design-mobbin",
@@ -1595,7 +1641,8 @@
       "openAccess": true,
       "deliverable": "Veja exatamente como os melhores aplicativos do mundo (Nubank, Airbnb, Duolingo) desenharam suas telas e fluxos.",
       "targetAudience": "Empreendedores e designers de produto",
-      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "carrossel-modelos-mentais",
@@ -1626,7 +1673,8 @@
         "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80",
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80"
       ],
-      "practicalExample": "Antes de assinar um contrato importante, faça uma sessão de \"Inversão\": liste tudo que levaria o acordo ao fracasso e crie cláusulas preventivas."
+      "practicalExample": "Antes de assinar um contrato importante, faça uma sessão de \"Inversão\": liste tudo que levaria o acordo ao fracasso e crie cláusulas preventivas.",
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "carrossel-micro-interacoes",
@@ -1656,7 +1704,8 @@
         "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80",
         "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80"
       ],
-      "practicalExample": "Em formulários de checkout, adicione feedback tátil e animação de loading direto no botão para eliminar cliques múltiplos por ansiedade do usuário."
+      "practicalExample": "Em formulários de checkout, adicione feedback tátil e animação de loading direto no botão para eliminar cliques múltiplos por ansiedade do usuário.",
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "conhecimento-metodo-10-dias",
@@ -1680,7 +1729,8 @@
       "addedAt": "2026-09-24",
       "updatedAt": "2026-09-24",
       "openAccess": true,
-      "author": "Clube Natural / Carl Jung"
+      "author": "Clube Natural / Carl Jung",
+      "thumbnail": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "conhecimento-checklist-seguranca",
@@ -1704,7 +1754,8 @@
       "addedAt": "2026-09-24",
       "updatedAt": "2026-09-24",
       "openAccess": true,
-      "author": "Nexus SecOps & DevSec"
+      "author": "Nexus SecOps & DevSec",
+      "thumbnail": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "repo-fcksignups",
@@ -1729,7 +1780,8 @@
       "updatedAt": "2026-09-24",
       "license": "Open Source",
       "openAccess": true,
-      "author": "BraveOPotato"
+      "author": "BraveOPotato",
+      "thumbnail": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80"
     },
     {
       "id": "conhecimento-cssbuy-guia",
@@ -1753,7 +1805,8 @@
       "addedAt": "2026-09-24",
       "updatedAt": "2026-09-24",
       "openAccess": true,
-      "author": "CSSBuy / ImportHelper"
+      "author": "CSSBuy / ImportHelper",
+      "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80"
     }
   ]
 }

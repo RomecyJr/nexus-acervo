@@ -25,7 +25,7 @@
     }
   })();
 </script>
-<script src="./data/catalog.js?v=1.4.0"></script>
+<script src="./data/catalog.js?v=2.0.0"></script>
 <style>
 
 /* --- ACESSIBILIDADE WCAG 2.2 AA: FOCUS VISIBLE (A11Y-03) --- */
@@ -849,24 +849,23 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
   border: 1px solid rgba(16, 185, 129, 0.3);
 }
 
-/* TOGGLE GROUP DE STATUS (TODOS / NÃO VISTOS / VISTOS) */
+/* TOGGLE GROUP DE STATUS (CHIPS EXECUTIVOS INBOX ZERO) */
 .status-toggle-group {
   display: inline-flex;
   align-items: center;
-  background: var(--surface2);
-  padding: 0.2rem;
-  border-radius: var(--radius);
-  border: 1px solid var(--border-color);
-  gap: 0.2rem;
+  gap: 0.4rem;
+  flex-wrap: wrap;
 }
 
 .status-toggle-btn {
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  padding: 0.28rem 0.65rem;
-  border-radius: calc(var(--radius) - 2px);
-  font-size: 0.74rem;
+  gap: 0.38rem;
+  padding: 0.28rem 0.68rem;
+  border-radius: var(--radius);
+  background: var(--surface2);
+  border: 1px solid var(--border-color);
+  font-size: 0.76rem;
   font-weight: 600;
   color: var(--muted-text);
   cursor: pointer;
@@ -874,27 +873,41 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
   white-space: nowrap;
 }
 
-.status-toggle-btn:hover {
+.status-toggle-btn strong {
   color: var(--text);
+  font-weight: 800;
+  font-family: var(--font-mono);
+}
+
+.status-toggle-btn:hover {
+  background: var(--surface3);
+  color: var(--text);
+  border-color: var(--border-strong);
 }
 
 .status-toggle-btn.active {
   background: var(--surface);
   color: var(--text);
-  font-weight: 700;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+  border-color: #3b82f6;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.25);
+}
+
+.status-toggle-btn.active[data-read="all"] {
+  border-color: rgba(59, 130, 246, 0.6);
 }
 
 .status-toggle-btn.active[data-read="unseen"] {
+  border-color: #3b82f6;
   color: #60a5fa;
 }
 
 .status-toggle-btn.active[data-read="seen"] {
+  border-color: #10b981;
   color: #34d399;
 }
 
-
 .status-toggle-btn.active[data-read="deleted"] {
+  border-color: #ef4444;
   color: #f87171;
 }
 
@@ -2448,35 +2461,29 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
             <h1 class="main-hero-title">Nexus Acervo <span class="hero-accent-text">· Segundo Cérebro</span></h1>
             <p class="main-hero-subtitle">Diretório de alta performance com ferramentas web sem cadastro, códigos de elite, vídeos e metodologias com aplicação prática imediata.</p>
           </div>
-          <div class="stats-cluster" aria-label="Estatísticas do Acervo">
-            <div class="stat-chip"><i data-lucide="database" style="width:13px;height:13px;"></i> <strong id="kpiTotal">0</strong> ativos</div>
-            <div class="stat-chip"><i data-lucide="inbox" style="width:13px;height:13px;color:#60a5fa;"></i> <strong id="kpiUnseen">0</strong> pendentes</div>
-            <div class="stat-chip"><i data-lucide="check-circle-2" style="width:13px;height:13px;color:#10b981;"></i> <strong id="kpiSeen">0</strong> vistos</div>
-            <div class="stat-chip"><i data-lucide="play" style="width:13px;height:13px;"></i> <strong id="kpiVideos">0</strong> vídeos</div>
-            <div class="stat-chip"><i data-lucide="github" style="width:13px;height:13px;"></i> <strong id="kpiRepos">0</strong> repos</div>
-            <div class="stat-chip"><i data-lucide="trash-2" style="width:13px;height:13px;color:#ef4444;"></i> <strong id="kpiDeleted">0</strong> lixeira</div>
-          </div>
         </div>
       </section>
 
       <!-- BARRA DE CONTROLES SHADCN UI -->
       <section class="controls-bar" style="margin-top: 1rem;">
-        <!-- SEGMENTED TABS (FORMATO) -->
-        <!-- FILTRO DE ESTADO INBOX ZERO (TODOS / NÃO VISTOS / VISTOS) -->
-        <div class="status-toggle-group" id="readStatusGroup" role="group" aria-label="Filtrar por status de visualização" style="margin-bottom: 0.5rem;">
-          <button class="status-toggle-btn active" data-read="all" aria-label="Todos os recursos (vistos e não vistos)"><i data-lucide="layers" style="width:13px;height:13px;"></i> Todos (<span id="statusCountAll">0</span>)</button>
-          <button class="status-toggle-btn" data-read="unseen" aria-label="Apenas o que ainda não vi"><i data-lucide="inbox" style="width:13px;height:13px;"></i> Não Vistos (<span id="statusCountUnseen">0</span>)</button>
-          <button class="status-toggle-btn" data-read="seen" aria-label="Apenas o que já assisti ou verifiquei"><i data-lucide="check-circle-2" style="width:13px;height:13px;"></i> Vistos (<span id="statusCountSeen">0</span>)</button>
-          <button class="status-toggle-btn" data-read="deleted" aria-label="Recursos excluídos da listagem"><i data-lucide="trash-2" style="width:13px;height:13px;"></i> Excluídos (<span id="statusCountDeleted">0</span>)</button>
-        </div>
-
-        <div class="segmented-control" id="categoryTabs">
-          <button class="segment-tab active" data-kind="all" aria-label="Todos os formatos"><i data-lucide="layout-grid" style="width:14px;height:14px;"></i> Todos</button>
-          <button class="segment-tab" data-kind="vídeo" aria-label="Vídeos"><i data-lucide="play-circle" style="width:14px;height:14px;"></i> Vídeos</button>
-          <button class="segment-tab" data-kind="repositório" aria-label="Repositórios"><i data-lucide="git-branch" style="width:14px;height:14px;"></i> Repositórios</button>
-          <button class="segment-tab" data-kind="carrossel" aria-label="Carrosséis"><i data-lucide="layers" style="width:14px;height:14px;"></i> Carrosséis</button>
-          <button class="segment-tab" data-kind="ferramenta" aria-label="Ferramentas"><i data-lucide="wrench" style="width:14px;height:14px;"></i> Ferramentas</button>
-          <button class="segment-tab" data-kind="conhecimento" aria-label="Conhecimento"><i data-lucide="book-open" style="width:14px;height:14px;"></i> Conhecimento</button>
+        <!-- FILTROS DE STATUS INBOX ZERO (CHIPS EXECUTIVOS ATIVOS) -->
+        <div class="status-toggle-group" id="readStatusGroup" role="group" aria-label="Filtrar por status de visualização">
+          <button class="status-toggle-btn active" data-read="all" aria-label="Todos os recursos ativos">
+            <i data-lucide="database" style="width:13px;height:13px;"></i>
+            <strong id="kpiTotal">0</strong> <span>ativos</span>
+          </button>
+          <button class="status-toggle-btn" data-read="unseen" aria-label="Recursos pendentes de estudo">
+            <i data-lucide="inbox" style="width:13px;height:13px;color:#60a5fa;"></i>
+            <strong id="kpiUnseen">0</strong> <span>pendentes</span>
+          </button>
+          <button class="status-toggle-btn" data-read="seen" aria-label="Recursos já vistos ou concluídos">
+            <i data-lucide="check-circle-2" style="width:13px;height:13px;color:#10b981;"></i>
+            <strong id="kpiSeen">0</strong> <span>vistos</span>
+          </button>
+          <button class="status-toggle-btn" data-read="deleted" aria-label="Recursos na lixeira">
+            <i data-lucide="trash-2" style="width:13px;height:13px;color:#ef4444;"></i>
+            <strong id="kpiDeleted">0</strong> <span>lixeira</span>
+          </button>
         </div>
 
         <div class="toolbar-right-cluster">
@@ -3250,6 +3257,90 @@ function extractGitHubRepo(url = '') {
   }
 }
 
+
+// ==========================================================================
+// ENGINE SEMÂNTICA DE THUMBNAILS E FALLBACKS VISUAIS CONTEXTUAIS
+// ==========================================================================
+const THEME_COVERS_MAP = {
+  produtividade: 'https://images.unsplash.com/photo-1484480974693-6ca0a78fb36b?w=800&auto=format&fit=crop&q=80',
+  cerebro: 'https://images.unsplash.com/photo-1507842229451-7f01be7ff6ab?w=800&auto=format&fit=crop&q=80',
+  habitos: 'https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&auto=format&fit=crop&q=80',
+  negocios: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=800&auto=format&fit=crop&q=80',
+  codigo: 'https://images.unsplash.com/photo-1555066931-4365d14bab8c?w=800&auto=format&fit=crop&q=80',
+  ia: 'https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80',
+  design: 'https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80',
+  financas: 'https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80',
+  importacao: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80',
+  seguranca: 'https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80',
+  psicologia: 'https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=80',
+  ferramenta: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80'
+};
+
+// IDs canônicos mapeados para evitar IDs quebrados de sessões antigas
+const KNOWN_CANONICAL_YOUTUBE = {
+  'video-hacks': '4aYVLpY5FYU',
+  'video-pensar-papel': 'OP3dA2GcAh8',
+  'oP_8lS0Lp5Y': '4aYVLpY5FYU',
+  'N93iJ3Jk7pU': 'OP3dA2GcAh8'
+};
+
+function getItemThumbnail(item) {
+  let ytId = item.youtubeId || extractYouTubeId(item.url);
+  if (KNOWN_CANONICAL_YOUTUBE[item.id]) {
+    ytId = KNOWN_CANONICAL_YOUTUBE[item.id];
+  } else if (KNOWN_CANONICAL_YOUTUBE[ytId]) {
+    ytId = KNOWN_CANONICAL_YOUTUBE[ytId];
+  }
+
+  if (ytId) {
+    return 'https://i.ytimg.com/vi/' + ytId + '/hqdefault.jpg';
+  }
+  if (item.thumbnail && !item.thumbnail.includes('oP_8lS0Lp5Y') && !item.thumbnail.includes('N93iJ3Jk7pU')) {
+    return item.thumbnail;
+  }
+
+  // Análise semântica contextual do recurso para retorno de capa relevante
+  const str = normalizeStr((item.title || '') + ' ' + (item.description || '') + ' ' + (item.deliverable || '') + ' ' + (item.segment || '') + ' ' + ((item.tags||[]).join(' ')));
+  if (str.includes('cerebro') || str.includes('segundo') || str.includes('tiago forte') || str.includes('code') || str.includes('memoria') || str.includes('notas')) {
+    return THEME_COVERS_MAP.cerebro;
+  }
+  if (str.includes('produtiv') || str.includes('hack') || str.includes('ali abdaal') || str.includes('time-blocking') || str.includes('pomodoro') || str.includes('foco')) {
+    return THEME_COVERS_MAP.produtividade;
+  }
+  if (str.includes('habito') || str.includes('james clear') || str.includes('atomico') || str.includes('rotina')) {
+    return THEME_COVERS_MAP.habitos;
+  }
+  if (str.includes('sucesso') || str.includes('negocio') || str.includes('flavio augusto') || str.includes('carreira') || str.includes('empresa') || str.includes('mrr') || str.includes('ebitda')) {
+    return THEME_COVERS_MAP.negocios;
+  }
+  if (str.includes('importa') || str.includes('china') || str.includes('cssbuy') || str.includes('taobao') || str.includes('xianyu')) {
+    return THEME_COVERS_MAP.importacao;
+  }
+  if (str.includes('seguranc') || str.includes('ciber') || str.includes('api key') || str.includes('auditoria') || str.includes('privacidade')) {
+    return THEME_COVERS_MAP.seguranca;
+  }
+  if (str.includes('psicolog') || str.includes('carl jung') || str.includes('identidade') || str.includes('mente') || str.includes('filosofia')) {
+    return THEME_COVERS_MAP.psicologia;
+  }
+  if (str.includes('design') || str.includes('ui') || str.includes('ux') || str.includes('interface') || str.includes('cor') || str.includes('icone')) {
+    return THEME_COVERS_MAP.design;
+  }
+  if (str.includes('ia') || str.includes('inteligencia artificial') || str.includes('llm') || str.includes('rag') || str.includes('bot') || str.includes('scraping')) {
+    return THEME_COVERS_MAP.ia;
+  }
+  if (item.kind === 'repositório' || str.includes('github') || str.includes('dev')) {
+    return THEME_COVERS_MAP.codigo;
+  }
+  return THEME_COVERS_MAP.ferramenta;
+}
+
+window.handleMediaThumbError = function(img, kind, segment, title) {
+  img.onerror = null;
+  img.onload = null;
+  const fallback = getItemThumbnail({ kind: kind || '', segment: segment || '', title: title || '' });
+  img.src = fallback;
+};
+
 function getItemFavicon(url = '') {
   try {
     const u = new URL(url);
@@ -3336,8 +3427,8 @@ function renderCards() {
       const isFav = storedFavorites.has(item.id);
       const isSeen = storedSeen.has(item.id);
       const isDeleted = storedDeleted.has(item.id);
-      const ytId = item.youtubeId || extractYouTubeId(item.url);
-      const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : (item.thumbnail || '');
+      const thumb = getItemThumbnail(item);
+        const ytId = item.youtubeId || extractYouTubeId(item.url);
       const isVideo = item.kind === 'vídeo' || !!ytId;
       const favicon = getItemFavicon(item.url);
       const deliverable = esc(item.deliverable || item.description);
@@ -3388,8 +3479,8 @@ function renderCards() {
       const isFav = storedFavorites.has(item.id);
       const isSeen = storedSeen.has(item.id);
       const isDeleted = storedDeleted.has(item.id);
-      const ytId = item.youtubeId || extractYouTubeId(item.url);
-      const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : (item.thumbnail || '');
+      const thumb = getItemThumbnail(item);
+        const ytId = item.youtubeId || extractYouTubeId(item.url);
       const favicon = getItemFavicon(item.url);
 
       return `
@@ -3473,8 +3564,8 @@ function renderCards() {
 
       // A. VÍDEO
       if (item.kind === 'vídeo') {
+        const thumb = getItemThumbnail(item);
         const ytId = item.youtubeId || extractYouTubeId(item.url);
-        const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : (item.thumbnail || '');
         const isHorizontal = uiPrefs.thumbSize === 'medium' || uiPrefs.thumbSize === 'small';
         const showThumb = uiPrefs.thumbSize !== 'none';
 
@@ -3482,7 +3573,7 @@ function renderCards() {
           return `
             <article class="card-item card-video-horizontal ${uiPrefs.thumbSize === 'small' ? 'thumb-sm' : ''} ${isSeen ? 'is-item-seen' : ''} ${isDeleted ? 'is-deleted-card' : ''}" data-id="${esc(item.id)}">
               <div class="card-thumb-side">
-                <img src="${thumb}" alt="${esc(item.title)}" loading="lazy">
+                <img src="${thumb}" alt="${esc(item.title)}" loading="lazy" onload="if(this.naturalWidth<=120 && this.naturalHeight<=90){ handleMediaThumbError(this, '${esc(item.kind)}', '${esc(item.segment)}', '${esc(item.title)}'); }" onerror="handleMediaThumbError(this, '${esc(item.kind)}', '${esc(item.segment)}', '${esc(item.title)}')">
                 <div class="video-hover-play"><div class="play-bubble"><i data-lucide="play" style="width:15px;height:15px;"></i></div></div>
                 <span class="video-label-badge">VÍDEO</span>
               </div>
@@ -3517,7 +3608,7 @@ function renderCards() {
           <article class="card-item ${isSeen ? 'is-item-seen' : ''} ${isDeleted ? 'is-deleted-card' : ''}" data-id="${esc(item.id)}">
             ${showThumb ? `
               <div class="card-thumb-top">
-                <img src="${thumb}" alt="${esc(item.title)}" loading="lazy">
+                <img src="${thumb}" alt="${esc(item.title)}" loading="lazy" onload="if(this.naturalWidth<=120 && this.naturalHeight<=90){ handleMediaThumbError(this, '${esc(item.kind)}', '${esc(item.segment)}', '${esc(item.title)}'); }" onerror="handleMediaThumbError(this, '${esc(item.kind)}', '${esc(item.segment)}', '${esc(item.title)}')">
                 <div class="video-hover-play"><div class="play-bubble"><i data-lucide="play" style="width:16px;height:16px;"></i></div></div>
                 <span class="video-label-badge">VÍDEO</span>
               </div>` : ''}
@@ -3961,9 +4052,11 @@ function toggleFavorite(id) {
 }
 
 function syncFilterControls() {
-  $$('#categoryTabs .segment-tab').forEach(b => {
-    b.classList.toggle('active', b.dataset.kind === state.kind);
-  });
+  if ($('#categoryTabs')) {
+    $('#categoryTabs .segment-tab').forEach(b => {
+      b.classList.toggle('active', b.dataset.kind === state.kind);
+    });
+  }
   $$('.nav-btn[data-kind]').forEach(b => {
     b.classList.toggle('active', b.dataset.kind === state.kind);
   });
