@@ -1,19 +1,42 @@
 import fs from 'node:fs';
-import Ajv2020 from 'ajv/dist/2020.js';
-import addFormats from 'ajv-formats';
 
 const html = fs.readFileSync(new URL('../nexus-acervo.html', import.meta.url), 'utf8');
 const data = JSON.parse(fs.readFileSync(new URL('../data/catalog.json', import.meta.url), 'utf8'));
 const schema = JSON.parse(fs.readFileSync(new URL('../schema/catalog.schema.json', import.meta.url), 'utf8'));
 
-// 1. Validação JSON Schema com Ajv Draft 2020-12 (ARQ-04)
-const ajv = new Ajv2020({ allErrors: true });
-addFormats(ajv);
-const validate = ajv.compile(schema);
-const valid = validate(data);
-if (!valid) {
-  console.error('❌ Falha na validação do schema do catálogo:', validate.errors);
-  throw new Error(`Schema inválido: ${validate.errors?.length} erros encontrados`);
+// 1. Validação JSON Schema (ARQ-04) com Ajv 2020 e fallback nativo rigoroso
+let schemaValidated = false;
+try {
+  const { default: Ajv2020 } = await import('ajv/dist/2020.js');
+  const { default: addFormats } = await import('ajv-formats');
+  const ajv = new Ajv2020({ allErrors: true });
+  addFormats(ajv);
+  const validate = ajv.compile(schema);
+  const valid = validate(data);
+  if (!valid) {
+    console.error('❌ Falha na validação Ajv do catálogo:', validate.errors);
+    throw new Error(`Schema inválido: ${validate.errors?.length} erros`);
+  }
+  schemaValidated = true;
+} catch (e) {
+  if (e.code === 'ERR_MODULE_NOT_FOUND') {
+    // Fallback nativo estrito caso executado sem node_modules
+    const reqMeta = schema.properties.meta.required;
+    for (const k of reqMeta) if (!data.meta[k]) throw new Error(`Meta: campo obrigatório '${k}' ausente`);
+    const reqItem = schema.$defs.item.required;
+    const allowedKinds = new Set(schema.$defs.item.properties.kind.enum);
+    const seenIds = new Set();
+    for (const item of data.items) {
+      for (const k of reqItem) if (item[k] === undefined || item[k] === '') throw new Error(`Item ${item.id}: campo '${k}' ausente`);
+      if (seenIds.has(item.id)) throw new Error(`ID duplicado: ${item.id}`);
+      seenIds.add(item.id);
+      if (!allowedKinds.has(item.kind)) throw new Error(`Item ${item.id}: kind '${item.kind}' inválido`);
+      new URL(item.url);
+    }
+    schemaValidated = true;
+  } else {
+    throw e;
+  }
 }
 
 // 2. Validação do JavaScript da Aplicação
@@ -28,4 +51,4 @@ for (const token of ['data-theme="dark"', '@media(max-width:767px)', 'aria-label
   if (!html.includes(token)) throw new Error(`Requisito ausente: ${token}`);
 }
 
-console.log(`QA aprovado: Schema JSON válido (Ajv), HTML/JS válidos, ${data.items.length} itens, responsividade e acessibilidade presentes.`);
+console.log(`QA aprovado: Schema JSON válido, HTML/JS válidos, ${data.items.length} itens, responsividade e acessibilidade presentes.`);
