@@ -628,15 +628,19 @@
     },
     {
       "id": "repo-documenso",
-      "title": "Documenso",
+      "title": "Documenso — Assinatura Digital Open Source",
       "kind": "repositório",
-      "segment": "Produtividade",
+      "segment": "Desenvolvimento",
       "url": "https://github.com/documenso/documenso",
-      "description": "Assinatura digital auto-hospedável com trilha de auditoria.",
+      "description": "A alternativa de código aberto número 1 ao DocuSign. Plataforma moderna, segura e auto-hospedável para assinatura eletrônica de documentos e contratos.",
       "tags": [
-        "documentos",
+        "github",
         "assinatura",
-        "self-hosted"
+        "pdf",
+        "contratos",
+        "open-source",
+        "shadcn",
+        "nextjs"
       ],
       "status": "ativo",
       "year": 2026,
@@ -646,10 +650,11 @@
       "license": "AGPL-3.0",
       "openAccess": true,
       "thumbnail": "https://opengraph.githubassets.com/1/documenso/documenso",
-      "deliverable": "Código e documentação aberta e pronta para usar em projetos de produtividade.",
+      "deliverable": "Plataforma completa de assinatura eletrônica de PDFs legalmente vinculativa com trilha de auditoria, eliminando mensalidades de SaaS e mantendo a soberania total dos dados.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "Assinatura digital auto-hospedável com trilha de auditoria. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://github.com/documenso/documenso."
+      "practicalExample": "Suba um contrato de prestação de serviços ou proposta comercial em PDF com campos de assinatura, rubrica e data para o cliente assinar diretamente pelo navegador com validade jurídica e hash SHA-256.",
+      "notes": "Construído com Next.js, Hono, Prisma, PostgreSQL, Tailwind CSS e componentes shadcn/ui. Suporta auto-hospedagem com Docker em 1 comando (docker compose up -d).",
+      "youtubeId": "Y0ppIQrEnZs"
     },
     {
       "id": "repo-twenty",
