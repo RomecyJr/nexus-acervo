@@ -123,10 +123,55 @@ body {
 a { color: inherit; text-decoration: none; }
 button, input, select, textarea { font-family: inherit; color: inherit; border: none; background: none; }
 
+
+/* ==========================================================================
+   SCROLLBARS CONTEMPORÂNEAS E ELIMINAÇÃO DE BARRAS BRANCAS NATIVAS
+   ========================================================================== */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: var(--border-strong) transparent;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--border-strong);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--muted-text);
+}
+
+/* Ocultar barra de rolagem horizontal nativa em containers de botões e abas */
+.segmented-control,
+.filter-chips-row,
+.status-toggle-group,
+.view-toggle-group {
+  scrollbar-width: none !important;
+  -ms-overflow-style: none !important;
+}
+
+.segmented-control::-webkit-scrollbar,
+.filter-chips-row::-webkit-scrollbar,
+.status-toggle-group::-webkit-scrollbar,
+.view-toggle-group::-webkit-scrollbar {
+  display: none !important;
+  height: 0 !important;
+  width: 0 !important;
+}
+
 /* APP LAYOUT */
 .app {
   display: grid;
-  grid-template-columns: 240px 1fr;
+  grid-template-columns: 268px 1fr;
   height: 100dvh;
   overflow: hidden;
 }
@@ -256,10 +301,11 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
   padding: 0.85rem 1rem;
   border-top: 1px solid var(--border-color);
   display: flex;
-  align-items: center;
-  justify-content: space-between;
+  flex-direction: column;
+  gap: 0.55rem;
   background: var(--surface2);
   font-size: 0.72rem;
+  flex-shrink: 0;
 }
 
 .status-badge-clean {
@@ -1413,41 +1459,278 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
 
 .segment-row {
   display: flex;
-  flex-direction: column;
-  gap: 0.25rem;
-  padding: 0.35rem 0.5rem;
-  border-radius: 4px;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.5rem;
+  padding: 0.45rem 0.65rem;
+  border-radius: var(--radius);
   cursor: pointer;
   transition: all var(--trans);
+  font-size: 0.76rem;
+  font-weight: 500;
+  color: var(--muted-text);
+  margin-bottom: 2px;
 }
 
-.segment-row:hover, .segment-row.active {
+.segment-row:hover {
   background: var(--surface2);
+  color: var(--text);
 }
 
 .segment-row.active {
-  border-left: 2px solid var(--text);
+  background: var(--surface3);
+  color: var(--text);
+  font-weight: 700;
 }
 
-.segment-row-header {
+.segment-row-name {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.segment-row-count {
+  font-size: 0.68rem;
+  font-family: var(--font-mono);
+  font-weight: 700;
+  padding: 0.1rem 0.45rem;
+  border-radius: 9999px;
+  background: var(--surface2);
+  color: var(--faint);
+  flex-shrink: 0;
+}
+
+.segment-row.active .segment-row-count {
+  background: var(--text);
+  color: var(--bg);
+}
+
+
+/* HERO HEADLINE SUPREMO */
+.hero-headline-section {
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid var(--border-color);
   display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.hero-headline-top-badge {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.headline-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.72rem;
+  font-weight: 700;
+  padding: 0.2rem 0.65rem;
+  border-radius: 9999px;
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  color: #34d399;
+  letter-spacing: 0.02em;
+}
+
+.headline-version-pill {
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.15rem 0.45rem;
+  border-radius: 4px;
+  background: var(--surface2);
+  border: 1px solid var(--border-color);
+  color: var(--faint);
+}
+
+.hero-headline-main {
+  display: flex;
+  align-items: flex-end;
   justify-content: space-between;
-  font-size: 0.75rem;
-  font-weight: 600;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.hero-headline-text {
+  flex: 1;
+  min-width: 280px;
+}
+
+.main-hero-title {
+  font-size: 1.8rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+  color: var(--text);
+  line-height: 1.2;
+}
+
+.hero-accent-text {
+  background: linear-gradient(135deg, #10b981 0%, #06b6d4 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.main-hero-subtitle {
+  color: var(--muted-text);
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-top: 0.35rem;
+  max-width: 680px;
+}
+
+/* Card Hierarchy Improvements */
+.card-meta-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.4rem;
+  margin-bottom: 0.45rem;
+}
+
+.card-meta-left {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+.card-meta-right {
+  display: flex;
+  align-items: center;
+  gap: 0.3rem;
+  flex-shrink: 0;
+}
+
+.card-headline-title {
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.4;
+  margin-bottom: 0.4rem;
+  word-break: break-word;
+}
+
+.card-quick-trash {
+  width: 24px;
+  height: 24px;
+  padding: 0;
+  border-radius: 4px;
+  display: grid;
+  place-items: center;
+}
+
+.card-action-btns-group {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  flex-wrap: wrap;
+}
+
+/* FOOTER EXECUTIVO E VOLTAR AO TOPO */
+.acervo-executive-footer {
+  margin-top: 2.5rem;
+  padding: 1.5rem 0 1rem;
+  border-top: 1px solid var(--border-color);
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.footer-top-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.footer-brand-info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+}
+
+.footer-brand-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: var(--text);
+}
+
+.footer-brand-desc {
+  font-size: 0.78rem;
   color: var(--muted-text);
 }
 
-.segment-track {
-  height: 4px;
-  background: var(--surface3);
-  border-radius: 9999px;
-  overflow: hidden;
+.footer-bottom-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  padding-top: 0.75rem;
+  border-top: 1px dashed var(--border-color);
+  font-size: 0.72rem;
+  color: var(--faint);
 }
 
-.segment-fill {
-  height: 100%;
-  background: var(--muted-text);
+.footer-meta-badges {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.footer-meta-pill {
+  padding: 0.15rem 0.5rem;
   border-radius: 9999px;
+  background: var(--surface2);
+  border: 1px solid var(--border-color);
+  font-family: var(--font-mono);
+  font-size: 0.68rem;
+  color: var(--muted-text);
+}
+
+/* BOTÃO FLUTUANTE DE SUBIR AO TOPO */
+.floating-scroll-top-btn {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.75rem;
+  z-index: 90;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  padding: 0.5rem 0.9rem;
+  border-radius: 9999px;
+  background: var(--surface);
+  border: 1px solid var(--border-strong);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.35);
+  color: var(--text);
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(12px);
+  transition: all 200ms cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.floating-scroll-top-btn.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.floating-scroll-top-btn:hover {
+  background: var(--surface2);
+  border-color: #10b981;
+  color: #10b981;
+  box-shadow: 0 6px 20px rgba(16, 185, 129, 0.25);
+  transform: translateY(-2px);
 }
 
 /* MODAIS SHADCN */
@@ -1760,11 +2043,12 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
 }
 
 .brand-subtitle {
-  font-size: 0.68rem;
+  font-size: 0.7rem;
   color: var(--muted-text);
   letter-spacing: -0.01em;
   white-space: nowrap;
   margin: 0;
+  line-height: 1.2;
 }
 
 /* User Profile & Auth Badges */
@@ -1804,6 +2088,7 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
 }
 
 .user-profile-sidebar-card {
+  width: 100%;
   padding: 0.65rem 0.8rem;
   background: var(--surface2);
   border: 1px solid var(--border-color);
@@ -1811,7 +2096,7 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
   display: flex;
   align-items: center;
   gap: 0.6rem;
-  margin-bottom: 0.6rem;
+  margin-bottom: 0;
 }
 
 .user-info-side {
@@ -2117,12 +2402,12 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
         </div>
         <button class="user-auth-action-btn" id="btnSidebarAuth" title="Gerenciar Conta / Cofre"><i data-lucide="settings" style="width:13px;height:13px;"></i></button>
       </div>
-      <div style="display:flex; align-items:center; justify-content:space-between;">
-        <div class="status-badge-clean">
+      <div style="display:flex; align-items:center; justify-content:space-between; gap:0.5rem; width:100%;">
+        <div class="status-badge-clean" style="white-space:nowrap;">
           <span class="status-dot-clean"></span>
           <span>Segundo Cérebro Ativo</span>
         </div>
-        <span style="font-family: var(--font-mono); font-size:0.7rem; color: var(--faint);">v2.0 PRO</span>
+        <span style="font-family: var(--font-mono); font-size:0.68rem; font-weight:700; color:var(--faint); background:var(--surface3); padding:0.12rem 0.45rem; border-radius:4px; white-space:nowrap; flex-shrink:0;">v2.0 PRO</span>
       </div>
     </div>
   </aside>
@@ -2152,21 +2437,25 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
 
     <!-- CONTENT ÁREA -->
     <main class="scroll-content" id="content">
-      <h1 class="sr-only-h1" style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0;">Nexus Acervo — Segundo Cérebro de Ferramentas, Repositórios e Vídeos</h1>
-      <!-- HEADER EXECUTIVO LIMPO -->
-      <section class="exec-header">
-        <div class="exec-header-text">
-          <h2>Nexus Acervo · Segundo Cérebro</h2>
-          <p>Repositório pessoal de ferramentas, códigos de alto nível, vídeos de estudo e carrosséis com explicação clara do que é, do que entrega e com exemplo prático de aplicação.</p>
+      <!-- HERO HEADLINE SECTION -->
+      <section class="hero-headline-section">
+        <div class="hero-headline-top-badge">
+          <span class="headline-pill"><i data-lucide="sparkles" style="width:13px;height:13px;color:#10b981;"></i> Base de Conhecimento & Curadoria de Elite</span>
+          <span class="headline-version-pill">v2.0 PRO</span>
         </div>
-
-        <div class="stats-cluster" aria-label="Estatísticas do Acervo">
-          <div class="stat-chip"><i data-lucide="database" style="width:13px;height:13px;"></i> <strong id="kpiTotal">0</strong> itens</div>
-          <div class="stat-chip"><i data-lucide="play" style="width:13px;height:13px;"></i> <strong id="kpiVideos">0</strong> vídeos</div>
-          <div class="stat-chip"><i data-lucide="github" style="width:13px;height:13px;"></i> <strong id="kpiRepos">0</strong> repos</div>
-          <div class="stat-chip"><i data-lucide="gallery-thumbnails" style="width:13px;height:13px;"></i> <strong id="kpiCarousels">0</strong> carrosséis</div>
-          <div class="stat-chip"><i data-lucide="star" style="width:13px;height:13px;color:#f59e0b;"></i> <strong id="kpiFavs">0</strong> favoritos</div>
-          <div class="stat-chip"><i data-lucide="check-circle-2" style="width:13px;height:13px;color:#10b981;"></i> <strong id="kpiSeen">0</strong> vistos</div>
+        <div class="hero-headline-main">
+          <div class="hero-headline-text">
+            <h1 class="main-hero-title">Nexus Acervo <span class="hero-accent-text">· Segundo Cérebro</span></h1>
+            <p class="main-hero-subtitle">Diretório de alta performance com ferramentas web sem cadastro, códigos de elite, vídeos e metodologias com aplicação prática imediata.</p>
+          </div>
+          <div class="stats-cluster" aria-label="Estatísticas do Acervo">
+            <div class="stat-chip"><i data-lucide="database" style="width:13px;height:13px;"></i> <strong id="kpiTotal">0</strong> ativos</div>
+            <div class="stat-chip"><i data-lucide="inbox" style="width:13px;height:13px;color:#60a5fa;"></i> <strong id="kpiUnseen">0</strong> pendentes</div>
+            <div class="stat-chip"><i data-lucide="check-circle-2" style="width:13px;height:13px;color:#10b981;"></i> <strong id="kpiSeen">0</strong> vistos</div>
+            <div class="stat-chip"><i data-lucide="play" style="width:13px;height:13px;"></i> <strong id="kpiVideos">0</strong> vídeos</div>
+            <div class="stat-chip"><i data-lucide="github" style="width:13px;height:13px;"></i> <strong id="kpiRepos">0</strong> repos</div>
+            <div class="stat-chip"><i data-lucide="trash-2" style="width:13px;height:13px;color:#ef4444;"></i> <strong id="kpiDeleted">0</strong> lixeira</div>
+          </div>
         </div>
       </section>
 
@@ -2304,6 +2593,32 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
           </div>
         </aside>
       </div>
+
+      <!-- FOOTER EXECUTIVO COM AÇÃO DE SUBIR AO TOPO -->
+      <footer class="acervo-executive-footer">
+        <div class="footer-top-row">
+          <div class="footer-brand-info">
+            <div class="footer-brand-title">
+              <i data-lucide="shield-check" style="width:16px;height:16px;color:#10b981;"></i>
+              <span>Nexus Acervo · Segundo Cérebro Profissional</span>
+            </div>
+            <p class="footer-brand-desc">Plataforma de inteligência pessoal, catalogações técnicas e referências validadas em produção.</p>
+          </div>
+          <div class="footer-actions-cluster">
+            <button class="btn secondary sm" id="btnFooterBackToTop" aria-label="Subir ao topo da página">
+              <i data-lucide="arrow-up" style="width:14px;height:14px;"></i>
+              <span>Voltar ao Topo</span>
+            </button>
+          </div>
+        </div>
+        <div class="footer-bottom-row">
+          <span class="footer-meta-text">© 2026 Nexus Acervo · Curadoria Romecy Jr · Soberania Digital & Local-First</span>
+          <div class="footer-meta-badges">
+            <span class="footer-meta-pill" id="footerTotalBadge">74 Itens Ativos</span>
+            <span class="footer-meta-pill">Armazenamento Local Criptografado</span>
+          </div>
+        </div>
+      </footer>
     </main>
   </div>
 </div>
@@ -3015,11 +3330,12 @@ function renderCards() {
     return;
   }
 
-  // 1. MODO LISTA EXECUTIVA
+  // 1. MODO LISTA EXECUTIVA (SEM CORTAR TEXTOS)
   if (uiPrefs.viewMode === 'list') {
     container.innerHTML = items.map(item => {
       const isFav = storedFavorites.has(item.id);
       const isSeen = storedSeen.has(item.id);
+      const isDeleted = storedDeleted.has(item.id);
       const ytId = item.youtubeId || extractYouTubeId(item.url);
       const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : (item.thumbnail || '');
       const isVideo = item.kind === 'vídeo' || !!ytId;
@@ -3027,26 +3343,26 @@ function renderCards() {
       const deliverable = esc(item.deliverable || item.description);
 
       return `
-        <article class="list-row-item" data-id="${esc(item.id)}">
-          <div>
+        <article class="list-row-item ${isSeen ? 'is-item-seen' : ''} ${isDeleted ? 'is-deleted-card' : ''}" data-id="${esc(item.id)}">
+          <div style="flex-shrink:0;">
             ${isVideo && thumb
               ? `<img class="list-thumb-img" src="${thumb}" alt="" loading="lazy">`
               : `<div class="list-avatar-icon"><img src="${favicon}" style="width:20px;height:20px;object-fit:contain;" alt="" onerror="this.style.display='none'"></div>`}
           </div>
 
-          <div class="list-col-title">
-            <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.2rem;">
+          <div class="list-col-title" style="flex:1; min-width:220px;">
+            <div style="display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.25rem;">
               <span class="meta-chip-tag" style="text-transform: uppercase;">${esc(item.kind)}</span>
               <span class="meta-chip-tag" style="color:var(--faint);">${esc(item.segment)}</span>
             </div>
-            <h3 style="font-size: 0.9rem; font-weight: 700; color: var(--text); overflow: hidden; text-overflow: ellipsis; white-space: nowrap;">${esc(item.title)}</h3>
+            <h3 style="font-size: 0.92rem; font-weight: 700; color: var(--text); line-height: 1.35;">${esc(item.title)}</h3>
           </div>
 
-          <div class="list-col-deliverable">
+          <div class="list-col-deliverable" style="flex:1; min-width:180px;">
             <span class="list-deliverable-text">⚡ ${deliverable}</span>
           </div>
 
-          <div class="list-col-actions">
+          <div class="list-col-actions" style="flex-shrink:0;">
             <div style="display:flex;align-items:center;gap:0.35rem;">
               ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
               ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
@@ -3071,37 +3387,33 @@ function renderCards() {
     container.innerHTML = items.map(item => {
       const isFav = storedFavorites.has(item.id);
       const isSeen = storedSeen.has(item.id);
+      const isDeleted = storedDeleted.has(item.id);
       const ytId = item.youtubeId || extractYouTubeId(item.url);
       const thumb = ytId ? `https://img.youtube.com/vi/${ytId}/hqdefault.jpg` : (item.thumbnail || '');
       const favicon = getItemFavicon(item.url);
 
       return `
-        <button class="tile-button-card" data-id="${esc(item.id)}" title="${esc(item.deliverable || item.description)}">
+        <div class="tile-button-card ${isSeen ? 'is-item-seen' : ''} ${isDeleted ? 'is-deleted-card' : ''}" data-id="${esc(item.id)}" title="${esc(item.deliverable || item.description)}">
           <div class="tile-media-avatar">
             ${thumb 
               ? `<img src="${thumb}" alt="">` 
               : `<img src="${favicon}" alt="" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2371717a%22 stroke-width=%222%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/></svg>'">`}
           </div>
           <div class="tile-info-block">
-            <div class="tile-info-title">${esc(item.title)}</div>
+            <div class="tile-info-title" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;line-height:1.3;">${esc(item.title)}</div>
             <div class="tile-info-meta">${esc(item.kind.toUpperCase())} · ${esc(item.segment)}</div>
           </div>
-          <div style="display:flex;align-items:center;gap:0.3rem;margin-left:auto;">
-            ${isDeleted ? '<span class="trash-badge-pill" style="font-size:0.6rem;padding:0.1rem 0.35rem;"><i data-lucide="trash-2" style="width:9px;height:9px;"></i> Excluído</span>' : ''}
-            <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir do acervo'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
-            ${!isDeleted ? `
-              <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-              <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-              <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-              <span class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:13px;height:13px;"></i></span>
-            ` : ''}
+          <div style="display:flex;align-items:center;gap:0.3rem;margin-left:auto;flex-shrink:0;">
+            ${isDeleted ? '<span class="trash-badge-pill" style="font-size:0.6rem;padding:0.1rem 0.35rem;"><i data-lucide="trash-2" style="width:9px;height:9px;"></i></span>' : ''}
+            <span class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:13px;height:13px;"></i></span>
+            <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" style="padding:0 0.4rem; height:24px;" title="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:11px;height:11px;"></i></button>
           </div>
-        </button>
+        </div>
       `;
     }).join('');
   }
 
-  // 3. MODO CARDS MULTI-COLUNA (DEFAULT)
+  // 3. MODO CARDS MULTI-COLUNA (ESTRUTURA SUPREMA HIERÁRQUICA)
   else {
     container.innerHTML = items.map(item => {
       const isFav = storedFavorites.has(item.id);
@@ -3114,6 +3426,51 @@ function renderCards() {
       const showDeliverable = uiPrefs.detailLevel === 'full' || uiPrefs.detailLevel === 'focused';
       const showExample = uiPrefs.detailLevel === 'full';
 
+      // Bloco comum de meta header (badges no topo + ações rápidas à direita)
+      const metaHeaderHtml = `
+        <div class="card-meta-header">
+          <div class="card-meta-left">
+            <span class="meta-chip-tag" style="text-transform: uppercase; font-weight:700;">${esc(item.kind)}</span>
+            <span class="meta-chip-tag" style="color:var(--faint);" data-segment="${esc(item.segment)}">${esc(item.segment)}</span>
+          </div>
+          <div class="card-meta-right">
+            ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
+            ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
+            <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" title="${isFav ? 'Desfavoritar' : 'Salvar nos Favoritos'}" aria-label="Favoritar"><i data-lucide="star" style="width:14px;height:14px;"></i></button>
+            <button class="card-action-btn btn-trash-toggle card-quick-trash ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir do acervo'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:12px;height:12px;"></i></button>
+          </div>
+        </div>
+      `;
+
+      // Bloco comum de rodapé com ações operacionais
+      const footActionsHtml = `
+        <div class="card-foot-actions">
+          <div class="card-action-btns-group">
+            ${!isDeleted ? `
+              <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para alternar)' : 'Marcar como visto'}">
+                <i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i>
+                <span>${isSeen ? 'Visto' : 'Marcar'}</span>
+              </button>
+              <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="Anotar insight pessoal">
+                <i data-lucide="file-text" style="width:13px;height:13px;"></i>
+                <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span>
+              </button>
+              <button class="icon-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
+            ` : `
+              <button class="card-action-btn btn-trash-toggle btn-restore-active" data-trash-id="${esc(item.id)}" title="Restaurar para acervo ativo">
+                <i data-lucide="rotate-ccw" style="width:13px;height:13px;"></i>
+                <span>Restaurar</span>
+              </button>
+            `}
+          </div>
+          <div class="card-button-links">
+            <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
+            ${item.id === 'repo-documenso' ? `<button class="btn secondary sm btn-open-documenso" style="font-size:0.72rem; height:26px; padding:0 0.55rem; gap:0.3rem;" title="Abrir Estúdio de Assinatura" aria-label="Abrir Documenso Studio"><i data-lucide="pen-tool" style="width:12px;height:12px;"></i><span>Assinar</span></button>` : ''}
+            <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir link externo" aria-label="Abrir link externo"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
+          </div>
+        </div>
+      `;
+
       // A. VÍDEO
       if (item.kind === 'vídeo') {
         const ytId = item.youtubeId || extractYouTubeId(item.url);
@@ -3123,7 +3480,7 @@ function renderCards() {
 
         if (isHorizontal && showThumb) {
           return `
-            <article class="card-item card-video-horizontal ${uiPrefs.thumbSize === 'small' ? 'thumb-sm' : ''}" data-id="${esc(item.id)}">
+            <article class="card-item card-video-horizontal ${uiPrefs.thumbSize === 'small' ? 'thumb-sm' : ''} ${isSeen ? 'is-item-seen' : ''} ${isDeleted ? 'is-deleted-card' : ''}" data-id="${esc(item.id)}">
               <div class="card-thumb-side">
                 <img src="${thumb}" alt="${esc(item.title)}" loading="lazy">
                 <div class="video-hover-play"><div class="play-bubble"><i data-lucide="play" style="width:15px;height:15px;"></i></div></div>
@@ -3131,51 +3488,33 @@ function renderCards() {
               </div>
               <div class="card-content-body">
                 <div>
-                  <div class="card-title-line">
-                    <h3 class="card-title-text">${esc(item.title)}</h3>
-                    <div style="display:flex;align-items:center;gap:0.35rem;">
-                      ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
-                      ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
-                      <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir / Mover para lixeira'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
-                      ${!isDeleted ? `
-                        <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-                        <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-                        <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-                        <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
-                      ` : ''}
-                    </div>
-                  </div>
-                  ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
+                  ${metaHeaderHtml}
+                  <h3 class="card-headline-title">${esc(item.title)}</h3>
+                  ${showSummary && summary ? `<p class="card-summary-desc">${summary}</p>` : ''}
                   ${storedNotes[item.id]?.text ? `
-    <div class="note-badge-preview">
-      <i data-lucide="file-text" style="width:12px;height:12px;color:#60a5fa;flex-shrink:0;"></i>
-      <span><strong>Nota:</strong> ${esc(storedNotes[item.id].text)}</span>
-    </div>` : ''}
-    ${showDeliverable ? `
+                    <div class="note-badge-preview">
+                      <i data-lucide="file-text" style="width:12px;height:12px;color:#60a5fa;flex-shrink:0;"></i>
+                      <span><strong>Nota:</strong> ${esc(storedNotes[item.id].text)}</span>
+                    </div>` : ''}
+                  ${showDeliverable && deliverableText ? `
                     <div class="callout-deliverable" style="margin-top: 0.45rem;">
                       <i data-lucide="zap"></i>
                       <span><strong>O que entrega:</strong> ${deliverableText}</span>
                     </div>` : ''}
-                  ${showExample ? `
+                  ${showExample && exampleText ? `
                     <div class="callout-example" style="margin-top: 0.35rem;">
                       <i data-lucide="lightbulb"></i>
                       <span><strong>Exemplo prático:</strong> ${exampleText}</span>
                     </div>` : ''}
                 </div>
-                <div class="card-foot-actions">
-                  <span style="font-size:0.7rem; color:var(--faint);">👥 ${esc(item.targetAudience || 'Geral')}</span>
-                  <div class="card-button-links">
-                    <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-                    <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir no YouTube" aria-label="Abrir no YouTube"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-                  </div>
-                </div>
+                ${footActionsHtml}
               </div>
             </article>
           `;
         }
 
         return `
-          <article class="card-item" data-id="${esc(item.id)}">
+          <article class="card-item ${isSeen ? 'is-item-seen' : ''} ${isDeleted ? 'is-deleted-card' : ''}" data-id="${esc(item.id)}">
             ${showThumb ? `
               <div class="card-thumb-top">
                 <img src="${thumb}" alt="${esc(item.title)}" loading="lazy">
@@ -3184,44 +3523,26 @@ function renderCards() {
               </div>` : ''}
             <div class="card-content-body">
               <div>
-                <div class="card-title-line">
-                  <h3 class="card-title-text">${esc(item.title)}</h3>
-                  <div style="display:flex;align-items:center;gap:0.35rem;">
-                      ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
-                      ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
-                      <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir / Mover para lixeira'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
-                      ${!isDeleted ? `
-                        <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-                        <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-                        <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-                        <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
-                      ` : ''}
-                    </div>
-                </div>
-                ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
+                ${metaHeaderHtml}
+                <h3 class="card-headline-title">${esc(item.title)}</h3>
+                ${showSummary && summary ? `<p class="card-summary-desc">${summary}</p>` : ''}
                 ${storedNotes[item.id]?.text ? `
-    <div class="note-badge-preview">
-      <i data-lucide="file-text" style="width:12px;height:12px;color:#60a5fa;flex-shrink:0;"></i>
-      <span><strong>Nota:</strong> ${esc(storedNotes[item.id].text)}</span>
-    </div>` : ''}
-    ${showDeliverable ? `
-                  <div class="callout-deliverable" style="margin-top: 0.5rem;">
+                  <div class="note-badge-preview">
+                    <i data-lucide="file-text" style="width:12px;height:12px;color:#60a5fa;flex-shrink:0;"></i>
+                    <span><strong>Nota:</strong> ${esc(storedNotes[item.id].text)}</span>
+                  </div>` : ''}
+                ${showDeliverable && deliverableText ? `
+                  <div class="callout-deliverable" style="margin-top: 0.45rem;">
                     <i data-lucide="zap"></i>
                     <span><strong>O que entrega:</strong> ${deliverableText}</span>
                   </div>` : ''}
-                ${showExample ? `
-                  <div class="callout-example" style="margin-top: 0.4rem;">
+                ${showExample && exampleText ? `
+                  <div class="callout-example" style="margin-top: 0.35rem;">
                     <i data-lucide="lightbulb"></i>
                     <span><strong>Exemplo prático:</strong> ${exampleText}</span>
                   </div>` : ''}
               </div>
-              <div class="card-foot-actions">
-                <span style="font-size:0.7rem; color:var(--faint);">👥 ${esc(item.targetAudience || 'Geral')}</span>
-                <div class="card-button-links">
-                  <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-                  <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir no YouTube" aria-label="Abrir no YouTube"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-                </div>
-              </div>
+              ${footActionsHtml}
             </div>
           </article>
         `;
@@ -3232,61 +3553,49 @@ function renderCards() {
         const repoName = extractGitHubRepo(item.url) || esc(item.title);
         const license = esc(item.license || 'Open Source');
         return `
-          <article class="card-item" data-id="${esc(item.id)}">
+          <article class="card-item ${isSeen ? 'is-item-seen' : ''} ${isDeleted ? 'is-deleted-card' : ''}" data-id="${esc(item.id)}">
             <div class="card-content-body">
               <div>
-                <div class="card-repo-header" style="margin-bottom: 0.5rem;">
-                  <div class="repo-mono-title">
-                    <i data-lucide="github"></i>
-                    <span>${esc(repoName)}</span>
+                <div class="card-meta-header">
+                  <div class="card-meta-left">
+                    <span class="meta-chip-tag" style="text-transform: uppercase; font-weight:700;">REPO</span>
+                    <span class="meta-chip-tag" style="color:var(--faint);">${esc(item.segment)}</span>
+                    <span class="meta-chip-tag" style="background:var(--surface3); font-family:var(--font-mono); font-size:0.65rem;">${license}</span>
                   </div>
-                  <div style="display: flex; align-items: center; gap: 0.4rem;">
-                    <span class="meta-chip-tag">${license}</span>
-                    <div style="display:flex;align-items:center;gap:0.35rem;">
-                      ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
-                      ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
-                      <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir / Mover para lixeira'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
-                      ${!isDeleted ? `
-                        <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-                        <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-                        <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-                        <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
-                      ` : ''}
-                    </div>
+                  <div class="card-meta-right">
+                    ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
+                    ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
+                    <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" title="${isFav ? 'Desfavoritar' : 'Salvar nos Favoritos'}"><i data-lucide="star" style="width:14px;height:14px;"></i></button>
+                    <button class="card-action-btn btn-trash-toggle card-quick-trash ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:12px;height:12px;"></i></button>
                   </div>
                 </div>
 
-                <h3 class="card-title-text">${esc(item.title)}</h3>
-                ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
+                <div class="repo-mono-title" style="margin-bottom: 0.35rem;">
+                  <i data-lucide="github" style="width:14px;height:14px;"></i>
+                  <span>${esc(repoName)}</span>
+                </div>
+
+                <h3 class="card-headline-title">${esc(item.title)}</h3>
+                ${showSummary && summary ? `<p class="card-summary-desc">${summary}</p>` : ''}
 
                 ${storedNotes[item.id]?.text ? `
-    <div class="note-badge-preview">
-      <i data-lucide="file-text" style="width:12px;height:12px;color:#60a5fa;flex-shrink:0;"></i>
-      <span><strong>Nota:</strong> ${esc(storedNotes[item.id].text)}</span>
-    </div>` : ''}
-    ${showDeliverable ? `
-                  <div class="callout-deliverable" style="margin-top: 0.5rem;">
+                  <div class="note-badge-preview">
+                    <i data-lucide="file-text" style="width:12px;height:12px;color:#60a5fa;flex-shrink:0;"></i>
+                    <span><strong>Nota:</strong> ${esc(storedNotes[item.id].text)}</span>
+                  </div>` : ''}
+                ${showDeliverable && deliverableText ? `
+                  <div class="callout-deliverable" style="margin-top: 0.45rem;">
                     <i data-lucide="zap"></i>
                     <span><strong>O que entrega:</strong> ${deliverableText}</span>
                   </div>` : ''}
-
-                ${showExample ? `
-                  <div class="callout-example" style="margin-top: 0.4rem;">
+                ${showExample && exampleText ? `
+                  <div class="callout-example" style="margin-top: 0.35rem;">
                     <i data-lucide="lightbulb"></i>
                     <span><strong>Exemplo prático:</strong> ${exampleText}</span>
                   </div>` : ''}
               </div>
 
-              <div class="card-foot-actions">
-                <div class="card-chips-group">
-                  ${item.tags.slice(0, 3).map(t => `<span class="meta-chip-tag" data-tag="${esc(t)}">#${esc(t)}</span>`).join('')}
-                </div>
-                <div class="card-button-links">
-                  <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-                  ${item.id === 'repo-documenso' ? `<button class="btn secondary sm btn-open-documenso" style="font-size:0.72rem; height:26px; padding:0 0.55rem; gap:0.3rem;" title="Abrir Estúdio de Assinatura" aria-label="Abrir Documenso Studio"><i data-lucide="pen-tool" style="width:12px;height:12px;"></i><span>Assinar</span></button>` : ''}
-                  <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Acessar Repositório" aria-label="Acessar Repositório"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-                </div>
-              </div>
+              ${footActionsHtml}
             </div>
           </article>
         `;
@@ -3298,7 +3607,7 @@ function renderCards() {
         const author = esc(item.author || '@instagram');
         const showThumb = uiPrefs.thumbSize !== 'none';
         return `
-          <article class="card-item" data-id="${esc(item.id)}">
+          <article class="card-item ${isSeen ? 'is-item-seen' : ''} ${isDeleted ? 'is-deleted-card' : ''}" data-id="${esc(item.id)}">
             ${showThumb ? `
               <div class="card-carousel-cover">
                 <img src="${slides[0]}" alt="${esc(item.title)}" loading="lazy">
@@ -3306,47 +3615,29 @@ function renderCards() {
               </div>` : ''}
             <div class="card-content-body">
               <div>
-                <div class="card-title-line">
-                  <div>
-                    <span style="font-size: 0.68rem; font-weight: 700; color: var(--muted-text);">${author}</span>
-                    <h3 class="card-title-text">${esc(item.title)}</h3>
-                  </div>
-                  <div style="display:flex;align-items:center;gap:0.35rem;">
-                      ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
-                      ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
-                      <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir / Mover para lixeira'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
-                      ${!isDeleted ? `
-                        <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-                        <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-                        <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-                        <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
-                      ` : ''}
-                    </div>
-                </div>
-                ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
+                ${metaHeaderHtml}
+                <div style="font-size:0.68rem; font-weight:700; color:var(--muted-text); margin-bottom:0.2rem;">${author}</div>
+                <h3 class="card-headline-title">${esc(item.title)}</h3>
+                ${showSummary && summary ? `<p class="card-summary-desc">${summary}</p>` : ''}
+
                 ${storedNotes[item.id]?.text ? `
-    <div class="note-badge-preview">
-      <i data-lucide="file-text" style="width:12px;height:12px;color:#60a5fa;flex-shrink:0;"></i>
-      <span><strong>Nota:</strong> ${esc(storedNotes[item.id].text)}</span>
-    </div>` : ''}
-    ${showDeliverable ? `
-                  <div class="callout-deliverable" style="margin-top: 0.5rem;">
+                  <div class="note-badge-preview">
+                    <i data-lucide="file-text" style="width:12px;height:12px;color:#60a5fa;flex-shrink:0;"></i>
+                    <span><strong>Nota:</strong> ${esc(storedNotes[item.id].text)}</span>
+                  </div>` : ''}
+                ${showDeliverable && deliverableText ? `
+                  <div class="callout-deliverable" style="margin-top: 0.45rem;">
                     <i data-lucide="zap"></i>
                     <span><strong>O que entrega:</strong> ${deliverableText}</span>
                   </div>` : ''}
-                ${showExample ? `
-                  <div class="callout-example" style="margin-top: 0.4rem;">
+                ${showExample && exampleText ? `
+                  <div class="callout-example" style="margin-top: 0.35rem;">
                     <i data-lucide="lightbulb"></i>
                     <span><strong>Exemplo prático:</strong> ${exampleText}</span>
                   </div>` : ''}
               </div>
-              <div class="card-foot-actions">
-                <span style="font-size:0.7rem; color:var(--faint);">📸 Carrossel</span>
-                <div class="card-button-links">
-                  <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-                  <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir no Instagram" aria-label="Abrir no Instagram"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-                </div>
-              </div>
+
+              ${footActionsHtml}
             </div>
           </article>
         `;
@@ -3356,61 +3647,48 @@ function renderCards() {
       const favicon = getItemFavicon(item.url);
       const isDoc = item.kind === 'conhecimento' || item.kind === 'diretório';
       return `
-        <article class="card-item" data-id="${esc(item.id)}">
+        <article class="card-item ${isSeen ? 'is-item-seen' : ''} ${isDeleted ? 'is-deleted-card' : ''}" data-id="${esc(item.id)}">
           <div class="card-content-body">
             <div>
-              <div style="display: flex; align-items: center; justify-content: space-between; margin-bottom: 0.6rem;">
-                <div style="width: 36px; height: 36px; border-radius: var(--radius); background: var(--surface2); border: 1px solid var(--border-color); display: grid; place-items: center; overflow: hidden;">
-                  ${isDoc 
-                    ? `<i data-lucide="book-open" style="width:18px;height:18px;color:var(--text);"></i>` 
-                    : `<img src="${favicon}" alt="" style="width:20px;height:20px;object-fit:contain;" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2371717a%22 stroke-width=%222%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/></svg>'">`}
+              <div class="card-meta-header">
+                <div class="card-meta-left">
+                  <div style="width: 28px; height: 28px; border-radius: 6px; background: var(--surface2); border: 1px solid var(--border-color); display: grid; place-items: center; overflow: hidden; margin-right: 0.2rem;">
+                    ${isDoc 
+                      ? `<i data-lucide="book-open" style="width:15px;height:15px;color:var(--text);"></i>` 
+                      : `<img src="${favicon}" alt="" style="width:16px;height:16px;object-fit:contain;" onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 24 24%22 fill=%22none%22 stroke=%22%2371717a%22 stroke-width=%222%22><circle cx=%2212%22 cy=%2212%22 r=%2210%22/></svg>'">`}
+                  </div>
+                  <span class="meta-chip-tag" style="text-transform: uppercase; font-weight:700;">${esc(item.kind)}</span>
+                  <span class="meta-chip-tag" style="color:var(--faint);">${esc(item.segment)}</span>
                 </div>
-                <div style="display: flex; align-items: center; gap: 0.4rem;">
-                  <span class="meta-chip-tag">${esc(item.segment)}</span>
-                  <div style="display:flex;align-items:center;gap:0.35rem;">
-                      ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
-                      ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
-                      <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir / Mover para lixeira'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
-                      ${!isDeleted ? `
-                        <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-                        <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-                        <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-                        <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
-                      ` : ''}
-                    </div>
+                <div class="card-meta-right">
+                  ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
+                  ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
+                  <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" title="${isFav ? 'Desfavoritar' : 'Salvar nos Favoritos'}"><i data-lucide="star" style="width:14px;height:14px;"></i></button>
+                  <button class="card-action-btn btn-trash-toggle card-quick-trash ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:12px;height:12px;"></i></button>
                 </div>
               </div>
 
-              <h3 class="card-title-text">${esc(item.title)}</h3>
-              ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
+              <h3 class="card-headline-title">${esc(item.title)}</h3>
+              ${showSummary && summary ? `<p class="card-summary-desc">${summary}</p>` : ''}
 
               ${storedNotes[item.id]?.text ? `
-    <div class="note-badge-preview">
-      <i data-lucide="file-text" style="width:12px;height:12px;color:#60a5fa;flex-shrink:0;"></i>
-      <span><strong>Nota:</strong> ${esc(storedNotes[item.id].text)}</span>
-    </div>` : ''}
-    ${showDeliverable ? `
-                <div class="callout-deliverable" style="margin-top: 0.5rem;">
+                <div class="note-badge-preview">
+                  <i data-lucide="file-text" style="width:12px;height:12px;color:#60a5fa;flex-shrink:0;"></i>
+                  <span><strong>Nota:</strong> ${esc(storedNotes[item.id].text)}</span>
+                </div>` : ''}
+              ${showDeliverable && deliverableText ? `
+                <div class="callout-deliverable" style="margin-top: 0.45rem;">
                   <i data-lucide="zap"></i>
                   <span><strong>O que entrega:</strong> ${deliverableText}</span>
                 </div>` : ''}
-
-              ${showExample ? `
-                <div class="callout-example" style="margin-top: 0.4rem;">
+              ${showExample && exampleText ? `
+                <div class="callout-example" style="margin-top: 0.35rem;">
                   <i data-lucide="lightbulb"></i>
                   <span><strong>Exemplo prático:</strong> ${exampleText}</span>
                 </div>` : ''}
             </div>
 
-            <div class="card-foot-actions">
-              <div class="card-chips-group">
-                ${item.tags.slice(0, 3).map(t => `<span class="meta-chip-tag" data-tag="${esc(t)}">#${esc(t)}</span>`).join('')}
-              </div>
-              <div class="card-button-links">
-                <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
-                <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Acessar Ferramenta" aria-label="Acessar Ferramenta"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
-              </div>
-            </div>
+            ${footActionsHtml}
           </div>
         </article>
       `;
@@ -3426,7 +3704,18 @@ function renderCards() {
 function attachCardEvents() {
   $$('.card-item, .list-row-item, .tile-button-card').forEach(card => {
     card.onclick = e => {
-      if (e.target.closest('.btn-trash-toggle') || e.target.closest('.card-seen-toggle') || e.target.closest('.card-favorite-toggle') || e.target.closest('.icon-action-btn') || e.target.closest('.meta-chip-tag')) return;
+      if (
+        e.target.closest('.btn-trash-toggle') ||
+        e.target.closest('.card-quick-trash') ||
+        e.target.closest('.btn-seen-toggle') ||
+        e.target.closest('.card-seen-toggle') ||
+        e.target.closest('.card-favorite-toggle') ||
+        e.target.closest('.icon-action-btn') ||
+        e.target.closest('.btn-open-notes') ||
+        e.target.closest('.btn-open-export') ||
+        e.target.closest('.btn-open-documenso') ||
+        e.target.closest('.meta-chip-tag')
+      ) return;
       const item = state.items.find(x => x.id === card.dataset.id);
       if (item) openDetailModal(item);
     };
@@ -3736,6 +4025,9 @@ function updateKpis() {
   const seenCount = active.filter(x => storedSeen.has(x.id)).length;
   const unseenCount = active.length - seenCount;
   if ($('#kpiSeen')) $('#kpiSeen').textContent = seenCount;
+  if ($('#kpiUnseen')) $('#kpiUnseen').textContent = unseenCount;
+  if ($('#kpiDeleted')) $('#kpiDeleted').textContent = deletedCount;
+  if ($('#footerTotalBadge')) $('#footerTotalBadge').textContent = `${active.length} Recursos Ativos`;
   if ($('#countSeen')) $('#countSeen').textContent = seenCount;
   if ($('#countUnseen')) $('#countUnseen').textContent = unseenCount;
   if ($('#statusCountAll')) $('#statusCountAll').textContent = active.length;
@@ -3826,18 +4118,13 @@ function renderSegmentList() {
     counts[x.segment] = (counts[x.segment] || 0) + 1;
   });
 
-  const max = Math.max(...Object.values(counts), 1);
   const container = $('#segmentsList');
   container.innerHTML = Object.entries(counts).map(([seg, count]) => {
-    const pct = Math.round((count / max) * 100);
     const active = state.segment === seg ? 'active' : '';
     return `
       <div class="segment-row ${active}" data-segment="${esc(seg)}">
-        <div class="segment-row-header">
-          <span>${esc(seg)}</span>
-          <strong style="color:var(--text);">${count}</strong>
-        </div>
-        <div class="segment-track"><div class="segment-fill" style="width: ${pct}%;"></div></div>
+        <span class="segment-row-name">${esc(seg)}</span>
+        <span class="segment-row-count">${count}</span>
       </div>
     `;
   }).join('');
@@ -4476,6 +4763,31 @@ $('#btnLogout')?.addEventListener('click', () => {
 
 
 document.addEventListener('DOMContentLoaded', () => {
+
+  // Conexão dos botões de Subir ao Topo
+  const scrollContainer = $('#content');
+  const btnFloating = $('#btnFloatingScrollTop');
+  const btnFooterTop = $('#btnFooterBackToTop');
+
+  function scrollToTop() {
+    if (scrollContainer) scrollContainer.scrollTo({ top: 0, behavior: 'smooth' });
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  }
+
+  if (scrollContainer && btnFloating) {
+    scrollContainer.addEventListener('scroll', () => {
+      if (scrollContainer.scrollTop > 300) {
+        btnFloating.classList.add('show');
+      } else {
+        btnFloating.classList.remove('show');
+      }
+    });
+    btnFloating.onclick = scrollToTop;
+  }
+  if (btnFooterTop) {
+    btnFooterTop.onclick = scrollToTop;
+  }
+
   updateAuthUi();
   // Alternador de Leitura (Inbox Zero: Todos / Não Vistos / Vistos)
   $$('#readStatusGroup .status-toggle-btn').forEach(btn => {
@@ -4791,5 +5103,12 @@ document.addEventListener('DOMContentLoaded', () => {
   };
 });
 </script>
+
+<!-- BOTÃO FLUTUANTE DE SUBIR AO TOPO -->
+<button class="floating-scroll-top-btn" id="btnFloatingScrollTop" aria-label="Voltar ao topo da página" title="Subir ao Topo">
+  <i data-lucide="arrow-up" style="width:15px;height:15px;"></i>
+  <span>Subir ao Topo</span>
+</button>
+
 </body>
 </html>
