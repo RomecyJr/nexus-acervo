@@ -6,10 +6,11 @@
   "scripts": {
     "sync": "node scripts/sync-data.mjs",
     "validate": "node scripts/validate.mjs",
+    "build": "npm run sync && npm run validate",
     "test": "npm run sync && npm run validate",
     "serve": "npx --yes serve ."
   },
-  "devDependencies": {
+  "dependencies": {
     "ajv": "^8.20.0",
     "ajv-formats": "^3.0.1"
   }
