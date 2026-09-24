@@ -1774,6 +1774,11 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
 
 .clean-modal.open { display: grid; }
 
+#notesModal,
+#exportInsightModal {
+  z-index: 1100;
+}
+
 .modal-dialog {
   background: var(--surface);
   border: 1px solid var(--border-strong);
@@ -3960,6 +3965,11 @@ function openDetailModal(itemOrId) {
     }
   }
 
+  const notesBtn = $('#btnModalNotesAction');
+  if (notesBtn) {
+    notesBtn.innerHTML = `<i data-lucide="file-text"></i> ${userNote && userNote.text ? 'Editar Nota' : 'Anotações'}`;
+  }
+
   const isFav = storedFavorites.has(item.id);
       const isSeen = storedSeen.has(item.id);
   updateModalSeenState(item.id);
@@ -4020,6 +4030,26 @@ function renderCarouselSlider(slides) {
 function closeDetailModal() {
   $('#detailModal').classList.remove('open');
   $('#modalMediaContainer').innerHTML = '';
+}
+
+function refreshDetailModalNotes(itemId) {
+  if (!state.selectedItem || state.selectedItem.id !== itemId) return;
+  const userNotesWrap = $('#modalUserNotesWrap');
+  const userNotesText = $('#modalUserNotesText');
+  const userNote = storedNotes[itemId];
+  if (userNotesWrap && userNotesText) {
+    if (userNote && userNote.text) {
+      userNotesWrap.style.display = 'block';
+      userNotesText.textContent = userNote.text + (userNote.action ? `\n\n🎯 Onde aplicar: ${userNote.action}` : '');
+    } else {
+      userNotesWrap.style.display = 'none';
+    }
+  }
+  const notesBtn = $('#btnModalNotesAction');
+  if (notesBtn) {
+    notesBtn.innerHTML = `<i data-lucide="file-text"></i> ${userNote && userNote.text ? 'Editar Nota' : 'Anotações'}`;
+    lucide.createIcons();
+  }
 }
 
 
@@ -4594,8 +4624,10 @@ function openNotesModal(itemId) {
 
 function closeNotesModal() {
   clearTimeout(notesDebounceTimer);
-  if (activeNotesItemId) {
-    commitNote(activeNotesItemId);
+  const closingId = activeNotesItemId;
+  if (closingId) {
+    commitNote(closingId);
+    refreshDetailModalNotes(closingId);
   }
   $('#notesModal').classList.remove('open');
   activeNotesItemId = null;
@@ -4610,6 +4642,7 @@ function handleNoteAutoSave() {
   if (statusEl) statusEl.textContent = 'Salvando...';
   notesDebounceTimer = setTimeout(() => {
     commitNote(id);
+    refreshDetailModalNotes(id);
     renderCards();
   }, 350);
 }
@@ -4628,13 +4661,15 @@ $('#btnSaveNoteClose')?.addEventListener('click', () => {
 $('#btnDeleteNote')?.addEventListener('click', () => {
   if (!activeNotesItemId) return;
   if (confirm('Deseja realmente limpar as anotações deste item?')) {
-    delete storedNotes[activeNotesItemId];
+    const id = activeNotesItemId;
+    delete storedNotes[id];
     saveNotesStorage();
     $('#notesTextInput').value = '';
     $('#notesActionInput').value = '';
     $('#notesTagsInput').value = '';
     $('#notesSaveStatus').textContent = 'Notas limpas';
     showToast('Anotações removidas');
+    refreshDetailModalNotes(id);
     renderCards();
     closeNotesModal();
   }
@@ -5078,6 +5113,27 @@ document.addEventListener('DOMContentLoaded', () => {
       navigator.clipboard.writeText(state.selectedItem.url).then(() => showToast('Link copiado!'));
     }
   };
+
+  // Ações de Anotações & Exportar do Modal de Detalhes
+  $('#btnModalNotesAction').onclick = () => {
+    if (state.selectedItem) {
+      openNotesModal(state.selectedItem.id);
+    }
+  };
+  $('#btnModalEditNotes').onclick = () => {
+    if (state.selectedItem) {
+      openNotesModal(state.selectedItem.id);
+    }
+  };
+  $('#btnModalExportAction').onclick = () => {
+    if (state.selectedItem) {
+      openExportModal(state.selectedItem.id);
+    }
+  };
+
+  // Fechar modais ao clicar no backdrop escuro
+  $('#notesModal').onclick = e => { if (e.target === $('#notesModal')) closeNotesModal(); };
+  $('#exportInsightModal').onclick = e => { if (e.target === $('#exportInsightModal')) closeExportModal(); };
 
   // Modal API
   $('#btnOpenApi').onclick = () => $('#apiModal').classList.add('open');
