@@ -6,3 +6,4 @@ node_modules/
 *.log
 00_Backup_Original/
 *.tar.gz
+*.gz

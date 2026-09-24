@@ -847,6 +847,47 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
   color: #34d399;
 }
 
+
+.status-toggle-btn.active[data-read="deleted"] {
+  color: #f87171;
+}
+
+.btn-trash-toggle {
+  opacity: 0.7;
+  transition: opacity 0.15s, color 0.15s, border-color 0.15s, background 0.15s;
+}
+.btn-trash-toggle:hover {
+  opacity: 1;
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.4);
+}
+.btn-restore-active {
+  background: rgba(16, 185, 129, 0.15) !important;
+  color: #34d399 !important;
+  border-color: rgba(16, 185, 129, 0.4) !important;
+  opacity: 1 !important;
+}
+.btn-restore-active:hover {
+  background: #10b981 !important;
+  color: #ffffff !important;
+}
+.card-item.is-deleted-card {
+  border-color: rgba(239, 68, 68, 0.35) !important;
+  background: rgba(239, 68, 68, 0.02) !important;
+}
+.trash-badge-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.45rem;
+  border-radius: 9999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  background: rgba(239, 68, 68, 0.15);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.3);
+}
+
 .btn-seen-active {
   background: #059669 !important;
   color: #ffffff !important;
@@ -2040,6 +2081,10 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
             <span class="nav-btn-inner"><i data-lucide="check-circle-2" style="color:#10b981;"></i> Já Vistos (Concluídos)</span>
             <span class="nav-pill-count" id="countSeen">0</span>
           </button>
+          <button class="nav-btn" data-read="deleted" aria-label="Recursos descartados ou excluídos">
+            <span class="nav-btn-inner"><i data-lucide="trash-2" style="color:#ef4444;"></i> Excluídos (Lixeira)</span>
+            <span class="nav-pill-count" id="countDeleted">0</span>
+          </button>
           <button class="nav-btn" data-kind="favorites" aria-label="Recursos salvos nos favoritos">
             <span class="nav-btn-inner"><i data-lucide="star"></i> Meus Favoritos</span>
             <span class="nav-pill-count" id="countFav">0</span>
@@ -2133,6 +2178,7 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
           <button class="status-toggle-btn active" data-read="all" aria-label="Todos os recursos (vistos e não vistos)"><i data-lucide="layers" style="width:13px;height:13px;"></i> Todos (<span id="statusCountAll">0</span>)</button>
           <button class="status-toggle-btn" data-read="unseen" aria-label="Apenas o que ainda não vi"><i data-lucide="inbox" style="width:13px;height:13px;"></i> Não Vistos (<span id="statusCountUnseen">0</span>)</button>
           <button class="status-toggle-btn" data-read="seen" aria-label="Apenas o que já assisti ou verifiquei"><i data-lucide="check-circle-2" style="width:13px;height:13px;"></i> Vistos (<span id="statusCountSeen">0</span>)</button>
+          <button class="status-toggle-btn" data-read="deleted" aria-label="Recursos excluídos da listagem"><i data-lucide="trash-2" style="width:13px;height:13px;"></i> Excluídos (<span id="statusCountDeleted">0</span>)</button>
         </div>
 
         <div class="segmented-control" id="categoryTabs">
@@ -2279,8 +2325,11 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
           <h2 style="font-size: 1.25rem; font-weight: 800; letter-spacing: -0.01em;" id="modalTitle">Título do Recurso</h2>
         </div>
 
-        <button class="btn secondary sm" id="btnModalToggleSeen" style="flex-shrink: 0;" aria-label="Marcar como visto"><i data-lucide="circle"></i> Marcar Visto</button>
-        <button class="btn" id="btnModalFav" style="flex-shrink: 0;"><i data-lucide="star"></i> Salvar</button>
+        <div style="display: flex; align-items: center; gap: 0.4rem; flex-shrink: 0; margin-right: 2.5rem;">
+          <button class="btn secondary sm" id="btnModalToggleSeen" aria-label="Marcar como visto"><i data-lucide="circle"></i> Marcar Visto</button>
+          <button class="btn" id="btnModalFav"><i data-lucide="star"></i> Salvar</button>
+          <button class="btn secondary sm" id="btnModalTrashAction" aria-label="Excluir ou restaurar recurso"><i data-lucide="trash-2"></i> Excluir</button>
+        </div>
       </div>
 
       <!-- O QUE É (DESCRIÇÃO DETALHADA) -->
@@ -2798,6 +2847,30 @@ const storedCustom = storedCustomRaw.filter(x => !seedIds.has(x.id));
 
 const storedFavorites = new Set(safeStore.get('nexus_favorites', []));
 const storedSeen = new Set(safeStore.get('nexus_seen_items', []));
+const storedDeleted = new Set(safeStore.get('nexus_deleted_items', []));
+
+function saveDeletedStorage() {
+  localStorage.setItem('nexus_deleted_items', JSON.stringify([...storedDeleted]));
+}
+
+function deleteItem(id) {
+  storedDeleted.add(id);
+  saveDeletedStorage();
+  if (state.selectedItem && state.selectedItem.id === id) {
+    closeDetailModal();
+  }
+  updateKpis();
+  renderCards();
+  showToast('Item movido para Excluídos 🗑️');
+}
+
+function restoreItem(id) {
+  storedDeleted.delete(id);
+  saveDeletedStorage();
+  updateKpis();
+  renderCards();
+  showToast('Item restaurado com sucesso! 🔄');
+}
 
 // PREFERÊNCIAS DE CUSTOMIZAÇÃO DO USUÁRIO (SHADCN CUSTOMIZER)
 const defaultPrefs = {
@@ -2885,10 +2958,20 @@ function matchesKind(item, filterKind) {
 // FILTRAGEM
 function getFilteredItems() {
   let list = state.items.filter(item => {
+    const isItemDeleted = storedDeleted.has(item.id);
+
+    // Regra estrita de exclusão: se o usuário estiver vendo os Excluídos, apenas itens deletados aparecem.
+    // Em qualquer outro filtro ('all', 'unseen', 'seen', pesquisa, etc.), itens deletados NUNCA aparecem.
+    if (state.readFilter === 'deleted') {
+      if (!isItemDeleted) return false;
+    } else {
+      if (isItemDeleted) return false;
+      if (state.readFilter === 'unseen' && storedSeen.has(item.id)) return false;
+      if (state.readFilter === 'seen' && !storedSeen.has(item.id)) return false;
+    }
+
     if (!matchesKind(item, state.kind)) return false;
     if (state.segment !== 'all' && item.segment !== state.segment) return false;
-    if (state.readFilter === 'unseen' && storedSeen.has(item.id)) return false;
-    if (state.readFilter === 'seen' && !storedSeen.has(item.id)) return false;
     if (state.activeTag && !item.tags.includes(state.activeTag)) return false;
 
     if (state.q.trim()) {
@@ -2918,12 +3001,13 @@ function renderCards() {
   container.className = `stream-container view-${uiPrefs.viewMode} cols-${uiPrefs.gridCols} gap-${uiPrefs.gapSize}`;
 
   if (!items.length) {
+    const isDeletedView = state.readFilter === 'deleted';
     container.innerHTML = `
       <div style="grid-column: 1 / -1; padding: 3.5rem 1rem; text-align: center; color: var(--muted-text);">
-        <i data-lucide="inbox" style="width: 40px; height: 40px; margin: 0 auto 0.75rem; opacity: 0.4;"></i>
-        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text);">Nenhum recurso encontrado</h3>
-        <p style="font-size: 0.825rem; margin-top: 0.2rem;">Tente pesquisar outros termos ou limpe os filtros ativos.</p>
-        <button class="btn" onclick="resetAllFilters()" style="margin-top: 0.85rem;" aria-label="Limpar todos os filtros">Limpar todos os filtros</button>
+        <i data-lucide="${isDeletedView ? 'trash-2' : 'inbox'}" style="width: 40px; height: 40px; margin: 0 auto 0.75rem; opacity: 0.4; ${isDeletedView ? 'color:#ef4444;' : ''}"></i>
+        <h3 style="font-size: 1.1rem; font-weight: 700; color: var(--text);">${isDeletedView ? 'Lixeira Vazia' : 'Nenhum recurso encontrado'}</h3>
+        <p style="font-size: 0.825rem; margin-top: 0.2rem;">${isDeletedView ? 'Nenhum recurso foi excluído até o momento. Quando você excluir cards, eles ficarão salvos aqui para restauração a qualquer momento.' : 'Tente pesquisar outros termos ou limpe os filtros ativos.'}</p>
+        ${isDeletedView ? '<button class="btn" onclick="state.readFilter=\'all\'; syncFilterControls(); renderCards();" style="margin-top: 0.85rem;" aria-label="Voltar para todos os recursos">Voltar ao Acervo Principal</button>' : '<button class="btn" onclick="resetAllFilters()" style="margin-top: 0.85rem;" aria-label="Limpar todos os filtros">Limpar todos os filtros</button>'}
       </div>`;
     $('#resultCount').textContent = '0 recursos encontrados';
     lucide.createIcons();
@@ -2964,12 +3048,16 @@ function renderCards() {
 
           <div class="list-col-actions">
             <div style="display:flex;align-items:center;gap:0.35rem;">
-                      ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
-                      <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-          <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-          <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-                      <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
-                    </div>
+              ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
+              ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
+              <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir do acervo'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
+              ${!isDeleted ? `
+                <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
+                <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
+                <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
+                <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+              ` : ''}
+            </div>
             <button class="icon-action-btn btn-copy" data-url="${safeUrl(item.url)}" title="Copiar Link" aria-label="Copiar link"><i data-lucide="copy" style="width:14px;height:14px;"></i></button>
             <a class="icon-action-btn" href="${safeUrl(item.url)}" target="_blank" rel="noopener noreferrer" onclick="event.stopPropagation();" title="Abrir link externo" aria-label="Abrir link externo"><i data-lucide="external-link" style="width:14px;height:14px;"></i></a>
           </div>
@@ -2999,10 +3087,14 @@ function renderCards() {
             <div class="tile-info-meta">${esc(item.kind.toUpperCase())} · ${esc(item.segment)}</div>
           </div>
           <div style="display:flex;align-items:center;gap:0.3rem;margin-left:auto;">
-            <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-          <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-          <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-            <span class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:13px;height:13px;"></i></span>
+            ${isDeleted ? '<span class="trash-badge-pill" style="font-size:0.6rem;padding:0.1rem 0.35rem;"><i data-lucide="trash-2" style="width:9px;height:9px;"></i> Excluído</span>' : ''}
+            <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir do acervo'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
+            ${!isDeleted ? `
+              <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
+              <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
+              <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
+              <span class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:13px;height:13px;"></i></span>
+            ` : ''}
           </div>
         </button>
       `;
@@ -3014,6 +3106,7 @@ function renderCards() {
     container.innerHTML = items.map(item => {
       const isFav = storedFavorites.has(item.id);
       const isSeen = storedSeen.has(item.id);
+      const isDeleted = storedDeleted.has(item.id);
       const summary = esc(item.description || '');
       const deliverableText = esc(item.deliverable || item.description);
       const exampleText = esc(item.practicalExample || 'Aplicável diretamente no fluxo de trabalho e projetos.');
@@ -3042,10 +3135,14 @@ function renderCards() {
                     <h3 class="card-title-text">${esc(item.title)}</h3>
                     <div style="display:flex;align-items:center;gap:0.35rem;">
                       ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
-                      <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-          <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-          <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-                      <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                      ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
+                      <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir / Mover para lixeira'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
+                      ${!isDeleted ? `
+                        <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
+                        <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
+                        <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
+                        <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                      ` : ''}
                     </div>
                   </div>
                   ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
@@ -3091,10 +3188,14 @@ function renderCards() {
                   <h3 class="card-title-text">${esc(item.title)}</h3>
                   <div style="display:flex;align-items:center;gap:0.35rem;">
                       ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
-                      <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-          <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-          <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-                      <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                      ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
+                      <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir / Mover para lixeira'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
+                      ${!isDeleted ? `
+                        <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
+                        <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
+                        <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
+                        <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                      ` : ''}
                     </div>
                 </div>
                 ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
@@ -3143,10 +3244,14 @@ function renderCards() {
                     <span class="meta-chip-tag">${license}</span>
                     <div style="display:flex;align-items:center;gap:0.35rem;">
                       ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
-                      <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-          <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-          <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-                      <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                      ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
+                      <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir / Mover para lixeira'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
+                      ${!isDeleted ? `
+                        <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
+                        <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
+                        <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
+                        <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                      ` : ''}
                     </div>
                   </div>
                 </div>
@@ -3208,10 +3313,14 @@ function renderCards() {
                   </div>
                   <div style="display:flex;align-items:center;gap:0.35rem;">
                       ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
-                      <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-          <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-          <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-                      <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                      ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
+                      <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir / Mover para lixeira'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
+                      ${!isDeleted ? `
+                        <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
+                        <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
+                        <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
+                        <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                      ` : ''}
                     </div>
                 </div>
                 ${showSummary ? `<p class="card-summary-desc" style="margin-top: 0.35rem;">${summary}</p>` : ''}
@@ -3260,10 +3369,14 @@ function renderCards() {
                   <span class="meta-chip-tag">${esc(item.segment)}</span>
                   <div style="display:flex;align-items:center;gap:0.35rem;">
                       ${isSeen ? '<span class="seen-badge-pill"><i data-lucide="check" style="width:10px;height:10px;"></i> Visto</span>' : ''}
-                      <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
-          <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
-          <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
-                      <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                      ${isDeleted ? '<span class="trash-badge-pill"><i data-lucide="trash-2" style="width:10px;height:10px;"></i> Excluído</span>' : ''}
+                      <button class="card-action-btn btn-trash-toggle ${isDeleted ? 'btn-restore-active' : ''}" data-trash-id="${esc(item.id)}" title="${isDeleted ? 'Restaurar para acervo ativo' : 'Excluir / Mover para lixeira'}" aria-label="${isDeleted ? 'Restaurar' : 'Excluir'}"><i data-lucide="${isDeleted ? 'rotate-ccw' : 'trash-2'}" style="width:13px;height:13px;"></i> <span>${isDeleted ? 'Restaurar' : 'Excluir'}</span></button>
+                      ${!isDeleted ? `
+                        <button class="card-action-btn btn-seen-toggle ${isSeen ? 'is-seen' : ''}" data-seen-id="${esc(item.id)}" title="${isSeen ? 'Visto / Concluído (clique para desmarcar)' : 'Marcar como visto'}" aria-label="Alternar visto"><i data-lucide="${isSeen ? 'check-circle-2' : 'circle'}" style="width:13px;height:13px;"></i> <span>${isSeen ? 'Visto' : 'Marcar'}</span></button>
+                        <button class="card-action-btn btn-open-notes ${storedNotes[item.id]?.text ? 'has-note' : ''}" data-notes-id="${esc(item.id)}" title="${storedNotes[item.id]?.text ? 'Ver anotação salva' : 'Anotar insight pessoal'}" aria-label="Anotações"><i data-lucide="file-text" style="width:13px;height:13px;"></i> <span>${storedNotes[item.id]?.text ? 'Nota' : 'Anotar'}</span></button>
+                        <button class="card-action-btn btn-open-export" data-export-id="${esc(item.id)}" title="Exportar para WhatsApp, Obsidian ou LLM" aria-label="Exportar"><i data-lucide="share-2" style="width:13px;height:13px;"></i></button>
+                        <button class="card-favorite-toggle ${isFav ? 'is-fav' : ''}" data-fav-id="${esc(item.id)}" aria-label="Favoritar"><i data-lucide="star" style="width:15px;height:15px;"></i></button>
+                      ` : ''}
                     </div>
                 </div>
               </div>
@@ -3313,7 +3426,7 @@ function renderCards() {
 function attachCardEvents() {
   $$('.card-item, .list-row-item, .tile-button-card').forEach(card => {
     card.onclick = e => {
-      if (e.target.closest('.card-seen-toggle') || e.target.closest('.card-favorite-toggle') || e.target.closest('.icon-action-btn') || e.target.closest('.meta-chip-tag')) return;
+      if (e.target.closest('.btn-trash-toggle') || e.target.closest('.card-seen-toggle') || e.target.closest('.card-favorite-toggle') || e.target.closest('.icon-action-btn') || e.target.closest('.meta-chip-tag')) return;
       const item = state.items.find(x => x.id === card.dataset.id);
       if (item) openDetailModal(item);
     };
@@ -3323,6 +3436,18 @@ function attachCardEvents() {
     btn.onclick = e => {
       e.stopPropagation();
       toggleSeen(btn.dataset.seenId);
+    };
+  });
+
+  $$('.btn-trash-toggle').forEach(btn => {
+    btn.onclick = e => {
+      e.stopPropagation();
+      const id = btn.dataset.trashId;
+      if (storedDeleted.has(id)) {
+        restoreItem(id);
+      } else {
+        deleteItem(id);
+      }
     };
   });
 
@@ -3447,6 +3572,25 @@ function openDetailModal(itemOrId) {
       const isSeen = storedSeen.has(item.id);
   updateModalSeenState(item.id);
   $('#btnModalFav').innerHTML = `<i data-lucide="star"></i> ${isFav ? 'Remover' : 'Favoritar'}`;
+  
+  const isDeleted = storedDeleted.has(item.id);
+  const trashBtn = $('#btnModalTrashAction');
+  if (trashBtn) {
+    if (isDeleted) {
+      trashBtn.innerHTML = '<i data-lucide="rotate-ccw"></i> Restaurar';
+      trashBtn.className = 'btn primary sm';
+      trashBtn.onclick = () => {
+        restoreItem(item.id);
+        openDetailModal(item);
+      };
+    } else {
+      trashBtn.innerHTML = '<i data-lucide="trash-2"></i> Excluir';
+      trashBtn.className = 'btn secondary sm btn-trash-toggle';
+      trashBtn.onclick = () => {
+        deleteItem(item.id);
+      };
+    }
+  }
 
   $('#detailModal').classList.add('open');
   const dialog = document.querySelector('.modal-dialog');
@@ -3534,6 +3678,12 @@ function syncFilterControls() {
   $$('.nav-btn[data-kind]').forEach(b => {
     b.classList.toggle('active', b.dataset.kind === state.kind);
   });
+  $$('#readStatusGroup .status-toggle-btn').forEach(b => {
+    b.classList.toggle('active', b.dataset.read === state.readFilter);
+  });
+  $$('.nav-btn[data-read]').forEach(b => {
+    b.classList.toggle('active', b.dataset.read === state.readFilter);
+  });
   $$('#segmentChipsContainer .filter-chip-item').forEach(b => {
     b.classList.toggle('active', b.dataset.segment === state.segment);
   });
@@ -3562,6 +3712,7 @@ function clearTagFilter() {
 function resetAllFilters() {
   state.kind = 'all';
   state.segment = 'all';
+  state.readFilter = 'all';
   state.activeTag = null;
   state.q = '';
   $('#searchInput').value = '';
@@ -3573,29 +3724,34 @@ function resetAllFilters() {
 }
 
 function updateKpis() {
-  const all = state.items;
-  if ($('#kpiTotal')) $('#kpiTotal').textContent = all.length;
-  if ($('#kpiVideos')) $('#kpiVideos').textContent = all.filter(x => x.kind === 'vídeo' || !!x.youtubeId).length;
-  if ($('#kpiRepos')) $('#kpiRepos').textContent = all.filter(x => x.kind === 'repositório').length;
-  if ($('#kpiCarousels')) $('#kpiCarousels').textContent = all.filter(x => x.kind === 'carrossel').length;
-  if ($('#kpiFavs')) $('#kpiFavs').textContent = storedFavorites.size;
+  const active = state.items.filter(x => !storedDeleted.has(x.id));
+  const deletedCount = state.items.filter(x => storedDeleted.has(x.id)).length;
 
-  const seenCount = all.filter(x => storedSeen.has(x.id)).length;
-  const unseenCount = all.length - seenCount;
+  if ($('#kpiTotal')) $('#kpiTotal').textContent = active.length;
+  if ($('#kpiVideos')) $('#kpiVideos').textContent = active.filter(x => x.kind === 'vídeo' || !!x.youtubeId).length;
+  if ($('#kpiRepos')) $('#kpiRepos').textContent = active.filter(x => x.kind === 'repositório').length;
+  if ($('#kpiCarousels')) $('#kpiCarousels').textContent = active.filter(x => x.kind === 'carrossel').length;
+  if ($('#kpiFavs')) $('#kpiFavs').textContent = active.filter(x => storedFavorites.has(x.id)).length;
+
+  const seenCount = active.filter(x => storedSeen.has(x.id)).length;
+  const unseenCount = active.length - seenCount;
   if ($('#kpiSeen')) $('#kpiSeen').textContent = seenCount;
   if ($('#countSeen')) $('#countSeen').textContent = seenCount;
   if ($('#countUnseen')) $('#countUnseen').textContent = unseenCount;
-  if ($('#statusCountAll')) $('#statusCountAll').textContent = all.length;
+  if ($('#statusCountAll')) $('#statusCountAll').textContent = active.length;
   if ($('#statusCountUnseen')) $('#statusCountUnseen').textContent = unseenCount;
   if ($('#statusCountSeen')) $('#statusCountSeen').textContent = seenCount;
 
-  if ($('#countAll')) $('#countAll').textContent = all.length;
-  if ($('#countVideo')) $('#countVideo').textContent = all.filter(x => x.kind === 'vídeo' || !!x.youtubeId).length;
-  if ($('#countRepo')) $('#countRepo').textContent = all.filter(x => x.kind === 'repositório').length;
-  if ($('#countCarousel')) $('#countCarousel').textContent = all.filter(x => x.kind === 'carrossel').length;
-  if ($('#countTool')) $('#countTool').textContent = all.filter(x => x.kind === 'ferramenta').length;
-  if ($('#countDoc')) $('#countDoc').textContent = all.filter(x => x.kind === 'conhecimento' || x.kind === 'diretório').length;
-  if ($('#countFav')) $('#countFav').textContent = storedFavorites.size;
+  if ($('#countDeleted')) $('#countDeleted').textContent = deletedCount;
+  if ($('#statusCountDeleted')) $('#statusCountDeleted').textContent = deletedCount;
+
+  if ($('#countAll')) $('#countAll').textContent = active.length;
+  if ($('#countVideo')) $('#countVideo').textContent = active.filter(x => x.kind === 'vídeo' || !!x.youtubeId).length;
+  if ($('#countRepo')) $('#countRepo').textContent = active.filter(x => x.kind === 'repositório').length;
+  if ($('#countCarousel')) $('#countCarousel').textContent = active.filter(x => x.kind === 'carrossel').length;
+  if ($('#countTool')) $('#countTool').textContent = active.filter(x => x.kind === 'ferramenta').length;
+  if ($('#countDoc')) $('#countDoc').textContent = active.filter(x => x.kind === 'conhecimento' || x.kind === 'diretório').length;
+  if ($('#countFav')) $('#countFav').textContent = active.filter(x => storedFavorites.has(x.id)).length;
 
   renderSegmentList();
   renderSegmentChips();
@@ -3603,7 +3759,7 @@ function updateKpis() {
   // Popula datalist de segmentos (BUG-10)
   const segmentDl = $('#segmentDatalist');
   if (segmentDl) {
-    const uniqueSegs = Array.from(new Set(state.items.map(x => x.segment).filter(Boolean)));
+    const uniqueSegs = Array.from(new Set(active.map(x => x.segment).filter(Boolean)));
     segmentDl.innerHTML = uniqueSegs.map(s => `<option value="${s}">`).join('');
   }
   renderQueuePreview();
@@ -3613,8 +3769,9 @@ function renderSegmentChips() {
   const container = $('#segmentChipsContainer');
   if (!container) return;
 
+  const activeItems = state.items.filter(x => !storedDeleted.has(x.id));
   const counts = {};
-  state.items.forEach(x => {
+  activeItems.forEach(x => {
     counts[x.segment] = (counts[x.segment] || 0) + 1;
   });
 
@@ -3637,7 +3794,7 @@ function renderSegmentChips() {
   let html = `<button class="filter-chip-item ${allActive}" data-segment="all" aria-label="Todos os segmentos">
     <i data-lucide="layers" style="width:13px;height:13px;"></i>
     <span>Todos os segmentos</span>
-    <span class="filter-chip-count">${state.items.length}</span>
+    <span class="filter-chip-count">${activeItems.length}</span>
   </button>`;
 
   Object.entries(counts).sort((a, b) => b[1] - a[1]).forEach(([seg, count]) => {
@@ -3664,7 +3821,8 @@ function renderSegmentChips() {
 
 function renderSegmentList() {
   const counts = {};
-  state.items.forEach(x => {
+  const activeItems = state.items.filter(x => !storedDeleted.has(x.id));
+  activeItems.forEach(x => {
     counts[x.segment] = (counts[x.segment] || 0) + 1;
   });
 
@@ -3694,7 +3852,7 @@ function renderSegmentList() {
 }
 
 function renderQueuePreview() {
-  const vids = state.items.filter(x => x.youtubeId).slice(0, 3);
+  const vids = state.items.filter(x => !storedDeleted.has(x.id) && x.youtubeId).slice(0, 3);
   $('#videoQueue').innerHTML = vids.map(v => `
     <div style="display: flex; gap: 0.6rem; align-items: center; cursor: pointer; padding: 0.35rem 0.5rem; border-radius: 4px; background: var(--surface2);" onclick="openDetailModal(state.items.find(x => x.id === '${v.id}'))">
       <img src="https://img.youtube.com/vi/${v.youtubeId}/hqdefault.jpg" style="width: 54px; aspect-ratio: 16/9; object-fit: cover; border-radius: 4px;" alt="">

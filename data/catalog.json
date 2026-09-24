@@ -2,7 +2,7 @@
   "meta": {
     "name": "Nexus Acervo",
     "version": "1.5.0",
-    "generatedAt": "2026-09-23T13:00:00-03:00",
+    "generatedAt": "2026-09-24T13:46:48.048Z",
     "language": "pt-BR",
     "sourceFile": "Relatorio-de-ferramentas-links-e-informacoes-dos-posts-analisados.md",
     "updatedAt": "2026-09-24T12:30:37.020Z"
@@ -527,14 +527,14 @@
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "license": "GPL-3.0",
       "openAccess": true,
       "thumbnail": "https://opengraph.githubassets.com/1/Fosowl/agenticSeek",
       "deliverable": "Código e documentação aberta e pronta para usar em projetos de ia e automação.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "Agente local com navegação, código, planejamento e voz. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://github.com/Fosowl/agenticSeek."
+      "notes": "Alternativa local e self-hosted a agentes autônomos proprietários em nuvem como Manus AI e Devin. Executa navegação web, terminal e código mantendo 100% da soberania de dados no dispositivo local."
     },
     {
       "id": "repo-coolify",
@@ -552,14 +552,14 @@
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "license": "Apache-2.0",
       "openAccess": true,
       "thumbnail": "https://opengraph.githubassets.com/1/coollabsio/coolify",
       "deliverable": "Código e documentação aberta e pronta para usar em projetos de infraestrutura.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "PaaS self-hosted para aplicações, bancos de dados e serviços. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://github.com/coollabsio/coolify."
+      "notes": "Alternativa self-hosted a Vercel, Heroku, Netlify e Render. Permite deploy de aplicações full-stack, bancos de dados e serviços em VPS própria (Hetzner, DigitalOcean, AWS) sem limites abusivos de bandwidth."
     },
     {
       "id": "repo-scrapling",
@@ -577,14 +577,14 @@
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "license": "BSD-3-Clause",
       "openAccess": true,
       "thumbnail": "https://opengraph.githubassets.com/1/D4Vinci/Scrapling",
       "deliverable": "Extrai dados de sites protegidos, tabelas e catálogos sem cair em captchas nem tomar bloqueio de IP.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Crie um robô que roda todo dia às 7h da manhã para coletar os preços de 50 produtos em lojas concorrentes e salvar uma planilha no seu Google Drive com alertas de promoções.",
-      "notes": "Utiliza emuladores de navegadores indetectáveis (Camoufox/Patchright) e seletores CSS inteligentes que se adaptam se o site mudar o layout levemente. Dispensa Proxies caros para a maioria dos casos de uso."
+      "notes": "Alternativa de alta performance a Bright Data, ScraperAPI e Zyte. Framework adaptativo de web scraping com recuperação automática de seletores quando o layout muda, bypass inteligente e rotação de proxies."
     },
     {
       "id": "repo-openbb",
@@ -602,14 +602,14 @@
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "license": "AGPL-3.0",
       "openAccess": true,
       "thumbnail": "https://opengraph.githubassets.com/1/OpenBB-finance/OpenBB",
       "deliverable": "Código e documentação aberta e pronta para usar em projetos de dados e apis.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "Plataforma aberta de dados para analistas, APIs e agentes. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://github.com/OpenBB-finance/OpenBB."
+      "notes": "Substituto open-source completo para Bloomberg Terminal, Refinitiv Eikon, FactSet e plataformas de dados de mercado com assinaturas de US$ 24k+/ano. Integração direta com Python, APIs quants e agentes de IA."
     },
     {
       "id": "repo-documenso",
@@ -657,14 +657,14 @@
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "license": "open source",
       "openAccess": true,
       "thumbnail": "https://opengraph.githubassets.com/1/twentyhq/twenty",
       "deliverable": "Código e documentação aberta e pronta para usar em projetos de negócios.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "CRM open source com contatos, funil, views e workflows. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://github.com/twentyhq/twenty."
+      "notes": "Alternativa open-source self-hosted ao Salesforce CRM e HubSpot CRM, eliminando cobrança por assento/usuário mensal (seat-based pricing). Suporta objetos personalizados, pipelines e IA."
     },
     {
       "id": "repo-openvoice",
@@ -682,14 +682,14 @@
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
-      "updatedAt": "2026-09-23",
+      "updatedAt": "2026-09-24",
       "license": "MIT",
       "openAccess": true,
       "thumbnail": "https://opengraph.githubassets.com/1/myshell-ai/OpenVoice",
       "deliverable": "Código e documentação aberta e pronta para usar em projetos de conteúdo e mídia.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ideal para integrar em projetos de desenvolvimento web ou automação, reduzindo semanas de código manual para poucas linhas de configuração.",
-      "notes": "Clonagem de voz, controle de estilo e geração multilíngue. Pode ser instalado facilmente via gerenciador de pacotes ou clonado via git clone https://github.com/myshell-ai/OpenVoice."
+      "notes": "Alternativa de clonagem instantânea de voz com controle granular de tom e estilo ao ElevenLabs e Resemble AI, sem custo de caracteres por API e com suporte a V2 multilíngue."
     },
     {
       "id": "video-natureza-humana",
@@ -1657,6 +1657,103 @@
         "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80"
       ],
       "practicalExample": "Em formulários de checkout, adicione feedback tátil e animação de loading direto no botão para eliminar cliques múltiplos por ansiedade do usuário."
+    },
+    {
+      "id": "conhecimento-metodo-10-dias",
+      "title": "Processo de 10 Dias de Mudança e Identidade — Carl Jung & Clube Natural",
+      "kind": "conhecimento",
+      "segment": "Conhecimento & Hacks",
+      "url": "https://www.instagram.com/reel/Db81e33RPDM/?stkn=d2Q4NjN4OGE5am56",
+      "description": "Método prático de 10 dias baseado em princípios junguianos para transformar objetivos vagos em uma direção concreta de mudança de identidade e hábitos por meio de ação deliberada e repetição contínua.",
+      "deliverable": "Framework em 4 etapas: questionamento profundo ('O que desejaria se parasse de fingir que não desejo?'), visualização sensorial da experiência concreta, alinhamento com a identidade capaz de sustentar o resultado e compromisso diário de 10 dias de pequenas ações coerentes.",
+      "practicalExample": "Substitua a meta abstrata 'quero ser produtivo' pela descrição vívida 'acordo sem pressa, domino minha rotina matinal e executo a tarefa mais complexa antes do meio-dia', praticando esse padrão por 10 dias consecutivos sem esperar motivação prévia.",
+      "tags": [
+        "Desenvolvimento Pessoal",
+        "Psicologia",
+        "Produtividade",
+        "Identidade",
+        "Hábitos"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "@clubenatural (Instagram Reel Db81e33RPDM)",
+      "addedAt": "2026-09-24",
+      "updatedAt": "2026-09-24",
+      "openAccess": true,
+      "author": "Clube Natural / Carl Jung"
+    },
+    {
+      "id": "conhecimento-checklist-seguranca",
+      "title": "Checklist de Segurança Cibernética para Extensões, IAs e Agentes Autônomos",
+      "kind": "conhecimento",
+      "segment": "Conhecimento & Hacks",
+      "url": "https://importhelper.com/privacy-policy/",
+      "description": "Protocolo operacional rigoroso de auditoria e segurança da informação antes de conceder permissões a extensões de navegador, conectar chaves de API em ferramentas de terceiros ou rodar agentes de programação locais.",
+      "deliverable": "Checklist com 5 diretrizes vitais: validação de manifest e permissões de extensões no Chrome/Edge, armazenamento estritamente local de API keys (localStorage), isolamento de agentes autônomos em containers/VMs, verificação de políticas de retenção de dados e auditoria de tráfego de rede.",
+      "practicalExample": "Auditar permissões de extensões via chrome://extensions, proibir inserção de API keys do OpenAI/Gemini em páginas sem processamento client-side certificado, e rodar agentes de código (como Droids/Factory ou Manus) com credenciais com privilégios mínimos.",
+      "tags": [
+        "Segurança",
+        "Privacidade",
+        "Extensões Web",
+        "API Keys",
+        "Auditoria"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Relatório Consolidado de Segurança de Posts",
+      "addedAt": "2026-09-24",
+      "updatedAt": "2026-09-24",
+      "openAccess": true,
+      "author": "Nexus SecOps & DevSec"
+    },
+    {
+      "id": "repo-fcksignups",
+      "title": "NoSignups / F*CKSIGNUPS — Diretório de Ferramentas Web Sem Cadastro",
+      "kind": "repositório",
+      "segment": "Repositórios & Ferramentas Open Source",
+      "url": "https://github.com/BraveOPotato/FckSignups",
+      "description": "Diretório colaborativo e de código aberto reunindo centenas de utilitários e ferramentas web para desenvolvedores, designers e criadores que funcionam instantaneamente sem exigir cadastro, cartão de crédito ou login.",
+      "deliverable": "Acesso a mais de 260 ferramentas web zero-login catalogadas em 9 categorias (produtividade, design, dev, escrita, privacidade, dados, mídia, educação), incluindo utilitários de alta relevância como Bundlephobia, Excalidraw, drawDB, Hoppscotch e OpenCut.",
+      "practicalExample": "Calcular o impacto e peso de dependências npm no bundle frontend via Bundlephobia ou criar diagramas relacionais e gerar SQL no drawDB em segundos sem expor seu e-mail ou registrar contas.",
+      "tags": [
+        "Open Source",
+        "Ferramentas Web",
+        "Privacidade",
+        "Sem Cadastro",
+        "Produtividade"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "BraveOPotato (GitHub)",
+      "addedAt": "2026-09-24",
+      "updatedAt": "2026-09-24",
+      "license": "Open Source",
+      "openAccess": true,
+      "author": "BraveOPotato"
+    },
+    {
+      "id": "conhecimento-cssbuy-guia",
+      "title": "CSSBuy — Guia Prático de Redirecionamento e Logística na China",
+      "kind": "conhecimento",
+      "segment": "Conhecimento & Hacks",
+      "url": "https://www.cssbuy.com/",
+      "description": "Guia operacional e logístico para utilização de agentes de compras e armazéns internacionais na China (Taobao, Xianyu, 1688, Weidian), com inspeção de qualidade de mercadorias, consolidação de pacotes e remessa alfandegária.",
+      "deliverable": "Pipeline passo a passo de compra assistida: recebimento no armazém chinês, conferência com fotos de controle de qualidade (QC Photos) em alta resolução, remoção de caixas volumosas para reduzir peso cúbico, consolidação em caixa única e suporte a desembaraço aduaneiro no Brasil.",
+      "practicalExample": "Comprar eletrônicos ou componentes industriais no Xianyu/Taobao via extensão ImportHelper, receber no armazém da CSSBuy em Hangzhou, solicitar fotos QC para atestar o funcionamento e consolidar 5 pedidos em um frete único para o Brasil com rastreio prioritário.",
+      "tags": [
+        "Importação",
+        "China",
+        "E-commerce",
+        "Logística",
+        "CSSBuy"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Relatório de Importação e Logística Internacional",
+      "addedAt": "2026-09-24",
+      "updatedAt": "2026-09-24",
+      "openAccess": true,
+      "author": "CSSBuy / ImportHelper"
     }
   ]
 }
