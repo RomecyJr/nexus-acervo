@@ -4,11 +4,11 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="description" content="Nexus Acervo - Segundo Cérebro pessoal contemporâneo de ferramentas, repositórios, vídeos e carrosséis com exemplos práticos.">
-<title>Nexus Acervo · Segundo Cérebro de Elite</title>
+<title>Nexus Acervo · Segundo Cérebro Profissional</title>
 <!-- Google Fonts: Plus Jakarta Sans + JetBrains Mono -->
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
 <!-- Favicon SVG e Anti-Flash de Tema -->
 <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='8' fill='%2318181b'/%3E%3Cpath d='M16 6L24 11V21L16 26L8 21V11L16 6Z' stroke='%2310b981' stroke-width='2' fill='none'/%3E%3Ccircle cx='16' cy='16' r='2.5' fill='%23fafafa'/%3E%3C/svg%3E">
@@ -27,6 +27,16 @@
 </script>
 <script src="./data/catalog.js?v=1.4.0"></script>
 <style>
+
+/* --- ACESSIBILIDADE WCAG 2.2 AA: FOCUS VISIBLE (A11Y-03) --- */
+*:focus-visible {
+  outline: 2px solid #10b981 !important;
+  outline-offset: 2px !important;
+}
+button:focus-visible, a:focus-visible, input:focus-visible, select:focus-visible, [tabindex="0"]:focus-visible {
+  box-shadow: 0 0 0 3px rgba(16, 185, 129, 0.35) !important;
+}
+
 /* --- DESIGN TOKENS SHADCN/UI (OFICIAIS DARK MODE) --- */
 :root[data-theme="dark"] {
   --background: 240 10% 3.9%;
@@ -1642,7 +1652,7 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
 }
 
 /* ==========================================================================
-   SUPREME DESIGN SYSTEM & BRAND TOKENS ($50K TIER)
+   NEXUS DESIGN SYSTEM & BRAND TOKENS
    ========================================================================== */
 .brand-section {
   padding: 1.1rem 1rem 0.95rem;
@@ -1870,7 +1880,7 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
   white-space: nowrap;
 }
 
-/* Modals Supreme Styling */
+/* Modais do Sistema */
 .modal-form-group {
   display: flex;
   flex-direction: column;
@@ -1990,7 +2000,7 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
           <span class="brand-title">Nexus Acervo</span>
           <span class="brand-badge-pro">PRO</span>
         </div>
-        <p class="brand-subtitle">Segundo Cérebro de Elite</p>
+        <p class="brand-subtitle">Segundo Cérebro de Referência</p>
       </div>
     </div>
 
@@ -3363,10 +3373,14 @@ function attachCardEvents() {
 }
 
 // MODAL DE DETALHES MULTIMÍDIA
-function openDetailModal(item) {
+function openDetailModal(itemOrId) {
+  const item = typeof itemOrId === 'string' ? state.items.find(x => x.id === itemOrId) : itemOrId;
+  if (!item) return;
+
   state.selectedItem = item;
   state.currentSlideIndex = 0;
   const mediaContainer = $('#modalMediaContainer');
+  const ytId = item.youtubeId || extractYouTubeId(item.url);
 
   // VÍDEO: Player Embutido Responsivo com Validação Segura (BUG-07)
   const isYt = id => /^[\w-]{11}$/.test(id || '');
@@ -3397,8 +3411,8 @@ function openDetailModal(item) {
     mediaContainer.innerHTML = '';
   }
 
-  $('#modalTitle').textContent = item.title;
-  $('#modalKind').textContent = item.kind.toUpperCase();
+  $('#modalTitle').textContent = item.title || '';
+  $('#modalKind').textContent = (item.kind || '').toUpperCase();
   $('#modalSegment').textContent = item.segment;
   $('#modalDescription').textContent = item.description;
   $('#modalDeliverable').textContent = item.deliverable || item.description;
@@ -3726,6 +3740,14 @@ function syncCustomizerUi() {
 // DOCUMENSO STUDIO (ASSINATURA DIGITAL AO VIVO)
 // ==========================================================================
 function initDocumensoStudio() {
+  // Carregamento sob demanda de fontes caligráficas (P-3)
+  if (!document.getElementById('font-cursive-documenso')) {
+    const fl = document.createElement('link');
+    fl.id = 'font-cursive-documenso';
+    fl.rel = 'stylesheet';
+    fl.href = 'https://fonts.googleapis.com/css2?family=Caveat:wght@600;700&family=Dancing+Script:wght@600;700&display=swap';
+    document.head.appendChild(fl);
+  }
   const modal = $('#documensoModal');
   if (!modal) return;
 
@@ -3971,7 +3993,7 @@ function downloadCaligraphicPng(text, font, filename) {
 
 
 // ==========================================================================
-// SEGUNDO CÉREBRO: SISTEMA DE ANOTAÇÕES, EXPORTAÇÃO E COFRE SUPREME
+// SEGUNDO CÉREBRO: SISTEMA DE ANOTAÇÕES, EXPORTAÇÃO E COFRE PESSOAL
 // ==========================================================================
 
 // Estado de Anotações Pessoais Seguro (BUG-01)
@@ -4148,7 +4170,7 @@ ${note.text || '*(Nenhum insight digitado ainda no Nexus)*'}
 ${note.action ? `### 🎯 Onde pretendo aplicar:\n${note.action}\n` : ''}
 
 ---
-*Exportado via Nexus Acervo · Segundo Cérebro de Elite*
+*Exportado via Nexus Acervo · Segundo Cérebro Profissional*
 `;
 }
 

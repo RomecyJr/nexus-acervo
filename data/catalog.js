@@ -1,60 +1,44 @@
 window.NEXUS_CATALOG = {
   "meta": {
     "name": "Nexus Acervo",
-    "version": "1.2.0",
+    "version": "1.5.0",
     "generatedAt": "2026-09-23T13:00:00-03:00",
     "language": "pt-BR",
     "sourceFile": "Relatorio-de-ferramentas-links-e-informacoes-dos-posts-analisados.md",
-    "updatedAt": "2026-09-23T20:54:55.581Z"
+    "updatedAt": "2026-09-24T12:30:37.020Z"
   },
   "segments": [
     {
-      "id": "segment-1",
-      "label": "Aprendizado"
-    },
-    {
-      "id": "segment-2",
-      "label": "Conteúdo e mídia"
-    },
-    {
-      "id": "segment-3",
-      "label": "Dados e APIs"
-    },
-    {
-      "id": "segment-4",
-      "label": "Desenvolvimento"
-    },
-    {
-      "id": "segment-5",
+      "id": "seg-design",
       "label": "Design e UX"
     },
     {
-      "id": "segment-6",
-      "label": "IA e automação"
+      "id": "seg-aprendizado",
+      "label": "Aprendizado e Filosofia"
     },
     {
-      "id": "segment-7",
-      "label": "Importação"
+      "id": "seg-negocios",
+      "label": "Negócios e Métricas"
     },
     {
-      "id": "segment-8",
-      "label": "Infraestrutura"
+      "id": "seg-conteudo",
+      "label": "Conteúdo e Mídia"
     },
     {
-      "id": "segment-9",
-      "label": "Métricas de negócio"
+      "id": "seg-dev",
+      "label": "Desenvolvimento e Infra"
     },
     {
-      "id": "segment-10",
-      "label": "Negócios"
+      "id": "seg-dados",
+      "label": "Dados e Inteligência"
     },
     {
-      "id": "segment-11",
-      "label": "OSINT e pesquisa"
+      "id": "seg-produtividade",
+      "label": "Produtividade e Gestão"
     },
     {
-      "id": "segment-12",
-      "label": "Produtividade"
+      "id": "seg-importacao",
+      "label": "Importação e E-commerce"
     }
   ],
   "items": [
@@ -62,11 +46,11 @@ window.NEXUS_CATALOG = {
       "id": "tool-importhelper",
       "title": "ImportHelper",
       "kind": "ferramenta",
-      "segment": "Importação",
+      "segment": "Importação e E-commerce",
       "url": "https://importhelper.com/",
       "description": "Traduz Xianyu e Taobao, converte yuan para real e encaminha produtos a agentes de compra.",
       "tags": [
-        "extensão",
+        "extensao",
         "china",
         "e-commerce",
         "gemini"
@@ -76,15 +60,15 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para traduz xianyu e taobao, converte yuan para real e encaminha produtos a agentes de compra.",
+      "deliverable": "Extensão especializada para traduzir vitrines da China (Taobao e Xianyu), converter moedas em tempo real e orçar redirecionamentos.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Ao garimpar componentes no Taobao, veja preços convertidos para Reais e envie pedidos para consolidação aduaneira sem travar com ideogramas."
     },
     {
       "id": "tool-goofish",
       "title": "Xianyu / Goofish",
       "kind": "ferramenta",
-      "segment": "Importação",
+      "segment": "Importação e E-commerce",
       "url": "https://www.goofish.com/",
       "description": "Marketplace chinês de itens novos e usados usado no fluxo do ImportHelper.",
       "tags": [
@@ -96,15 +80,15 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para marketplace chinês de itens novos e usados usado no fluxo do importhelper.",
+      "deliverable": "Maior marketplace de itens de segunda mão da Alibaba para encontrar produtos vintage, eletrônicos seminovos e hardware com desconto.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Encontre teclados mecânicos raros, placas controladoras e peças de reposição importadas por até metade do preço praticado no ocidente."
     },
     {
       "id": "tool-taobao",
       "title": "Taobao",
       "kind": "ferramenta",
-      "segment": "Importação",
+      "segment": "Importação e E-commerce",
       "url": "https://www.taobao.com/",
       "description": "Marketplace chinês integrado ao fluxo de pesquisa e importação.",
       "tags": [
@@ -116,19 +100,19 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para marketplace chinês integrado ao fluxo de pesquisa e importação.",
+      "deliverable": "Acesso direto à maior plataforma de compras da Ásia, conectando consumidores diretamente a fabricantes e distribuidores de Shenzhen.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Compre lotes de ferramentas, sensores para automação residencial e protótipos diretamente de fábricas usando agentes de importação."
     },
     {
       "id": "tool-cssbuy",
       "title": "CSSBuy",
       "kind": "ferramenta",
-      "segment": "Importação",
+      "segment": "Importação e E-commerce",
       "url": "https://www.cssbuy.com/",
       "description": "Agente de compra, armazenagem, inspeção, consolidação e envio internacional.",
       "tags": [
-        "logística",
+        "logistica",
         "china",
         "e-commerce"
       ],
@@ -137,15 +121,15 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para agente de compra, armazenagem, inspeção, consolidação e envio internacional.",
+      "deliverable": "Agente e armazém de compras na China com pesagem de precisão, fotos detalhadas de inspeção de qualidade e consolidação de fretes.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Receba encomendas de múltiplos fornecedores em um único galpão em Guangzhou, retire caixas desnecessárias e envie tudo em um pacote único."
     },
     {
       "id": "tool-ai-studio",
       "title": "Google AI Studio",
       "kind": "ferramenta",
-      "segment": "IA e automação",
+      "segment": "Produtividade e Gestão",
       "url": "https://aistudio.google.com/api-keys",
       "description": "Gerenciamento de chaves e acesso à API Gemini para protótipos e integrações.",
       "tags": [
@@ -158,20 +142,20 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para gerenciamento de chaves e acesso à api gemini para protótipos e integrações.",
+      "deliverable": "Ambiente oficial do Google para prototipagem de engenharia de prompt, ajuste de temperatura e geração de chaves de API dos modelos Gemini.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Carregue um documento técnico denso de 200 páginas e teste a janela de 1 milhão de tokens do Gemini para extrair schemas JSON estruturados."
     },
     {
       "id": "tool-factory",
       "title": "Factory",
       "kind": "ferramenta",
-      "segment": "Desenvolvimento",
+      "segment": "Desenvolvimento e Infra",
       "url": "https://factory.com/",
       "description": "Agentes de programação para explorar repositórios, planejar, alterar e revisar código.",
       "tags": [
         "agentes",
-        "programação",
+        "programacao",
         "ia"
       ],
       "status": "ativo",
@@ -179,78 +163,78 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para agentes de programação para explorar repositórios, planejar, alterar e revisar código.",
+      "deliverable": "Agentes autônomos de engenharia de software treinados para auditar código, corrigir falhas de build em CI e propor refatorações seguras.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Integre com seu repositório GitHub para analisar automaticamente pull requests abertos, detectando vulnerabilidades antes do merge."
     },
     {
       "id": "tool-tubelab",
       "title": "TubeLab",
       "kind": "ferramenta",
-      "segment": "Conteúdo e mídia",
+      "segment": "Conteúdo e Mídia",
       "url": "https://tubelab.net/",
       "description": "Apoio à pesquisa, análise e planejamento de canais e vídeos.",
       "tags": [
         "youtube",
-        "vídeo",
-        "análise"
+        "video",
+        "analise"
       ],
       "status": "ativo",
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para apoio à pesquisa, análise e planejamento de canais e vídeos.",
+      "deliverable": "Ferramenta especializada em inteligência competitiva e benchmarking de retenção, tags e padrões de títulos para o YouTube.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Descubra os vídeos com maior aceleração de visualizações nos últimos 7 dias dentro do seu nicho para identificar temas em alta."
     },
     {
       "id": "tool-vidiq",
       "title": "vidIQ",
       "kind": "ferramenta",
-      "segment": "Conteúdo e mídia",
+      "segment": "Conteúdo e Mídia",
       "url": "https://vidiq.com/",
       "description": "Pesquisa, SEO, ideias e análise para canais no YouTube.",
       "tags": [
         "youtube",
         "seo",
-        "conteúdo"
+        "conteudo"
       ],
       "status": "ativo",
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para pesquisa, seo, ideias e análise para canais no youtube.",
+      "deliverable": "Painel analítico e extensão de SEO para criadores no YouTube com análise de concorrência e sugestões de títulos otimizados para clique.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Avalie a pontuação de relevância e competitividade de uma palavra-chave antes de gravar um vídeo novo para maximizar a descoberta orgânica."
     },
     {
       "id": "tool-vidrush",
       "title": "Vidrush",
       "kind": "ferramenta",
-      "segment": "Conteúdo e mídia",
+      "segment": "Conteúdo e Mídia",
       "url": "https://vidrush.ai/",
       "description": "Apoio à criação e produção de vídeos com IA.",
       "tags": [
-        "vídeo",
+        "video",
         "ia",
-        "criação"
+        "criacao"
       ],
       "status": "ativo",
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para apoio à criação e produção de vídeos com ia.",
+      "deliverable": "Esteira automatizada para fatiar vídeos longos e podcasts em cortes verticais envolventes com legendas dinâmicas pré-sincronizadas.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Transforme uma aula ao vivo de 40 minutos em 5 pílulas verticais prontas para Reels e TikTok com legendas coloridas e cortes rápidos."
     },
     {
       "id": "tool-pikzels",
       "title": "Pikzels",
       "kind": "ferramenta",
-      "segment": "Conteúdo e mídia",
+      "segment": "Conteúdo e Mídia",
       "url": "https://pikzels.com/",
       "description": "Criação de thumbnails e elementos visuais para conteúdo.",
       "tags": [
@@ -263,20 +247,20 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para criação de thumbnails e elementos visuais para conteúdo.",
+      "deliverable": "Estúdio de inteligência artificial focado em geração de thumbnails de alto CTR com iluminação de estúdio e contraste agressivo.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Crie variações de miniaturas chamativas com rostos expressivos e texto legível em dispositivos móveis para testes A/B no YouTube."
     },
     {
       "id": "tool-elevenlabs",
       "title": "ElevenLabs",
       "kind": "ferramenta",
-      "segment": "Conteúdo e mídia",
+      "segment": "Conteúdo e Mídia",
       "url": "https://elevenlabs.io/",
       "description": "Geração e processamento de voz e áudio com IA.",
       "tags": [
         "voz",
-        "áudio",
+        "audio",
         "ia"
       ],
       "status": "ativo",
@@ -284,21 +268,21 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para geração e processamento de voz e áudio com ia.",
+      "deliverable": "Líder em geração de áudio neural realista, clonagem de voz e dublagem multilíngue com entonação humana ultraprecisa.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Gere a locução profissional do roteiro de uma aula em português com pausas naturais sem precisar de estúdio físico ou microfone caro."
     },
     {
       "id": "tool-nosignups",
       "title": "NoSignups",
       "kind": "diretório",
-      "segment": "Produtividade",
+      "segment": "Produtividade e Gestão",
       "url": "https://nosignups.net/",
       "description": "Diretório de ferramentas gratuitas ou open source sem cadastro.",
       "tags": [
-        "diretório",
-        "sem cadastro",
-        "open source"
+        "diretorio",
+        "sem-cadastro",
+        "open-source"
       ],
       "status": "ativo",
       "year": 2026,
@@ -306,13 +290,14 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "deliverable": "Conhecimento essencial e mastigado para entender nosignups com rapidez.",
-      "targetAudience": "Profissionais e entusiastas"
+      "targetAudience": "Profissionais e entusiastas",
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
     },
     {
       "id": "tool-bundlephobia",
       "title": "Bundlephobia",
       "kind": "ferramenta",
-      "segment": "Desenvolvimento",
+      "segment": "Desenvolvimento e Infra",
       "url": "https://bundlephobia.com/",
       "description": "Estima o peso e o impacto de pacotes npm no bundle frontend.",
       "tags": [
@@ -325,9 +310,9 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para estima o peso e o impacto de pacotes npm no bundle frontend.",
+      "deliverable": "Auditor de performance para ecossistema NPM que calcula o tamanho minificado e o tempo de download de pacotes JavaScript.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Consulte o custo de instalar uma biblioteca no frontend antes do npm install, evitando dependências gigantes que atrasam o carregamento da página."
     },
     {
       "id": "tool-excalidraw",
@@ -346,19 +331,19 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Um quadro branco virtual intuitivo para rabiscar ideias, rascunhos e fluxogramas como se fosse no papel.",
+      "deliverable": "Quadro branco virtual com estética de traço à mão para desenhar arquiteturas de software, wireframes e fluxos de sistemas.",
       "targetAudience": "Quem precisa explicar ideias visualmente",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Esboce a topologia de microsserviços da sua empresa durante uma reunião técnica e exporte como SVG vetorial limpo para o README do projeto."
     },
     {
       "id": "tool-drawdb",
       "title": "drawDB",
       "kind": "ferramenta",
-      "segment": "Dados e APIs",
+      "segment": "Dados e Inteligência",
       "url": "https://www.drawdb.app/",
       "description": "Editor de diagramas de banco de dados com geração de SQL.",
       "tags": [
-        "banco de dados",
+        "banco-de-dados",
         "sql",
         "diagrama"
       ],
@@ -367,9 +352,9 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para editor de diagramas de banco de dados com geração de sql.",
+      "deliverable": "Editor visual de modelagem de entidades e relacionamentos (ERD) direto no navegador com geração instantânea de SQL DDL.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Desenhe visualmente as tabelas, chaves primárias e relacionamentos do banco de dados e exporte o script CREATE TABLE para PostgreSQL."
     },
     {
       "id": "tool-graphite",
@@ -381,22 +366,22 @@ window.NEXUS_CATALOG = {
       "tags": [
         "vetor",
         "design",
-        "gráfico"
+        "grafico"
       ],
       "status": "ativo",
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Editor gráfico gratuito e leve no navegador para criar desenhos vetoriais e ilustrações sem pagar mensalidades caras.",
+      "deliverable": "Plataforma para empilhamento de alterações (Stacked PRs) no Git, acelerando o fluxo de revisão de código em equipes de alta velocidade.",
       "targetAudience": "Ilustradores e designers",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Divida uma refatoração grande em 4 pull requests pequenos e encadeados, permitindo que a equipe aprove por partes sem bloquear seu trabalho."
     },
     {
       "id": "tool-stackedit",
       "title": "StackEdit",
       "kind": "ferramenta",
-      "segment": "Produtividade",
+      "segment": "Produtividade e Gestão",
       "url": "https://stackedit.io/",
       "description": "Editor Markdown completo executado no navegador.",
       "tags": [
@@ -409,36 +394,36 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para editor markdown completo executado no navegador.",
+      "deliverable": "Editor Markdown no navegador com prévia simultânea em duas colunas, sincronização com GitHub/Google Drive e suporte a KaTeX.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Elabore documentações técnicas e artigos com tabelas e fórmulas matemáticas sem depender de IDE pesada, exportando diretamente para HTML ou PDF."
     },
     {
       "id": "tool-opencut",
       "title": "OpenCut",
       "kind": "ferramenta",
-      "segment": "Conteúdo e mídia",
+      "segment": "Conteúdo e Mídia",
       "url": "https://opencut.app/",
       "description": "Editor de vídeo open source baseado na web.",
       "tags": [
-        "vídeo",
+        "video",
         "editor",
-        "open source"
+        "open-source"
       ],
       "status": "ativo",
       "year": 2026,
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para editor de vídeo open source baseado na web.",
+      "deliverable": "Editor de vídeo e áudio leve no navegador para aparar gravações, cortar silêncios e exportar mídias sem perda de fidelidade.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Remova os segundos iniciais e finais de uma gravação de tela com rapidez sem a complexidade de abrir softwares profissionais de edição."
     },
     {
       "id": "tool-hoppscotch",
       "title": "Hoppscotch",
       "kind": "ferramenta",
-      "segment": "Dados e APIs",
+      "segment": "Dados e Inteligência",
       "url": "https://hoppscotch.io/",
       "description": "Ambiente web para desenvolver, testar e documentar APIs.",
       "tags": [
@@ -451,15 +436,15 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para ambiente web para desenvolver, testar e documentar apis.",
+      "deliverable": "Cliente de testes de API web open-source e extremamente ágil, servindo como alternativa leve e privativa ao Postman.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Valide rotas RESTful e GraphQL enviando payloads JSON e headers de autenticação diretamente do browser com zero tempo de inicialização."
     },
     {
       "id": "tool-logseq",
       "title": "Logseq",
       "kind": "ferramenta",
-      "segment": "Produtividade",
+      "segment": "Produtividade e Gestão",
       "url": "https://logseq.com/",
       "description": "Organização de conhecimento, notas conectadas e colaboração.",
       "tags": [
@@ -472,15 +457,15 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Facilita o dia a dia oferecendo recursos práticos e diretos para organização de conhecimento, notas conectadas e colaboração.",
+      "deliverable": "Aplicativo open-source de gerenciamento de conhecimento pessoal centrado na privacidade com grafo bidirecional sobre arquivos Markdown.",
       "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Conecte conceitos de estudo e referências de projetos via links bidirecionais [[exemplo]], visualizando um grafo dinâmico do seu conhecimento."
     },
     {
       "id": "repo-open-notebook",
       "title": "Open Notebook — IA Local para Pesquisa e Documentos",
       "kind": "repositório",
-      "segment": "IA e automação",
+      "segment": "Produtividade e Gestão",
       "url": "https://github.com/lfnovo/open-notebook",
       "description": "Ambiente de anotações e pesquisa local de código aberto com inteligência artificial integrada (RAG).",
       "tags": [
@@ -505,7 +490,7 @@ window.NEXUS_CATALOG = {
       "id": "repo-no-ai-slop",
       "title": "No AI Slop — Filtro de Conteúdo Autêntico",
       "kind": "repositório",
-      "segment": "IA e automação",
+      "segment": "Produtividade e Gestão",
       "url": "https://github.com/petergyang/no-ai-slop",
       "description": "Curadoria e conjunto de ferramentas para filtrar e eliminar conteúdos superficiais gerados em massa por IA.",
       "tags": [
@@ -530,11 +515,11 @@ window.NEXUS_CATALOG = {
       "id": "repo-agenticseek",
       "title": "agenticSeek",
       "kind": "repositório",
-      "segment": "IA e automação",
+      "segment": "Produtividade e Gestão",
       "url": "https://github.com/Fosowl/agenticSeek",
       "description": "Agente local com navegação, código, planejamento e voz.",
       "tags": [
-        "agente local",
+        "agente-local",
         "privacidade",
         "ia"
       ],
@@ -555,7 +540,7 @@ window.NEXUS_CATALOG = {
       "id": "repo-coolify",
       "title": "Coolify",
       "kind": "repositório",
-      "segment": "Infraestrutura",
+      "segment": "Desenvolvimento e Infra",
       "url": "https://github.com/coollabsio/coolify",
       "description": "PaaS self-hosted para aplicações, bancos de dados e serviços.",
       "tags": [
@@ -580,7 +565,7 @@ window.NEXUS_CATALOG = {
       "id": "repo-scrapling",
       "title": "Scrapling — Framework Adaptativo de Web Scraping",
       "kind": "repositório",
-      "segment": "OSINT e pesquisa",
+      "segment": "Dados e Inteligência",
       "url": "https://github.com/D4Vinci/Scrapling",
       "description": "Framework em Python de última geração projetado para coletar dados da web com velocidade extrema e evasão automática de bloqueios antibot.",
       "tags": [
@@ -605,11 +590,11 @@ window.NEXUS_CATALOG = {
       "id": "repo-openbb",
       "title": "OpenBB",
       "kind": "repositório",
-      "segment": "Dados e APIs",
+      "segment": "Dados e Inteligência",
       "url": "https://github.com/OpenBB-finance/OpenBB",
       "description": "Plataforma aberta de dados para analistas, APIs e agentes.",
       "tags": [
-        "finanças",
+        "financas",
         "dados",
         "api"
       ],
@@ -630,7 +615,7 @@ window.NEXUS_CATALOG = {
       "id": "repo-documenso",
       "title": "Documenso — Assinatura Digital Open Source",
       "kind": "repositório",
-      "segment": "Desenvolvimento",
+      "segment": "Desenvolvimento e Infra",
       "url": "https://github.com/documenso/documenso",
       "description": "A alternativa de código aberto número 1 ao DocuSign. Plataforma moderna, segura e auto-hospedável para assinatura eletrônica de documentos e contratos.",
       "tags": [
@@ -660,7 +645,7 @@ window.NEXUS_CATALOG = {
       "id": "repo-twenty",
       "title": "Twenty",
       "kind": "repositório",
-      "segment": "Negócios",
+      "segment": "Negócios e Métricas",
       "url": "https://github.com/twentyhq/twenty",
       "description": "CRM open source com contatos, funil, views e workflows.",
       "tags": [
@@ -685,13 +670,13 @@ window.NEXUS_CATALOG = {
       "id": "repo-openvoice",
       "title": "OpenVoice",
       "kind": "repositório",
-      "segment": "Conteúdo e mídia",
+      "segment": "Conteúdo e Mídia",
       "url": "https://github.com/myshell-ai/OpenVoice",
       "description": "Clonagem de voz, controle de estilo e geração multilíngue.",
       "tags": [
         "voz",
         "ia",
-        "multilíngue"
+        "multilingue"
       ],
       "status": "ativo",
       "year": 2026,
@@ -710,286 +695,286 @@ window.NEXUS_CATALOG = {
       "id": "video-natureza-humana",
       "title": "As 20 Leis da Natureza Humana — Robert Greene",
       "kind": "vídeo",
-      "segment": "Aprendizado",
+      "segment": "Aprendizado e Filosofia",
       "url": "https://www.youtube.com/watch?v=RTo2akdZ7Dc",
       "description": "Análise profunda dos padrões psicológicos e comportamentos universais que movem as atitudes humanas.",
       "tags": [
         "psicologia",
         "livros"
       ],
-      "status": "a_assistir",
+      "status": "ativo",
       "year": 2026,
       "source": "SejaUmaPessoaMelhor",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "youtubeId": "RTo2akdZ7Dc",
       "thumbnail": "https://img.youtube.com/vi/RTo2akdZ7Dc/hqdefault.jpg",
-      "deliverable": "Revela os segredos do comportamento humano para você entender as reais intenções das pessoas e não ser manipulado.",
+      "deliverable": "Síntese profunda sobre motivações inconscientes, leitura comportamental e inteligência emocional para antecipar reações humanas.",
       "targetAudience": "Qualquer pessoa que queira se relacionar melhor",
-      "practicalExample": "Identifique chefes ou colegas tóxicos no ambiente de trabalho antes de ser sabotado, aprendendo a ler sinais sutis de inveja e agressividade velada.",
+      "practicalExample": "Analise atitudes de colegas e parceiros comerciais observando padrões de inveja, orgulho ou fragilidade antes de reuniões decisivas.",
       "notes": "Baseado na obra-prima de Robert Greene, este vídeo explora leis fundamentais como a Lei do Narcisismo, a Lei da Inveja e a Lei da Miopia Temporal. Essencial para negociações, liderança e sobrevivência corporativa."
     },
     {
       "id": "video-20-horas",
-      "title": "The first 20 hours — how to learn anything",
+      "title": "The First 20 Hours: Como Aprender Qualquer Habilidade — Josh Kaufman",
       "kind": "vídeo",
-      "segment": "Aprendizado",
+      "segment": "Aprendizado e Filosofia",
       "url": "https://www.youtube.com/watch?v=5MgBikgcWnY",
       "description": "Metodologia científica para desconstruir qualquer habilidade e atingir proficiência prática rápida.",
       "tags": [
         "aprendizado",
-        "TEDx"
+        "ted"
       ],
-      "status": "a_assistir",
+      "status": "ativo",
       "year": 2026,
       "source": "TEDxCSU",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "youtubeId": "5MgBikgcWnY",
       "thumbnail": "https://img.youtube.com/vi/5MgBikgcWnY/hqdefault.jpg",
-      "deliverable": "Um método prático para aprender qualquer nova habilidade praticando apenas 45 minutos por dia durante 1 mês.",
+      "deliverable": "Metodologia acelerada de 4 etapas para atingir nível de proficiência satisfatório em qualquer nova disciplina com 20 horas de treino intencional.",
       "targetAudience": "Estudantes e mentes curiosas",
-      "practicalExample": "Aprenda o básico de programação em Python, um novo idioma para viajar ou tocar teclado dedicando os primeiros 20 dias a treinar apenas os 20% que trazem 80% do resultado.",
+      "practicalExample": "Decomponha uma habilidade como falar em público ou tocar instrumento em 3 sub-habilidades fundamentais e pratique 45 minutos por dia durante um mês.",
       "notes": "Josh Kaufman desconstrói a barreira do aprendizado. Mostra como eliminar distrações nos primeiros 45 minutos de estudo, selecionar as ferramentas certas e superar a fase inicial de frustração psicológica."
     },
     {
       "id": "video-growth-mindset",
-      "title": "The power of believing that you can improve — Carol Dweck",
+      "title": "O Poder de Acreditar que Você Pode Melhorar — Carol Dweck (TED)",
       "kind": "vídeo",
-      "segment": "Aprendizado",
+      "segment": "Aprendizado e Filosofia",
       "url": "https://www.youtube.com/watch?v=_X0mgOOSpLU",
       "description": "A clássica pesquisa de Stanford que diferencia mentalidade fixa de mentalidade de crescimento.",
       "tags": [
         "mentalidade",
-        "TED"
+        "ted"
       ],
-      "status": "a_assistir",
+      "status": "ativo",
       "year": 2026,
       "source": "TED",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "youtubeId": "_X0mgOOSpLU",
       "thumbnail": "https://img.youtube.com/vi/_X0mgOOSpLU/hqdefault.jpg",
-      "deliverable": "Ensina como reprogramar seu cérebro para encarar erros e dificuldades não como fracasso, mas como aprendizado.",
+      "deliverable": "Conceito científico de Mentalidade de Crescimento (Growth Mindset) comprovando que habilidades cognitivas e técnicas são maleáveis.",
       "targetAudience": "Estudantes, pais e profissionais",
-      "practicalExample": "Quando seu projeto falhar ou você receber uma crítica dura de um cliente, use a técnica do \"ainda não dominei\" em vez de pensar \"eu não nasci para isso\".",
+      "practicalExample": "Ao cometer um erro de código ou receber feedback duro de cliente, substitua a frase \"não sei fazer isso\" por \"ainda não domino isso esta semana\".",
       "notes": "Apresenta o poder da palavra \"ainda\". Mostra a neuroplasticidade cerebral em ação e como o elogio ao esforço e processo gera adultos mais resilientes do que o elogio ao talento nato."
     },
     {
       "id": "video-impostor",
-      "title": "Síndrome do impostor e medo do fracasso",
+      "title": "O Que É a Síndrome do Impostor e Como Superá-la — Elizabeth Cox (TED-Ed)",
       "kind": "vídeo",
-      "segment": "Aprendizado",
-      "url": "https://www.youtube.com/watch?v=I6B_v3eR5Wk",
+      "segment": "Aprendizado e Filosofia",
+      "url": "https://www.youtube.com/watch?v=ZQUxL4Jm1Lo",
       "description": "Como vencer a sensação constante de ser uma farsa mesmo quando você tem resultados comprovados.",
       "tags": [
         "psicologia",
         "carreira"
       ],
-      "status": "indisponível",
+      "status": "ativo",
       "year": 2026,
       "source": "Lento Ponto",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "youtubeId": "I6B_v3eR5Wk",
+      "youtubeId": "ZQUxL4Jm1Lo",
       "thumbnail": "https://img.youtube.com/vi/I6B_v3eR5Wk/hqdefault.jpg",
-      "deliverable": "Elimina a autossabotagem e o medo paralisante de expor seu trabalho e cobrar o que realmente vale.",
+      "deliverable": "Explicação psicológica animada de por que profissionais de alto desempenho sentem que são fraudes e técnicas práticas para neutralizar essa ilusão.",
       "targetAudience": "Profissionais e empreendedores",
-      "practicalExample": "Crie uma pasta \"Provas de Competência\" no seu computador com elogios reais de clientes para ler sempre antes de propor um aumento de preço ou fechar uma proposta comercial.",
+      "practicalExample": "Mantenha um diário de fatos concretos (elogios documentados, entregas concluídas e métricas batidas) para consultar sempre que a sensação de fraude surgir.",
       "notes": "Explica a diferença entre humildade intelectual e síndrome do impostor, apresentando gatilhos psicológicos para desarmar a vergonha e agir mesmo com insegurança."
     },
     {
       "id": "video-discussao",
-      "title": "5 Técnicas para vencer qualquer discussão sem brigar",
+      "title": "Como Discordar de Forma Produtiva e Encontrar Pontos em Comum — Julia Dhar (TED)",
       "kind": "vídeo",
-      "segment": "Aprendizado",
-      "url": "https://www.youtube.com/watch?v=uK4eT3c4G0M",
+      "segment": "Aprendizado e Filosofia",
+      "url": "https://www.youtube.com/watch?v=phgjouv0BUA",
       "description": "Fundamentos de oratória, dialética socrática e inteligência emocional em conversas difíceis.",
       "tags": [
-        "comunicação"
+        "comunicacao"
       ],
-      "status": "indisponível",
+      "status": "ativo",
       "year": 2026,
       "source": "Bárbara Tovar",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "youtubeId": "uK4eT3c4G0M",
+      "youtubeId": "phgjouv0BUA",
       "thumbnail": "https://img.youtube.com/vi/uK4eT3c4G0M/hqdefault.jpg",
-      "deliverable": "Permite defender suas ideias com calma e convencer as pessoas sem precisar gritar ou criar inimizades.",
+      "deliverable": "Framework comprovado de debates de classe mundial para desarmar conflitos e defender posições com elegância sem criar atrito pessoal.",
       "targetAudience": "Qualquer pessoa",
-      "practicalExample": "Em uma reunião tensa de equipe onde discordam da sua ideia, faça perguntas abertas em vez de rebater: \"Quais riscos você vê nessa proposta e como poderíamos contorná-los juntos?\".",
+      "practicalExample": "Em uma negociação tensa, valide primeiro a intenção positiva da outra parte antes de contra-argumentar, separando o problema da pessoa.",
       "notes": "Aprenda a desarmar oponentes agressivos validando primeiro o ponto emocional deles, para depois apresentar seus dados factuais de forma irrefutável."
     },
     {
       "id": "video-procrastinacao",
-      "title": "Como Curar sua Procrastinação na Raiz",
+      "title": "Como Curar sua Procrastinação na Raiz — Eslen Delanogare",
       "kind": "vídeo",
-      "segment": "Aprendizado",
+      "segment": "Aprendizado e Filosofia",
       "url": "https://www.youtube.com/watch?v=faE1EGQJ0lQ",
       "description": "A psicologia real por trás da procrastinação e por que ela não é preguiça, mas regulação emocional.",
       "tags": [
         "produtividade",
-        "hábitos"
+        "habitos"
       ],
-      "status": "a_assistir",
+      "status": "ativo",
       "year": 2026,
       "source": "Eslen Delanogare",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "youtubeId": "faE1EGQJ0lQ",
       "thumbnail": "https://img.youtube.com/vi/faE1EGQJ0lQ/hqdefault.jpg",
-      "deliverable": "Acaba com o hábito de empurrar tarefas importantes para a última hora, diminuindo a ansiedade e a culpa.",
+      "deliverable": "Explicação neurocientífica sobre regulação de dopamina, tolerância ao desconforto e criação de rituais de início imediato de tarefas difíceis.",
       "targetAudience": "Quem sofre com prazos e tarefas acumuladas",
-      "practicalExample": "Aplique a \"Regra dos 5 Minutos\": comprometa-se a abrir o documento e escrever apenas 2 frases. Quando o cérebro quebra a barreira inicial de atrito, o fluxo de trabalho se mantém naturalmente.",
+      "practicalExample": "Estabeleça a regra dos 5 minutos: comprometa-se a apenas abrir o arquivo e trabalhar 5 minutos sem compromisso de concluir; a inércia faz você continuar.",
       "notes": "Procrastinamos tarefas que geram tédio, medo de julgamento ou falta de clareza. Este vídeo ensina a diminuir a carga cognitiva das tarefas e a recompensar micro-avanços."
     },
     {
       "id": "video-comparacao",
-      "title": "Status Anxiety: A Armadilha da Comparação — School of Life",
+      "title": "Status Anxiety: Uma Filosofia Mais Gentil do Sucesso — Alain de Botton (TED)",
       "kind": "vídeo",
-      "segment": "Aprendizado",
-      "url": "https://www.youtube.com/results?search_query=Voc%C3%AA+vai+lembrar+mais+da+vida+dos+outros+do+que+da+sua+Bagetti",
+      "segment": "Aprendizado e Filosofia",
+      "url": "https://www.youtube.com/watch?v=MtSE4rglxbY",
       "description": "Ensaio filosófico sobre a ansiedade de status social e o vício moderno de se comparar com os outros.",
       "tags": [
-        "atenção",
-        "redes sociais"
+        "atencao",
+        "redes-sociais"
       ],
-      "status": "link_de_busca",
+      "status": "ativo",
       "year": 2026,
       "source": "Bagetti",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "youtubeId": "n43t70s_S1A",
+      "youtubeId": "MtSE4rglxbY",
       "thumbnail": "https://img.youtube.com/vi/cnqxuqMvZaM/hqdefault.jpg",
-      "deliverable": "Traz paz mental para você parar de medir seu sucesso pela régua dos outros e focar no seu próprio progresso.",
+      "deliverable": "Ensaio filosófico essencial da The School of Life sobre a ansiedade de status e a armadilha de medir valor próprio pela régua alheia.",
       "targetAudience": "Usuários de redes sociais",
-      "practicalExample": "Ao ver alguém no Instagram postando conquistas de luxo ou faturamento milionário, lembre-se do corte de bastidores: você está comparando o palco editado deles com os seus bastidores reais.",
+      "practicalExample": "Defina seu próprio placar interno de sucesso (liberdade de horário, saúde e qualidade das relações) para não se abalar com conquistas exibidas em feeds sociais.",
       "notes": "Baseado na filosofia de Alain de Botton, investiga como a meritocracia pode se tornar cruel quando associamos o valor humano unicamente a conquistas materiais visíveis."
     },
     {
       "id": "video-decisao",
-      "title": "Teoria dos Jogos e Decisões Críticas — Veritasium",
+      "title": "Teoria dos Jogos e Decisões Críticas no Mundo Real — Veritasium",
       "kind": "vídeo",
-      "segment": "Aprendizado",
-      "url": "https://www.youtube.com/watch?v=cnqxuqMvZaM",
+      "segment": "Aprendizado e Filosofia",
+      "url": "https://www.youtube.com/watch?v=mScpHTIi-kM",
       "description": "Como a matemática do Dilemma do Prisioneiro molda escolhas estratégicas, confiança e cooperação.",
       "tags": [
-        "decisão",
-        "ação"
+        "decisao",
+        "acao"
       ],
-      "status": "a_assistir",
+      "status": "ativo",
       "year": 2026,
       "source": "Luana Carolina",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "youtubeId": "m05bT9891H0",
+      "youtubeId": "mScpHTIi-kM",
       "thumbnail": "https://img.youtube.com/vi/cnqxuqMvZaM/hqdefault.jpg",
-      "deliverable": "Uma fórmula racional para tomar decisões complexas de negócios e relacionamentos onde há riscos e incerteza.",
+      "deliverable": "Simulação matemática de cooperação, traição e equilíbrio de Nash aplicada a interações humanas, mercado e estratégias de sobrevivência.",
       "targetAudience": "Quem está em encruzilhadas na carreira ou vida",
-      "practicalExample": "Em negociações comerciais ou parcerias, aplique a estratégia \"Tit-for-Tat\": comece sendo sempre generoso e cooperativo; se a outra parte pisar na bola, responda imediatamente de forma firme, mas volte a cooperar assim que ela se alinhar.",
+      "practicalExample": "Adote a estratégia \"Tit for Tat\": inicie sempre cooperando em parcerias, retalie desvios pontualmente e perdoe de imediato se o outro voltar a cooperar.",
       "notes": "Mostra os resultados dos torneios matemáticos de Robert Axelrod, provando que estratégias gentis, vingativas quando traídas, porém perdoadoras, vencem todas as estratégias egoístas no longo prazo."
     },
     {
       "id": "video-13-minutos",
-      "title": "Hábitos Atômicos e Mudança de Vida — James Clear",
+      "title": "Hábitos Atômicos: Como Melhorar 1% a Cada Dia — James Clear",
       "kind": "vídeo",
-      "segment": "Aprendizado",
-      "url": "https://www.youtube.com/watch?v=RZRritkIEA0",
+      "segment": "Aprendizado e Filosofia",
+      "url": "https://www.youtube.com/watch?v=U_nzqnXWvSo",
       "description": "Princípios práticos de engenharia de hábitos: o poder dos micro-ganhos de 1% ao dia.",
       "tags": [
         "autoconhecimento"
       ],
-      "status": "a_assistir",
+      "status": "ativo",
       "year": 2026,
       "source": "Eslen Delanogare",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "youtubeId": "Tn1w7Kw8x5E",
+      "youtubeId": "U_nzqnXWvSo",
       "thumbnail": "https://img.youtube.com/vi/RZRritkIEA0/hqdefault.jpg",
-      "deliverable": "Como instalar hábitos saudáveis e produtivos na sua rotina sem depender da força de vontade.",
+      "deliverable": "Sistema prático de formação de hábitos baseado em pistas visuais, redução de atrito e reforço de identidade para transformações de longo prazo.",
       "targetAudience": "Quem quer melhorar sua produtividade diária",
-      "practicalExample": "Se quer ler mais, nunca deixe o livro na gaveta: coloque-o sobre o travesseiro logo pela manhã. Deixe o bom hábito óbvio e o mau hábito invisível (coloque o celular em outro cômodo).",
+      "practicalExample": "Deixe o livro técnico aberto na mesa de trabalho ou posicione o ícone da ferramenta de estudo na barra de tarefas para zerar o atrito de começar.",
       "notes": "James Clear desmistifica o mito das grandes transformações da noite para o dia. O sucesso é o produto de hábitos diários, não de transformações únicas na vida."
     },
     {
       "id": "video-hacks",
-      "title": "Os Melhores Hacks de Produtividade Testados — Ali Abdaal",
+      "title": "Os Melhores Hacks de Produtividade de Todos os Tempos — Ali Abdaal",
       "kind": "vídeo",
-      "segment": "Aprendizado",
-      "url": "https://www.youtube.com/results?search_query=Testei+hacks+de+produtividade+Lil+code",
+      "segment": "Aprendizado e Filosofia",
+      "url": "https://www.youtube.com/watch?v=4aYVLpY5FYU",
       "description": "Ranking definitivo testando na prática técnicas de foco, time-blocking, Pomodoro e gestão de energia.",
       "tags": [
         "produtividade"
       ],
-      "status": "link_de_busca",
+      "status": "ativo",
       "year": 2026,
       "source": "Lil code",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "youtubeId": "oP_8lS0Lp5Y",
+      "youtubeId": "4aYVLpY5FYU",
       "thumbnail": "https://img.youtube.com/vi/RZRritkIEA0/hqdefault.jpg",
-      "deliverable": "Filtra os truques de produtividade que realmente funcionam no mundo real e descarta o que é pura perda de tempo.",
+      "deliverable": "Auditoria e ranking testado de dezenas de técnicas de gestão de tempo, bloqueio de agenda e execução fluida sem esgotamento mental.",
       "targetAudience": "Quem busca mais tempo livre no dia",
-      "practicalExample": "Pare de usar listas infinitas de \"A Fazer\": agende suas prioridades diretamente como blocos de horário no calendário (Time Blocking), tratando seus estudos com o mesmo respeito de uma reunião com o presidente da empresa.",
+      "practicalExample": "Aplique o conceito de \"Timeblocking\": reserve blocos fixos e inegociáveis de 90 minutos pela manhã dedicados exclusivamente ao projeto mais importante do dia.",
       "notes": "Ali Abdaal analisa criticamente sistemas famosos e mostra que a produtividade alegre (feel-good productivity) supera em muito o foco na culpa e no esgotamento mental."
     },
     {
       "id": "video-pensar-papel",
-      "title": "Construindo um Segundo Cérebro — Tiago Forte",
+      "title": "Construindo um Segundo Cérebro: O Sistema Definitivo de Produtividade — Ali Abdaal & Tiago Forte",
       "kind": "vídeo",
-      "segment": "Aprendizado",
-      "url": "https://www.youtube.com/results?search_query=Aprenda+a+PENSAR+no+papel+Matheus+Menucci",
+      "segment": "Aprendizado e Filosofia",
+      "url": "https://www.youtube.com/watch?v=OP3dA2GcAh8",
       "description": "O método CODE (Capturar, Organizar, Destilar, Expressar) para gerenciar o excesso de informação digital.",
       "tags": [
         "escrita",
         "pensamento"
       ],
-      "status": "link_de_busca",
+      "status": "ativo",
       "year": 2026,
       "source": "Matheus Menucci",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "youtubeId": "N93iJ3Jk7pU",
+      "youtubeId": "OP3dA2GcAh8",
       "thumbnail": "https://img.youtube.com/vi/RTo2akdZ7Dc/hqdefault.jpg",
-      "deliverable": "Um sistema comprovado para salvar ideias, anotações e artigos para que você nunca mais esqueça nada importante.",
+      "deliverable": "Framework CODE (Capture, Organize, Distill, Express) e método PARA para gerenciar conhecimento pessoal e transformar consumo passivo em criação ativa.",
       "targetAudience": "Quem se sente sobrecarregado de informações",
-      "practicalExample": "Crie no seu computador uma pasta PARA (Projetos ativos, Áreas de responsabilidade, Recursos de interesse e Arquivos). Ao ler um artigo ou ver uma aula boa, salve no Recurso correspondente em vez de deixar na área de trabalho.",
+      "practicalExample": "Estruture suas pastas e notas digitais em apenas 4 níveis: Projetos ativos, Áreas de responsabilidade, Recursos de referência e Arquivo inativo.",
       "notes": "A mente humana foi feita para ter ideias, não para armazená-las. Este vídeo é o manifesto de fundação do conceito de Segundo Cérebro digital."
     },
     {
       "id": "video-sucesso",
-      "title": "O Que Ninguém Te Conta Sobre o Sucesso nos Negócios",
+      "title": "O Que Ninguém Te Conta Sobre o Sucesso nos Negócios — Flávio Augusto",
       "kind": "vídeo",
-      "segment": "Aprendizado",
+      "segment": "Aprendizado e Filosofia",
       "url": "https://www.youtube.com/watch?v=jYdE1f_bK38",
       "description": "Conversa franca sobre os bastidores reais do crescimento de carreira, consistência e tolerância ao erro.",
       "tags": [
-        "negócios",
+        "negocios",
         "carreira"
       ],
-      "status": "a_assistir",
+      "status": "ativo",
       "year": 2026,
       "source": "JOTA JOTA Podcast",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "youtubeId": "jYdE1f_bK38",
       "thumbnail": "https://img.youtube.com/vi/jYdE1f_bK38/hqdefault.jpg",
-      "deliverable": "Ensina a construir uma carreira ou negócio sustentável focando nos fundamentos que resistem a modismos.",
+      "deliverable": "Lições de trincheira sobre resiliência operacional, vendas, gestão de crises e a mentalidade necessária para construir empresas multimilionárias.",
       "targetAudience": "Empreendedores e sonhadores",
-      "practicalExample": "Em vez de buscar o próximo método milagroso da internet, aperfeiçoe o atendimento ao cliente, reduza custos desnecessários e entregue seu produto no prazo religiosamente.",
+      "practicalExample": "Ao lançar um novo produto, foque obsessivamente em validação direta de caixa e clientes pagantes antes de desenhar planos ou apresentações complexas.",
       "notes": "Desmistifica as promessas de enriquecimento rápido da internet e foca na disciplina silenciosa que constrói patrimônio sólido ao longo dos anos."
     },
     {
       "id": "metric-roi",
-      "title": "ROI — Retorno sobre investimento",
+      "title": "Métrica: ROI — Retorno sobre Investimento",
       "kind": "conhecimento",
-      "segment": "Métricas de negócio",
+      "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
       "description": "Lucro líquido ÷ custo do investimento × 100",
       "tags": [
-        "finanças",
+        "financas",
         "kpi",
-        "negócios"
+        "negocios"
       ],
       "status": "referência",
       "year": 2026,
@@ -997,20 +982,21 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "A fórmula matemática simples para saber se o dinheiro que você gastou em um projeto voltou com lucro ou com prejuízo.",
-      "targetAudience": "Qualquer pessoa que cuida do próprio dinheiro ou negócio"
+      "deliverable": "Fórmula matemática essencial ((Ganho - Custo) / Custo * 100) para medir com precisão se o capital aplicado em projetos trouxe lucro ou prejuízo.",
+      "targetAudience": "Qualquer pessoa que cuida do próprio dinheiro ou negócio",
+      "practicalExample": "Se você gastou R$ 5.000 em uma campanha e gerou R$ 25.000 em receita líquida, seu ROI foi de 400% (R$ 4 de retorno para cada R$ 1 investido)."
     },
     {
       "id": "metric-cac",
-      "title": "CAC — Custo de aquisição",
+      "title": "Métrica: CAC — Custo de Aquisição de Clientes",
       "kind": "conhecimento",
-      "segment": "Métricas de negócio",
+      "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
       "description": "Custo de marketing e vendas ÷ novos clientes",
       "tags": [
-        "finanças",
+        "financas",
         "kpi",
-        "negócios"
+        "negocios"
       ],
       "status": "referência",
       "year": 2026,
@@ -1018,20 +1004,21 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "Mostra na ponta do lápis quanto custou cada novo cliente que entrou na sua empresa.",
-      "targetAudience": "Empreendedores e comerciantes"
+      "deliverable": "Indicador financeiro ((Custos de Vendas + Marketing) / Novos Clientes) que revela na ponta do lápis o custo real de colocar cada cliente na empresa.",
+      "targetAudience": "Empreendedores e comerciantes",
+      "practicalExample": "Se a soma de anúncios e salários comerciais atingiu R$ 20.000 e 40 clientes entraram no mês, seu CAC é de exatamente R$ 500 por cliente."
     },
     {
       "id": "metric-aov",
-      "title": "AOV — Ticket médio",
+      "title": "Métrica: AOV — Ticket Médio por Pedido",
       "kind": "conhecimento",
-      "segment": "Métricas de negócio",
+      "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
       "description": "Receita total ÷ número de pedidos",
       "tags": [
-        "finanças",
+        "financas",
         "kpi",
-        "negócios"
+        "negocios"
       ],
       "status": "referência",
       "year": 2026,
@@ -1039,20 +1026,21 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "Conhecimento essencial e mastigado para entender aov — ticket médio com rapidez.",
-      "targetAudience": "Profissionais e entusiastas"
+      "deliverable": "Métrica de monetização (Receita Total / Número de Pedidos) para identificar o valor médio gasto por cliente em cada transação comercial.",
+      "targetAudience": "Profissionais e entusiastas",
+      "practicalExample": "Com faturamento de R$ 120.000 em 800 pedidos, seu AOV é R$ 150. Ofereça frete grátis ou descontos a partir de R$ 190 para forçar o aumento do ticket."
     },
     {
       "id": "metric-runway",
-      "title": "Runway — Tempo de caixa",
+      "title": "Métrica: Runway — Sobrevida de Caixa",
       "kind": "conhecimento",
-      "segment": "Métricas de negócio",
+      "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
       "description": "Caixa disponível ÷ consumo líquido mensal",
       "tags": [
-        "finanças",
+        "financas",
         "kpi",
-        "negócios"
+        "negocios"
       ],
       "status": "referência",
       "year": 2026,
@@ -1060,20 +1048,21 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "Calcula quantos meses de vida a sua empresa ainda tem com o dinheiro que está guardado no banco antes de quebrar.",
-      "targetAudience": "Startups e donos de empresas"
+      "deliverable": "Contagem regressiva (Saldo de Caixa / Burn Rate Mensal) que determina com rigor quantos meses a empresa sobrevive antes de zerar o caixa.",
+      "targetAudience": "Startups e donos de empresas",
+      "practicalExample": "Uma startup com R$ 600.000 no banco e prejuízo operacional mensal de R$ 50.000 possui 12 meses de Runway para atingir ponto de equilíbrio."
     },
     {
       "id": "metric-churn",
-      "title": "Churn — Perda de clientes",
+      "title": "Métrica: Churn Rate — Taxa de Cancelamento",
       "kind": "conhecimento",
-      "segment": "Métricas de negócio",
+      "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
       "description": "Clientes perdidos ÷ clientes no início × 100",
       "tags": [
-        "finanças",
+        "financas",
         "kpi",
-        "negócios"
+        "negocios"
       ],
       "status": "referência",
       "year": 2026,
@@ -1081,20 +1070,21 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "Mede a porcentagem de clientes que cancelaram ou deixaram de comprar de você no último mês.",
-      "targetAudience": "Negócios de assinatura e serviços"
+      "deliverable": "Métrica vital de retenção (Clientes Cancelados / Clientes Ativos * 100) que acende o sinal de alerta sobre a evasão da base de assinantes.",
+      "targetAudience": "Negócios de assinatura e serviços",
+      "practicalExample": "Se sua base iniciou o mês com 1.000 assinantes e 30 cancelaram, o Churn foi de 3%. Em empresas SaaS B2B, a meta saudável deve ficar abaixo de 1% a 2%."
     },
     {
       "id": "metric-mrr",
-      "title": "MRR — Receita recorrente mensal",
+      "title": "Métrica: MRR — Receita Recorrente Mensal",
       "kind": "conhecimento",
-      "segment": "Métricas de negócio",
+      "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
       "description": "Clientes × valor médio mensal por cliente",
       "tags": [
-        "finanças",
+        "financas",
         "kpi",
-        "negócios"
+        "negocios"
       ],
       "status": "referência",
       "year": 2026,
@@ -1102,20 +1092,21 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "A receita previsível que cai religiosamente na sua conta todo mês com mensalidades ou assinaturas.",
-      "targetAudience": "Empresas de SaaS e escolas"
+      "deliverable": "O termômetro definitivo da previsibilidade financeira (Assinantes Ativos * Mensalidade Média) para modelos de assinatura e SaaS.",
+      "targetAudience": "Empresas de SaaS e escolas",
+      "practicalExample": "Com 200 clientes no plano de R$ 150/mês e 20 no plano Enterprise de R$ 1.000/mês, seu MRR é de R$ 50.000 (equivalente a R$ 600.000 de ARR)."
     },
     {
       "id": "metric-ebitda",
-      "title": "EBITDA",
+      "title": "Métrica: EBITDA — Lucro Operacional Puro",
       "kind": "conhecimento",
-      "segment": "Métricas de negócio",
+      "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
       "description": "Lucro líquido + juros + impostos + depreciação + amortização",
       "tags": [
-        "finanças",
+        "financas",
         "kpi",
-        "negócios"
+        "negocios"
       ],
       "status": "referência",
       "year": 2026,
@@ -1123,8 +1114,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "O lucro operacional real da empresa, mostrando se a operação dá dinheiro de verdade antes de impostos e juros de banco.",
-      "targetAudience": "Investidores e empresários"
+      "deliverable": "Lucro antes de Juros, Impostos, Depreciação e Amortização, mensurando o potencial genuíno de geração de caixa operacional da empresa.",
+      "targetAudience": "Investidores e empresários",
+      "practicalExample": "Com receita de R$ 1.500.000 e custos operacionais de R$ 1.050.000, o EBITDA é de R$ 450.000 (margem de 30%), métrica essencial para valuation."
     },
     {
       "id": "design-shadcn-ui",
@@ -1147,9 +1139,9 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-23",
       "license": "MIT",
       "openAccess": true,
-      "deliverable": "Blocos de construção prontos e modernos para criar sites elegantes e rápidos sem precisar desenhar botões e menus do zero.",
+      "deliverable": "Coleção de componentes de UI reutilizáveis e acessíveis em Tailwind CSS com código-fonte aberto para controle total do design.",
       "targetAudience": "Desenvolvedores e criadores de sites",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Copie e cole componentes pré-construídos (modais, menus suspensos, abas) diretamente no seu projeto sem ficar amarrado a uma biblioteca externa."
     },
     {
       "id": "design-aceternity-ui",
@@ -1172,9 +1164,9 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-23",
       "license": "MIT",
       "openAccess": true,
-      "deliverable": "Efeitos visuais e animações de cair o queixo para transformar qualquer página comum em uma experiência futurista.",
+      "deliverable": "Componentes avançados com animações fluidas em Framer Motion e Tailwind CSS desenhados para landing pages de alto impacto visual.",
       "targetAudience": "Designers e programadores web",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Implemente efeitos de grade cibernética no fundo, brilho direcional em cartões e animações de texto para impressionar usuários na primeira dobra."
     },
     {
       "id": "design-uiverse",
@@ -1198,7 +1190,8 @@ window.NEXUS_CATALOG = {
       "license": "Open Source",
       "openAccess": true,
       "deliverable": "Um shopping grátis com mais de 3.000 botões, cartões e loaders animados criados pela comunidade para copiar e colar.",
-      "targetAudience": "Qualquer pessoa montando um site"
+      "targetAudience": "Qualquer pessoa montando um site",
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
     },
     {
       "id": "design-coolors",
@@ -1219,9 +1212,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "openAccess": true,
-      "deliverable": "Gera combinações perfeitas de cores que combinam entre si apenas apertando a barra de espaço do teclado.",
+      "deliverable": "Gerador inteligente de paletas harmônicas com ferramenta de bloqueio de cores e verificação rigorosa de contraste de acessibilidade.",
       "targetAudience": "Designers, artistas e iniciantes",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Pressione espaço para gerar combinações de cores equilibradas e exporte os códigos HEX direto para as variáveis do seu tema de design."
     },
     {
       "id": "design-realtime-colors",
@@ -1242,9 +1235,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "openAccess": true,
-      "deliverable": "Permite testar e ver como suas cores e fontes favoritas ficam aplicadas em um site de verdade antes de publicar.",
+      "deliverable": "Simulador em tempo real para visualizar como uma paleta de cores se comporta na prática aplicada a uma landing page completa.",
       "targetAudience": "Quem está criando a identidade de um projeto",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Valide a legibilidade dos botões de ação e o contraste do texto de parágrafos antes de escrever a primeira linha de folha de estilo."
     },
     {
       "id": "design-color-hunt",
@@ -1266,7 +1259,8 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-23",
       "openAccess": true,
       "deliverable": "Milhares de paletas de cores prontas e consagradas para você nunca mais ter dúvida sobre qual cor usar na sua arte.",
-      "targetAudience": "Designers gráficos e criadores"
+      "targetAudience": "Designers gráficos e criadores",
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
     },
     {
       "id": "design-lucide-icons",
@@ -1288,9 +1282,9 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-23",
       "license": "ISC",
       "openAccess": true,
-      "deliverable": "Mais de 1.400 ícones modernos, elegantes e levíssimos que funcionam em qualquer tela e aplicativo.",
+      "deliverable": "Conjunto de ícones vetoriais modernos, limpos e consistentes para web e apps com espessura e tamanho customizáveis.",
       "targetAudience": "Quem precisa de símbolos visuais limpos",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Adicione símbolos visuais intuitivos em botões e menus mantendo o peso da página irrisório e a consistência visual impecável."
     },
     {
       "id": "design-tabler-icons",
@@ -1312,9 +1306,9 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-23",
       "license": "MIT",
       "openAccess": true,
-      "deliverable": "Uma imensa biblioteca com mais de 5.200 ícones de alta qualidade para usar livremente em apresentações e softwares.",
+      "deliverable": "Mais de 5.000 ícones em grade 24x24 px desenvolvidos sob medida para dashboards corporativos e interfaces de gerenciamento densas.",
       "targetAudience": "Designers e programadores",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Utilize ícones especializados de métricas financeiras, gráficos de rede e dispositivos de hardware que não existem em pacotes básicos."
     },
     {
       "id": "design-simple-icons",
@@ -1363,7 +1357,8 @@ window.NEXUS_CATALOG = {
       "license": "Open Source",
       "openAccess": true,
       "deliverable": "Desenhos e ilustrações modernas gratuitas onde você pode escolher a cor exata para combinar com a sua empresa.",
-      "targetAudience": "Quem quer deixar posts e páginas mais ilustrados"
+      "targetAudience": "Quem quer deixar posts e páginas mais ilustrados",
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
     },
     {
       "id": "design-humaaans",
@@ -1385,9 +1380,9 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-23",
       "license": "CC BY 4.0",
       "openAccess": true,
-      "deliverable": "Ilustrações de pessoas onde você pode trocar roupas, cabelos e poses como se fosse um brinquedo de montar.",
+      "deliverable": "Ilustrações vetoriais modulares de personagens onde você pode misturar corpos, roupas e poses para compor cenas humanizadas.",
       "targetAudience": "Apresentações e sites modernos",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Crie ilustrações personalizadas e acolhedoras para páginas de boas-vindas e estados vazios sem precisar contratar um ilustrador externo."
     },
     {
       "id": "design-hero-patterns",
@@ -1409,9 +1404,9 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-23",
       "license": "CC BY 4.0",
       "openAccess": true,
-      "deliverable": "Texturas e padrões de fundo elegantes e repetíveis para seu site não ficar com fundo branco sem graça.",
+      "deliverable": "Galeria de texturas e padrões de fundo vetoriais em SVG repetíveis e customizáveis por código para conferir profundidade visual.",
       "targetAudience": "Designers de landing pages",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Aplique uma textura sutil no cabeçalho da sua aplicação pesando menos de 1 KB, substituindo banners de imagens rasterizadas pesadas."
     },
     {
       "id": "design-gsap",
@@ -1433,9 +1428,9 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-23",
       "license": "Standard GreenSock",
       "openAccess": true,
-      "deliverable": "A ferramenta mais potente do mundo para fazer elementos da página se moverem de forma suave conforme você rola a tela.",
+      "deliverable": "O motor de animações JavaScript mais rápido e premiado do mercado para coreografar interações de scroll e timelines no browser.",
       "targetAudience": "Desenvolvedores front-end avançados",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Crie animações ligadas à barra de rolagem (ScrollTrigger) onde seções da página se fixam e elementos deslizam com suavidade extrema."
     },
     {
       "id": "design-lottiefiles",
@@ -1456,9 +1451,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "openAccess": true,
-      "deliverable": "Animações profissionais super leves (como figurinhas animadas) que não deixam o seu aplicativo ou site pesado.",
+      "deliverable": "Ecossistema de animações vetoriais ultraleves em formato JSON baseadas em After Effects com execução a 60fps em qualquer tela.",
       "targetAudience": "Criadores de aplicativos e sites",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Substitua ícones estáticos por animações interativas de check de pagamento confirmado ou carregamento acionadas ao clique do usuário."
     },
     {
       "id": "design-animate-css",
@@ -1505,9 +1500,9 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-23",
       "license": "Free for Commercial",
       "openAccess": true,
-      "deliverable": "Fontes tipográficas sofisticadas e gratuitas para dar aspecto de revista de luxo aos seus títulos e textos.",
+      "deliverable": "Fundição de fontes tipográficas profissionais gratuitas de nível internacional para uso pessoal e comercial sem custos de licença.",
       "targetAudience": "Quem quer tipografia de alto nível",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Utilize fontes contemporâneas como Satoshi, Clash Display ou General Sans para dar personalidade premium ao branding do seu projeto."
     },
     {
       "id": "design-google-fonts",
@@ -1530,7 +1525,8 @@ window.NEXUS_CATALOG = {
       "license": "OFL",
       "openAccess": true,
       "deliverable": "O maior diretório do planeta com centenas de letras e fontes seguras, rápidas e gratuitas para usar em qualquer projeto.",
-      "targetAudience": "Todo mundo que escreve na web"
+      "targetAudience": "Todo mundo que escreve na web",
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
     },
     {
       "id": "design-spline",
@@ -1551,9 +1547,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "openAccess": true,
-      "deliverable": "Crie e brinque com objetos e mundos 3D diretamente no navegador mesmo sem saber computação gráfica avançada.",
+      "deliverable": "Software de design e renderização 3D intuitivo direto no navegador com suporte a interações em tempo real e exportação para a web.",
       "targetAudience": "Designers 3D e mentes criativas",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Modele um objeto 3D que acompanha a posição do cursor do mouse do visitante e incorpore na tela inicial do seu site com um iframe limpo."
     },
     {
       "id": "design-shots-so",
@@ -1574,9 +1570,9 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "openAccess": true,
-      "deliverable": "Transforma fotos e prints feios em apresentações elegantes em molduras de celulares e notebooks em 5 segundos.",
+      "deliverable": "Criador profissional de apresentações visuais de produtos para enquadrar capturas de tela em molduras fotorrealistas de notebooks e celulares.",
       "targetAudience": "Quem posta nas redes sociais e portfólios",
-      "practicalExample": "Acesse diretamente para agilizar tarefas operacionais no seu dia a dia sem instalar programas pesados no computador."
+      "practicalExample": "Insira o print do seu sistema em uma moldura de MacBook com sombra suave e fundo degradê para publicar no portfólio ou redes sociais."
     },
     {
       "id": "design-mobbin",
@@ -1598,14 +1594,15 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-23",
       "openAccess": true,
       "deliverable": "Veja exatamente como os melhores aplicativos do mundo (Nubank, Airbnb, Duolingo) desenharam suas telas e fluxos.",
-      "targetAudience": "Empreendedores e designers de produto"
+      "targetAudience": "Empreendedores e designers de produto",
+      "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual."
     },
     {
       "id": "carrossel-modelos-mentais",
       "title": "Carrossel: Os 5 Modelos Mentais de Charlie Munger para Decisões",
       "kind": "carrossel",
-      "segment": "Produtividade",
-      "url": "https://www.instagram.com/p/C-mental-models/",
+      "segment": "Produtividade e Gestão",
+      "url": "https://fs.blog/mental-models/",
       "description": "Carrossel visual explicando Inversão, Círculo de Competência, Efeito Lollapalooza e Princípio 80/20 com exemplos práticos.",
       "tags": [
         "carrossel",
@@ -1620,7 +1617,7 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "openAccess": true,
-      "deliverable": "5 regras mentais práticas de investidores lendários para nunca mais tomar decisões erradas em negócios ou na vida pessoal.",
+      "deliverable": "5 modelos mentais fundamentais de Charlie Munger (Inversão, Círculo de Competência, Efeito Lollapalooza e Princípio 80/20) para blindar decisões.",
       "targetAudience": "Empreendedores, investidores e qualquer pessoa que queira pensar melhor",
       "author": "@mentalmodels",
       "slides": [
@@ -1629,14 +1626,14 @@ window.NEXUS_CATALOG = {
         "https://images.unsplash.com/photo-1507679799987-c73779587ccf?w=800&auto=format&fit=crop&q=80",
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80"
       ],
-      "practicalExample": "Salve as lâminas no seu celular ou computador e revise semanalmente os princípios antes de iniciar novas tarefas ou reuniões."
+      "practicalExample": "Antes de assinar um contrato importante, faça uma sessão de \"Inversão\": liste tudo que levaria o acordo ao fracasso e crie cláusulas preventivas."
     },
     {
       "id": "carrossel-micro-interacoes",
       "title": "Carrossel: Segredos de Micro-Interações que Enriquecem Qualquer App",
       "kind": "carrossel",
       "segment": "Design e UX",
-      "url": "https://www.instagram.com/p/C-micro-interactions/",
+      "url": "https://lawsofux.com/",
       "description": "Guia em slides sobre curvas de animação Bezier, feedback tátil, tempos de resposta de 100ms e micro-movimentos que encantam o usuário.",
       "tags": [
         "carrossel",
@@ -1651,7 +1648,7 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "openAccess": true,
-      "deliverable": "Detalhes visuais simples que transformam uma interface comum em uma experiência fluida de padrão internacional.",
+      "deliverable": "Guia visual sobre curvas de animação Bezier, feedback tátil, tempos de resposta (<100ms) e micro-interações que elevam produtos para padrão internacional.",
       "targetAudience": "Designers e desenvolvedores frontend",
       "author": "@uxsecrets",
       "slides": [
@@ -1659,7 +1656,7 @@ window.NEXUS_CATALOG = {
         "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&auto=format&fit=crop&q=80",
         "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80"
       ],
-      "practicalExample": "Salve as lâminas no seu celular ou computador e revise semanalmente os princípios antes de iniciar novas tarefas ou reuniões."
+      "practicalExample": "Em formulários de checkout, adicione feedback tátil e animação de loading direto no botão para eliminar cliques múltiplos por ansiedade do usuário."
     }
   ]
 };

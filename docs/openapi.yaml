@@ -1,53 +1,77 @@
 openapi: 3.1.0
 info:
-  title: Nexus Acervo API
-  version: 1.0.0
-  description: API de leitura do acervo privado para agentes e ferramentas externas.
+  title: Nexus Acervo Public Data API
+  version: 1.5.0
+  description: Endpoint canônico público e estático do catálogo Nexus Acervo para consumo por agentes de IA e integrações externas.
 servers:
-  - url: https://SEU-DOMINIO/api/v1
-security:
-  - bearerAuth: []
+  - url: https://nexus-acervo.vercel.app
+    description: Servidor de Produção (Vercel)
+  - url: http://localhost:3000
+    description: Ambiente de Desenvolvimento Local
 paths:
-  /items:
+  /data/catalog.json:
     get:
-      summary: Lista itens do acervo
-      parameters:
-        - {name: kind, in: query, schema: {type: string}}
-        - {name: segment, in: query, schema: {type: string}}
-        - {name: tag, in: query, schema: {type: string}}
-        - {name: q, in: query, schema: {type: string}}
+      summary: Retorna o catálogo completo do acervo em JSON
+      description: Fornece metadados, segmentos normalizados e todos os recursos catalogados (ferramentas, repositórios, vídeos, carrosséis e conhecimento).
       responses:
         '200':
-          description: Catálogo filtrado
+          description: Catálogo completo estruturado
           content:
             application/json:
-              schema: {type: array, items: {$ref: '#/components/schemas/Item'}}
-  /items/{id}:
-    get:
-      summary: Retorna um item
-      parameters:
-        - {name: id, in: path, required: true, schema: {type: string}}
-      responses:
-        '200': {description: Item encontrado, content: {application/json: {schema: {$ref: '#/components/schemas/Item'}}}}
-        '404': {description: Item não encontrado}
-  /segments:
-    get:
-      summary: Lista segmentos e contagens
-      responses:
-        '200': {description: Segmentos}
+              schema:
+                $ref: '#/components/schemas/CatalogResponse'
 components:
-  securitySchemes:
-    bearerAuth: {type: http, scheme: bearer}
   schemas:
+    CatalogResponse:
+      type: object
+      required: [meta, segments, items]
+      properties:
+        meta:
+          type: object
+          required: [name, version, generatedAt, language]
+          properties:
+            name: { type: string, example: "Nexus Acervo" }
+            version: { type: string, example: "1.5.0" }
+            generatedAt: { type: string, format: date-time }
+            language: { type: string, example: "pt-BR" }
+            sourceFile: { type: string }
+        segments:
+          type: array
+          items:
+            type: object
+            required: [id, label]
+            properties:
+              id: { type: string, example: "seg-design" }
+              label: { type: string, example: "Design e UX" }
+        items:
+          type: array
+          items:
+            $ref: '#/components/schemas/Item'
     Item:
       type: object
-      required: [id, title, kind, segment, url, description, tags, status]
+      required: [id, title, kind, segment, url, description, tags, status, year, source, addedAt, updatedAt]
       properties:
-        id: {type: string}
-        title: {type: string}
-        kind: {type: string, enum: [ferramenta, vídeo, repositório, conhecimento, diretório]}
-        segment: {type: string}
-        url: {type: string, format: uri}
-        description: {type: string}
-        tags: {type: array, items: {type: string}}
-        status: {type: string}
+        id: { type: string, example: "repo-documenso" }
+        title: { type: string, example: "Documenso — Assinatura Digital Open Source" }
+        kind:
+          type: string
+          enum: [ferramenta, vídeo, repositório, conhecimento, diretório, carrossel]
+        segment: { type: string, example: "Desenvolvimento e Infra" }
+        url: { type: string, format: uri, example: "https://github.com/documenso/documenso" }
+        description: { type: string }
+        tags:
+          type: array
+          items: { type: string }
+        status: { type: string, example: "ativo" }
+        year: { type: integer, example: 2026 }
+        source: { type: string, example: "Relatório consolidado" }
+        addedAt: { type: string, format: date, example: "2026-09-23" }
+        updatedAt: { type: string, format: date, example: "2026-09-24" }
+        deliverable: { type: string }
+        practicalExample: { type: string }
+        youtubeId: { type: string }
+        thumbnail: { type: string }
+        targetAudience: { type: string }
+        slides:
+          type: array
+          items: { type: string }
