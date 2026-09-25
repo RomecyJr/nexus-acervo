@@ -12,8 +12,8 @@ console.log('=== INICIANDO AUDITORIA & TESTE DE PONTA A PONTA (E2E) DO NEXUS COP
 const html = fs.readFileSync(htmlPath, 'utf8');
 
 const requiredTokens = [
-  { token: 'id="btnCopilotConfigKey"', desc: 'Botão Configurar I.A no Header do Copilot' },
-  { token: 'Configurar I.A', desc: 'Label explícito Configurar I.A no botão do Copilot' },
+  { token: 'id="btnCopilotConfigKey"', desc: 'Botão Configurar IA no Header do Copilot' },
+  { token: 'Configurar IA', desc: 'Label explícito Configurar IA no botão do Copilot' },
   { token: 'id="aiConfigModal"', desc: 'Modal de Configuração de IA presente' },
   { token: 'z-index: 2100 !important;', desc: 'Z-Index prioritário do modal de configuração' },
   { token: 'value="auto"', desc: 'Opção Automático presente no select de modelos' },
