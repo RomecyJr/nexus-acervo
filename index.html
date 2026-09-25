@@ -1841,6 +1841,14 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
   pointer-events: auto;
 }
 
+#aiCopilotModal {
+  z-index: 1050;
+}
+
+#aiConfigModal {
+  z-index: 2100 !important;
+}
+
 .clean-modal .modal-dialog {
   background: var(--surface);
   border: 1px solid var(--border-strong);
@@ -3490,7 +3498,10 @@ html.vault-locked-state .app {
         </div>
       </div>
       <div style="display: flex; align-items: center; gap: 0.4rem;">
-        <button type="button" class="btn secondary sm" id="btnCopilotConfigKey" title="Configurações de Modelos e Chave" style="font-size: 0.7rem; height: 26px; padding: 0 0.5rem; gap: 0.3rem;"><i data-lucide="sliders-horizontal" style="width: 11px; height: 11px;"></i><span>Modelos</span></button>
+        <button type="button" class="btn secondary sm" id="btnCopilotConfigKey" title="Configurar Modelos Gratuitos e Chave OpenRouter" style="font-size: 0.72rem; height: 28px; padding: 0 0.65rem; gap: 0.35rem; border-color: rgba(56, 189, 248, 0.35); color: #38bdf8;">
+          <i data-lucide="settings-2" style="width: 12px; height: 12px;"></i>
+          <span>Configurar I.A</span>
+        </button>
         <button class="modal-close-icon" id="btnCopilotClose" aria-label="Fechar Copilot" style="position: static; margin-left: 0.25rem;"><i data-lucide="x"></i></button>
       </div>
     </div>
@@ -3540,7 +3551,7 @@ html.vault-locked-state .app {
 </div>
 
 <!-- MODAL DE CONFIGURAÇÃO OPENROUTER IA -->
-<div class="clean-modal" id="aiConfigModal" role="dialog" aria-modal="true" aria-labelledby="aiConfigModalTitle">
+<div class="clean-modal" id="aiConfigModal" role="dialog" aria-modal="true" aria-labelledby="aiConfigModalTitle" style="z-index: 2100 !important;">
   <div class="modal-dialog" style="max-width: 520px;">
     <button class="modal-close-icon" id="btnAiConfigClose" aria-label="Fechar modal"><i data-lucide="x"></i></button>
     <div style="padding: 1.75rem;">
@@ -3565,12 +3576,14 @@ html.vault-locked-state .app {
         <div>
           <label style="display: block; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--faint); margin-bottom: 0.35rem;">Modelo LLM para Extração</label>
           <select id="selectOpenRouterModel" style="width: 100%; height: 38px; background: var(--surface2); border: 1px solid var(--border-color); border-radius: 6px; padding: 0 0.85rem; font-size: 0.8rem; font-weight: 600; color: var(--text); cursor: pointer;">
-            <option value="nvidia/nemotron-3-ultra-550b-a55b:free" selected>⭐ NVIDIA Nemotron 3 Ultra 550B (Gratuito · Flagship 1M Context)</option>
-            <option value="nvidia/nemotron-3-super-120b-a12b:free">⚡ NVIDIA Nemotron 3 Super 120B (Gratuito · Alta Densidade)</option>
-            <option value="nvidia/nemotron-3.5-lightning:free">🚀 NVIDIA Nemotron 3.5 Lightning (Gratuito · 1M Context)</option>
+            <option value="auto" selected>✨ Automático (Roteamento Inteligente & Auto-Fallback Gratuito)</option>
+            <option value="nvidia/nemotron-3-ultra-550b-a55b:free">🟢 NVIDIA Nemotron 3 Ultra 550B (Gratuito · Flagship 1M Context)</option>
+            <option value="nvidia/nemotron-3-super-120b-a12b:free">🟢 NVIDIA Nemotron 3 Super 120B (Gratuito · Alta Densidade)</option>
+            <option value="nvidia/nemotron-3.5-lightning:free">⚡ NVIDIA Nemotron 3.5 Lightning (Gratuito · Velocidade Extrema)</option>
             <option value="nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free">🧠 NVIDIA Nemotron 3 Nano Omni 30B (Gratuito · Raciocínio Rápido)</option>
-            <option value="openrouter/free">🌐 OpenRouter Free Auto-Router (Gratuito · Roteador Inteligente)</option>
+            <option value="openrouter/free">🌐 OpenRouter Free Auto-Router (Gratuito · Balanceador Global)</option>
           </select>
+          <span style="font-size: 0.7rem; color: #71717a; margin-top: 0.3rem; display: block;">Modo Automático seleciona a melhor IA gratuita disponível e alterna transparentemente em caso de instabilidade.</span>
         </div>
 
         <div id="aiTestFeedback" style="display: none; padding: 0.55rem 0.75rem; border-radius: 6px; font-size: 0.75rem;"></div>
@@ -4322,23 +4335,114 @@ const OPENROUTER_MODEL_STORAGE = 'nexus_openrouter_model';
 
 
 // ============================================================================
-// CHAVE PRE-CONFIGURADA DO OPENROUTER & MOTOR DO COPILOT IA
+// CHAVE PRE-CONFIGURADA DO OPENROUTER & MOTOR RESILIENTE DO COPILOT IA
 // ============================================================================
 const CANONICAL_OPENROUTER_KEY = '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';
-const CANONICAL_OPENROUTER_MODEL = 'nvidia/nemotron-3-ultra-550b-a55b:free';
+const CANONICAL_OPENROUTER_MODEL = 'auto';
+
+const VALID_FREE_MODELS = [
+  { id: 'auto', name: '✨ Modo Automático (Melhores Modelos Gratuitos)' },
+  { id: 'nvidia/nemotron-3-ultra-550b-a55b:free', name: '🟢 NVIDIA Nemotron 3 Ultra 550B (Flagship 1M Context)' },
+  { id: 'nvidia/nemotron-3-super-120b-a12b:free', name: '🟢 NVIDIA Nemotron 3 Super 120B (Alta Densidade)' },
+  { id: 'nvidia/nemotron-3.5-lightning:free', name: '⚡ NVIDIA Nemotron 3.5 Lightning (Velocidade Extrema)' },
+  { id: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', name: '🧠 NVIDIA Nemotron 3 Nano Omni 30B (Raciocínio Rápido)' },
+  { id: 'openrouter/free', name: '🌐 OpenRouter Free Auto-Router (Balanceador Global)' }
+];
+
+const AUTO_MODEL_PRIORITY = [
+  'nvidia/nemotron-3-ultra-550b-a55b:free',
+  'nvidia/nemotron-3-super-120b-a12b:free',
+  'nvidia/nemotron-3.5-lightning:free',
+  'openrouter/free',
+  'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free'
+];
+
+function sanitizeAiStorage() {
+  try {
+    const currentKey = localStorage.getItem(OPENROUTER_KEY_STORAGE);
+    if (!currentKey || !currentKey.trim() || currentKey.includes('sua-chave') || !currentKey.startsWith('sk-or-v1-')) {
+      localStorage.setItem(OPENROUTER_KEY_STORAGE, CANONICAL_OPENROUTER_KEY);
+    }
+
+    const currentModel = localStorage.getItem(OPENROUTER_MODEL_STORAGE);
+    const validIds = VALID_FREE_MODELS.map(m => m.id);
+    if (!currentModel || !validIds.includes(currentModel.trim()) || currentModel.includes('gemini-2.0-flash-exp')) {
+      localStorage.setItem(OPENROUTER_MODEL_STORAGE, 'auto');
+    }
+  } catch(e) {
+    console.warn('Erro ao sanitizar storage de IA:', e);
+  }
+}
+sanitizeAiStorage();
 
 function getOpenRouterKey() {
-  const saved = localStorage.getItem(OPENROUTER_KEY_STORAGE);
-  if (saved && saved.trim()) return saved.trim();
-  localStorage.setItem(OPENROUTER_KEY_STORAGE, CANONICAL_OPENROUTER_KEY);
-  return CANONICAL_OPENROUTER_KEY;
+  sanitizeAiStorage();
+  return localStorage.getItem(OPENROUTER_KEY_STORAGE) || CANONICAL_OPENROUTER_KEY;
 }
 
 function getOpenRouterModel() {
-  const saved = localStorage.getItem(OPENROUTER_MODEL_STORAGE);
-  if (saved && saved.trim()) return saved.trim();
-  localStorage.setItem(OPENROUTER_MODEL_STORAGE, CANONICAL_OPENROUTER_MODEL);
-  return CANONICAL_OPENROUTER_MODEL;
+  sanitizeAiStorage();
+  return localStorage.getItem(OPENROUTER_MODEL_STORAGE) || 'auto';
+}
+
+function getModelDisplayName(modelId) {
+  if (!modelId || modelId === 'auto') return '✨ Modo Automático (Melhores Modelos Gratuitos)';
+  const found = VALID_FREE_MODELS.find(m => m.id === modelId);
+  if (found) return found.name;
+  const parts = modelId.split('/');
+  return parts[1] || modelId;
+}
+
+async function callOpenRouterWithFallback({ apiKey, model, messages, maxTokens = 800, temperature = 0.3 }) {
+  let candidates = [];
+  if (!model || model === 'auto') {
+    candidates = [...AUTO_MODEL_PRIORITY];
+  } else {
+    candidates = [model, ...AUTO_MODEL_PRIORITY.filter(m => m !== model)];
+  }
+
+  let lastError = null;
+  for (const candidateModel of candidates) {
+    try {
+      const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
+        method: 'POST',
+        headers: {
+          'Authorization': 'Bearer ' + apiKey,
+          'HTTP-Referer': 'https://nexus-acervo.vercel.app',
+          'X-Title': 'Nexus Acervo',
+          'Content-Type': 'application/json'
+        },
+        body: JSON.stringify({
+          model: candidateModel,
+          messages: messages,
+          max_tokens: maxTokens,
+          temperature: temperature
+        })
+      });
+
+      if (!res.ok) {
+        const errText = await res.text();
+        console.warn('[OpenRouter Fallback] Modelo ' + candidateModel + ' retornou status ' + res.status + ': ' + errText);
+        lastError = new Error('HTTP ' + res.status + ': ' + errText);
+        continue;
+      }
+
+      const data = await res.json();
+      const rawContent = data.choices?.[0]?.message?.content;
+      if (rawContent && rawContent.trim()) {
+        const cleanContent = rawContent.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
+        return {
+          content: cleanContent,
+          usedModel: candidateModel
+        };
+      }
+    } catch (e) {
+      console.warn('[OpenRouter Fallback] Excecao no modelo ' + candidateModel + ':', e.message);
+      lastError = e;
+    }
+  }
+
+  throw lastError || new Error('Nenhum modelo gratuito da rede OpenRouter respondeu com sucesso no momento.');
 }
 
 // Histórico de conversação local
@@ -4422,38 +4526,20 @@ async function sendCopilotMessage(userText) {
   ];
 
   const apiKey = getOpenRouterKey();
-  const model = getOpenRouterModel();
+  const selectedModel = getOpenRouterModel();
 
   try {
-    const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${apiKey}`,
-        'HTTP-Referer': 'https://nexus-acervo.vercel.app',
-        'X-Title': 'Nexus Acervo',
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        model: model,
-        messages: messages,
-        max_tokens: 800,
-        temperature: 0.3
-      })
+    const result = await callOpenRouterWithFallback({
+      apiKey: apiKey,
+      model: selectedModel,
+      messages: messages,
+      maxTokens: 800,
+      temperature: 0.3
     });
 
     typingEl.remove();
 
-    if (!res.ok) {
-      const errText = await res.text();
-      throw new Error(`Erro HTTP ${res.status}: ${errText}`);
-    }
-
-    const data = await res.json();
-    let reply = data.choices?.[0]?.message?.content || 'Não foi possível obter resposta do modelo.';
-
-    // Se o modelo retornou raciocínio interno separado, garante a extração do conteúdo limpo
-    reply = reply.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
-
+    const reply = result.content || 'Não foi possível obter resposta do modelo.';
     copilotChatHistory.push({ role: 'assistant', content: reply });
 
     // Renderizar resposta da IA
@@ -4465,9 +4551,17 @@ async function sendCopilotMessage(userText) {
       .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
       .replace(/\n/g, '<br>');
 
+    const usedModelShort = result.usedModel.split('/')[1]?.replace(':free', '') || result.usedModel;
+
     aiMsgEl.innerHTML = `
       <div class="copilot-msg-avatar"><i data-lucide="key-round" style="width:14px;height:14px;"></i></div>
-      <div class="copilot-msg-content">${formattedReply}</div>
+      <div class="copilot-msg-content">
+        ${formattedReply}
+        <div style="margin-top: 0.55rem; padding-top: 0.45rem; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.68rem; color: var(--faint); display: flex; align-items: center; justify-content: space-between;">
+          <span>⚡ ${esc(usedModelShort)} · Gratuito</span>
+          <span style="color: #34d399;">● Online</span>
+        </div>
+      </div>
     `;
     messagesContainer.appendChild(aiMsgEl);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
@@ -4479,12 +4573,20 @@ async function sendCopilotMessage(userText) {
     errorEl.innerHTML = `
       <div class="copilot-msg-avatar"><i data-lucide="alert-circle" style="width:14px;height:14px;color:#f87171;"></i></div>
       <div class="copilot-msg-content" style="border-color:rgba(239,68,68,0.3);color:#f87171;">
-        Desculpe, ocorreu uma falha na chamada à IA: ${esc(err.message)}
+        <p style="margin-bottom: 0.45rem;"><strong>Falha na comunicação com a IA:</strong> ${esc(err.message)}</p>
+        <button type="button" class="btn secondary sm btn-error-config-ai" style="font-size: 0.72rem; height: 26px; padding: 0 0.55rem; gap: 0.3rem;">
+          <i data-lucide="settings-2" style="width: 12px; height: 12px;"></i>
+          <span>Configurar I.A</span>
+        </button>
       </div>
     `;
     messagesContainer.appendChild(errorEl);
     messagesContainer.scrollTop = messagesContainer.scrollHeight;
     lucide.createIcons();
+
+    errorEl.querySelector('.btn-error-config-ai')?.addEventListener('click', () => {
+      openAiConfig();
+    });
   }
 }
 
@@ -4573,31 +4675,18 @@ Sua tarefa é analisar os dados brutos de um recurso web e retornar EXCLUSIVAMEN
 
   const userPrompt = `URL: ${url}\nDados preliminares extraídos: ${JSON.stringify(baseData)}`;
 
-  const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-    method: 'POST',
-    headers: {
-      'Authorization': `Bearer ${apiKey}`,
-      'HTTP-Referer': 'https://nexus-acervo.vercel.app',
-      'X-Title': 'Nexus Acervo',
-      'Content-Type': 'application/json'
-    },
-    body: JSON.stringify({
-      model: model,
-      messages: [
-        { role: 'system', content: systemPrompt },
-        { role: 'user', content: userPrompt }
-      ],
-      temperature: 0.2
-    })
+  const result = await callOpenRouterWithFallback({
+    apiKey: apiKey,
+    model: model,
+    messages: [
+      { role: 'system', content: systemPrompt },
+      { role: 'user', content: userPrompt }
+    ],
+    maxTokens: 600,
+    temperature: 0.2
   });
 
-  if (!res.ok) {
-    const errText = await res.text();
-    throw new Error(`OpenRouter HTTP ${res.status}: ${errText}`);
-  }
-
-  const json = await res.json();
-  const rawContent = json.choices?.[0]?.message?.content || '{}';
+  const rawContent = result.content || '{}';
   const cleanJson = rawContent.replace(/^```json\s*/i, '').replace(/```\s*$/i, '').trim();
   return JSON.parse(cleanJson);
 }
