@@ -6,20 +6,21 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, '..');
 const htmlPath = path.resolve(rootDir, 'nexus-acervo.html');
 
-console.log('=== INICIANDO AUDITORIA & TESTE DE PONTA A PONTA (E2E) DO NEXUS COPILOT IA ===\n');
+console.log('=== INICIANDO AUDITORIA & TESTE DE PONTA A PONTA (E2E) DO NEXUS CLAW IA ===\n');
 
 // 1. Verificação estática do HTML
 const html = fs.readFileSync(htmlPath, 'utf8');
 
 const requiredTokens = [
   { token: 'id="btnCopilotConfigKey"', desc: 'Botão Configurar IA no Header do Copilot' },
-  { token: 'Configurar IA', desc: 'Label explícito Configurar IA no botão do Copilot' },
   { token: 'id="aiConfigModal"', desc: 'Modal de Configuração de IA presente' },
   { token: 'z-index: 2100 !important;', desc: 'Z-Index prioritário do modal de configuração' },
-  { token: 'value="auto"', desc: 'Opção Automático presente no select de modelos' },
+  { token: 'z-ai/glm-5.3-flash', desc: 'Modelo Z.ai GLM 5.3 Flash configurado como prioritário' },
+  { token: 'google/gemini-2.5-flash-lite', desc: 'Opção Google Gemini 2.5 Flash Lite presente' },
   { token: 'callOpenRouterWithFallback', desc: 'Função de Auto-Fallback ativa no código' },
-  { token: 'btn-error-config-ai', desc: 'Botão de configuração em caso de erro presente no chat' },
-  { token: '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', desc: 'Chave pré-configurada do usuário' }
+  { token: 'extractMetadataFromUrl', desc: 'Extrator oficial e autônomo de URLs ativo' },
+  { token: 'synthesizeAutonomousEditorial', desc: 'Motor de síntese editorial autônoma ($50k benchmark)' },
+  { token: 'answerWithLocalSemanticEngine', desc: 'Motor semântico local resiliente para zero crashes' }
 ];
 
 let allTokensFound = true;
@@ -36,123 +37,103 @@ if (!allTokensFound) {
   process.exit(1);
 }
 
-// 2. Teste dinâmico de envio de mensagem ao vivo para o OpenRouter
-const apiKey = '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';
+// 2. Testes de Extração Autônoma da Web em Tempo Real
+console.log('\n--- EXECUTANDO TESTES DINÂMICOS DE CONECTIVIDADE WEB AO VIVO ---');
 
-const AUTO_MODEL_PRIORITY = [
-  'nvidia/nemotron-3-ultra-550b-a55b:free',
-  'nvidia/nemotron-3-super-120b-a12b:free',
-  'nvidia/nemotron-3.5-lightning:free',
-  'openrouter/free',
-  'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free'
-];
-
-async function callOpenRouterWithFallback({ apiKey, model, messages, maxTokens = 300, temperature = 0.3 }) {
-  let candidates = [];
-  if (!model || model === 'auto') {
-    candidates = [...AUTO_MODEL_PRIORITY];
-  } else {
-    candidates = [model, ...AUTO_MODEL_PRIORITY.filter(m => m !== model)];
-  }
-
-  let lastError = null;
-  for (const candidateModel of candidates) {
-    try {
-      const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
-        method: 'POST',
-        headers: {
-          'Authorization': `Bearer ${apiKey}`,
-          'HTTP-Referer': 'https://nexus-acervo.vercel.app',
-          'X-Title': 'Nexus Acervo',
-          'Content-Type': 'application/json'
-        },
-        body: JSON.stringify({
-          model: candidateModel,
-          messages: messages,
-          max_tokens: maxTokens,
-          temperature: temperature
-        })
-      });
-
-      if (!res.ok) {
-        const errText = await res.text();
-        console.log(`   [Fallback log] Modelo ${candidateModel} retornou ${res.status}, tentando próximo...`);
-        lastError = new Error(`HTTP ${res.status}: ${errText}`);
-        continue;
-      }
-
-      const data = await res.json();
-      const rawContent = data.choices?.[0]?.message?.content;
-      if (rawContent && rawContent.trim()) {
-        const cleanContent = rawContent.replace(/<think>[\s\S]*?<\/think>/gi, '').trim();
-        return {
-          content: cleanContent,
-          usedModel: candidateModel
-        };
-      }
-    } catch (e) {
-      console.log(`   [Fallback log] Erro de rede com ${candidateModel}: ${e.message}`);
-      lastError = e;
-    }
-  }
-
-  throw lastError || new Error('Nenhum modelo gratuito respondeu.');
-}
-
-console.log('\n--- EXECUTANDO TESTES DINÂMICOS AO VIVO NA API OPENROUTER ---');
-
-async function runLiveTests() {
-  // Teste A: Mensagem simples "tste" (a mensagem exata enviada pelo usuário)
-  console.log('\n👉 Teste A: Envio da mensagem "tste" no Modo Automático:');
+async function testGitHubLiveExtraction() {
+  console.log('\n👉 Teste 1: Acesso ao vivo ao GitHub para o repositório "sindresorhus/awesome":');
   const t0 = Date.now();
-  const resA = await callOpenRouterWithFallback({
-    apiKey,
-    model: 'auto',
-    messages: [
-      { role: 'system', content: 'Você é o Nexus Copilot do Nexus Acervo. Responda em português de forma concisa.' },
-      { role: 'user', content: 'tste' }
-    ]
-  });
-  const elapsedA = Date.now() - t0;
-  console.log(`✅ Teste A Concluído em ${elapsedA}ms!`);
-  console.log(`   Modelo Utilizado: ${resA.usedModel}`);
-  console.log(`   Resposta da IA: "${resA.content.slice(0, 140)}..."`);
+  const url = 'https://github.com/sindresorhus/awesome';
+  const ghMatch = url.match(/github\.com\/([^\/\s]+)\/([^\/\?\s#]+)/i);
+  if (!ghMatch) throw new Error('Falha no regex de URL do GitHub');
 
-  // Teste B: Envio com modelo deprecado que causou o erro 404 anterior
-  console.log('\n👉 Teste B: Resiliência contra Modelo Deprecado (google/gemini-2.0-flash-exp:free):');
-  const resB = await callOpenRouterWithFallback({
-    apiKey,
-    model: 'google/gemini-2.0-flash-exp:free',
-    messages: [
-      { role: 'system', content: 'Você é o Nexus Copilot do Nexus Acervo.' },
-      { role: 'user', content: 'Qual o propósito do acervo?' }
-    ]
+  const owner = ghMatch[1];
+  const repo = ghMatch[2].replace(/\.git$/i, '');
+  const res = await fetch(`https://api.github.com/repos/${owner}/${repo}`, {
+    headers: { 'User-Agent': 'Nexus-Claw-Audit/3.0' }
   });
-  console.log(`✅ Teste B Concluído com Sucesso!`);
-  console.log(`   Recuperado transparentemente via: ${resB.usedModel}`);
-  console.log(`   Resposta: "${resB.content.slice(0, 140)}..."`);
 
-  // Teste C: Pergunta com contexto do acervo
-  console.log('\n👉 Teste C: Pergunta com contexto do acervo ("Quais os 3 melhores repositórios?"):');
-  const resC = await callOpenRouterWithFallback({
-    apiKey,
-    model: 'auto',
-    messages: [
-      { 
-        role: 'system', 
-        content: 'Você é o Nexus Copilot. Você tem acesso a 76 recursos do acervo, incluindo Crawl4AI, OpenCodeInterpreter e Documenso.' 
-      },
-      { role: 'user', content: 'Quais os 3 melhores repositórios do acervo?' }
-    ]
-  });
-  console.log(`✅ Teste C Concluído com Sucesso!`);
-  console.log(`   Modelo: ${resC.usedModel}`);
-  console.log(`   Resposta da IA:\n${resC.content.slice(0, 220)}...`);
+  if (!res.ok) {
+    throw new Error(`GitHub API retornou status HTTP ${res.status}`);
+  }
 
-  console.log('\n🎉 TODOS OS TESTES E2E FORAM APROVADOS COM 100% DE SUCESSO!');
+  const data = await res.json();
+  const elapsed = Date.now() - t0;
+  console.log(`✅ Teste 1 Concluído em ${elapsed}ms!`);
+  console.log(`   Nome do Repositório: ${data.name}`);
+  console.log(`   Estrelas no GitHub: ★ ${data.stargazers_count.toLocaleString()}`);
+  console.log(`   Descrição Oficial: "${data.description.slice(0, 90)}..."`);
+  console.log(`   Thumbnail OpenGraph Oficial: https://opengraph.githubassets.com/1/${owner}/${repo}`);
+
+  if (data.stargazers_count < 100000) {
+    throw new Error('Número de estrelas inesperado para sindresorhus/awesome');
+  }
 }
 
-runLiveTests().catch(err => {
-  console.error('\n❌ Falha no teste dinâmico:', err);
+async function testYouTubeLiveExtraction() {
+  console.log('\n👉 Teste 2: Acesso ao vivo ao YouTube oEmbed para vídeo canônico:');
+  const t0 = Date.now();
+  const videoUrl = 'https://www.youtube.com/watch?v=RTo2akdZ7Dc';
+  const res = await fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent(videoUrl)}&format=json`);
+
+  if (!res.ok) {
+    throw new Error(`YouTube oEmbed retornou status HTTP ${res.status}`);
+  }
+
+  const data = await res.json();
+  const elapsed = Date.now() - t0;
+  console.log(`✅ Teste 2 Concluído em ${elapsed}ms!`);
+  console.log(`   Título Oficial do Vídeo: "${data.title}"`);
+  console.log(`   Canal / Autor: "${data.author_name}"`);
+  console.log(`   Thumbnail Oficial: https://img.youtube.com/vi/RTo2akdZ7Dc/hqdefault.jpg`);
+}
+
+async function testAutonomousSynthesisStandard() {
+  console.log('\n👉 Teste 3: Validação da Síntese Editorial Autônoma ($50k standard):');
+  
+  // Extrair a função do HTML para validar execução real
+  const synthMatch = html.match(/function synthesizeAutonomousEditorial[\s\S]*?\n\}/);
+  if (!synthMatch) throw new Error('Função synthesizeAutonomousEditorial não encontrada no HTML');
+
+  // Simular dados brutos extraídos do GitHub
+  const baseData = {
+    url: 'https://github.com/sindresorhus/awesome',
+    title: 'awesome — Awesome lists about all kinds of interesting topics',
+    kind: 'repositório',
+    description: 'Awesome lists about all kinds of interesting topics curated by the global open source community.',
+    segment: 'Desenvolvimento e Infra',
+    tags: ['awesome', 'github', 'ia'],
+    stars: 510000,
+    thumbnail: 'https://opengraph.githubassets.com/1/sindresorhus/awesome'
+  };
+
+  // Avaliação funcional
+  const evalSynth = new Function('url', 'baseData', 'extractYouTubeId', `${synthMatch[0]}; return synthesizeAutonomousEditorial(url, baseData);`);
+  const synthResult = evalSynth(baseData.url, baseData, () => null);
+
+  console.log(`✅ Teste 3 Concluído! Metadados gerados:`);
+  console.log(`   ID: ${synthResult.id}`);
+  console.log(`   Título: "${synthResult.title}"`);
+  console.log(`   Entregável: "${synthResult.deliverable.slice(0, 80)}..."`);
+  console.log(`   Exemplo Prático: "${synthResult.practicalExample.slice(0, 80)}..."`);
+  console.log(`   Público-Alvo: "${synthResult.targetAudience}"`);
+  console.log(`   Tags: ${JSON.stringify(synthResult.tags)}`);
+
+  if (!synthResult.title.includes('—')) throw new Error('Título deve conter o separador de intenção "—"');
+  if (synthResult.deliverable.length < 30) throw new Error('Entregável muito curto (< 30 chars)');
+  if (synthResult.practicalExample.length < 30) throw new Error('Exemplo prático muito curto (< 30 chars)');
+  if (!synthResult.tags.includes('IA')) throw new Error('Tag IA padronizada deve estar presente');
+}
+
+async function runAllTests() {
+  await testGitHubLiveExtraction();
+  await testYouTubeLiveExtraction();
+  await testAutonomousSynthesisStandard();
+
+  console.log('\n🎉 TODOS OS TESTES E2E E CONECTIVIDADE WEB FORAM APROVADOS COM 100% DE SUCESSO!');
+}
+
+runAllTests().catch(err => {
+  console.error('\n❌ Falha nos testes de validação:', err);
   process.exit(1);
 });

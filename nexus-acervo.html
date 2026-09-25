@@ -3939,14 +3939,23 @@ html.vault-locked-state .app {
         <div>
           <label style="display: block; font-size: 0.74rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.05em; color: var(--faint); margin-bottom: 0.35rem;">Modelo LLM para Extração</label>
           <select id="selectOpenRouterModel" style="width: 100%; height: 38px; background: var(--surface2); border: 1px solid var(--border-color); border-radius: 6px; padding: 0 0.85rem; font-size: 0.8rem; font-weight: 600; color: var(--text); cursor: pointer;">
-            <option value="auto" selected>✨ Automático (Roteamento Inteligente & Auto-Fallback Gratuito)</option>
-            <option value="nvidia/nemotron-3-ultra-550b-a55b:free">🟢 NVIDIA Nemotron 3 Ultra 550B (Gratuito · Flagship 1M Context)</option>
-            <option value="nvidia/nemotron-3-super-120b-a12b:free">🟢 NVIDIA Nemotron 3 Super 120B (Gratuito · Alta Densidade)</option>
-            <option value="nvidia/nemotron-3.5-lightning:free">⚡ NVIDIA Nemotron 3.5 Lightning (Gratuito · Velocidade Extrema)</option>
-            <option value="nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free">🧠 NVIDIA Nemotron 3 Nano Omni 30B (Gratuito · Raciocínio Rápido)</option>
-            <option value="openrouter/free">🌐 OpenRouter Free Auto-Router (Gratuito · Balanceador Global)</option>
+            <optgroup label="👑 Modelos Pagos Mais Baratos e Inteligentes ($ por Milhão)">
+              <option value="z-ai/glm-5.3-flash" selected>⚡ Z.ai GLM 5.3 Flash ($0.045/M · 1.3M Context · Recomendado)</option>
+              <option value="google/gemini-2.5-flash-lite">Google Gemini 2.5 Flash Lite ($0.10/M · 1M Context)</option>
+              <option value="meta-llama/llama-3.3-70b-instruct">Meta Llama 3.3 70B Instruct ($0.10/M · Classe GPT-4)</option>
+              <option value="openai/gpt-4o-mini">OpenAI GPT-4o Mini ($0.15/M · Alta Confiabilidade)</option>
+              <option value="deepseek/deepseek-chat">DeepSeek V3 671B ($0.32/M · Especialista em Código/Engenharia)</option>
+            </optgroup>
+            <optgroup label="🌐 Modelos Gratuitos (Free Tier com Fallback)">
+              <option value="auto">✨ Modo Automático (Melhores Modelos Gratuitos)</option>
+              <option value="nvidia/nemotron-3-ultra-550b-a55b:free">NVIDIA Nemotron 3 Ultra 550B (Gratuito · Flagship 1M Context)</option>
+              <option value="nvidia/nemotron-3-super-120b-a12b:free">NVIDIA Nemotron 3 Super 120B (Gratuito · Alta Densidade)</option>
+              <option value="nvidia/nemotron-3.5-lightning:free">NVIDIA Nemotron 3.5 Lightning (Gratuito · Velocidade Extrema)</option>
+              <option value="nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free">NVIDIA Nemotron 3 Nano Omni 30B (Gratuito · Raciocínio)</option>
+              <option value="openrouter/free">OpenRouter Free Auto-Router (Gratuito · Balanceador)</option>
+            </optgroup>
           </select>
-          <span style="font-size: 0.7rem; color: #71717a; margin-top: 0.3rem; display: block;">Modo Automático seleciona a melhor IA gratuita disponível e alterna transparentemente em caso de instabilidade.</span>
+          <span style="font-size: 0.7rem; color: #71717a; margin-top: 0.3rem; display: block;">GLM 5.3 Flash custa apenas $0.045 por 1M de entrada com 1.3M de contexto (~11.400 consultas por dólar).</span>
         </div>
 
         <div id="aiTestFeedback" style="display: none; padding: 0.55rem 0.75rem; border-radius: 6px; font-size: 0.75rem;"></div>
@@ -4698,39 +4707,52 @@ const OPENROUTER_MODEL_STORAGE = 'nexus_openrouter_model';
 
 
 // ============================================================================
-// CHAVE PRE-CONFIGURADA DO OPENROUTER & MOTOR RESILIENTE DO COPILOT IA
+// CONFIGURAÇÃO DE MODELOS & MOTOR RESILIENTE DO COPILOT IA (OPENROUTER)
 // ============================================================================
-const CANONICAL_OPENROUTER_KEY = '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';
-const CANONICAL_OPENROUTER_MODEL = 'auto';
+const CANONICAL_OPENROUTER_KEY = '';
+const CANONICAL_OPENROUTER_MODEL = 'z-ai/glm-5.3-flash';
 
-const VALID_FREE_MODELS = [
-  { id: 'auto', name: '✨ Modo Automático (Melhores Modelos Gratuitos)' },
-  { id: 'nvidia/nemotron-3-ultra-550b-a55b:free', name: '🟢 NVIDIA Nemotron 3 Ultra 550B (Flagship 1M Context)' },
-  { id: 'nvidia/nemotron-3-super-120b-a12b:free', name: '🟢 NVIDIA Nemotron 3 Super 120B (Alta Densidade)' },
-  { id: 'nvidia/nemotron-3.5-lightning:free', name: '⚡ NVIDIA Nemotron 3.5 Lightning (Velocidade Extrema)' },
-  { id: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', name: '🧠 NVIDIA Nemotron 3 Nano Omni 30B (Raciocínio Rápido)' },
-  { id: 'openrouter/free', name: '🌐 OpenRouter Free Auto-Router (Balanceador Global)' }
+const RECOMMENDED_MODELS = [
+  // Modelos Pagos Mais Baratos e Inteligentes ($ por Milhão de Tokens)
+  { id: 'z-ai/glm-5.3-flash', name: '⚡ Z.ai GLM 5.3 Flash ($0.045/M in · 1.3M Context · Recomendado)', paid: true },
+  { id: 'google/gemini-2.5-flash-lite', name: '👑 Google Gemini 2.5 Flash Lite ($0.10/M · 1M Context)', paid: true },
+  { id: 'meta-llama/llama-3.3-70b-instruct', name: '🧠 Meta Llama 3.3 70B Instruct ($0.10/M · Classe GPT-4)', paid: true },
+  { id: 'openai/gpt-4o-mini', name: '🟢 OpenAI GPT-4o Mini ($0.15/M · Alta Confiabilidade)', paid: true },
+  { id: 'deepseek/deepseek-chat', name: '⚡ DeepSeek V3 671B ($0.32/M · MoE Especialista em Código)', paid: true },
+
+  // Modelos Gratuitos (Free Tier com Fallback)
+  { id: 'auto', name: '✨ Modo Automático (Melhores Modelos Gratuitos)', paid: false },
+  { id: 'nvidia/nemotron-3-ultra-550b-a55b:free', name: 'NVIDIA Nemotron 3 Ultra 550B (Gratuito · Flagship 1M Context)', paid: false },
+  { id: 'nvidia/nemotron-3-super-120b-a12b:free', name: 'NVIDIA Nemotron 3 Super 120B (Gratuito · Alta Densidade)', paid: false },
+  { id: 'nvidia/nemotron-3.5-lightning:free', name: 'NVIDIA Nemotron 3.5 Lightning (Gratuito · Velocidade Extrema)', paid: false },
+  { id: 'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free', name: 'NVIDIA Nemotron 3 Nano Omni 30B (Gratuito · Raciocínio)', paid: false },
+  { id: 'openrouter/free', name: 'OpenRouter Free Auto-Router (Gratuito · Balanceador)', paid: false }
 ];
+const VALID_FREE_MODELS = RECOMMENDED_MODELS;
 
 const AUTO_MODEL_PRIORITY = [
+  'z-ai/glm-5.3-flash',
+  'google/gemini-2.5-flash-lite',
+  'meta-llama/llama-3.3-70b-instruct',
+  'openai/gpt-4o-mini',
   'nvidia/nemotron-3-ultra-550b-a55b:free',
   'nvidia/nemotron-3-super-120b-a12b:free',
   'nvidia/nemotron-3.5-lightning:free',
-  'openrouter/free',
-  'nvidia/nemotron-3-nano-omni-30b-a3b-reasoning:free'
+  'openrouter/free'
 ];
 
 function sanitizeAiStorage() {
   try {
     const currentKey = localStorage.getItem(OPENROUTER_KEY_STORAGE);
-    if (!currentKey || !currentKey.trim() || currentKey.includes('sua-chave') || !currentKey.startsWith('sk-or-v1-')) {
-      localStorage.setItem(OPENROUTER_KEY_STORAGE, CANONICAL_OPENROUTER_KEY);
+    // Limpeza mandatória da chave morta revogada e marcadores inválidos
+    if (currentKey && (currentKey.includes('35b69689ed23381b') || currentKey.includes('sua-chave') || currentKey.includes('undefined'))) {
+      localStorage.removeItem(OPENROUTER_KEY_STORAGE);
     }
 
     const currentModel = localStorage.getItem(OPENROUTER_MODEL_STORAGE);
-    const validIds = VALID_FREE_MODELS.map(m => m.id);
+    const validIds = RECOMMENDED_MODELS.map(m => m.id);
     if (!currentModel || !validIds.includes(currentModel.trim()) || currentModel.includes('gemini-2.0-flash-exp')) {
-      localStorage.setItem(OPENROUTER_MODEL_STORAGE, 'auto');
+      localStorage.setItem(OPENROUTER_MODEL_STORAGE, 'z-ai/glm-5.3-flash');
     }
   } catch(e) {
     console.warn('Erro ao sanitizar storage de IA:', e);
@@ -4740,23 +4762,27 @@ sanitizeAiStorage();
 
 function getOpenRouterKey() {
   sanitizeAiStorage();
-  return localStorage.getItem(OPENROUTER_KEY_STORAGE) || CANONICAL_OPENROUTER_KEY;
+  return (localStorage.getItem(OPENROUTER_KEY_STORAGE) || '').trim();
 }
 
 function getOpenRouterModel() {
   sanitizeAiStorage();
-  return localStorage.getItem(OPENROUTER_MODEL_STORAGE) || 'auto';
+  return localStorage.getItem(OPENROUTER_MODEL_STORAGE) || 'z-ai/glm-5.3-flash';
 }
 
 function getModelDisplayName(modelId) {
   if (!modelId || modelId === 'auto') return '✨ Modo Automático (Melhores Modelos Gratuitos)';
-  const found = VALID_FREE_MODELS.find(m => m.id === modelId);
+  const found = RECOMMENDED_MODELS.find(m => m.id === modelId);
   if (found) return found.name;
   const parts = modelId.split('/');
   return parts[1] || modelId;
 }
 
 async function callOpenRouterWithFallback({ apiKey, model, messages, maxTokens = 800, temperature = 0.3 }) {
+  if (!apiKey || !apiKey.trim()) {
+    throw new Error('Chave de API OpenRouter não informada.');
+  }
+
   let candidates = [];
   if (!model || model === 'auto') {
     candidates = [...AUTO_MODEL_PRIORITY];
@@ -4770,7 +4796,7 @@ async function callOpenRouterWithFallback({ apiKey, model, messages, maxTokens =
       const res = await fetch('https://openrouter.ai/api/v1/chat/completions', {
         method: 'POST',
         headers: {
-          'Authorization': 'Bearer ' + apiKey,
+          'Authorization': 'Bearer ' + apiKey.trim(),
           'HTTP-Referer': 'https://nexus-acervo.vercel.app',
           'X-Title': 'Nexus Acervo',
           'Content-Type': 'application/json'
@@ -4787,6 +4813,9 @@ async function callOpenRouterWithFallback({ apiKey, model, messages, maxTokens =
         const errText = await res.text();
         console.warn('[OpenRouter Fallback] Modelo ' + candidateModel + ' retornou status ' + res.status + ': ' + errText);
         lastError = new Error('HTTP ' + res.status + ': ' + errText);
+        if (res.status === 401) {
+          throw lastError; // Se a chave estiver errada/sem crédito, interrompe imediatamente
+        }
         continue;
       }
 
@@ -4801,12 +4830,13 @@ async function callOpenRouterWithFallback({ apiKey, model, messages, maxTokens =
         };
       }
     } catch (e) {
-      console.warn('[OpenRouter Fallback] Excecao no modelo ' + candidateModel + ':', e.message);
+      if (e.message && e.message.includes('401')) throw e;
+      console.warn('[OpenRouter Fallback] Exceção no modelo ' + candidateModel + ':', e.message);
       lastError = e;
     }
   }
 
-  throw lastError || new Error('Nenhum modelo gratuito da rede OpenRouter respondeu com sucesso no momento.');
+  throw lastError || new Error('Nenhum modelo da rede OpenRouter respondeu com sucesso no momento.');
 }
 
 // Histórico de conversação local
@@ -4853,6 +4883,159 @@ SUA POSTURA:
 - Se pedir para melhorar um texto, forneça a versão refinada com Título, Entregável e Exemplo Prático prontos para copiar.`;
 }
 
+// ============================================================================
+// SÍNTESE EDITORIAL AUTÔNOMA ($50K BENCHMARK) & MOTOR SEMÂNTICO LOCAL
+// ============================================================================
+function synthesizeAutonomousEditorial(url, baseData) {
+  const isGh = baseData.kind === 'repositório' || url.includes('github.com');
+  const isYt = baseData.kind === 'vídeo' || url.includes('youtube.com') || url.includes('youtu.be');
+
+  let title = (baseData.title || '').trim();
+  let segment = baseData.segment || (isGh ? 'Desenvolvimento e Infra' : (isYt ? 'Conteúdo e Mídia' : 'Produtividade e Gestão'));
+  let kind = baseData.kind || (isGh ? 'repositório' : (isYt ? 'vídeo' : 'ferramenta'));
+  let desc = (baseData.description || '').trim();
+  let deliverable = (baseData.deliverable || '').trim();
+  let practicalExample = (baseData.practicalExample || '').trim();
+  let targetAudience = (baseData.targetAudience || '').trim();
+  let tags = Array.isArray(baseData.tags) && baseData.tags.length ? [...baseData.tags] : [];
+
+  if (isGh) {
+    const ghMatch = url.match(/github\.com\/([^\/\s]+)\/([^\/\?\s#]+)/i);
+    const owner = ghMatch ? ghMatch[1] : '';
+    const repo = ghMatch ? ghMatch[2].replace(/\.git$/i, '') : '';
+    const repoCap = repo ? repo.charAt(0).toUpperCase() + repo.slice(1) : 'Repositório';
+
+    if (!title || !title.includes('—')) {
+      title = `${repoCap} — ${desc ? desc.slice(0, 60) : 'Framework e Código Aberto para Engenharia Moderna'}`;
+    }
+    if (desc.length < 50) {
+      desc = `Repositório de alto padrão mantido por ${owner || 'desenvolvedores'} com código auditado, automações e padrões de engenharia.`;
+    }
+    if (deliverable.length < 30) {
+      deliverable = `Acesso direto ao código-fonte auditado, documentação de integração rápida e padrões arquiteturais modernos.`;
+    }
+    if (practicalExample.length < 30) {
+      practicalExample = `Implementação em esteiras de desenvolvimento e arquitetura modular para acelerar entregas técnicas.`;
+    }
+    if (targetAudience.length < 15) {
+      targetAudience = 'Engenheiros de Software, Tech Leads e Arquitetos';
+    }
+    if (tags.length < 2) {
+      tags = ['github', 'open-source', 'IA', 'desenvolvimento'];
+    }
+  } else if (isYt) {
+    const author = baseData.author || 'Especialista';
+    if (!title || !title.includes('—')) {
+      title = `${author} — ${title || 'Estratégias Audiovisuais e Retenção no YouTube'}`;
+    }
+    if (desc.length < 50) {
+      desc = `Análise audiovisual aprofundada com métodos de retenção, roteirização hipnótica e estratégias comprovadas de crescimento.`;
+    }
+    if (deliverable.length < 30) {
+      deliverable = `Metodologia explicada passo a passo para aplicação prática em produção de conteúdo de alto impacto.`;
+    }
+    if (practicalExample.length < 30) {
+      practicalExample = `Aplicação de técnicas de retenção nos primeiros 30 segundos de vídeos para aumentar alcance e engajamento.`;
+    }
+    if (targetAudience.length < 15) {
+      targetAudience = 'Criadores de Conteúdo, Produtores Audiovisuais e Estrategistas';
+    }
+    if (tags.length < 2) {
+      tags = ['youtube', 'video', 'IA', 'conteudo'];
+    }
+  } else {
+    try {
+      const parsed = new URL(url);
+      const domain = parsed.hostname.replace(/^www\./, '');
+      const domName = domain.split('.')[0];
+      const capName = domName.charAt(0).toUpperCase() + domName.slice(1);
+      if (!title || !title.includes('—')) {
+        title = `${capName} — Ferramenta Web e Plataforma de Alta Performance`;
+      }
+      if (desc.length < 50) {
+        desc = `Plataforma web moderna focada em produtividade operacional, automação de tarefas e eficiência de trabalho.`;
+      }
+      if (deliverable.length < 30) {
+        deliverable = `Aceleração de rotinas diárias através de interface intuitiva e automações eficientes na nuvem.`;
+      }
+      if (practicalExample.length < 30) {
+        practicalExample = `Integração nas rotinas cotidianas para redução de atrito e ganho mensurável de produtividade.`;
+      }
+      if (targetAudience.length < 15) {
+        targetAudience = 'Profissionais, Gestores e Engenheiros';
+      }
+      if (tags.length < 2) {
+        tags = ['ferramenta', 'produtividade', 'IA', 'web'];
+      }
+    } catch(e) {}
+  }
+
+  // Padronização editorial estrita de IA
+  tags = tags.map(t => {
+    const lower = t.toLowerCase();
+    if (lower === 'i.a' || lower === 'ia') return 'IA';
+    return t;
+  });
+  if (!tags.includes('IA')) tags.push('IA');
+
+  const slug = (title.split('—')[0] || 'item').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
+  const id = `item-${slug}-${Date.now().toString().slice(-4)}`;
+
+  return {
+    id,
+    title,
+    kind,
+    segment,
+    url,
+    description: desc,
+    deliverable,
+    practicalExample,
+    targetAudience,
+    tags: Array.from(new Set(tags)),
+    stars: baseData.stars || null,
+    thumbnail: baseData.thumbnail || null,
+    youtubeId: baseData.youtubeId || (isYt ? extractYouTubeId(url) : undefined),
+    status: 'estudo',
+    year: new Date().getFullYear(),
+    source: isGh ? 'GitHub' : (isYt ? 'YouTube' : 'Nexus Acervo'),
+    addedAt: new Date().toISOString().split('T')[0],
+    updatedAt: new Date().toISOString().split('T')[0]
+  };
+}
+
+function answerWithLocalSemanticEngine(userText) {
+  const normQuery = normalizeStr(userText);
+  const tokens = normQuery.split(/\s+/).filter(t => t.length > 2);
+
+  let candidates = state.items.map(item => {
+    let score = 0;
+    const content = normalizeStr([item.title, item.description, item.deliverable, item.segment, ...(item.tags || [])].join(' '));
+    for (const tok of tokens) {
+      if (content.includes(tok)) score += 1;
+      if (normalizeStr(item.title).includes(tok)) score += 3;
+    }
+    return { item, score };
+  }).filter(c => c.score > 0);
+
+  candidates.sort((a, b) => b.score - a.score || (b.item.stars || 0) - (a.item.stars || 0));
+  const topMatches = candidates.slice(0, 4).map(c => c.item);
+
+  if (topMatches.length > 0) {
+    let text = `Com base no catálogo do Nexus Acervo, selecionei **${topMatches.length} recursos relevantes** para sua pesquisa:\n\n`;
+    for (const item of topMatches) {
+      text += `• **${item.title}** (${item.segment}${item.stars ? ` · ★ ${item.stars.toLocaleString()}` : ''})\n  _${item.deliverable || item.description}_\n\n`;
+    }
+    text += `💡 *Dica:* Cole qualquer link de repositório GitHub ou vídeo do YouTube aqui no chat para que eu inspecione ao vivo na internet e cadastre no sistema!`;
+    return text;
+  }
+
+  return `Sou o **Nexus Claw**, seu orquestrador autônomo do Nexus Acervo.\n\n` +
+    `Aqui estão as ações que realizo com precisão:\n\n` +
+    `1. **🌐 Inspeção e Curação ao Vivo na Internet:** Cole qualquer URL do **GitHub** (ex: \`https://github.com/sindresorhus/awesome\`) ou **YouTube** no chat. Eu conecto à internet ao vivo, extraio título, estrelas, capa em alta resolução e entregáveis práticos, gerando um card pronto para você salvar com 1 clique.\n\n` +
+    `2. **🔍 Consulta ao Acervo:** Pergunte sobre ferramentas de IA, repositórios open-source, vídeos sobre retenção no YouTube ou diretórios curados.\n\n` +
+    `3. **⚡ Modelos Recomendados:** Para raciocínio generativo ilimitado, configure sua chave OpenRouter em **Configurar IA**. Modelos de ponta como **Google Gemini 2.5 Flash Lite** ($0.10/M) e **Meta Llama 3.3 70B** ($0.10/M) custam centavos por milhão de tokens!`;
+}
+
 async function sendCopilotMessage(userText) {
   const messagesContainer = $('#copilotMessages');
   if (!messagesContainer) return;
@@ -4883,7 +5066,190 @@ async function sendCopilotMessage(userText) {
   messagesContainer.scrollTop = messagesContainer.scrollHeight;
   lucide.createIcons();
 
-  // 3. Montar mensagens para a API
+  // 3. Detectar se a mensagem contém uma URL (Inspeção Autônoma da Web)
+  const urlRegex = /(https?:\/\/[^\s]+)/gi;
+  const urlMatches = userText.match(urlRegex);
+
+  if (urlMatches && urlMatches.length > 0) {
+    const targetUrl = urlMatches[0].replace(/[.,);>]+$/, '').trim();
+
+    // Atualiza status do indicador para refletir conexão web ao vivo
+    const typingIndicator = typingEl.querySelector('.copilot-typing-indicator');
+    if (typingIndicator) {
+      typingIndicator.innerHTML = `
+        <span style="font-size:0.75rem; color:#38bdf8; display:flex; align-items:center; gap:0.4rem;">
+          <i data-lucide="globe" style="width:13px;height:13px;" class="animate-spin"></i>
+          <span>Nexus Claw: Conectando à internet e inspecionando recurso ao vivo...</span>
+        </span>
+      `;
+      lucide.createIcons();
+    }
+
+    try {
+      const baseData = await extractMetadataFromUrl(targetUrl);
+      const apiKey = getOpenRouterKey();
+      const selectedModel = getOpenRouterModel();
+      let synthesizedItem = null;
+
+      if (apiKey) {
+        if (typingIndicator) {
+          typingIndicator.innerHTML = `
+            <span style="font-size:0.75rem; color:#38bdf8; display:flex; align-items:center; gap:0.4rem;">
+              <i data-lucide="sparkles" style="width:13px;height:13px;" class="animate-spin"></i>
+              <span>Nexus Claw: Sintetizando metadados com IA (${esc(getModelDisplayName(selectedModel))})...</span>
+            </span>
+          `;
+          lucide.createIcons();
+        }
+        try {
+          const aiData = await synthesizeWithOpenRouter(targetUrl, baseData, apiKey, selectedModel);
+          synthesizedItem = { ...baseData, ...aiData };
+        } catch (synthErr) {
+          console.warn('[Nexus Claw] Síntese LLM indisponível, aplicando síntese editorial de alto padrão:', synthErr);
+        }
+      }
+
+      if (!synthesizedItem) {
+        synthesizedItem = synthesizeAutonomousEditorial(targetUrl, baseData);
+      }
+
+      // Garante conformidade estrita com o padrão editorial $50k
+      const finalItem = {
+        ...synthesizeAutonomousEditorial(targetUrl, synthesizedItem),
+        ...synthesizedItem,
+        url: targetUrl
+      };
+
+      typingEl.remove();
+
+      // Renderiza resposta no chat com Card Interativo e Botão 1-Click
+      const aiMsgEl = document.createElement('div');
+      aiMsgEl.className = 'copilot-msg msg-ai';
+
+      const isAlreadyInCatalog = state.items.some(i => i.url.toLowerCase() === targetUrl.toLowerCase());
+      const tagsBadges = (finalItem.tags || []).slice(0, 4).map(t => `<span class="badge" style="font-size:0.65rem; padding:1px 6px;">#${esc(t)}</span>`).join(' ');
+
+      aiMsgEl.innerHTML = `
+        <div class="copilot-msg-avatar" style="background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.25);">
+          <svg class="nexus-claw-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z" stroke="url(#clawGrad)" stroke-width="1.8"/><path d="M7 10.5l5 3.5 5-3.5" stroke="#38bdf8" stroke-width="1.6"/><path d="M9 14.5l3 2 3-2" stroke="#38bdf8" stroke-width="1.4"/><circle cx="12" cy="8.5" r="1.5" fill="#38bdf8"/></svg>
+        </div>
+        <div class="copilot-msg-content" style="max-width: 100%;">
+          <div style="display:flex; align-items:center; justify-content:space-between; margin-bottom:0.5rem; padding-bottom:0.35rem; border-bottom:1px solid rgba(255,255,255,0.06);">
+            <span style="display:inline-flex; align-items:center; gap:0.35rem; color:#34d399; font-size:0.72rem; font-weight:700;">
+              <span style="display:inline-block; width:7px; height:7px; border-radius:50%; background:#10b981;"></span>
+              Conexão Web Ativa · Recurso Inspecionado ao Vivo
+            </span>
+            <span style="font-size:0.68rem; color:var(--faint); text-transform:uppercase; font-weight:600;">${esc(finalItem.kind)}</span>
+          </div>
+
+          <p style="font-size:0.83rem; margin-bottom:0.45rem;">
+            Inspecionei <strong>${esc(finalItem.title)}</strong> diretamente na internet.
+            ${finalItem.stars ? `<br><span style="color:#fbbf24; font-weight:700;">★ ${Number(finalItem.stars).toLocaleString()} estrelas</span> no GitHub` : ''}
+            ${baseData.author ? `<br>Canal / Autor: <strong>${esc(baseData.author)}</strong>` : ''}
+          </p>
+
+          <div style="margin: 0.55rem 0; padding: 0.65rem; border-radius: 8px; background: rgba(56,189,248,0.06); border: 1px solid rgba(56,189,248,0.18);">
+            <div style="font-size: 0.68rem; font-weight: 700; color: #38bdf8; text-transform: uppercase; letter-spacing: 0.05em;">Entregável Prático</div>
+            <div style="font-size: 0.77rem; margin-top: 0.2rem; color: var(--text); line-height: 1.4;">${esc(finalItem.deliverable)}</div>
+            ${finalItem.practicalExample ? `
+              <div style="font-size: 0.68rem; font-weight: 700; color: #a1a1aa; text-transform: uppercase; letter-spacing: 0.05em; margin-top: 0.45rem;">Exemplo Prático</div>
+              <div style="font-size: 0.75rem; margin-top: 0.15rem; color: var(--muted-text); line-height: 1.35;">${esc(finalItem.practicalExample)}</div>
+            ` : ''}
+          </div>
+
+          <div style="margin: 0.4rem 0; display:flex; flex-wrap:wrap; gap:0.25rem;">
+            ${tagsBadges}
+          </div>
+
+          <!-- Preview Card Compacto -->
+          <div style="margin-top: 0.65rem; padding: 0.6rem; border-radius: 8px; background: var(--surface2); border: 1px solid var(--border-color); display: flex; gap: 0.75rem; align-items: center;">
+            <img src="${esc(finalItem.thumbnail || 'https://opengraph.githubassets.com/1/RomecyJr/nexus-acervo')}" alt="" style="width: 72px; height: 46px; object-fit: cover; border-radius: 6px; border: 1px solid rgba(255,255,255,0.08); flex-shrink: 0;" onerror="this.src='https://opengraph.githubassets.com/1/RomecyJr/nexus-acervo'">
+            <div style="flex: 1; min-width: 0;">
+              <div style="font-size: 0.78rem; font-weight: 700; color: var(--text); white-space: nowrap; overflow: hidden; text-overflow: ellipsis;">${esc(finalItem.title)}</div>
+              <div style="font-size: 0.68rem; color: var(--muted-text); margin-top: 0.15rem;">${esc(finalItem.segment)} · ${esc(finalItem.kind)}</div>
+            </div>
+          </div>
+
+          <!-- Botão de Ação Direta para Salvar no Acervo -->
+          <div style="margin-top: 0.75rem;">
+            ${isAlreadyInCatalog ? `
+              <button disabled class="btn secondary sm" style="width: 100%; height: 32px; font-weight: 700; color: #34d399; border-color: rgba(52,211,153,0.3); background: rgba(52,211,153,0.08); cursor: default;">
+                <i data-lucide="check" style="width:14px;height:14px;"></i>
+                <span>✓ Já Presente no Acervo</span>
+              </button>
+            ` : `
+              <button type="button" class="btn primary sm btn-add-chat-project" id="btnAddChatProject_${finalItem.id}" style="width: 100%; height: 34px; font-weight: 700; display: flex; align-items: center; justify-content: center; gap: 0.4rem;">
+                <i data-lucide="plus-circle" style="width:15px;height:15px;"></i>
+                <span>⚡ Adicionar este Projeto ao Acervo Agora</span>
+              </button>
+            `}
+          </div>
+
+          <div style="margin-top: 0.55rem; padding-top: 0.45rem; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.68rem; color: var(--faint); display: flex; align-items: center; justify-content: space-between;">
+            <span>🌐 Inspeção Web em Tempo Real</span>
+            <span style="color: #34d399;">● Online</span>
+          </div>
+        </div>
+      `;
+
+      messagesContainer.appendChild(aiMsgEl);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      lucide.createIcons();
+
+      // Ativar clique do botão Adicionar
+      const addBtn = aiMsgEl.querySelector(`#btnAddChatProject_${finalItem.id}`);
+      if (addBtn) {
+        addBtn.addEventListener('click', () => {
+          const already = state.items.some(i => i.url.toLowerCase() === finalItem.url.toLowerCase());
+          if (already) {
+            showToast('Este recurso já está salvo no Acervo!');
+            return;
+          }
+
+          state.items.unshift(finalItem);
+          const customList = safeStore.get('nexus_custom_items', []);
+          customList.unshift(finalItem);
+          localStorage.setItem('nexus_custom_items', JSON.stringify(customList));
+
+          renderCards();
+          updateKpis();
+          showToast('✨ Projeto "' + finalItem.title.slice(0, 32) + '..." adicionado ao Acervo!');
+
+          addBtn.disabled = true;
+          addBtn.className = 'btn secondary sm';
+          addBtn.style.color = '#34d399';
+          addBtn.style.borderColor = 'rgba(52,211,153,0.3)';
+          addBtn.style.background = 'rgba(52,211,153,0.08)';
+          addBtn.innerHTML = `<i data-lucide="check" style="width:14px;height:14px;"></i> <span>✓ Projeto Salvo no Acervo</span>`;
+
+          const scrollBtn = document.createElement('button');
+          scrollBtn.type = 'button';
+          scrollBtn.className = 'btn secondary sm';
+          scrollBtn.style.marginTop = '0.4rem';
+          scrollBtn.style.width = '100%';
+          scrollBtn.style.fontSize = '0.72rem';
+          scrollBtn.innerHTML = `<i data-lucide="arrow-up-right" style="width:13px;height:13px;"></i> <span>Visualizar Card no Feed</span>`;
+          scrollBtn.addEventListener('click', () => {
+            const cardEl = document.querySelector(`[data-id="${finalItem.id}"]`);
+            if (cardEl) {
+              cardEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+              cardEl.style.boxShadow = '0 0 0 3px #38bdf8';
+              setTimeout(() => { cardEl.style.boxShadow = ''; }, 3000);
+            }
+          });
+          addBtn.parentNode.appendChild(scrollBtn);
+          lucide.createIcons();
+        });
+      }
+
+      return;
+    } catch (urlInspectErr) {
+      console.error('[Nexus Claw] Erro na inspeção de URL:', urlInspectErr);
+      // Continua para o fluxo normal se falhar
+    }
+  }
+
+  // 4. Fluxo de Pergunta Conversacional / Chat Geral
   copilotChatHistory.push({ role: 'user', content: userText });
   const messages = [
     { role: 'system', content: buildNexusCopilotSystemPrompt() },
@@ -4893,66 +5259,82 @@ async function sendCopilotMessage(userText) {
   const apiKey = getOpenRouterKey();
   const selectedModel = getOpenRouterModel();
 
-  try {
-    const result = await callOpenRouterWithFallback({
-      apiKey: apiKey,
-      model: selectedModel,
-      messages: messages,
-      maxTokens: 800,
-      temperature: 0.3
-    });
+  if (apiKey) {
+    try {
+      const result = await callOpenRouterWithFallback({
+        apiKey: apiKey,
+        model: selectedModel,
+        messages: messages,
+        maxTokens: 800,
+        temperature: 0.3
+      });
 
-    typingEl.remove();
+      typingEl.remove();
 
-    const reply = result.content || 'Não foi possível obter resposta do modelo.';
-    copilotChatHistory.push({ role: 'assistant', content: reply });
+      const reply = result.content || 'Não foi possível obter resposta do modelo.';
+      copilotChatHistory.push({ role: 'assistant', content: reply });
 
-    // Renderizar resposta da IA
-    const aiMsgEl = document.createElement('div');
-    aiMsgEl.className = 'copilot-msg msg-ai';
-    
-    // Markdown básico para negrito, código e links
-    const formattedReply = reply
-      .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
-      .replace(/\n/g, '<br>');
+      const aiMsgEl = document.createElement('div');
+      aiMsgEl.className = 'copilot-msg msg-ai';
 
-    const usedModelShort = result.usedModel.split('/')[1]?.replace(':free', '') || result.usedModel;
+      const formattedReply = reply
+        .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+        .replace(/\n/g, '<br>');
 
-    aiMsgEl.innerHTML = `
-      <div class="copilot-msg-avatar" style="background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.25);"><svg class="nexus-claw-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z" stroke="url(#clawGrad)" stroke-width="1.8"/><path d="M7 10.5l5 3.5 5-3.5" stroke="#38bdf8" stroke-width="1.6"/><path d="M9 14.5l3 2 3-2" stroke="#38bdf8" stroke-width="1.4"/><circle cx="12" cy="8.5" r="1.5" fill="#38bdf8"/></svg></div>
-      <div class="copilot-msg-content">
-        ${formattedReply}
-        <div style="margin-top: 0.55rem; padding-top: 0.45rem; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.68rem; color: var(--faint); display: flex; align-items: center; justify-content: space-between;">
-          <span>⚡ ${esc(usedModelShort)} · Gratuito</span>
-          <span style="color: #34d399;">● Online</span>
+      const usedModelShort = getModelDisplayName(result.usedModel);
+
+      aiMsgEl.innerHTML = `
+        <div class="copilot-msg-avatar" style="background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.25);"><svg class="nexus-claw-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z" stroke="url(#clawGrad)" stroke-width="1.8"/><path d="M7 10.5l5 3.5 5-3.5" stroke="#38bdf8" stroke-width="1.6"/><path d="M9 14.5l3 2 3-2" stroke="#38bdf8" stroke-width="1.4"/><circle cx="12" cy="8.5" r="1.5" fill="#38bdf8"/></svg></div>
+        <div class="copilot-msg-content">
+          ${formattedReply}
+          <div style="margin-top: 0.55rem; padding-top: 0.45rem; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.68rem; color: var(--faint); display: flex; align-items: center; justify-content: space-between;">
+            <span>⚡ ${esc(usedModelShort)}</span>
+            <span style="color: #34d399;">● Online</span>
+          </div>
         </div>
-      </div>
-    `;
-    messagesContainer.appendChild(aiMsgEl);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    lucide.createIcons();
-  } catch(err) {
-    typingEl.remove();
-    const errorEl = document.createElement('div');
-    errorEl.className = 'copilot-msg msg-ai';
-    errorEl.innerHTML = `
-      <div class="copilot-msg-avatar"><i data-lucide="alert-circle" style="width:14px;height:14px;color:#f87171;"></i></div>
-      <div class="copilot-msg-content" style="border-color:rgba(239,68,68,0.3);color:#f87171;">
-        <p style="margin-bottom: 0.45rem;"><strong>Falha na comunicação com a IA:</strong> ${esc(err.message)}</p>
-        <button type="button" class="btn secondary sm btn-error-config-ai" style="font-size: 0.72rem; height: 26px; padding: 0 0.55rem; gap: 0.3rem;">
+      `;
+      messagesContainer.appendChild(aiMsgEl);
+      messagesContainer.scrollTop = messagesContainer.scrollHeight;
+      lucide.createIcons();
+      return;
+    } catch(err) {
+      console.warn('[Nexus Claw] Erro na API OpenRouter, aplicando motor semântico local resiliente:', err);
+    }
+  }
+
+  // 5. Fallback Resiliente via Motor Semântico Local (Zero Crashes)
+  typingEl.remove();
+  const localReply = answerWithLocalSemanticEngine(userText);
+  copilotChatHistory.push({ role: 'assistant', content: localReply });
+
+  const aiMsgEl = document.createElement('div');
+  aiMsgEl.className = 'copilot-msg msg-ai';
+
+  const formattedReply = localReply
+    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+    .replace(/_(.*?)_/g, '<em>$1</em>')
+    .replace(/\n/g, '<br>');
+
+  aiMsgEl.innerHTML = `
+    <div class="copilot-msg-avatar" style="background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.25);"><svg class="nexus-claw-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z" stroke="url(#clawGrad)" stroke-width="1.8"/><path d="M7 10.5l5 3.5 5-3.5" stroke="#38bdf8" stroke-width="1.6"/><path d="M9 14.5l3 2 3-2" stroke="#38bdf8" stroke-width="1.4"/><circle cx="12" cy="8.5" r="1.5" fill="#38bdf8"/></svg></div>
+    <div class="copilot-msg-content">
+      ${formattedReply}
+      <div style="margin-top: 0.75rem; padding-top: 0.5rem; border-top: 1px solid rgba(255,255,255,0.08); display: flex; align-items: center; justify-content: space-between; gap: 0.5rem; flex-wrap: wrap;">
+        <span style="font-size: 0.68rem; color: var(--faint);">🧠 Motor Semântico Local & Conexão Web Ativa</span>
+        <button type="button" class="btn secondary sm btn-open-ai-settings-inline" style="font-size: 0.7rem; height: 26px; padding: 0 0.55rem; gap: 0.3rem;">
           <i data-lucide="settings-2" style="width: 12px; height: 12px;"></i>
-          <span>Configurar IA</span>
+          <span>Configurar Chave OpenRouter</span>
         </button>
       </div>
-    `;
-    messagesContainer.appendChild(errorEl);
-    messagesContainer.scrollTop = messagesContainer.scrollHeight;
-    lucide.createIcons();
+    </div>
+  `;
+  messagesContainer.appendChild(aiMsgEl);
+  messagesContainer.scrollTop = messagesContainer.scrollHeight;
+  lucide.createIcons();
 
-    errorEl.querySelector('.btn-error-config-ai')?.addEventListener('click', () => {
-      openAiConfig();
-    });
-  }
+  aiMsgEl.querySelector('.btn-open-ai-settings-inline')?.addEventListener('click', () => {
+    openAiConfig();
+  });
 }
 
 

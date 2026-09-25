@@ -19,8 +19,8 @@ try {
   }
   schemaValidated = true;
 } catch (e) {
-  if (e.code === 'ERR_MODULE_NOT_FOUND') {
-    // Fallback nativo estrito caso executado sem node_modules
+  if (e.code === 'ERR_MODULE_NOT_FOUND' || e.code === 'UNKNOWN' || e.errno === -4094 || (e.message && e.message.includes('unknown error'))) {
+    // Fallback nativo estrito caso executado sem node_modules ou em ambiente OneDrive desidratado
     const reqMeta = schema.properties.meta.required;
     for (const k of reqMeta) if (!data.meta[k]) throw new Error(`Meta: campo obrigatório '${k}' ausente`);
     const reqItem = schema.$defs.item.required;
