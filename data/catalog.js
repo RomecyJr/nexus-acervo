@@ -1,44 +1,52 @@
 window.NEXUS_CATALOG = {
   "meta": {
     "name": "Nexus Acervo",
-    "version": "1.5.0",
-    "generatedAt": "2026-09-24T18:39:26.071Z",
+    "version": "3.0.0",
+    "generatedAt": "2026-09-25T11:18:36.343Z",
     "language": "pt-BR",
     "sourceFile": "Relatorio-de-ferramentas-links-e-informacoes-dos-posts-analisados.md",
-    "updatedAt": "2026-09-24T12:30:37.020Z"
+    "updatedAt": "2026-09-25"
   },
   "segments": [
     {
-      "id": "seg-design",
-      "label": "Design e UX"
-    },
-    {
-      "id": "seg-aprendizado",
-      "label": "Aprendizado e Filosofia"
-    },
-    {
-      "id": "seg-negocios",
-      "label": "Negócios e Métricas"
-    },
-    {
-      "id": "seg-conteudo",
-      "label": "Conteúdo e Mídia"
-    },
-    {
-      "id": "seg-dev",
-      "label": "Desenvolvimento e Infra"
-    },
-    {
-      "id": "seg-dados",
-      "label": "Dados e Inteligência"
-    },
-    {
-      "id": "seg-produtividade",
+      "id": "produtividade-gestao",
       "label": "Produtividade e Gestão"
     },
     {
-      "id": "seg-importacao",
+      "id": "conteudo-midia",
+      "label": "Conteúdo e Mídia"
+    },
+    {
+      "id": "desenvolvimento-infra",
+      "label": "Desenvolvimento e Infra"
+    },
+    {
+      "id": "design-ux",
+      "label": "Design e UX"
+    },
+    {
+      "id": "dados-inteligencia",
+      "label": "Dados e Inteligência"
+    },
+    {
+      "id": "negocios-metricas",
+      "label": "Negócios e Métricas"
+    },
+    {
+      "id": "aprendizado-filosofia",
+      "label": "Aprendizado e Filosofia"
+    },
+    {
+      "id": "importacao-ecommerce",
       "label": "Importação e E-commerce"
+    },
+    {
+      "id": "metodos-frameworks",
+      "label": "Métodos & Frameworks"
+    },
+    {
+      "id": "repositorios-ferramentas-open-source",
+      "label": "Repositórios & Ferramentas Open Source"
     }
   ],
   "items": [
@@ -63,7 +71,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Extensão especializada para traduzir vitrines da China (Taobao e Xianyu), converter moedas em tempo real e orçar redirecionamentos.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Ao garimpar componentes no Taobao, veja preços convertidos para Reais e envie pedidos para consolidação aduaneira sem travar com ideogramas.",
-      "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=importhelper.com&sz=128",
+      "area": "Negócios",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Traduz Xianyu e Taobao, converte yuan para real e encaminha produtos a agentes de compra.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-goofish",
@@ -84,7 +99,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Maior marketplace de itens de segunda mão da Alibaba para encontrar produtos vintage, eletrônicos seminovos e hardware com desconto.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Encontre teclados mecânicos raros, placas controladoras e peças de reposição importadas por até metade do preço praticado no ocidente.",
-      "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.goofish.com&sz=128",
+      "area": "Negócios",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Marketplace chinês de itens novos e usados usado no fluxo do ImportHelper.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-taobao",
@@ -105,15 +127,22 @@ window.NEXUS_CATALOG = {
       "deliverable": "Acesso direto à maior plataforma de compras da Ásia, conectando consumidores diretamente a fabricantes e distribuidores de Shenzhen.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Compre lotes de ferramentas, sensores para automação residencial e protótipos diretamente de fábricas usando agentes de importação.",
-      "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.taobao.com&sz=128",
+      "area": "Negócios",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Marketplace chinês integrado ao fluxo de pesquisa e importação.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-cssbuy",
-      "title": "CSSBuy",
+      "title": "CSSBuy — Agente de Compras, Inspeção e Logística na China",
       "kind": "ferramenta",
       "segment": "Importação e E-commerce",
       "url": "https://www.cssbuy.com/",
-      "description": "Agente de compra, armazenagem, inspeção, consolidação e envio internacional.",
+      "description": "Plataforma completa de compras assistidas, controle de qualidade, consolidação de pacotes e frete internacional da China para o Brasil.",
       "tags": [
         "logistica",
         "china",
@@ -124,10 +153,22 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Agente e armazém de compras na China com pesagem de precisão, fotos detalhadas de inspeção de qualidade e consolidação de fretes.",
-      "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Receba encomendas de múltiplos fornecedores em um único galpão em Guangzhou, retire caixas desnecessárias e envie tudo em um pacote único.",
-      "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80"
+      "deliverable": "Capacidade de adquirir produtos em plataformas chinesas (Taobao, 1688, Weidian) com inspeção prévia de fotos e pesagem antes do envio.",
+      "targetAudience": "Empreendedores de e-commerce, importadores e pesquisadores de hardware",
+      "practicalExample": "Comprar componentes ou amostras pelo 1688 via link direto, solicitar fotos detalhadas de medidas no armazém e despachar via frete com rastreio.",
+      "thumbnail": "https://www.google.com/s2/favicons?domain=cssbuy.com&sz=128",
+      "area": "Operações",
+      "intents": [
+        "Comprar",
+        "Operar"
+      ],
+      "relations": [
+        {
+          "type": "has_guide",
+          "targetId": "conhecimento-cssbuy-guia"
+        }
+      ],
+      "summary": "Plataforma completa de compras assistidas, controle de qualidade, consolidação de pacotes e frete internacional da China para o…"
     },
     {
       "id": "tool-ai-studio",
@@ -149,7 +190,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Ambiente oficial do Google para prototipagem de engenharia de prompt, ajuste de temperatura e geração de chaves de API dos modelos Gemini.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Carregue um documento técnico denso de 200 páginas e teste a janela de 1 milhão de tokens do Gemini para extrair schemas JSON estruturados.",
-      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=aistudio.google.com&sz=128",
+      "area": "Operações",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Gerenciamento de chaves e acesso à API Gemini para protótipos e integrações.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-factory",
@@ -171,7 +219,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Agentes autônomos de engenharia de software treinados para auditar código, corrigir falhas de build em CI e propor refatorações seguras.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Integre com seu repositório GitHub para analisar automaticamente pull requests abertos, detectando vulnerabilidades antes do merge.",
-      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=factory.com&sz=128",
+      "area": "Desenvolvimento",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Agentes de programação para explorar repositórios, planejar, alterar e revisar código.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-tubelab",
@@ -193,7 +248,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Ferramenta especializada em inteligência competitiva e benchmarking de retenção, tags e padrões de títulos para o YouTube.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Descubra os vídeos com maior aceleração de visualizações nos últimos 7 dias dentro do seu nicho para identificar temas em alta.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=tubelab.net&sz=128",
+      "area": "Aprendizado",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Apoio à pesquisa, análise e planejamento de canais e vídeos.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-vidiq",
@@ -215,7 +277,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Painel analítico e extensão de SEO para criadores no YouTube com análise de concorrência e sugestões de títulos otimizados para clique.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Avalie a pontuação de relevância e competitividade de uma palavra-chave antes de gravar um vídeo novo para maximizar a descoberta orgânica.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=vidiq.com&sz=128",
+      "area": "Aprendizado",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Pesquisa, SEO, ideias e análise para canais no YouTube.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-vidrush",
@@ -223,7 +292,7 @@ window.NEXUS_CATALOG = {
       "kind": "ferramenta",
       "segment": "Conteúdo e Mídia",
       "url": "https://vidrush.ai/",
-      "description": "Apoio à criação e produção de vídeos com IA.",
+      "description": "Plataforma impulsionada por IA para geração, transcrição, corte inteligente e legendagem de vídeos voltados para mídias sociais e esteiras de conteúdo.",
       "tags": [
         "video",
         "ia",
@@ -234,10 +303,17 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Esteira automatizada para fatiar vídeos longos e podcasts em cortes verticais envolventes com legendas dinâmicas pré-sincronizadas.",
+      "deliverable": "Produção rápida de recortes verticais e legendas sincronizadas para amplificar o alcance orgânico no YouTube Shorts e TikTok.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Transforme uma aula ao vivo de 40 minutos em 5 pílulas verticais prontas para Reels e TikTok com legendas coloridas e cortes rápidos.",
-      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=vidrush.ai&sz=128",
+      "area": "Aprendizado",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Plataforma impulsionada por IA para geração, transcrição, corte inteligente e legendagem de vídeos voltados para mídias sociais…",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-pikzels",
@@ -259,7 +335,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Estúdio de inteligência artificial focado em geração de thumbnails de alto CTR com iluminação de estúdio e contraste agressivo.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Crie variações de miniaturas chamativas com rostos expressivos e texto legível em dispositivos móveis para testes A/B no YouTube.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=pikzels.com&sz=128",
+      "area": "Aprendizado",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Criação de thumbnails e elementos visuais para conteúdo.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-elevenlabs",
@@ -267,7 +350,7 @@ window.NEXUS_CATALOG = {
       "kind": "ferramenta",
       "segment": "Conteúdo e Mídia",
       "url": "https://elevenlabs.io/",
-      "description": "Geração e processamento de voz e áudio com IA.",
+      "description": "Referência global em síntese de voz, clonagem neural hiper-realista e dublagem multilíngue automatizada com nuances emocionais em alta fidelidade.",
       "tags": [
         "voz",
         "audio",
@@ -278,10 +361,17 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Líder em geração de áudio neural realista, clonagem de voz e dublagem multilíngue com entonação humana ultraprecisa.",
+      "deliverable": "Áudios e narrações com naturalidade humana impecável para cursos, vídeos explicativos, agentes de atendimento e podcasts.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Gere a locução profissional do roteiro de uma aula em português com pausas naturais sem precisar de estúdio físico ou microfone caro.",
-      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=elevenlabs.io&sz=128",
+      "area": "Aprendizado",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Referência global em síntese de voz, clonagem neural hiper-realista e dublagem multilíngue automatizada com nuances emocionais …",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-nosignups",
@@ -303,7 +393,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Conhecimento essencial e mastigado para entender nosignups com rapidez.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=nosignups.net&sz=128",
+      "area": "Operações",
+      "intents": [
+        "Aprender",
+        "Pesquisar"
+      ],
+      "summary": "Diretório de ferramentas gratuitas ou open source sem cadastro.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-bundlephobia",
@@ -325,7 +422,16 @@ window.NEXUS_CATALOG = {
       "deliverable": "Auditor de performance para ecossistema NPM que calcula o tamanho minificado e o tempo de download de pacotes JavaScript.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Consulte o custo de instalar uma biblioteca no frontend antes do npm install, evitando dependências gigantes que atrasam o carregamento da página.",
-      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=bundlephobia.com&sz=128",
+      "area": "Desenvolvimento",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Estima o peso e o impacto de pacotes npm no bundle frontend.",
+      "thumbnailSource": "domain-favicon-hd",
+      "stars": 7150,
+      "githubRepo": "pastelsky/bundlephobia"
     },
     {
       "id": "tool-excalidraw",
@@ -347,7 +453,16 @@ window.NEXUS_CATALOG = {
       "deliverable": "Quadro branco virtual com estética de traço à mão para desenhar arquiteturas de software, wireframes e fluxos de sistemas.",
       "targetAudience": "Quem precisa explicar ideias visualmente",
       "practicalExample": "Esboce a topologia de microsserviços da sua empresa durante uma reunião técnica e exporte como SVG vetorial limpo para o README do projeto.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=excalidraw.com&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Quadro branco virtual para desenhos, fluxos e diagramas.",
+      "thumbnailSource": "domain-favicon-hd",
+      "stars": 84600,
+      "githubRepo": "excalidraw/excalidraw"
     },
     {
       "id": "tool-drawdb",
@@ -369,7 +484,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Editor visual de modelagem de entidades e relacionamentos (ERD) direto no navegador com geração instantânea de SQL DDL.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Desenhe visualmente as tabelas, chaves primárias e relacionamentos do banco de dados e exporte o script CREATE TABLE para PostgreSQL.",
-      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.drawdb.app&sz=128",
+      "area": "Aprendizado",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Editor de diagramas de banco de dados com geração de SQL.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-graphite",
@@ -391,7 +513,16 @@ window.NEXUS_CATALOG = {
       "deliverable": "Plataforma para empilhamento de alterações (Stacked PRs) no Git, acelerando o fluxo de revisão de código em equipes de alta velocidade.",
       "targetAudience": "Ilustradores e designers",
       "practicalExample": "Divida uma refatoração grande em 4 pull requests pequenos e encadeados, permitindo que a equipe aprove por partes sem bloquear seu trabalho.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=editor.graphite.rs&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Editor de criação gráfica vetorial e arte digital.",
+      "thumbnailSource": "domain-favicon-hd",
+      "stars": 14200,
+      "githubRepo": "GraphiteEditor/Graphite"
     },
     {
       "id": "tool-stackedit",
@@ -399,7 +530,7 @@ window.NEXUS_CATALOG = {
       "kind": "ferramenta",
       "segment": "Produtividade e Gestão",
       "url": "https://stackedit.io/",
-      "description": "Editor Markdown completo executado no navegador.",
+      "description": "Editor Markdown completo, open source e baseado no navegador, com sincronização em nuvem, visualização lado a lado em tempo real e exportação para PDF e HTML.",
       "tags": [
         "markdown",
         "escrita",
@@ -410,10 +541,17 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Editor Markdown no navegador com prévia simultânea em duas colunas, sincronização com GitHub/Google Drive e suporte a KaTeX.",
+      "deliverable": "Ambiente de escrita técnica e redação de documentações limpo, portável e acessível sem necessidade de instalação local.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Elabore documentações técnicas e artigos com tabelas e fórmulas matemáticas sem depender de IDE pesada, exportando diretamente para HTML ou PDF.",
-      "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=stackedit.io&sz=128",
+      "area": "Operações",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Editor Markdown completo, open source e baseado no navegador, com sincronização em nuvem, visualização lado a lado em tempo rea…",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "tool-opencut",
@@ -421,7 +559,7 @@ window.NEXUS_CATALOG = {
       "kind": "ferramenta",
       "segment": "Conteúdo e Mídia",
       "url": "https://opencut.app/",
-      "description": "Editor de vídeo open source baseado na web.",
+      "description": "Editor de vídeo leve, moderno e open source executado diretamente na web, permitindo cortes precisos, organização de faixas e exportação rápida sem marcas d’água.",
       "tags": [
         "video",
         "editor",
@@ -432,10 +570,19 @@ window.NEXUS_CATALOG = {
       "source": "Relatório consolidado",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
-      "deliverable": "Editor de vídeo e áudio leve no navegador para aparar gravações, cortar silêncios e exportar mídias sem perda de fidelidade.",
+      "deliverable": "Capacidade de realizar edições diretas e montagens de vídeo em qualquer máquina sem dependência de softwares desktop pesados.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Remova os segundos iniciais e finais de uma gravação de tela com rapidez sem a complexidade de abrir softwares profissionais de edição.",
-      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=opencut.app&sz=128",
+      "area": "Aprendizado",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Editor de vídeo leve, moderno e open source executado diretamente na web, permitindo cortes precisos, organização de faixas e e…",
+      "thumbnailSource": "domain-favicon-hd",
+      "stars": 5200,
+      "githubRepo": "opencut/opencut"
     },
     {
       "id": "tool-hoppscotch",
@@ -457,7 +604,16 @@ window.NEXUS_CATALOG = {
       "deliverable": "Cliente de testes de API web open-source e extremamente ágil, servindo como alternativa leve e privativa ao Postman.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Valide rotas RESTful e GraphQL enviando payloads JSON e headers de autenticação diretamente do browser com zero tempo de inicialização.",
-      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=hoppscotch.io&sz=128",
+      "area": "Aprendizado",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Ambiente web para desenvolver, testar e documentar APIs.",
+      "thumbnailSource": "domain-favicon-hd",
+      "stars": 65400,
+      "githubRepo": "hoppscotch/hoppscotch"
     },
     {
       "id": "tool-logseq",
@@ -479,7 +635,16 @@ window.NEXUS_CATALOG = {
       "deliverable": "Aplicativo open-source de gerenciamento de conhecimento pessoal centrado na privacidade com grafo bidirecional sobre arquivos Markdown.",
       "targetAudience": "Profissionais e entusiastas",
       "practicalExample": "Conecte conceitos de estudo e referências de projetos via links bidirecionais [[exemplo]], visualizando um grafo dinâmico do seu conhecimento.",
-      "thumbnail": "https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=logseq.com&sz=128",
+      "area": "Operações",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Organização de conhecimento, notas conectadas e colaboração.",
+      "thumbnailSource": "domain-favicon-hd",
+      "stars": 33400,
+      "githubRepo": "logseq/logseq"
     },
     {
       "id": "repo-open-notebook",
@@ -507,7 +672,13 @@ window.NEXUS_CATALOG = {
       "notes": "Roda 100% privado no seu próprio computador ou servidor. Seus dados sigilosos e contratos nunca são enviados para servidores externos de inteligência artificial.",
       "stars": 39458,
       "forks": 4570,
-      "githubRepo": "lfnovo/open-notebook"
+      "githubRepo": "lfnovo/open-notebook",
+      "area": "Operações",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "Ambiente de anotações e pesquisa local de código aberto com inteligência artificial integrada (RAG)."
     },
     {
       "id": "repo-no-ai-slop",
@@ -535,7 +706,13 @@ window.NEXUS_CATALOG = {
       "notes": "Implementa heurísticas de vocabulário e padrões de repetição sintática típicos de LLMs para devolver a sensação de navegar na internet autêntica pré-2022.",
       "stars": 11184,
       "forks": 757,
-      "githubRepo": "petergyang/no-ai-slop"
+      "githubRepo": "petergyang/no-ai-slop",
+      "area": "Operações",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "Curadoria e conjunto de ferramentas para filtrar e eliminar conteúdos superficiais gerados em massa por IA."
     },
     {
       "id": "repo-agenticseek",
@@ -563,7 +740,13 @@ window.NEXUS_CATALOG = {
       "notes": "Alternativa local e self-hosted a agentes autônomos proprietários em nuvem como Manus AI e Devin. Executa navegação web, terminal e código mantendo 100% da soberania de dados no dispositivo local.",
       "stars": 27306,
       "forks": 3061,
-      "githubRepo": "Fosowl/agenticSeek"
+      "githubRepo": "Fosowl/agenticSeek",
+      "area": "Operações",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "Agente local com navegação, código, planejamento e voz."
     },
     {
       "id": "repo-coolify",
@@ -591,7 +774,13 @@ window.NEXUS_CATALOG = {
       "notes": "Alternativa self-hosted a Vercel, Heroku, Netlify e Render. Permite deploy de aplicações full-stack, bancos de dados e serviços em VPS própria (Hetzner, DigitalOcean, AWS) sem limites abusivos de bandwidth.",
       "stars": 62237,
       "forks": 5540,
-      "githubRepo": "coollabsio/coolify"
+      "githubRepo": "coollabsio/coolify",
+      "area": "Desenvolvimento",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "PaaS self-hosted para aplicações, bancos de dados e serviços."
     },
     {
       "id": "repo-scrapling",
@@ -619,7 +808,13 @@ window.NEXUS_CATALOG = {
       "notes": "Alternativa de alta performance a Bright Data, ScraperAPI e Zyte. Framework adaptativo de web scraping com recuperação automática de seletores quando o layout muda, bypass inteligente e rotação de proxies.",
       "stars": 83418,
       "forks": 8525,
-      "githubRepo": "D4Vinci/Scrapling"
+      "githubRepo": "D4Vinci/Scrapling",
+      "area": "Aprendizado",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "Framework em Python de última geração projetado para coletar dados da web com velocidade extrema e evasão automática de bloquei…"
     },
     {
       "id": "repo-openbb",
@@ -647,7 +842,13 @@ window.NEXUS_CATALOG = {
       "notes": "Substituto open-source completo para Bloomberg Terminal, Refinitiv Eikon, FactSet e plataformas de dados de mercado com assinaturas de US$ 24k+/ano. Integração direta com Python, APIs quants e agentes de IA.",
       "stars": 73438,
       "forks": 7602,
-      "githubRepo": "OpenBB-finance/OpenBB"
+      "githubRepo": "OpenBB-finance/OpenBB",
+      "area": "Aprendizado",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "Plataforma aberta de dados para analistas, APIs e agentes."
     },
     {
       "id": "repo-documenso",
@@ -680,7 +881,13 @@ window.NEXUS_CATALOG = {
       "youtubeId": "Y0ppIQrEnZs",
       "stars": 15177,
       "forks": 3270,
-      "githubRepo": "documenso/documenso"
+      "githubRepo": "documenso/documenso",
+      "area": "Desenvolvimento",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "A alternativa de código aberto número 1 ao DocuSign. Plataforma moderna, segura e auto-hospedável para assinatura eletrônica de…"
     },
     {
       "id": "repo-twenty",
@@ -708,7 +915,13 @@ window.NEXUS_CATALOG = {
       "notes": "Alternativa open-source self-hosted ao Salesforce CRM e HubSpot CRM, eliminando cobrança por assento/usuário mensal (seat-based pricing). Suporta objetos personalizados, pipelines e IA.",
       "stars": 57445,
       "forks": 9275,
-      "githubRepo": "twentyhq/twenty"
+      "githubRepo": "twentyhq/twenty",
+      "area": "Negócios",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "CRM open source com contatos, funil, views e workflows."
     },
     {
       "id": "repo-openvoice",
@@ -736,7 +949,13 @@ window.NEXUS_CATALOG = {
       "notes": "Alternativa de clonagem instantânea de voz com controle granular de tom e estilo ao ElevenLabs e Resemble AI, sem custo de caracteres por API e com suporte a V2 multilíngue.",
       "stars": 37655,
       "forks": 4243,
-      "githubRepo": "myshell-ai/OpenVoice"
+      "githubRepo": "myshell-ai/OpenVoice",
+      "area": "Aprendizado",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "Clonagem de voz, controle de estilo e geração multilíngue."
     },
     {
       "id": "video-natureza-humana",
@@ -757,9 +976,15 @@ window.NEXUS_CATALOG = {
       "youtubeId": "RTo2akdZ7Dc",
       "thumbnail": "https://i.ytimg.com/vi/RTo2akdZ7Dc/hqdefault.jpg",
       "deliverable": "Síntese profunda sobre motivações inconscientes, leitura comportamental e inteligência emocional para antecipar reações humanas.",
-      "targetAudience": "Qualquer pessoa que queira se relacionar melhor",
+      "targetAudience": "Líderes, negociadores e profissionais que buscam inteligência social e domínio sobre dinâmicas interpessoais",
       "practicalExample": "Analise atitudes de colegas e parceiros comerciais observando padrões de inveja, orgulho ou fragilidade antes de reuniões decisivas.",
-      "notes": "Baseado na obra-prima de Robert Greene, este vídeo explora leis fundamentais como a Lei do Narcisismo, a Lei da Inveja e a Lei da Miopia Temporal. Essencial para negociações, liderança e sobrevivência corporativa."
+      "notes": "Baseado na obra-prima de Robert Greene, este vídeo explora leis fundamentais como a Lei do Narcisismo, a Lei da Inveja e a Lei da Miopia Temporal. Essencial para negociações, liderança e sobrevivência corporativa.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "Análise profunda dos padrões psicológicos e comportamentos universais que movem as atitudes humanas.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "video-20-horas",
@@ -782,7 +1007,13 @@ window.NEXUS_CATALOG = {
       "deliverable": "Metodologia acelerada de 4 etapas para atingir nível de proficiência satisfatório em qualquer nova disciplina com 20 horas de treino intencional.",
       "targetAudience": "Estudantes e mentes curiosas",
       "practicalExample": "Decomponha uma habilidade como falar em público ou tocar instrumento em 3 sub-habilidades fundamentais e pratique 45 minutos por dia durante um mês.",
-      "notes": "Josh Kaufman desconstrói a barreira do aprendizado. Mostra como eliminar distrações nos primeiros 45 minutos de estudo, selecionar as ferramentas certas e superar a fase inicial de frustração psicológica."
+      "notes": "Josh Kaufman desconstrói a barreira do aprendizado. Mostra como eliminar distrações nos primeiros 45 minutos de estudo, selecionar as ferramentas certas e superar a fase inicial de frustração psicológica.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "Metodologia científica para desconstruir qualquer habilidade e atingir proficiência prática rápida.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "video-growth-mindset",
@@ -805,7 +1036,13 @@ window.NEXUS_CATALOG = {
       "deliverable": "Conceito científico de Mentalidade de Crescimento (Growth Mindset) comprovando que habilidades cognitivas e técnicas são maleáveis.",
       "targetAudience": "Estudantes, pais e profissionais",
       "practicalExample": "Ao cometer um erro de código ou receber feedback duro de cliente, substitua a frase \"não sei fazer isso\" por \"ainda não domino isso esta semana\".",
-      "notes": "Apresenta o poder da palavra \"ainda\". Mostra a neuroplasticidade cerebral em ação e como o elogio ao esforço e processo gera adultos mais resilientes do que o elogio ao talento nato."
+      "notes": "Apresenta o poder da palavra \"ainda\". Mostra a neuroplasticidade cerebral em ação e como o elogio ao esforço e processo gera adultos mais resilientes do que o elogio ao talento nato.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "A clássica pesquisa de Stanford que diferencia mentalidade fixa de mentalidade de crescimento.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "video-impostor",
@@ -828,7 +1065,13 @@ window.NEXUS_CATALOG = {
       "deliverable": "Explicação psicológica animada de por que profissionais de alto desempenho sentem que são fraudes e técnicas práticas para neutralizar essa ilusão.",
       "targetAudience": "Profissionais e empreendedores",
       "practicalExample": "Mantenha um diário de fatos concretos (elogios documentados, entregas concluídas e métricas batidas) para consultar sempre que a sensação de fraude surgir.",
-      "notes": "Explica a diferença entre humildade intelectual e síndrome do impostor, apresentando gatilhos psicológicos para desarmar a vergonha e agir mesmo com insegurança."
+      "notes": "Explica a diferença entre humildade intelectual e síndrome do impostor, apresentando gatilhos psicológicos para desarmar a vergonha e agir mesmo com insegurança.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "Como vencer a sensação constante de ser uma farsa mesmo quando você tem resultados comprovados.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "video-discussao",
@@ -838,7 +1081,11 @@ window.NEXUS_CATALOG = {
       "url": "https://www.youtube.com/watch?v=phgjouv0BUA",
       "description": "Fundamentos de oratória, dialética socrática e inteligência emocional em conversas difíceis.",
       "tags": [
-        "comunicacao"
+        "comunicacao",
+        "negociacao",
+        "ted-talks",
+        "soft-skills",
+        "resolucao-de-conflitos"
       ],
       "status": "ativo",
       "year": 2026,
@@ -848,9 +1095,15 @@ window.NEXUS_CATALOG = {
       "youtubeId": "phgjouv0BUA",
       "thumbnail": "https://i.ytimg.com/vi/phgjouv0BUA/hqdefault.jpg",
       "deliverable": "Framework comprovado de debates de classe mundial para desarmar conflitos e defender posições com elegância sem criar atrito pessoal.",
-      "targetAudience": "Qualquer pessoa",
+      "targetAudience": "Gestores, comunicadores e equipes multidisciplinares lidando com debates difíceis e divergências estratégicas",
       "practicalExample": "Em uma negociação tensa, valide primeiro a intenção positiva da outra parte antes de contra-argumentar, separando o problema da pessoa.",
-      "notes": "Aprenda a desarmar oponentes agressivos validando primeiro o ponto emocional deles, para depois apresentar seus dados factuais de forma irrefutável."
+      "notes": "Aprenda a desarmar oponentes agressivos validando primeiro o ponto emocional deles, para depois apresentar seus dados factuais de forma irrefutável.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "Fundamentos de oratória, dialética socrática e inteligência emocional em conversas difíceis.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "video-procrastinacao",
@@ -873,7 +1126,13 @@ window.NEXUS_CATALOG = {
       "deliverable": "Explicação neurocientífica sobre regulação de dopamina, tolerância ao desconforto e criação de rituais de início imediato de tarefas difíceis.",
       "targetAudience": "Quem sofre com prazos e tarefas acumuladas",
       "practicalExample": "Estabeleça a regra dos 5 minutos: comprometa-se a apenas abrir o arquivo e trabalhar 5 minutos sem compromisso de concluir; a inércia faz você continuar.",
-      "notes": "Procrastinamos tarefas que geram tédio, medo de julgamento ou falta de clareza. Este vídeo ensina a diminuir a carga cognitiva das tarefas e a recompensar micro-avanços."
+      "notes": "Procrastinamos tarefas que geram tédio, medo de julgamento ou falta de clareza. Este vídeo ensina a diminuir a carga cognitiva das tarefas e a recompensar micro-avanços.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "A psicologia real por trás da procrastinação e por que ela não é preguiça, mas regulação emocional.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "video-comparacao",
@@ -896,7 +1155,13 @@ window.NEXUS_CATALOG = {
       "deliverable": "Ensaio filosófico essencial da The School of Life sobre a ansiedade de status e a armadilha de medir valor próprio pela régua alheia.",
       "targetAudience": "Usuários de redes sociais",
       "practicalExample": "Defina seu próprio placar interno de sucesso (liberdade de horário, saúde e qualidade das relações) para não se abalar com conquistas exibidas em feeds sociais.",
-      "notes": "Baseado na filosofia de Alain de Botton, investiga como a meritocracia pode se tornar cruel quando associamos o valor humano unicamente a conquistas materiais visíveis."
+      "notes": "Baseado na filosofia de Alain de Botton, investiga como a meritocracia pode se tornar cruel quando associamos o valor humano unicamente a conquistas materiais visíveis.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "Ensaio filosófico sobre a ansiedade de status social e o vício moderno de se comparar com os outros.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "video-decisao",
@@ -919,7 +1184,13 @@ window.NEXUS_CATALOG = {
       "deliverable": "Simulação matemática de cooperação, traição e equilíbrio de Nash aplicada a interações humanas, mercado e estratégias de sobrevivência.",
       "targetAudience": "Quem está em encruzilhadas na carreira ou vida",
       "practicalExample": "Adote a estratégia \"Tit for Tat\": inicie sempre cooperando em parcerias, retalie desvios pontualmente e perdoe de imediato se o outro voltar a cooperar.",
-      "notes": "Mostra os resultados dos torneios matemáticos de Robert Axelrod, provando que estratégias gentis, vingativas quando traídas, porém perdoadoras, vencem todas as estratégias egoístas no longo prazo."
+      "notes": "Mostra os resultados dos torneios matemáticos de Robert Axelrod, provando que estratégias gentis, vingativas quando traídas, porém perdoadoras, vencem todas as estratégias egoístas no longo prazo.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "Como a matemática do Dilemma do Prisioneiro molda escolhas estratégicas, confiança e cooperação.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "video-13-minutos",
@@ -929,7 +1200,11 @@ window.NEXUS_CATALOG = {
       "url": "https://www.youtube.com/watch?v=U_nzqnXWvSo",
       "description": "Princípios práticos de engenharia de hábitos: o poder dos micro-ganhos de 1% ao dia.",
       "tags": [
-        "autoconhecimento"
+        "autoconhecimento",
+        "habitos",
+        "produtividade",
+        "desenvolvimento-pessoal",
+        "james-clear"
       ],
       "status": "ativo",
       "year": 2026,
@@ -941,7 +1216,13 @@ window.NEXUS_CATALOG = {
       "deliverable": "Sistema prático de formação de hábitos baseado em pistas visuais, redução de atrito e reforço de identidade para transformações de longo prazo.",
       "targetAudience": "Quem quer melhorar sua produtividade diária",
       "practicalExample": "Deixe o livro técnico aberto na mesa de trabalho ou posicione o ícone da ferramenta de estudo na barra de tarefas para zerar o atrito de começar.",
-      "notes": "James Clear desmistifica o mito das grandes transformações da noite para o dia. O sucesso é o produto de hábitos diários, não de transformações únicas na vida."
+      "notes": "James Clear desmistifica o mito das grandes transformações da noite para o dia. O sucesso é o produto de hábitos diários, não de transformações únicas na vida.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "Princípios práticos de engenharia de hábitos: o poder dos micro-ganhos de 1% ao dia.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "video-hacks",
@@ -951,7 +1232,11 @@ window.NEXUS_CATALOG = {
       "url": "https://www.youtube.com/watch?v=4aYVLpY5FYU",
       "description": "Ranking definitivo testando na prática técnicas de foco, time-blocking, Pomodoro e gestão de energia.",
       "tags": [
-        "produtividade"
+        "produtividade",
+        "gestao-de-tempo",
+        "rotina",
+        "alta-performance",
+        "ali-abdaal"
       ],
       "status": "ativo",
       "year": 2026,
@@ -963,7 +1248,13 @@ window.NEXUS_CATALOG = {
       "deliverable": "Auditoria e ranking testado de dezenas de técnicas de gestão de tempo, bloqueio de agenda e execução fluida sem esgotamento mental.",
       "targetAudience": "Quem busca mais tempo livre no dia",
       "practicalExample": "Aplique o conceito de \"Timeblocking\": reserve blocos fixos e inegociáveis de 90 minutos pela manhã dedicados exclusivamente ao projeto mais importante do dia.",
-      "notes": "Ali Abdaal analisa criticamente sistemas famosos e mostra que a produtividade alegre (feel-good productivity) supera em muito o foco na culpa e no esgotamento mental."
+      "notes": "Ali Abdaal analisa criticamente sistemas famosos e mostra que a produtividade alegre (feel-good productivity) supera em muito o foco na culpa e no esgotamento mental.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "Ranking definitivo testando na prática técnicas de foco, time-blocking, Pomodoro e gestão de energia.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "video-pensar-papel",
@@ -986,7 +1277,13 @@ window.NEXUS_CATALOG = {
       "deliverable": "Framework CODE (Capture, Organize, Distill, Express) e método PARA para gerenciar conhecimento pessoal e transformar consumo passivo em criação ativa.",
       "targetAudience": "Quem se sente sobrecarregado de informações",
       "practicalExample": "Estruture suas pastas e notas digitais em apenas 4 níveis: Projetos ativos, Áreas de responsabilidade, Recursos de referência e Arquivo inativo.",
-      "notes": "A mente humana foi feita para ter ideias, não para armazená-las. Este vídeo é o manifesto de fundação do conceito de Segundo Cérebro digital."
+      "notes": "A mente humana foi feita para ter ideias, não para armazená-las. Este vídeo é o manifesto de fundação do conceito de Segundo Cérebro digital.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "O método CODE (Capturar, Organizar, Destilar, Expressar) para gerenciar o excesso de informação digital.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "video-sucesso",
@@ -1009,7 +1306,13 @@ window.NEXUS_CATALOG = {
       "deliverable": "Lições de trincheira sobre resiliência operacional, vendas, gestão de crises e a mentalidade necessária para construir empresas multimilionárias.",
       "targetAudience": "Empreendedores e sonhadores",
       "practicalExample": "Ao lançar um novo produto, foque obsessivamente em validação direta de caixa e clientes pagantes antes de desenhar planos ou apresentações complexas.",
-      "notes": "Desmistifica as promessas de enriquecimento rápido da internet e foca na disciplina silenciosa que constrói patrimônio sólido ao longo dos anos."
+      "notes": "Desmistifica as promessas de enriquecimento rápido da internet e foca na disciplina silenciosa que constrói patrimônio sólido ao longo dos anos.",
+      "area": "Aprendizado",
+      "intents": [
+        "Aprender"
+      ],
+      "summary": "Conversa franca sobre os bastidores reais do crescimento de carreira, consistência e tolerância ao erro.",
+      "thumbnailSource": "youtube-hq"
     },
     {
       "id": "metric-roi",
@@ -1017,7 +1320,7 @@ window.NEXUS_CATALOG = {
       "kind": "conhecimento",
       "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
-      "description": "Lucro líquido ÷ custo do investimento × 100",
+      "description": "Indicador percentual que avalia a eficiência financeira de um investimento em relação ao seu custo inicial: (Lucro Líquido ÷ Custo do Investimento) × 100.",
       "tags": [
         "financas",
         "kpi",
@@ -1029,10 +1332,25 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "Fórmula matemática essencial ((Ganho - Custo) / Custo * 100) para medir com precisão se o capital aplicado em projetos trouxe lucro ou prejuízo.",
-      "targetAudience": "Qualquer pessoa que cuida do próprio dinheiro ou negócio",
-      "practicalExample": "Se você gastou R$ 5.000 em uma campanha e gerou R$ 25.000 em receita líquida, seu ROI foi de 400% (R$ 4 de retorno para cada R$ 1 investido).",
-      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
+      "deliverable": "Clareza imediata sobre se uma campanha, contratação ou projeto gerou retorno financeiro positivo acima do custo de capital.",
+      "targetAudience": "Fundadores, diretores financeiros e gestores de tráfego/marketing",
+      "practicalExample": "Avaliar um investimento de R$ 10.000 em mídia paga que gerou R$ 35.000 de margem de contribuição (ROI de 250%).",
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.instagram.com&sz=128",
+      "summary": "Métrica financeira essencial para validar a rentabilidade de cada real investido na operação.",
+      "keyTakeaways": [
+        "Diferença crítica entre faturamento bruto e lucro líquido real",
+        "Necessidade de incluir todos os custos ocultos de implementação"
+      ],
+      "parentId": "carrossel-metricas-instagram",
+      "area": "Negócios",
+      "intents": [
+        "Medir",
+        "Aprender"
+      ],
+      "effort": "5 min",
+      "impact": "alto",
+      "confidence": "high",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "metric-cac",
@@ -1040,7 +1358,7 @@ window.NEXUS_CATALOG = {
       "kind": "conhecimento",
       "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
-      "description": "Custo de marketing e vendas ÷ novos clientes",
+      "description": "Valor financeiro médio investido em marketing e vendas para conquistar cada novo cliente pagante: (Custos de Vendas + Marketing) ÷ Novos Clientes.",
       "tags": [
         "financas",
         "kpi",
@@ -1052,18 +1370,33 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "Indicador financeiro ((Custos de Vendas + Marketing) / Novos Clientes) que revela na ponta do lápis o custo real de colocar cada cliente na empresa.",
-      "targetAudience": "Empreendedores e comerciantes",
-      "practicalExample": "Se a soma de anúncios e salários comerciais atingiu R$ 20.000 e 40 clientes entraram no mês, seu CAC é de exatamente R$ 500 por cliente.",
-      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
+      "deliverable": "Parâmetro de viabilidade do modelo comercial quando cruzado com o LTV (Lifetime Value).",
+      "targetAudience": "Líderes comerciais, gestores de marketing e fundadores de empresas escaláveis",
+      "practicalExample": "Gastar R$ 20.000 no mês com equipe comercial e anúncios para fechar 40 novos clientes, resultando em um CAC unitário de R$ 500.",
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.instagram.com&sz=128",
+      "summary": "Custo direto e indireto para trazer um novo cliente pagante para dentro do negócio.",
+      "keyTakeaways": [
+        "O CAC deve ser idealmente recuperado em até 6 a 12 meses",
+        "Relação LTV:CAC saudável deve ser de no mínimo 3:1"
+      ],
+      "parentId": "carrossel-metricas-instagram",
+      "area": "Negócios",
+      "intents": [
+        "Medir",
+        "Aprender"
+      ],
+      "effort": "5 min",
+      "impact": "alto",
+      "confidence": "high",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "metric-aov",
-      "title": "Métrica: AOV — Ticket Médio por Pedido",
+      "title": "Métrica: AOV — Ticket Médio por Transação",
       "kind": "conhecimento",
       "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
-      "description": "Receita total ÷ número de pedidos",
+      "description": "Valor monetário médio gasto pelos clientes em cada compra individual na plataforma: Receita Total ÷ Número de Transações.",
       "tags": [
         "financas",
         "kpi",
@@ -1075,18 +1408,33 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "Métrica de monetização (Receita Total / Número de Pedidos) para identificar o valor médio gasto por cliente em cada transação comercial.",
-      "targetAudience": "Profissionais e entusiastas",
-      "practicalExample": "Com faturamento de R$ 120.000 em 800 pedidos, seu AOV é R$ 150. Ofereça frete grátis ou descontos a partir de R$ 190 para forçar o aumento do ticket.",
-      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
+      "deliverable": "Alavanca de crescimento da receita sem necessidade de aumentar o tráfego ou o investimento em mídia.",
+      "targetAudience": "Operadores de e-commerce, gerentes de produto e analistas de pricing",
+      "practicalExample": "Implementar order bump e upsell no checkout, elevando o valor médio de pedido de R$ 120 para R$ 168.",
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.instagram.com&sz=128",
+      "summary": "Indicador do valor monetário médio capturado por venda realizada na esteira comercial.",
+      "keyTakeaways": [
+        "Estratégias de bundling e frete grátis condicional expandem o AOV",
+        "Aumento de 20% no ticket médio pode dobrar o lucro operacional"
+      ],
+      "parentId": "carrossel-metricas-instagram",
+      "area": "Negócios",
+      "intents": [
+        "Medir",
+        "Aprender"
+      ],
+      "effort": "5 min",
+      "impact": "alto",
+      "confidence": "high",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "metric-runway",
-      "title": "Métrica: Runway — Sobrevida de Caixa",
+      "title": "Métrica: Runway — Fôlego e Sobrevida de Caixa",
       "kind": "conhecimento",
       "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
-      "description": "Caixa disponível ÷ consumo líquido mensal",
+      "description": "Tempo em meses que a empresa consegue operar antes de zerar o caixa com base no consumo mensal líquido: Saldo de Caixa ÷ Burn Rate Mensal.",
       "tags": [
         "financas",
         "kpi",
@@ -1098,18 +1446,33 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "Contagem regressiva (Saldo de Caixa / Burn Rate Mensal) que determina com rigor quantos meses a empresa sobrevive antes de zerar o caixa.",
-      "targetAudience": "Startups e donos de empresas",
-      "practicalExample": "Uma startup com R$ 600.000 no banco e prejuízo operacional mensal de R$ 50.000 possui 12 meses de Runway para atingir ponto de equilíbrio.",
-      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
+      "deliverable": "Visibilidade preventiva para planejar captação de recursos, contenção de despesas ou aceleração de receita antes de crises de liquidez.",
+      "targetAudience": "CEOs, CFOs e investidores de empresas em estágio inicial e crescimento",
+      "practicalExample": "Com R$ 600.000 no banco e queima líquida de R$ 50.000/mês, a empresa possui exatamente 12 meses de runway para atingir o breakeven.",
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.instagram.com&sz=128",
+      "summary": "Medição exata da quantidade de meses de operação que o saldo de caixa atual sustenta.",
+      "keyTakeaways": [
+        "Manter sempre um runway mínimo prudencial de 6 a 9 meses",
+        "Revisar a taxa de queima mensal a cada contratação ou compromisso fixo"
+      ],
+      "parentId": "carrossel-metricas-instagram",
+      "area": "Negócios",
+      "intents": [
+        "Medir",
+        "Aprender"
+      ],
+      "effort": "5 min",
+      "impact": "alto",
+      "confidence": "high",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "metric-churn",
-      "title": "Métrica: Churn Rate — Taxa de Cancelamento",
+      "title": "Métrica: Churn Rate — Taxa de Cancelamento de Clientes",
       "kind": "conhecimento",
       "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
-      "description": "Clientes perdidos ÷ clientes no início × 100",
+      "description": "Percentual de clientes ou receita perdida ao longo de um determinado período: (Clientes Perdidos no Período ÷ Clientes no Início) × 100.",
       "tags": [
         "financas",
         "kpi",
@@ -1121,10 +1484,25 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "Métrica vital de retenção (Clientes Cancelados / Clientes Ativos * 100) que acende o sinal de alerta sobre a evasão da base de assinantes.",
-      "targetAudience": "Negócios de assinatura e serviços",
-      "practicalExample": "Se sua base iniciou o mês com 1.000 assinantes e 30 cancelaram, o Churn foi de 3%. Em empresas SaaS B2B, a meta saudável deve ficar abaixo de 1% a 2%.",
-      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
+      "deliverable": "Diagnóstico precoce de problemas de retenção, insatisfação com produto ou desalinhamento na venda.",
+      "targetAudience": "Equipes de Customer Success, gerentes de produto e analistas de retenção",
+      "practicalExample": "Iniciar o trimestre com 500 contas ativas e registrar 15 cancelamentos no mês, representando uma taxa de churn mensal de 3,0%.",
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.instagram.com&sz=128",
+      "summary": "Índice de perda de clientes que mede diretamente o balde furado da operação recorrente.",
+      "keyTakeaways": [
+        "Churn alto anula completamente os ganhos obtidos com novo CAC",
+        "Net Revenue Churn negativo é a principal alavanca de valorização de um negócio"
+      ],
+      "parentId": "carrossel-metricas-instagram",
+      "area": "Negócios",
+      "intents": [
+        "Medir",
+        "Aprender"
+      ],
+      "effort": "5 min",
+      "impact": "alto",
+      "confidence": "high",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "metric-mrr",
@@ -1132,7 +1510,7 @@ window.NEXUS_CATALOG = {
       "kind": "conhecimento",
       "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
-      "description": "Clientes × valor médio mensal por cliente",
+      "description": "Valor previsível e recorrente gerado por todos os clientes ativos com planos de assinatura mensal: Total de Assinaturas × Valor Mensal.",
       "tags": [
         "financas",
         "kpi",
@@ -1144,18 +1522,33 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "O termômetro definitivo da previsibilidade financeira (Assinantes Ativos * Mensalidade Média) para modelos de assinatura e SaaS.",
-      "targetAudience": "Empresas de SaaS e escolas",
-      "practicalExample": "Com 200 clientes no plano de R$ 150/mês e 20 no plano Enterprise de R$ 1.000/mês, seu MRR é de R$ 50.000 (equivalente a R$ 600.000 de ARR).",
-      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
+      "deliverable": "Previsibilidade financeira para planejamento orçamentário, contratações e expansão da infraestrutura com risco controlado.",
+      "targetAudience": "Empreendedores SaaS, investidores e gestores de negócios por assinatura",
+      "practicalExample": "Operar com 250 clientes no plano Pro de R$ 199/mês e 50 empresas no Enterprise de R$ 990/mês, totalizando um MRR de R$ 99.250.",
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.instagram.com&sz=128",
+      "summary": "Faturamento recorrente previsível que sustenta modelos baseados em assinatura.",
+      "keyTakeaways": [
+        "Segmentar em New MRR, Expansion MRR, Contraction MRR e Churned MRR",
+        "Base para avaliação de valuation múltiplo do negócio"
+      ],
+      "parentId": "carrossel-metricas-instagram",
+      "area": "Negócios",
+      "intents": [
+        "Medir",
+        "Aprender"
+      ],
+      "effort": "5 min",
+      "impact": "alto",
+      "confidence": "high",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "metric-ebitda",
-      "title": "Métrica: EBITDA — Lucro Operacional Puro",
+      "title": "Métrica: EBITDA — Lucro Operacional Antes de Efeitos Não-Caixa",
       "kind": "conhecimento",
       "segment": "Negócios e Métricas",
       "url": "https://www.instagram.com/p/DdWQ-MMEamI/",
-      "description": "Lucro líquido + juros + impostos + depreciação + amortização",
+      "description": "Lucro da empresa antes de deduzir juros, tributos sobre a renda, depreciações de ativos físicos e amortizações de intangíveis.",
       "tags": [
         "financas",
         "kpi",
@@ -1167,10 +1560,25 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "notes": "Fórmula educacional; valide período, custos e critérios antes de usar.",
-      "deliverable": "Lucro antes de Juros, Impostos, Depreciação e Amortização, mensurando o potencial genuíno de geração de caixa operacional da empresa.",
-      "targetAudience": "Investidores e empresários",
-      "practicalExample": "Com receita de R$ 1.500.000 e custos operacionais de R$ 1.050.000, o EBITDA é de R$ 450.000 (margem de 30%), métrica essencial para valuation.",
-      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
+      "deliverable": "Medição da capacidade de geração pura de caixa da atividade-fim do negócio, livre de alavancagem financeira ou regras tributárias.",
+      "targetAudience": "Contadores consultivos, analistas de M&A, diretores financeiros e sócios-proprietários",
+      "practicalExample": "Faturamento de R$ 1.000.000 com custos operacionais de R$ 680.000 gerando R$ 320.000 de EBITDA (margem EBITDA de 32%).",
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.instagram.com&sz=128",
+      "summary": "Aferição do potencial operacional bruto de geração de riqueza das atividades comerciais.",
+      "keyTakeaways": [
+        "Permite comparar rentabilidade operacional com concorrentes de diferentes estruturas de capital",
+        "É a métrica mais utilizada em processos de fusão e aquisição (valuation por múltiplos de EBITDA)"
+      ],
+      "parentId": "carrossel-metricas-instagram",
+      "area": "Negócios",
+      "intents": [
+        "Medir",
+        "Aprender"
+      ],
+      "effort": "5 min",
+      "impact": "alto",
+      "confidence": "high",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-shadcn-ui",
@@ -1196,7 +1604,16 @@ window.NEXUS_CATALOG = {
       "deliverable": "Coleção de componentes de UI reutilizáveis e acessíveis em Tailwind CSS com código-fonte aberto para controle total do design.",
       "targetAudience": "Desenvolvedores e criadores de sites",
       "practicalExample": "Copie e cole componentes pré-construídos (modais, menus suspensos, abas) diretamente no seu projeto sem ficar amarrado a uma biblioteca externa.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=ui.shadcn.com&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Componentes reutilizáveis, acessíveis e customizáveis construídos com Radix UI e Tailwind CSS.",
+      "thumbnailSource": "domain-favicon-hd",
+      "stars": 79200,
+      "githubRepo": "shadcn-ui/ui"
     },
     {
       "id": "design-aceternity-ui",
@@ -1222,7 +1639,16 @@ window.NEXUS_CATALOG = {
       "deliverable": "Componentes avançados com animações fluidas em Framer Motion e Tailwind CSS desenhados para landing pages de alto impacto visual.",
       "targetAudience": "Designers e programadores web",
       "practicalExample": "Implemente efeitos de grade cibernética no fundo, brilho direcional em cartões e animações de texto para impressionar usuários na primeira dobra.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=ui.aceternity.com&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Coleção de componentes modernos e interativos com animações Framer Motion e Tailwind CSS.",
+      "thumbnailSource": "domain-favicon-hd",
+      "stars": 12500,
+      "githubRepo": "aceternity/ui"
     },
     {
       "id": "design-uiverse",
@@ -1246,9 +1672,18 @@ window.NEXUS_CATALOG = {
       "license": "Open Source",
       "openAccess": true,
       "deliverable": "Um shopping grátis com mais de 3.000 botões, cartões e loaders animados criados pela comunidade para copiar e colar.",
-      "targetAudience": "Qualquer pessoa montando um site",
+      "targetAudience": "Desenvolvedores front-end, designers de produto e entusiastas de prototipagem rápida de UI com Tailwind e CSS puro",
       "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=uiverse.io&sz=128",
+      "area": "Design",
+      "intents": [
+        "Aprender",
+        "Pesquisar"
+      ],
+      "summary": "O maior repositório aberto de elementos de UI em CSS puro e Tailwind criados pela comunidade.",
+      "thumbnailSource": "domain-favicon-hd",
+      "stars": 4900,
+      "githubRepo": "uiverse-io/galaxy"
     },
     {
       "id": "design-coolors",
@@ -1272,7 +1707,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Gerador inteligente de paletas harmônicas com ferramenta de bloqueio de cores e verificação rigorosa de contraste de acessibilidade.",
       "targetAudience": "Designers, artistas e iniciantes",
       "practicalExample": "Pressione espaço para gerar combinações de cores equilibradas e exporte os códigos HEX direto para as variáveis do seu tema de design.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=coolors.co&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Gerador ultrarrápido de paletas de cores harmônicas com exportação para CSS, SVG e JSON.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-realtime-colors",
@@ -1296,7 +1738,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Simulador em tempo real para visualizar como uma paleta de cores se comporta na prática aplicada a uma landing page completa.",
       "targetAudience": "Quem está criando a identidade de um projeto",
       "practicalExample": "Valide a legibilidade dos botões de ação e o contraste do texto de parágrafos antes de escrever a primeira linha de folha de estilo.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.realtimecolors.com&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Ferramenta para testar e visualizar paletas de cores e fontes em uma aplicação real em tempo real.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-color-hunt",
@@ -1320,7 +1769,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Milhares de paletas de cores prontas e consagradas para você nunca mais ter dúvida sobre qual cor usar na sua arte.",
       "targetAudience": "Designers gráficos e criadores",
       "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=colorhunt.co&sz=128",
+      "area": "Design",
+      "intents": [
+        "Aprender",
+        "Pesquisar"
+      ],
+      "summary": "Plataforma aberta com milhares de paletas selecionadas manualmente por designers e artistas.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-lucide-icons",
@@ -1345,7 +1801,16 @@ window.NEXUS_CATALOG = {
       "deliverable": "Conjunto de ícones vetoriais modernos, limpos e consistentes para web e apps com espessura e tamanho customizáveis.",
       "targetAudience": "Quem precisa de símbolos visuais limpos",
       "practicalExample": "Adicione símbolos visuais intuitivos em botões e menus mantendo o peso da página irrisório e a consistência visual impecável.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=lucide.dev&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Coleção elegante, leve e consistente com mais de 1.400 ícones SVG abertos para web e mobile.",
+      "thumbnailSource": "domain-favicon-hd",
+      "stars": 17800,
+      "githubRepo": "lucide-icons/lucide"
     },
     {
       "id": "design-tabler-icons",
@@ -1370,7 +1835,16 @@ window.NEXUS_CATALOG = {
       "deliverable": "Mais de 5.000 ícones em grade 24x24 px desenvolvidos sob medida para dashboards corporativos e interfaces de gerenciamento densas.",
       "targetAudience": "Designers e programadores",
       "practicalExample": "Utilize ícones especializados de métricas financeiras, gráficos de rede e dispositivos de hardware que não existem em pacotes básicos.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=tabler.io&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Mais de 5.200 ícones vetoriais personalizáveis de alta resolução para web e aplicativos.",
+      "thumbnailSource": "domain-favicon-hd",
+      "stars": 16700,
+      "githubRepo": "tabler/tabler-icons"
     },
     {
       "id": "design-simple-icons",
@@ -1400,7 +1874,13 @@ window.NEXUS_CATALOG = {
       "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80",
       "stars": 25906,
       "forks": 3170,
-      "githubRepo": "simple-icons/simple-icons"
+      "githubRepo": "simple-icons/simple-icons",
+      "area": "Design",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "Mais de 3.000 ícones SVG oficiais de marcas globais, linguagens de programação e ferramentas de tecnologia."
     },
     {
       "id": "design-undraw",
@@ -1425,7 +1905,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Desenhos e ilustrações modernas gratuitas onde você pode escolher a cor exata para combinar com a sua empresa.",
       "targetAudience": "Quem quer deixar posts e páginas mais ilustrados",
       "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=undraw.co&sz=128",
+      "area": "Design",
+      "intents": [
+        "Aprender",
+        "Pesquisar"
+      ],
+      "summary": "Ilustrações vetoriais abertas e modernas que podem ser customizadas com a cor da sua marca.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-humaaans",
@@ -1450,7 +1937,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Ilustrações vetoriais modulares de personagens onde você pode misturar corpos, roupas e poses para compor cenas humanizadas.",
       "targetAudience": "Apresentações e sites modernos",
       "practicalExample": "Crie ilustrações personalizadas e acolhedoras para páginas de boas-vindas e estados vazios sem precisar contratar um ilustrador externo.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.humaaans.com&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Biblioteca modular de ilustrações de pessoas com posições, roupas e estilos intercambiáveis.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-hero-patterns",
@@ -1475,7 +1969,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Galeria de texturas e padrões de fundo vetoriais em SVG repetíveis e customizáveis por código para conferir profundidade visual.",
       "targetAudience": "Designers de landing pages",
       "practicalExample": "Aplique uma textura sutil no cabeçalho da sua aplicação pesando menos de 1 KB, substituindo banners de imagens rasterizadas pesadas.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=heropatterns.com&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Coleção de padrões de fundo repetíveis em código SVG puro para enriquecer seções hero e cards.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-gsap",
@@ -1500,7 +2001,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "O motor de animações JavaScript mais rápido e premiado do mercado para coreografar interações de scroll e timelines no browser.",
       "targetAudience": "Desenvolvedores front-end avançados",
       "practicalExample": "Crie animações ligadas à barra de rolagem (ScrollTrigger) onde seções da página se fixam e elementos deslizam com suavidade extrema.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=gsap.com&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "O padrão da indústria para animações JavaScript robustas, ultra fluidas e de alta performance.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-lottiefiles",
@@ -1524,7 +2032,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Ecossistema de animações vetoriais ultraleves em formato JSON baseadas em After Effects com execução a 60fps em qualquer tela.",
       "targetAudience": "Criadores de aplicativos e sites",
       "practicalExample": "Substitua ícones estáticos por animações interativas de check de pagamento confirmado ou carregamento acionadas ao clique do usuário.",
-      "thumbnail": "https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=lottiefiles.com&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Plataforma de animações interativas ultraleves em formato JSON para web, iOS e Android.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-animate-css",
@@ -1553,7 +2068,13 @@ window.NEXUS_CATALOG = {
       "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80",
       "stars": 82816,
       "forks": 15891,
-      "githubRepo": "animate-css/animate.css"
+      "githubRepo": "animate-css/animate.css",
+      "area": "Design",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "Biblioteca pronta para uso de animações CSS cross-browser para botões, modais e transições de página."
     },
     {
       "id": "design-fontshare",
@@ -1578,7 +2099,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Fundição de fontes tipográficas profissionais gratuitas de nível internacional para uso pessoal e comercial sem custos de licença.",
       "targetAudience": "Quem quer tipografia de alto nível",
       "practicalExample": "Utilize fontes contemporâneas como Satoshi, Clash Display ou General Sans para dar personalidade premium ao branding do seu projeto.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.fontshare.com&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Serviço de fontes tipográficas gratuitas e de nível profissional (incluindo Satoshi e Cabinet Grotesk).",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-google-fonts",
@@ -1603,7 +2131,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "O maior diretório do planeta com centenas de letras e fontes seguras, rápidas e gratuitas para usar em qualquer projeto.",
       "targetAudience": "Todo mundo que escreve na web",
       "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=fonts.google.com&sz=128",
+      "area": "Design",
+      "intents": [
+        "Aprender",
+        "Pesquisar"
+      ],
+      "summary": "Catálogo global com mais de 1.600 famílias de fontes abertas e ícones com CDN de alta disponibilidade.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-spline",
@@ -1627,7 +2162,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Software de design e renderização 3D intuitivo direto no navegador com suporte a interações em tempo real e exportação para a web.",
       "targetAudience": "Designers 3D e mentes criativas",
       "practicalExample": "Modele um objeto 3D que acompanha a posição do cursor do mouse do visitante e incorpore na tela inicial do seu site com um iframe limpo.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=spline.design&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Ferramenta de design 3D no navegador com suporte a interações em tempo real e exportação para web.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-shots-so",
@@ -1651,7 +2193,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Criador profissional de apresentações visuais de produtos para enquadrar capturas de tela em molduras fotorrealistas de notebooks e celulares.",
       "targetAudience": "Quem posta nas redes sociais e portfólios",
       "practicalExample": "Insira o print do seu sistema em uma moldura de MacBook com sombra suave e fundo degradê para publicar no portfólio ou redes sociais.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=shots.so&sz=128",
+      "area": "Design",
+      "intents": [
+        "Criar",
+        "Operar"
+      ],
+      "summary": "Crie mockups impressionantes para capturas de tela de aplicativos, websites e postagens sociais.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "design-mobbin",
@@ -1675,7 +2224,14 @@ window.NEXUS_CATALOG = {
       "deliverable": "Veja exatamente como os melhores aplicativos do mundo (Nubank, Airbnb, Duolingo) desenharam suas telas e fluxos.",
       "targetAudience": "Empreendedores e designers de produto",
       "practicalExample": "Acesse o link direto e incorpore o recurso na rotina operacional para economizar horas de retrabalho manual.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=mobbin.com&sz=128",
+      "area": "Design",
+      "intents": [
+        "Aprender",
+        "Pesquisar"
+      ],
+      "summary": "O maior arquivo do mundo de telas reais, fluxos de onboarding e padrões de UI/UX de apps e produtos web.",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "carrossel-modelos-mentais",
@@ -1693,12 +2249,12 @@ window.NEXUS_CATALOG = {
       ],
       "status": "ativo",
       "year": 2026,
-      "source": "Segundo Cérebro / Instagram",
+      "source": "Curadoria Nexus / Instagram",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "openAccess": true,
       "deliverable": "5 modelos mentais fundamentais de Charlie Munger (Inversão, Círculo de Competência, Efeito Lollapalooza e Princípio 80/20) para blindar decisões.",
-      "targetAudience": "Empreendedores, investidores e qualquer pessoa que queira pensar melhor",
+      "targetAudience": "Tomadores de decisão, investidores e estrategistas focados em reduzir pontos cegos e viés cognitivo",
       "author": "@mentalmodels",
       "slides": [
         "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=800&auto=format&fit=crop&q=80",
@@ -1707,7 +2263,13 @@ window.NEXUS_CATALOG = {
         "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80"
       ],
       "practicalExample": "Antes de assinar um contrato importante, faça uma sessão de \"Inversão\": liste tudo que levaria o acordo ao fracasso e crie cláusulas preventivas.",
-      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://images.unsplash.com/photo-1677442136019-21780efad99a?w=800&auto=format&fit=crop&q=80",
+      "area": "Operações",
+      "intents": [
+        "Aprender",
+        "Pesquisar"
+      ],
+      "summary": "Carrossel visual explicando Inversão, Círculo de Competência, Efeito Lollapalooza e Princípio 80/20 com exemplos práticos."
     },
     {
       "id": "carrossel-micro-interacoes",
@@ -1725,7 +2287,7 @@ window.NEXUS_CATALOG = {
       ],
       "status": "ativo",
       "year": 2026,
-      "source": "Segundo Cérebro / Instagram",
+      "source": "Curadoria Nexus / Instagram",
       "addedAt": "2026-09-23",
       "updatedAt": "2026-09-23",
       "openAccess": true,
@@ -1738,13 +2300,19 @@ window.NEXUS_CATALOG = {
         "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?w=800&auto=format&fit=crop&q=80"
       ],
       "practicalExample": "Em formulários de checkout, adicione feedback tátil e animação de loading direto no botão para eliminar cliques múltiplos por ansiedade do usuário.",
-      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://images.unsplash.com/photo-1507238691740-187a5b1d37b8?w=800&auto=format&fit=crop&q=80",
+      "area": "Design",
+      "intents": [
+        "Aprender",
+        "Pesquisar"
+      ],
+      "summary": "Guia em slides sobre curvas de animação Bezier, feedback tátil, tempos de resposta de 100ms e micro-movimentos que encantam o u…"
     },
     {
       "id": "conhecimento-metodo-10-dias",
       "title": "Processo de 10 Dias de Mudança e Identidade — Carl Jung & Clube Natural",
       "kind": "conhecimento",
-      "segment": "Conhecimento & Hacks",
+      "segment": "Métodos & Frameworks",
       "url": "https://www.instagram.com/reel/Db81e33RPDM/?stkn=d2Q4NjN4OGE5am56",
       "description": "Método prático de 10 dias baseado em princípios junguianos para transformar objetivos vagos em uma direção concreta de mudança de identidade e hábitos por meio de ação deliberada e repetição contínua.",
       "deliverable": "Framework em 4 etapas: questionamento profundo ('O que desejaria se parasse de fingir que não desejo?'), visualização sensorial da experiência concreta, alinhamento com a identidade capaz de sustentar o resultado e compromisso diário de 10 dias de pequenas ações coerentes.",
@@ -1763,13 +2331,21 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-24",
       "openAccess": true,
       "author": "Clube Natural / Carl Jung",
-      "thumbnail": "https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=www.instagram.com&sz=128",
+      "targetAudience": "Profissionais buscando reprogramação comportamental, clareza mental e disciplina de execução pessoal",
+      "area": "Operações",
+      "intents": [
+        "Aprender",
+        "Pesquisar"
+      ],
+      "summary": "Método prático de 10 dias baseado em princípios junguianos para transformar objetivos vagos em uma direção concreta de mudança …",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "conhecimento-checklist-seguranca",
       "title": "Checklist de Segurança Cibernética para Extensões, IAs e Agentes Autônomos",
       "kind": "conhecimento",
-      "segment": "Conhecimento & Hacks",
+      "segment": "Métodos & Frameworks",
       "url": "https://importhelper.com/privacy-policy/",
       "description": "Protocolo operacional rigoroso de auditoria e segurança da informação antes de conceder permissões a extensões de navegador, conectar chaves de API em ferramentas de terceiros ou rodar agentes de programação locais.",
       "deliverable": "Checklist com 5 diretrizes vitais: validação de manifest e permissões de extensões no Chrome/Edge, armazenamento estritamente local de API keys (localStorage), isolamento de agentes autônomos em containers/VMs, verificação de políticas de retenção de dados e auditoria de tráfego de rede.",
@@ -1788,7 +2364,15 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-24",
       "openAccess": true,
       "author": "Nexus SecOps & DevSec",
-      "thumbnail": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=importhelper.com&sz=128",
+      "targetAudience": "Desenvolvedores, analistas de segurança e usuários de inteligência artificial que manuseiam credenciais e dados sensíveis",
+      "area": "Operações",
+      "intents": [
+        "Aprender",
+        "Pesquisar"
+      ],
+      "summary": "Protocolo operacional rigoroso de auditoria e segurança da informação antes de conceder permissões a extensões de navegador, co…",
+      "thumbnailSource": "domain-favicon-hd"
     },
     {
       "id": "repo-fcksignups",
@@ -1814,20 +2398,28 @@ window.NEXUS_CATALOG = {
       "license": "Open Source",
       "openAccess": true,
       "author": "BraveOPotato",
-      "thumbnail": "https://images.unsplash.com/photo-1563986768609-322da13575f3?w=800&auto=format&fit=crop&q=80",
+      "thumbnail": "https://opengraph.githubassets.com/1/BraveOPotato/FckSignups",
       "stars": 4340,
       "forks": 257,
-      "githubRepo": "BraveOPotato/FckSignups"
+      "githubRepo": "BraveOPotato/FckSignups",
+      "targetAudience": "Engenheiros de software, criadores e pesquisadores que priorizam ferramentas web imediatas sem atrito de cadastro",
+      "area": "Desenvolvimento",
+      "intents": [
+        "Pesquisar",
+        "Automatizar"
+      ],
+      "summary": "Diretório colaborativo e de código aberto reunindo centenas de utilitários e ferramentas web para desenvolvedores, designers e …",
+      "thumbnailSource": "github-opengraph"
     },
     {
       "id": "conhecimento-cssbuy-guia",
       "title": "CSSBuy — Guia Prático de Redirecionamento e Logística na China",
       "kind": "conhecimento",
-      "segment": "Conhecimento & Hacks",
+      "segment": "Métodos & Frameworks",
       "url": "https://www.cssbuy.com/",
-      "description": "Guia operacional e logístico para utilização de agentes de compras e armazéns internacionais na China (Taobao, Xianyu, 1688, Weidian), com inspeção de qualidade de mercadorias, consolidação de pacotes e remessa alfandegária.",
-      "deliverable": "Pipeline passo a passo de compra assistida: recebimento no armazém chinês, conferência com fotos de controle de qualidade (QC Photos) em alta resolução, remoção de caixas volumosas para reduzir peso cúbico, consolidação em caixa única e suporte a desembaraço aduaneiro no Brasil.",
-      "practicalExample": "Comprar eletrônicos ou componentes industriais no Xianyu/Taobao via extensão ImportHelper, receber no armazém da CSSBuy em Hangzhou, solicitar fotos QC para atestar o funcionamento e consolidar 5 pedidos em um frete único para o Brasil com rastreio prioritário.",
+      "description": "Manual passo a passo de como cadastrar endereço, negociar taxas, declarar itens para alfândega brasileira e otimizar fretes consolidados.",
+      "deliverable": "Roteiro seguro para evitar retenções aduaneiras e reduzir custos de frete internacional em remessas da China.",
+      "practicalExample": "Executar a declaração simplificada de 3 encomendas diferentes, combinando-as numa única caixa para economizar taxa de despacho postal.",
       "tags": [
         "Importação",
         "China",
@@ -1842,7 +2434,102 @@ window.NEXUS_CATALOG = {
       "updatedAt": "2026-09-24",
       "openAccess": true,
       "author": "CSSBuy / ImportHelper",
-      "thumbnail": "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=800&auto=format&fit=crop&q=80"
+      "thumbnail": "https://www.google.com/s2/favicons?domain=cssbuy.com&sz=128",
+      "area": "Operações",
+      "intents": [
+        "Aprender",
+        "Operar"
+      ],
+      "targetAudience": "Importadores diretos e compradores de suprimentos corporativos",
+      "relations": [
+        {
+          "type": "guide_for",
+          "targetId": "tool-cssbuy"
+        }
+      ],
+      "summary": "Manual passo a passo de como cadastrar endereço, negociar taxas, declarar itens para alfândega brasileira e otimizar fretes con…"
+    },
+    {
+      "id": "course-openclaw-negocios",
+      "title": "OpenClaw nos Negócios — Imersão em Automação com Agentes",
+      "kind": "curso",
+      "area": "Negócios",
+      "intents": [
+        "Aprender",
+        "Automatizar"
+      ],
+      "segment": "Produtividade e Gestão",
+      "url": "https://lastlink.com/f/imersaoopenclawnosnegocios/classroom/ae609e37-7d82-4039-ad5f-96d0a0cb8d56/023c607c-215c-44b0-bf40-eb741c7a4274",
+      "description": "Curso prático focado na aplicação operacional de agentes autônomos e fluxos inteligentes com OpenClaw em processos de negócios.",
+      "deliverable": "Capacidade de diagnosticar gargalos operacionais e prototipar fluxos de automação autônomos orientados a resultado e redução de custos.",
+      "practicalExample": "Mapear o fluxo de triagem e qualificação de leads, integrando agente OpenClaw para resposta e atualização de CRM sem intervenção manual.",
+      "targetAudience": "Empreendedores, operadores e gestores de tecnologia interessados em automação com IA",
+      "tags": [
+        "openclaw",
+        "automacao",
+        "agentes",
+        "negocios",
+        "curso",
+        "produtividade"
+      ],
+      "summary": "Imersão prática na construção de fluxos com agentes autônomos OpenClaw para ganho operacional e eficiência empresarial.",
+      "keyTakeaways": [
+        "Identificação cirúrgica de processos manuais automatizáveis",
+        "Construção de fluxos orientados a entrega de resultado de negócio",
+        "Operação e monitoramento de agentes autônomos em produção"
+      ],
+      "action": "Mapear uma rotina operacional manual repetitiva da sua operação e desenhar o fluxo de teste com agente OpenClaw.",
+      "effort": "4-6 horas",
+      "impact": "alto",
+      "confidence": "high",
+      "thumbnail": "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&auto=format&fit=crop&q=80",
+      "status": "estudo",
+      "year": 2026,
+      "source": "Nexus Acervo",
+      "addedAt": "2026-09-24",
+      "updatedAt": "2026-09-25"
+    },
+    {
+      "id": "video-terceira-onda-ia",
+      "title": "A 3ª Onda da IA: Vender Resultados, Não Ferramentas",
+      "kind": "vídeo",
+      "area": "Negócios",
+      "intents": [
+        "Aprender",
+        "Avaliar oportunidade"
+      ],
+      "segment": "Conteúdo e Mídia",
+      "url": "https://www.youtube.com/watch?v=qqdoGv3ae-8",
+      "youtubeId": "qqdoGv3ae-8",
+      "description": "Análise aprofundada sobre a migração do modelo SaaS tradicional de ferramentas para negócios de IA que garantem e entregam o resultado final em mercados operacionais tradicionais.",
+      "deliverable": "Framework prático de 8 perguntas de viabilidade para avaliar ideias de negócios em IA antes de investir tempo e capital.",
+      "practicalExample": "Aplicar o teste de validação das 8 perguntas em uma oportunidade de automação contábil ou jurídica para aferir defensabilidade contra concorrentes.",
+      "targetAudience": "Fundadores de startups, desenvolvedores e operadores de produto avaliando novos modelos de IA",
+      "tags": [
+        "IA",
+        "SaaS",
+        "negocios",
+        "oportunidades",
+        "estrategia",
+        "startups"
+      ],
+      "summary": "Análise estratégica sobre a criação de negócios de IA orientados a resultado final em mercados corporativos tradicionais.",
+      "keyTakeaways": [
+        "O modelo SaaS tradicional de software-como-ferramenta está cedendo lugar a soluções de resultado contratado",
+        "Mercados operacionais tradicionais oferecem menor disputa e disposição real de pagamento",
+        "Defensabilidade e retenção exigem integração profunda ao fluxo de trabalho do cliente"
+      ],
+      "action": "Submeter sua tese ou projeto atual ao checklist de 8 perguntas do vídeo para validar o potencial de escala.",
+      "effort": "25 min",
+      "impact": "alto",
+      "confidence": "high",
+      "thumbnail": "https://i.ytimg.com/vi/qqdoGv3ae-8/hqdefault.jpg",
+      "status": "estudo",
+      "year": 2026,
+      "source": "Nexus Acervo",
+      "addedAt": "2026-09-24",
+      "updatedAt": "2026-09-25",
+      "thumbnailSource": "youtube-hq"
     }
   ]
 };

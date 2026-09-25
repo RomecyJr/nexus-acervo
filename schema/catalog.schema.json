@@ -3,17 +3,38 @@
   "$id": "https://nexus-acervo.local/schema/catalog.schema.json",
   "title": "Nexus Acervo Catalog",
   "type": "object",
-  "required": ["meta", "segments", "items"],
+  "required": [
+    "meta",
+    "segments",
+    "items"
+  ],
   "properties": {
     "meta": {
       "type": "object",
-      "required": ["name", "version", "generatedAt", "language"],
+      "required": [
+        "name",
+        "version",
+        "generatedAt",
+        "language"
+      ],
       "properties": {
-        "name": { "type": "string" },
-        "version": { "type": "string" },
-        "generatedAt": { "type": "string", "format": "date-time" },
-        "language": { "type": "string" },
-        "sourceFile": { "type": "string" }
+        "name": {
+          "type": "string"
+        },
+        "version": {
+          "type": "string",
+          "default": "3.0.0"
+        },
+        "generatedAt": {
+          "type": "string",
+          "format": "date-time"
+        },
+        "language": {
+          "type": "string"
+        },
+        "sourceFile": {
+          "type": "string"
+        }
       },
       "additionalProperties": true
     },
@@ -21,17 +42,26 @@
       "type": "array",
       "items": {
         "type": "object",
-        "required": ["id", "label"],
+        "required": [
+          "id",
+          "label"
+        ],
         "properties": {
-          "id": { "type": "string" },
-          "label": { "type": "string" }
+          "id": {
+            "type": "string"
+          },
+          "label": {
+            "type": "string"
+          }
         },
         "additionalProperties": false
       }
     },
     "items": {
       "type": "array",
-      "items": { "$ref": "#/$defs/item" }
+      "items": {
+        "$ref": "#/$defs/item"
+      }
     }
   },
   "$defs": {
@@ -52,8 +82,14 @@
         "updatedAt"
       ],
       "properties": {
-        "id": { "type": "string", "pattern": "^[a-z0-9-]+$" },
-        "title": { "type": "string", "minLength": 2 },
+        "id": {
+          "type": "string",
+          "pattern": "^[a-z0-9-]+$"
+        },
+        "title": {
+          "type": "string",
+          "minLength": 2
+        },
         "kind": {
           "enum": [
             "ferramenta",
@@ -61,38 +97,128 @@
             "repositório",
             "conhecimento",
             "diretório",
-            "carrossel"
+            "carrossel",
+            "curso"
           ]
         },
-        "segment": { "type": "string" },
-        "url": { "type": "string", "format": "uri" },
-        "description": { "type": "string" },
+        "segment": {
+          "type": "string"
+        },
+        "url": {
+          "type": "string",
+          "format": "uri"
+        },
+        "description": {
+          "type": "string"
+        },
         "tags": {
           "type": "array",
-          "items": { "type": "string" },
+          "items": {
+            "type": "string"
+          },
           "uniqueItems": true
         },
-        "status": { "type": "string" },
-        "year": { "type": "integer", "minimum": 1900 },
-        "source": { "type": "string" },
-        "addedAt": { "type": "string", "format": "date" },
-        "updatedAt": { "type": "string", "format": "date" },
-        "license": { "type": "string" },
-        "openAccess": { "type": "boolean" },
-        "notes": { "type": "string" },
-        "deliverable": { "type": "string" },
-        "youtubeId": { "type": "string" },
-        "thumbnail": { "type": "string" },
-        "targetAudience": { "type": "string" },
+        "status": {
+          "type": "string"
+        },
+        "year": {
+          "type": "integer",
+          "minimum": 1900
+        },
+        "source": {
+          "type": "string"
+        },
+        "addedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "updatedAt": {
+          "type": "string",
+          "format": "date"
+        },
+        "license": {
+          "type": "string"
+        },
+        "openAccess": {
+          "type": "boolean"
+        },
+        "notes": {
+          "type": "string"
+        },
+        "deliverable": {
+          "type": "string"
+        },
+        "youtubeId": {
+          "type": "string"
+        },
+        "thumbnail": {
+          "type": "string"
+        },
+        "targetAudience": {
+          "type": "string"
+        },
         "slides": {
           "type": "array",
-          "items": { "type": "string" }
+          "items": {
+            "type": "string"
+          }
         },
-        "author": { "type": "string" },
-        "stack": { "type": "string" },
-        "stars": { "type": "integer", "minimum": 0 },
-        "forks": { "type": "integer", "minimum": 0 },
-        "githubRepo": { "type": "string" }
+        "author": {
+          "type": "string"
+        },
+        "stack": {
+          "type": "string"
+        },
+        "stars": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "forks": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "githubRepo": {
+          "type": "string"
+        },
+        "area": {
+          "type": "string"
+        },
+        "intents": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "summary": {
+          "type": "string"
+        },
+        "keyTakeaways": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "action": {
+          "type": "string"
+        },
+        "effort": {
+          "type": "string"
+        },
+        "impact": {
+          "type": "string"
+        },
+        "confidence": {
+          "type": "string"
+        },
+        "relations": {
+          "type": "array"
+        },
+        "parentId": {
+          "type": "string"
+        },
+        "reviewedAt": {
+          "type": "string"
+        }
       },
       "additionalProperties": true
     }

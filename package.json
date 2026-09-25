@@ -1,11 +1,12 @@
 {
   "name": "nexus-acervo",
-  "version": "1.0.0",
+  "version": "3.0.0",
   "private": true,
   "type": "module",
   "scripts": {
     "sync": "node scripts/sync-data.mjs",
-    "validate": "node scripts/validate.mjs",
+    "lint:editorial": "node scripts/lint_editorial.mjs",
+    "validate": "node scripts/lint_editorial.mjs && node scripts/validate.mjs",
     "build": "npm run sync && npm run validate",
     "test": "npm run sync && npm run validate",
     "serve": "npx --yes serve ."
