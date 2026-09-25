@@ -2,7 +2,7 @@ window.NEXUS_CATALOG = {
   "meta": {
     "name": "Nexus Acervo",
     "version": "3.0.0",
-    "generatedAt": "2026-09-25T11:18:36.343Z",
+    "generatedAt": "2026-09-25T14:14:57.657Z",
     "language": "pt-BR",
     "sourceFile": "Relatorio-de-ferramentas-links-e-informacoes-dos-posts-analisados.md",
     "updatedAt": "2026-09-25"
@@ -2530,6 +2530,48 @@ window.NEXUS_CATALOG = {
       "addedAt": "2026-09-24",
       "updatedAt": "2026-09-25",
       "thumbnailSource": "youtube-hq"
+    },
+    {
+      "id": "video-danny-why-youtube-algorithm-update",
+      "title": "Danny Why — Estratégias de Adaptação ao Novo Algoritmo do YouTube",
+      "kind": "vídeo",
+      "segment": "Conteúdo e Mídia",
+      "url": "https://www.youtube.com/watch?v=phQWga1difM",
+      "description": "Análise aprofundada das recentes alterações no sistema de recomendação e métricas de distribuição do YouTube, detalhando como criadores devem reposicionar sua produção para sustentar relevância e monetização.",
+      "deliverable": "Roteiro tático de reformulação dos primeiros 30 segundos, refinamento de CTR de miniaturas e calibração de cadência para se beneficiar da nova lógica algorítmica da plataforma.",
+      "practicalExample": "Canal especializado em tecnologia e inteligência artificial ajusta os ganchos iniciais dos vídeos e dobra a retenção média dos espectadores em menos de três semanas.",
+      "targetAudience": "Criadores de Conteúdo, Produtores de Vídeo, Estrategistas Digitais e Gestores de Comunicação",
+      "tags": [
+        "youtube",
+        "algoritmo",
+        "estrategia",
+        "criação de conteúdo",
+        "IA"
+      ],
+      "status": "ativo",
+      "year": 2026,
+      "source": "Danny Why",
+      "addedAt": "2026-09-25",
+      "updatedAt": "2026-09-25",
+      "youtubeId": "phQWga1difM",
+      "thumbnail": "https://i.ytimg.com/vi/phQWga1difM/hqdefault.jpg",
+      "thumbnailSource": "youtube-hq",
+      "notes": "Vídeo essencial conduzido por Danny Why analisando a virada de chave do YouTube em 2026: priorização de satisfação do usuário e tempo de sessão qualificado sobre cliques sensacionalistas de baixo engajamento.",
+      "area": "Mídia",
+      "intents": [
+        "Aprender",
+        "Praticar"
+      ],
+      "summary": "Análise profunda sobre o impacto das novas diretrizes de recomendação e retenção do YouTube para criadores e marcas.",
+      "keyTakeaways": [
+        "O algoritmo privilegia retenção contínua e sessões completas sobre métricas de vaidade",
+        "Títulos e miniaturas devem prometer valor tangível e demonstrar entrega logo nos primeiros 15 segundos",
+        "Canais que dominam a nova dinâmica de feed ganham prioridade de distribuição orgânica nos motores de busca e na página inicial"
+      ],
+      "action": "Auditar as métricas de retenção dos últimos uploads do canal e aplicar o gancho estruturado no próximo roteiro.",
+      "effort": "Médio",
+      "impact": "Alto",
+      "confidence": "95%"
     }
   ]
 };

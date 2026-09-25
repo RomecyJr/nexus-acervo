@@ -1818,6 +1818,59 @@ button, input, select, textarea { font-family: inherit; color: inherit; border: 
   transition-duration: 70ms !important;
 }
 
+
+/* ============================================================================
+   NEXUS CLAW — IDENTIDADE DE IA CYBERBOT (OPENCLAW / GROK CRAFT)
+   ============================================================================ */
+.nexus-claw-icon {
+  display: inline-block;
+  vertical-align: middle;
+  filter: drop-shadow(0 0 4px rgba(56, 189, 248, 0.35));
+  transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1), filter 180ms ease-out;
+}
+
+.ai-copilot-trigger-btn:hover .nexus-claw-icon,
+.nav-btn:hover .nexus-claw-icon {
+  transform: scale(1.12);
+  filter: drop-shadow(0 0 8px rgba(56, 189, 248, 0.7));
+}
+
+.ai-copilot-trigger-btn {
+  position: relative;
+  background: rgba(16, 185, 129, 0.08) !important;
+  border: 1px solid rgba(56, 189, 248, 0.25) !important;
+  transition: background 160ms var(--ease-out), border-color 160ms var(--ease-out), transform 160ms var(--ease-out) !important;
+}
+
+.ai-copilot-trigger-btn:hover {
+  background: rgba(56, 189, 248, 0.15) !important;
+  border-color: rgba(56, 189, 248, 0.5) !important;
+  transform: scale(1.04);
+}
+
+.ai-copilot-pulse-dot {
+  position: absolute;
+  top: 5px;
+  right: 5px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #10b981;
+  box-shadow: 0 0 6px #10b981;
+}
+
+.badge-mini-claw {
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  background: rgba(56, 189, 248, 0.15);
+  color: #38bdf8;
+  letter-spacing: 0.04em;
+  font-family: var(--font-mono);
+  margin-left: auto;
+}
+
 /* Entrada física de modais com escala de 0.95 para 1 e blur progressivo */
 .clean-modal {
   position: fixed;
@@ -3096,8 +3149,23 @@ html.vault-locked-state .app {
       <div class="nav-group" style="margin-top: 1.15rem;">
         <div class="nav-section-title">Sistema & Integrações</div>
         <nav class="nav-list">
-          <button class="nav-btn" id="btnSideOpenAiCopilot" aria-label="Conversar com a IA">
-            <span class="nav-btn-inner"><i data-lucide="key-round" style="color:#10b981;"></i> Assistente IA (Chave)</span>
+          <button class="nav-btn" id="btnSideOpenAiCopilot" aria-label="Abrir Nexus Claw IA">
+            <span class="nav-btn-inner" style="gap: 0.55rem;">
+              <svg class="nexus-claw-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M12 2L4 7v10l8 5 8-5V7L12 2z" stroke="url(#clawGrad)" stroke-width="1.8"/>
+  <path d="M7 10.5l5 3.5 5-3.5" stroke="#38bdf8" stroke-width="1.6"/>
+  <path d="M9 14.5l3 2 3-2" stroke="#38bdf8" stroke-width="1.4"/>
+  <circle cx="12" cy="8.5" r="1.5" fill="#38bdf8"/>
+  <defs>
+    <linearGradient id="clawGrad" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10b981"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+</svg>
+              <span>Nexus Claw</span>
+              <span class="badge-mini-claw">BOT IA</span>
+            </span>
           </button>
           <button class="nav-btn" id="btnOpenAiImport" aria-label="Importação Inteligente com IA">
             <span class="nav-btn-inner"><i data-lucide="sparkles" style="color:#38bdf8;"></i> Importar com IA</span>
@@ -3149,8 +3217,20 @@ html.vault-locked-state .app {
       </div>
 
       <div class="topbar-right">
-        <button class="btn icon-only ai-copilot-trigger-btn" id="btnOpenAiCopilot" title="Conversar com a IA (Nexus Copilot · Chave de Inteligência)" aria-label="Abrir Assistente de IA com Contexto do Acervo">
-          <i data-lucide="key-round" style="width:16px;height:16px;color:#10b981;"></i>
+        <button class="btn icon-only ai-copilot-trigger-btn" id="btnOpenAiCopilot" title="Nexus Claw · Inteligência Autônoma do Acervo (Padrão Grok / OpenClaw)" aria-label="Abrir Nexus Claw com Contexto do Acervo">
+          <svg class="nexus-claw-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M12 2L4 7v10l8 5 8-5V7L12 2z" stroke="url(#clawGrad)" stroke-width="1.8"/>
+  <path d="M7 10.5l5 3.5 5-3.5" stroke="#38bdf8" stroke-width="1.6"/>
+  <path d="M9 14.5l3 2 3-2" stroke="#38bdf8" stroke-width="1.4"/>
+  <circle cx="12" cy="8.5" r="1.5" fill="#38bdf8"/>
+  <defs>
+    <linearGradient id="clawGrad" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10b981"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+</svg>
+          <span class="ai-copilot-pulse-dot" title="Nexus Claw Online"></span>
         </button>
         <button class="user-profile-btn" id="btnUserAuth" aria-label="Acessar Perfil e Cofre">
           <div class="user-avatar-badge" id="topUserAvatar">RV</div>
@@ -3486,13 +3566,25 @@ html.vault-locked-state .app {
     <!-- Header -->
     <div style="padding: 1.1rem 1.25rem 0.95rem; border-bottom: 1px solid rgba(255,255,255,0.07); display: flex; align-items: center; justify-content: space-between; flex-shrink: 0;">
       <div style="display: flex; align-items: center; gap: 0.65rem;">
-        <div style="width: 32px; height: 32px; border-radius: 8px; background: rgba(16, 185, 129, 0.12); display: grid; place-items: center; color: #10b981;">
-          <i data-lucide="key-round" style="width: 17px; height: 17px;"></i>
+        <div style="width: 34px; height: 34px; border-radius: 8px; background: rgba(56, 189, 248, 0.12); border: 1px solid rgba(56, 189, 248, 0.25); display: grid; place-items: center;">
+          <svg class="nexus-claw-icon" viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+  <path d="M12 2L4 7v10l8 5 8-5V7L12 2z" stroke="url(#clawGrad)" stroke-width="1.8"/>
+  <path d="M7 10.5l5 3.5 5-3.5" stroke="#38bdf8" stroke-width="1.6"/>
+  <path d="M9 14.5l3 2 3-2" stroke="#38bdf8" stroke-width="1.4"/>
+  <circle cx="12" cy="8.5" r="1.5" fill="#38bdf8"/>
+  <defs>
+    <linearGradient id="clawGrad" x1="4" y1="2" x2="20" y2="22" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#10b981"/>
+      <stop offset="1" stop-color="#38bdf8"/>
+    </linearGradient>
+  </defs>
+</svg>
         </div>
         <div>
           <div style="display: flex; align-items: center; gap: 0.5rem;">
-            <h2 style="font-size: 1.05rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text);" id="copilotModalTitle">Nexus Copilot · Assistente IA</h2>
-            <span style="font-size: 0.62rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 4px; background: rgba(16, 185, 129, 0.15); color: #34d399; font-family: var(--font-mono);" id="copilotCatalogCountPill">76 ITENS CARREGADOS</span>
+            <h2 style="font-size: 1.05rem; font-weight: 800; letter-spacing: -0.02em; color: var(--text);" id="copilotModalTitle">Nexus Claw · Inteligência Autônoma</h2>
+            <span class="badge-mini-claw" style="font-size: 0.6rem; padding: 0.1rem 0.4rem;">GROK ENGINE</span>
+            <span style="font-size: 0.62rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 4px; background: rgba(16, 185, 129, 0.15); color: #34d399; font-family: var(--font-mono);" id="copilotCatalogCountPill">77 ITENS CARREGADOS</span>
           </div>
           <p style="font-size: 0.72rem; color: var(--muted-text); margin-top: 0.1rem;" id="copilotModelActiveLabel">NVIDIA Nemotron 3 Ultra (550B Flagship Free)</p>
         </div>
@@ -3521,7 +3613,7 @@ html.vault-locked-state .app {
         <div class="copilot-msg-avatar"><i data-lucide="key-round" style="width: 14px; height: 14px;"></i></div>
         <div class="copilot-msg-content">
           <p>Olá, <strong>Romecy</strong>! Sou seu assistente com inteligência artificial conectado diretamente à base de conhecimento do <strong>Nexus Acervo</strong>.</p>
-          <p style="margin-top: 0.4rem;">Tenho acesso em tempo real aos seus <strong>76 recursos catalogados</strong>, suas tags, repositórios, favoritos e status de estudo. Como posso te ajudar hoje?</p>
+          <p style="margin-top: 0.4rem;">Tenho acesso em tempo real aos seus <strong>77 recursos catalogados</strong>, suas tags, repositórios, favoritos e status de estudo. Como posso te ajudar hoje?</p>
           <ul style="margin: 0.45rem 0 0 1.2rem; font-size: 0.78rem; display: grid; gap: 0.25rem;">
             <li><strong>Textos & Curadoria:</strong> revisar descrições, lapidar entregáveis tangíveis e formular títulos canônicos.</li>
             <li><strong>Imagens & Capas:</strong> orientar links oficiais do GitHub OpenGraph, YouTube HD e Favicons 128px.</li>
@@ -4460,7 +4552,8 @@ function buildNexusCopilotSystemPrompt() {
     return `- [${i.kind.toUpperCase()}] "${i.title}" (${i.segment}${i.stars ? ' | ★' + i.stars : ''}): ${i.deliverable || i.description} (URL: ${i.url})`;
   }).join('\n');
 
-  return `Você é o Nexus Copilot, o assistente oficial de IA do Nexus Acervo ($50k benchmark de curadoria técnica padrão Linear e Sindre Sorhus Awesome).
+  return `Você é o Nexus Claw (codinome ClawBot / Grok-Engine), o agente de inteligência autônoma e orquestrador oficial do Nexus Acervo ($50k benchmark padrão Linear & Sindre Sorhus Awesome).
+Sua postura é executiva, afiada, precisa e inspirada em inteligências como Grok e OpenClaw: foco implacável em entregáveis tangíveis, zero enrolação (zero AI Slop) e domínio absoluto de código, vídeo e ferramentas.
 Você auxilia diretamente o curador Romecy Veiga a gerenciar, enriquecer e estudar o acervo.
 
 ESTADO ATUAL DO ACERVO:
@@ -4554,7 +4647,7 @@ async function sendCopilotMessage(userText) {
     const usedModelShort = result.usedModel.split('/')[1]?.replace(':free', '') || result.usedModel;
 
     aiMsgEl.innerHTML = `
-      <div class="copilot-msg-avatar"><i data-lucide="key-round" style="width:14px;height:14px;"></i></div>
+      <div class="copilot-msg-avatar" style="background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.25);"><svg class="nexus-claw-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z" stroke="url(#clawGrad)" stroke-width="1.8"/><path d="M7 10.5l5 3.5 5-3.5" stroke="#38bdf8" stroke-width="1.6"/><path d="M9 14.5l3 2 3-2" stroke="#38bdf8" stroke-width="1.4"/><circle cx="12" cy="8.5" r="1.5" fill="#38bdf8"/></svg></div>
       <div class="copilot-msg-content">
         ${formattedReply}
         <div style="margin-top: 0.55rem; padding-top: 0.45rem; border-top: 1px solid rgba(255,255,255,0.06); font-size: 0.68rem; color: var(--faint); display: flex; align-items: center; justify-content: space-between;">
@@ -4609,20 +4702,39 @@ async function extractMetadataFromUrl(url) {
 
   const lowerUrl = url.toLowerCase();
 
-  // A. YOUTUBE VIDEO
+  // A. YOUTUBE VIDEO (EXTRAÇÃO OFICIAL VIA OEMBED COM FALLBACK DUPLO)
   const ytId = extractYouTubeId(url);
   if (ytId) {
     result.kind = 'vídeo';
     result.thumbnail = `https://img.youtube.com/vi/${ytId}/hqdefault.jpg`;
-    result.tags = ['video', 'aula', 'ia'];
+    result.tags = ['youtube', 'video', 'conteudo', 'algoritmo', 'IA'];
+    result.segment = 'Conteúdo e Mídia';
+
+    let fetched = false;
+    // 1. YouTube oEmbed oficial (rápido e 100% canônico)
     try {
-      const res = await fetch(`https://noembed.com/embed?url=${encodeURIComponent(url)}`);
+      const res = await fetch(`https://www.youtube.com/oembed?url=${encodeURIComponent(url)}&format=json`);
       if (res.ok) {
         const data = await res.json();
         if (data.title) result.title = data.title;
         if (data.author_name) result.author = data.author_name;
+        fetched = true;
       }
-    } catch(e) {}
+    } catch(e) {
+      console.warn('Falha no oEmbed nativo, acionando fallback noembed:', e);
+    }
+
+    // 2. Fallback via noembed
+    if (!fetched) {
+      try {
+        const res2 = await fetch(`https://noembed.com/embed?url=${encodeURIComponent(url)}`);
+        if (res2.ok) {
+          const data2 = await res2.json();
+          if (data2.title) result.title = data2.title;
+          if (data2.author_name) result.author = data2.author_name;
+        }
+      } catch(e2) {}
+    }
     return result;
   }
 
@@ -4662,33 +4774,59 @@ async function extractMetadataFromUrl(url) {
   return result;
 }
 
+function robustExtractJson(rawText) {
+  if (!rawText) return null;
+  // 1. Bloco de código markdown
+  const codeBlockMatch = rawText.match(/```(?:json)?\s*([\s\S]*?)\s*```/i);
+  if (codeBlockMatch && codeBlockMatch[1]) {
+    try { return JSON.parse(codeBlockMatch[1].trim()); } catch(e) {}
+  }
+  // 2. Substring do primeiro { ao último }
+  const firstBrace = rawText.indexOf('{');
+  const lastBrace = rawText.lastIndexOf('}');
+  if (firstBrace !== -1 && lastBrace !== -1 && lastBrace > firstBrace) {
+    try {
+      return JSON.parse(rawText.substring(firstBrace, lastBrace + 1));
+    } catch(e) {}
+  }
+  return null;
+}
+
 async function synthesizeWithOpenRouter(url, baseData, apiKey, model) {
-  const systemPrompt = `Você é o assistente editorial sênior do Nexus Acervo ($50k benchmark padrão Linear & Sindre Sorhus Awesome).
-Sua tarefa é analisar os dados brutos de um recurso web e retornar EXCLUSIVAMENTE um objeto JSON válido (sem blocos markdown extras) com os campos:
-- title: Fórmula estrita "Nome — Ação ou Proposta de Valor" (ex: "v0 by Vercel — Geração Rápida de UI com React e Tailwind")
-- description: Resumo executivo de altíssimo nível (mínimo 60 caracteres) explicando o que é e seu diferencial.
-- deliverable: O que a ferramenta entrega de forma tangível e observável (mínimo 35 caracteres).
+  const systemPrompt = `Você é o Nexus Claw, assistente editorial sênior do Nexus Acervo ($50k benchmark padrão Linear & Sindre Sorhus Awesome).
+Sua tarefa é analisar os dados brutos de um recurso web e retornar EXCLUSIVAMENTE um objeto JSON válido (sem blocos markdown, sem divagações, sem explicações).
+INICIE SUA RESPOSTA IMEDIATAMENTE COM O CARACTERE "{" E TERMINE COM "}".
+
+Campos obrigatórios:
+- title: Fórmula estrita "Nome — Ação ou Proposta de Valor" (ex: "Danny Why — Estratégias de Adaptação ao Novo Algoritmo do YouTube")
+- description: Resumo executivo de altíssimo nível (mínimo 60 caracteres) explicando o conteúdo, diferenciais e valor prático.
+- deliverable: O que quem consome ganha de forma tangível e observável (mínimo 35 caracteres).
 - practicalExample: Caso concreto e direto de aplicação prática no mundo real (mínimo 35 caracteres).
-- segment: Um dos seguintes segmentos canônicos: "Desenvolvimento", "Inteligência Artificial", "Produtividade", "Design & UI", "Negócios", "Carreira", "Segurança".
-- targetAudience: Personas reais (ex: "Desenvolvedores Full-stack e Engenheiros de Produto").
+- segment: Um dos seguintes: "Conteúdo e Mídia", "Desenvolvimento e Infra", "Produtividade e Gestão", "Design e UX", "Dados e Inteligência", "Negócios e Métricas", "Aprendizado e Filosofia".
+- targetAudience: Personas reais (ex: "Criadores de Conteúdo, Produtores Audiovisuais e Estrategistas Digitais").
 - tags: Array com 3 a 5 tags técnicas limpas (padronize SEMPRE "IA", nunca "I.A").`;
 
-  const userPrompt = `URL: ${url}\nDados preliminares extraídos: ${JSON.stringify(baseData)}`;
+  const userPrompt = `URL: ${url}\nDados preliminares: ${JSON.stringify(baseData)}\n\nRetorne exclusivamente o JSON estruturado agora.`;
+
+  // Para síntese de JSON rápida, priorizar modelos que respondem imediatamente com JSON
+  const synthModel = (!model || model === 'auto') ? 'openrouter/free' : model;
 
   const result = await callOpenRouterWithFallback({
     apiKey: apiKey,
-    model: model,
+    model: synthModel,
     messages: [
       { role: 'system', content: systemPrompt },
       { role: 'user', content: userPrompt }
     ],
-    maxTokens: 600,
-    temperature: 0.2
+    maxTokens: 1200,
+    temperature: 0.1
   });
 
-  const rawContent = result.content || '{}';
-  const cleanJson = rawContent.replace(/^```json\s*/i, '').replace(/```\s*$/i, '').trim();
-  return JSON.parse(cleanJson);
+  const parsed = robustExtractJson(result.content);
+  if (!parsed) {
+    throw new Error('Não foi possível interpretar a resposta estruturada do modelo.');
+  }
+  return parsed;
 }
 
 
@@ -6926,9 +7064,9 @@ document.addEventListener('DOMContentLoaded', () => {
     if (container) {
       container.innerHTML = `
         <div class="copilot-msg msg-ai">
-          <div class="copilot-msg-avatar"><i data-lucide="key-round" style="width: 14px; height: 14px;"></i></div>
+          <div class="copilot-msg-avatar" style="background:rgba(56,189,248,0.12);border:1px solid rgba(56,189,248,0.25);"><svg class="nexus-claw-icon" viewBox="0 0 24 24" width="16" height="16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 2L4 7v10l8 5 8-5V7L12 2z" stroke="url(#clawGrad)" stroke-width="1.8"/><path d="M7 10.5l5 3.5 5-3.5" stroke="#38bdf8" stroke-width="1.6"/><path d="M9 14.5l3 2 3-2" stroke="#38bdf8" stroke-width="1.4"/><circle cx="12" cy="8.5" r="1.5" fill="#38bdf8"/></svg></div>
           <div class="copilot-msg-content">
-            <p>Histórico limpo. Estou pronto para ajudar com novas questões de texto, imagens ou exploração do acervo!</p>
+            <p>Histórico limpo. <strong>Nexus Claw</strong> pronto para minerar novos recursos, calibrar entregáveis ou analisar o acervo!</p>
           </div>
         </div>
       `;
@@ -7087,10 +7225,15 @@ document.addEventListener('DOMContentLoaded', () => {
       return;
     }
 
+    const originalBtnHtml = btnRunAiAutoFill.innerHTML;
+    btnRunAiAutoFill.disabled = true;
+    btnRunAiAutoFill.innerHTML = `<i data-lucide="loader-2" class="animate-spin" style="width:13px;height:13px;"></i> <span>Sintetizando...</span>`;
+    lucide.createIcons();
+
     if (aiAutoFillStatus) {
       aiAutoFillStatus.style.display = 'block';
-      aiAutoFillStatus.style.color = '#60a5fa';
-      aiAutoFillStatus.textContent = '⚡ Analisando recurso e extraindo metadados...';
+      aiAutoFillStatus.style.color = '#38bdf8';
+      aiAutoFillStatus.textContent = '⚡ Nexus Claw: Extraindo dados oficiais do recurso...';
     }
 
     try {
@@ -7101,43 +7244,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
       if (apiKey) {
         if (aiAutoFillStatus) {
-          aiAutoFillStatus.textContent = '🤖 Sintetizando descrição executiva e entregável via IA...';
+          aiAutoFillStatus.textContent = '🤖 Nexus Claw: Gerando título canônico, entregável e tags executivas...';
         }
         try {
           const aiData = await synthesizeWithOpenRouter(url, baseData, apiKey, getOpenRouterModel());
           finalData = { ...baseData, ...aiData };
         } catch(aiErr) {
-          console.warn('Falha no OpenRouter, aplicando extração base:', aiErr);
+          console.warn('Falha na síntese IA, aplicando dados base do recurso:', aiErr);
         }
       }
 
-      // Preencher formulário
+      // Preencher formulário de forma inteligente
       const form = $('#addItemForm');
       if (form) {
-        if (form.elements['title'] && finalData.title) form.elements['title'].value = finalData.title;
-        if (form.elements['kind'] && finalData.kind) form.elements['kind'].value = finalData.kind;
+        if (form.elements['title']) form.elements['title'].value = finalData.title || baseData.title || '';
+        if (form.elements['kind']) form.elements['kind'].value = finalData.kind || baseData.kind || 'ferramenta';
         if (form.elements['url']) form.elements['url'].value = url;
-        if (form.elements['segment'] && finalData.segment) form.elements['segment'].value = finalData.segment;
-        if (form.elements['description'] && finalData.description) form.elements['description'].value = finalData.description;
-        if (form.elements['deliverable'] && finalData.deliverable) form.elements['deliverable'].value = finalData.deliverable;
-        if (form.elements['practicalExample'] && finalData.practicalExample) form.elements['practicalExample'].value = finalData.practicalExample;
-        if (form.elements['targetAudience'] && finalData.targetAudience) form.elements['targetAudience'].value = finalData.targetAudience;
-        if (form.elements['tags'] && Array.isArray(finalData.tags)) form.elements['tags'].value = finalData.tags.join(', ');
+        if (form.elements['segment']) form.elements['segment'].value = finalData.segment || 'Conteúdo e Mídia';
+        if (form.elements['description']) form.elements['description'].value = finalData.description || '';
+        if (form.elements['deliverable']) form.elements['deliverable'].value = finalData.deliverable || '';
+        if (form.elements['practicalExample']) form.elements['practicalExample'].value = finalData.practicalExample || '';
+        if (form.elements['targetAudience']) form.elements['targetAudience'].value = finalData.targetAudience || 'Criadores e Especialistas';
+        if (form.elements['tags']) {
+          const tagsArray = Array.isArray(finalData.tags) ? finalData.tags : ['ia', 'produtividade'];
+          form.elements['tags'].value = tagsArray.join(', ');
+        }
       }
 
       if (aiAutoFillStatus) {
         aiAutoFillStatus.style.color = '#34d399';
-        aiAutoFillStatus.textContent = apiKey 
-          ? '✓ Recurso sintetizado e preenchido com IA com sucesso!'
-          : '✓ Metadados extraídos! (Adicione sua chave OpenRouter para síntese executiva por IA).';
+        aiAutoFillStatus.textContent = '✓ Recurso sintetizado pelo Nexus Claw e pronto para salvar!';
       }
 
-      showToast('Formulário preenchido automaticamente! ✨');
+      showToast('Sintetizado com Nexus Claw com sucesso! 🚀');
     } catch(err) {
       if (aiAutoFillStatus) {
         aiAutoFillStatus.style.color = '#f87171';
         aiAutoFillStatus.textContent = `Erro ao extrair: ${err.message}`;
       }
+      showToast('Erro ao processar URL. Tente novamente.');
+    } finally {
+      btnRunAiAutoFill.disabled = false;
+      btnRunAiAutoFill.innerHTML = originalBtnHtml;
+      lucide.createIcons();
     }
   });
 
