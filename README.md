@@ -63,4 +63,8 @@ Implemente `docs/openapi.yaml` em Cloudflare Workers, FastAPI, Express ou outra 
 
 ## Segurança
 
-O frontend não contém segredos. Autenticação e autorização devem existir na camada da API ou no acesso ao repositório privado. Antes de automações executarem comandos ou instalarem ferramentas, revise permissões, licenças e tratamento de dados.
+O dashboard atual é uma aplicação estática: o catálogo e a validação do cofre são executados no navegador, e notas/progresso ficam no `localStorage`. Isso é adequado para uma biblioteca pessoal e local, mas **não deve ser tratado como autenticação de produção** — qualquer segredo enviado ao frontend pode ser inspecionado pelo visitante.
+
+Para transformar o acervo em um cofre realmente privado, coloque a aplicação atrás de autenticação no servidor (por exemplo, Vercel Authentication/Clerk/Auth.js), remova o catálogo privado do HTML público e persista notas em uma API protegida. A versão atual já explicita essa limitação na tela de login e adiciona `Referrer-Policy` e `Permissions-Policy` na Vercel.
+
+Antes de automações executarem comandos ou instalarem ferramentas, revise permissões, licenças e tratamento de dados.
