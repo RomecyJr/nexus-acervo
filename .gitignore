@@ -7,3 +7,5 @@ node_modules/
 00_Backup_Original/
 *.tar.gz
 *.gz
+.claude/
+09_Projeto_Informacoes/

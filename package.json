@@ -6,10 +6,11 @@
   "scripts": {
     "sync": "node scripts/sync-data.mjs",
     "lint:editorial": "node scripts/lint_editorial.mjs",
-    "validate": "node scripts/lint_editorial.mjs && node scripts/validate.mjs",
+    "validate": "node scripts/lint_editorial.mjs && node scripts/validate.mjs && node scripts/check_static.mjs",
     "build": "npm run sync && npm run validate",
     "test": "npm run sync && npm run validate",
-    "serve": "npx --yes serve ."
+    "serve": "npx --yes serve .",
+    "start": "npm run serve"
   },
   "dependencies": {
     "ajv": "^8.20.0",
